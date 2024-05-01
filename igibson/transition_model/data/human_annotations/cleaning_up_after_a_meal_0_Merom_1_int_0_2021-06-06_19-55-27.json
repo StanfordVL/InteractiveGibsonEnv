@@ -1,0 +1,158 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "dishwasher_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_53"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_53"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_53"
+    },
+    {
+        "action": "SOAK",
+        "object": "dishwasher_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "dishwasher_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bowl_98"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bowl_98"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_100"
+    },
+    {
+        "action": "CLEAN",
+        "object": "plate_100"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cup_105"
+    },
+    {
+        "action": "CLEAN",
+        "object": "cup_105"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cup_104"
+    },
+    {
+        "action": "CLEAN",
+        "object": "cup_104"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_103"
+    },
+    {
+        "action": "CLEAN",
+        "object": "plate_103"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_102"
+    },
+    {
+        "action": "CLEAN",
+        "object": "plate_102"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bowl_97"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bowl_97"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_101"
+    },
+    {
+        "action": "CLEAN",
+        "object": "plate_101"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "armchair_23"
+    },
+    {
+        "action": "CLEAN",
+        "object": "armchair_23"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "paper_bag_99"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_106"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "paper_bag_99"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_107"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "paper_bag_99"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "room_floor_kitchen_0"
+    }
+]

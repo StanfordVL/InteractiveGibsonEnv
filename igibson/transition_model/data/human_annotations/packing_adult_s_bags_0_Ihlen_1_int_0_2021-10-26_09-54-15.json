@@ -1,0 +1,62 @@
+[
+    {
+        "action": "OPEN",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "mouse_119"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bracelet_116"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "necklace_117"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "toothbrush_118"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lipstick_115"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lipstick_114"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "backpack_112"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "room_floor_corridor_0"
+    }
+]

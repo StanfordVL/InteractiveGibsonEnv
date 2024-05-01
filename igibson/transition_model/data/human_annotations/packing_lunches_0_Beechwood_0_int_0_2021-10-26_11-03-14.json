@@ -1,0 +1,94 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "apple_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "banana_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cookie_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cookie_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_1"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_54"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chip_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "chip_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_1"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_57"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "salad_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "juice_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "pop_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_1"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_57"
+    }
+]

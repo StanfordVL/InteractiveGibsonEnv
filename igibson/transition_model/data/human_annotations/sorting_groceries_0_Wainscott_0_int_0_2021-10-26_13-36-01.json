@@ -1,0 +1,146 @@
+[
+    {
+        "action": "LEFT_GRASP",
+        "object": "orange_2"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "orange_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "orange_1"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "orange_2"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "prosciutto_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cheese_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "milk_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "yogurt_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "carrot_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "carrot_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "carrot_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "soup_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "apple_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "apple_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "apple_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "broccoli_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pretzel_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "flour_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "prosciutto_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "fridge_97"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_97"
+    }
+]
