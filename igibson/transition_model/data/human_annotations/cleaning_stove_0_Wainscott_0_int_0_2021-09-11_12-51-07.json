@@ -8,7 +8,7 @@
         "object": "rag_0"
     },
     {
-        "action": "RIGHT_PLACE_ONTOP",
+        "action": "RIGHT_PLACE_INSIDE",
         "object": "sink_82"
     },
     {
@@ -16,15 +16,11 @@
         "object": "dishtowel_0"
     },
     {
-        "action": "RIGHT_PLACE_ONTOP",
+        "action": "RIGHT_PLACE_INSIDE",
         "object": "sink_82"
     },
     {
         "action": "TOGGLE_ON",
-        "object": "sink_82"
-    },
-    {
-        "action": "TOGGLE_OFF",
         "object": "sink_82"
     },
     {
@@ -34,6 +30,10 @@
     {
         "action": "SOAK",
         "object": "dishtowel_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_82"
     },
     {
         "action": "RIGHT_GRASP",
@@ -48,7 +48,11 @@
         "object": "stove_88"
     },
     {
-        "action": "RIGHT_PLACE_ONTOP",
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_82"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
         "object": "sink_82"
     }
 ]

@@ -426,6 +426,11 @@ class ActionEnv:
             print(f"Both hands full, release one object first to {open_close} the object")
             return False
 
+        # can't open if toggled on
+        if open_close=='open' and object_states.ToggledOn in obj.states and obj.states[object_states.ToggledOn].get_value():
+            print(f"{obj.name} is toggled on, cannot be opened")
+            return False
+
         ## post effects
         self.navigate_to_if_needed(obj)
         flag=obj.states[object_states.Open].set_value((open_close=='open'),fully=True)
@@ -458,11 +463,30 @@ class ActionEnv:
             print(f"Both hands full, release one object first to toggle {on_off} the object")
             return False
 
+        # can't toggle on if open
+        if on_off=='on' and object_states.Open in obj.states and obj.states[object_states.Open].get_value():
+            print(f"{obj.name} is open, cannot be toggled on")
+            return False
+
         ## post effects
         self.navigate_to_if_needed(obj)
         
         obj.states[object_states.ToggledOn].set_value((on_off=='on'))
         print(f"Toggle{on_off} {obj.name} success")
+
+
+        # handel special effects, clean objects inside toggled on dishwasher
+        allowed_cleaners=["dishwasher"]
+        if on_off=='on':
+            for allowed_cleaner in allowed_cleaners:
+                if allowed_cleaner in obj.name:
+                    for child in self.relation_tree.get_node(obj).children.values():
+                        if object_states.Dusty in child.obj.states:
+                            child.obj.states[object_states.Dusty].set_value(False)
+                        if object_states.Stained in child.obj.states:
+                            child.obj.states[object_states.Stained].set_value(False)
+                    print(f"Clean objects inside {obj.name} success")
+                    break
         return True
 
     def slice(self,obj:URDFObject):
@@ -483,6 +507,8 @@ class ActionEnv:
         
         has_slicer=False
         for inventory_obj in self.robot_inventory.values():
+            if inventory_obj is None:
+                continue
             if hasattr(inventory_obj, "states") and object_states.Slicer in inventory_obj.states:
                 has_slicer=True
                 break
@@ -507,7 +533,8 @@ class ActionEnv:
         return True
     
     def clean_dust(self,obj):
-
+        ## pre conditions
+        in_cleaner=False
         if isinstance(obj,RoomFloor):
             obj=obj.floor_obj
         else:
@@ -517,25 +544,45 @@ class ActionEnv:
             except ValueError as e:
                 print(e)
                 return False
+            
+            # check if obj is inside a toggled cleaner
+            node=self.relation_tree.get_node(obj)
+            allowed_cleaners=["dishwasher","sink"]
+            while node.parent is not self.relation_tree.root:
+                parent_obj=node.parent.obj
+                if object_states.ToggledOn in parent_obj.states \
+                and parent_obj.states[object_states.ToggledOn].get_value():
+                    for allowed_cleaner in allowed_cleaners:
+                        if allowed_cleaner in parent_obj.name:
+                            in_cleaner=True
+                            break
+                if in_cleaner:
+                    break
+                node=node.parent
         
         
         if not (hasattr(obj, "states") and object_states.Dusty in obj.states):
-            print("Clean failed, object cannot be cleaned")
+            print("Clean-dust failed, object cannot be clean-dusted")
             return False
         
         if not obj.states[object_states.Dusty].get_value():
-            print("Clean failed, object is already cleaned")
+            print("Clean-dust failed, object is already clean-dusted")
             return False
         
+        # check if cleaner in inventory
         has_cleaner=False
         for inventory_obj in self.robot_inventory.values():
+            if inventory_obj is None:
+                continue
             if hasattr(inventory_obj, "states") and object_states.CleaningTool in inventory_obj.states:
                 has_cleaner=True
                 break
-        if not has_cleaner:
-            print("Clean failed, no cleaner in inventory")
+
+        if not in_cleaner and not has_cleaner:
+            print("Clean-dust failed, please place object in a toggled on cleaner or get a cleaner first")
             return False
-        
+
+
         ## post effects
         self.navigate_to_if_needed(obj)
         obj.states[object_states.Dusty].set_value(False)
@@ -544,33 +591,63 @@ class ActionEnv:
     
     def clean_stain(self,obj):
         ## pre conditions
-        try:
-            self.check_interactability(obj)
-        except ValueError as e:
-            print(e)
-            return False
+        in_cleaner=False
+        if isinstance(obj,RoomFloor):
+            obj=obj.floor_obj
+        else:
+            try:
+                self.check_interactability(obj)
+            except ValueError as e:
+                print(e)
+                return False
+            
+            # check if obj is inside a toggled cleaner
+            node=self.relation_tree.get_node(obj)
+            allowed_clean_containers=["sink"]
+            while node.parent is not self.relation_tree.root:
+                parent_obj=node.parent.obj
+                if object_states.ToggledOn in parent_obj.states \
+                and parent_obj.states[object_states.ToggledOn].get_value():
+                    for allowed_clean_container in allowed_clean_containers:
+                        if allowed_clean_container in parent_obj.name:
+                            in_cleaner=True
+                            break
+                if in_cleaner:
+                    break
+                node=node.parent
         
         if not (hasattr(obj, "states") and object_states.Stained in obj.states):
-            print("Clean failed, object cannot be cleaned")
+            print("Clean-stain, object cannot be clean-stained")
             return False
         
         if not obj.states[object_states.Stained].get_value():
-            print("Clean failed, object is already cleaned")
+            print("Clean-stain, object is already clean-stained")
             return False
         
-        has_cleaner=False
-        cleaner_soaked=False
+        # check if has soaked cleaner in inventory
+        has_soaked_cleaner=False
+        allowed_cleaners=["detergent"]
         for inventory_obj in self.robot_inventory.values():
-            if hasattr(inventory_obj, "states") and object_states.CleaningTool in inventory_obj.states:
-                has_cleaner=True
-                if hasattr(inventory_obj, "states") and object_states.Soaked in inventory_obj.states and inventory_obj.states[object_states.Soaked].get_value():
-                    cleaner_soaked=True
+            if inventory_obj is None:
+                continue
+
+            if hasattr(inventory_obj, "states") and object_states.CleaningTool in inventory_obj.states \
+            and object_states.Soaked in inventory_obj.states and inventory_obj.states[object_states.Soaked].get_value():
+                has_soaked_cleaner=True
+                break
+                
+
+            for allowed_cleaner in allowed_cleaners:
+                if allowed_cleaner in inventory_obj.name:
+                    has_soaked_cleaner=True
                     break
-        if not has_cleaner:
-            print("Clean failed, no cleaner in inventory")
-            return False
-        if not cleaner_soaked:
-            print("Clean failed, cleaner is not soaked")
+
+            
+            if  has_soaked_cleaner:
+                break
+
+        if not in_cleaner and not has_soaked_cleaner:
+            print("Clean-stain failed, please place object in a toggled on cleaner or get a soaked cleaner first")
             return False
         
         ## post effects
@@ -595,15 +672,26 @@ class ActionEnv:
             print(f"{soak_or_dry.capitalize()} failed, object is already {soak_or_dry}ed")
             return False
         
-        # has_soaker=False
-        # for inventory_obj in self.inventory.values():
-        #     if hasattr(inventory_obj, "states") and object_states.Soaker in inventory_obj.states:
-        #         has_soaker=True
-        #         break
-        # if not has_soaker:
-        #     print("Soak failed, no soaker in inventory")
-        #     return False
-        
+        # if soak_or_dry=='soak', obj must be put in a toggled sink
+        allowed_soakers=["sink","teapot"]
+        if soak_or_dry=='soak':
+            in_sink=False
+            node=self.relation_tree.get_node(obj)
+            while node.parent is not self.relation_tree.root:
+                parent_obj=node.parent.obj
+                for allowed_soaker in allowed_soakers:
+                    if allowed_soaker in parent_obj.name and (object_states.ToggledOn in parent_obj.states \
+                    and parent_obj.states[object_states.ToggledOn].get_value() or \
+                    object_states.ToggledOn not in parent_obj.states):
+                        in_sink=True
+                        break
+                if in_sink:
+                    break
+                node=node.parent
+            if not in_sink:
+                print("Soak failed, please place object in a toggled on sink first")
+                return False
+
         ## post effects
         self.navigate_to_if_needed(obj)
         obj.states[object_states.Soaked].set_value((soak_or_dry=='soak'))
@@ -767,6 +855,12 @@ class ActionEnv:
     
     def right_place_under(self,obj:URDFObject):
         return self.place_under(obj,'right_hand')
+    
+    def clean(self,obj:URDFObject):
+        # clean will clean both dust and stain
+        flag1=self.clean_dust(obj)
+        flag2=self.clean_stain(obj)
+        return flag1 or flag2
 
     
         

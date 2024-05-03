@@ -5,11 +5,11 @@
     },
     {
         "action": "TOGGLE_ON",
-        "object": "sink_32"
+        "object": "sink_7"
     },
     {
         "action": "RIGHT_PLACE_INSIDE",
-        "object": "sink_32"
+        "object": "sink_7"
     },
     {
         "action": "SOAK",
@@ -17,7 +17,7 @@
     },
     {
         "action": "TOGGLE_OFF",
-        "object": "sink_32"
+        "object": "sink_7"
     },
     {
         "action": "RIGHT_GRASP",
@@ -25,7 +25,7 @@
     },
     {
         "action": "CLEAN",
-        "object": "sink_32"
+        "object": "sink_7"
     },
     {
         "action": "CLEAN",
@@ -40,7 +40,11 @@
         "object": "bathtub_4"
     },
     {
+        "action": "CLEAN",
+        "object": "toilet_6"
+    },
+    {
         "action": "RIGHT_PLACE_INSIDE",
-        "object": "bucket_15"
+        "object": "bucket_0"
     }
 ]

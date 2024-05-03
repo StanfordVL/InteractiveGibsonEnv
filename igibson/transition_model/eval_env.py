@@ -75,7 +75,7 @@ class EvalEnv(BaseEnv):
             EvalActions.LEFT_RELEASE.value: self.action_env.left_release,
             EvalActions.OPEN.value: self.action_env.open,
             EvalActions.CLOSE.value: self.action_env.close,
-            EvalActions.CLEAN.value: self.action_env.clean_dust,
+            EvalActions.CLEAN.value: self.action_env.clean,
             EvalActions.SLICE.value: self.action_env.slice,
             EvalActions.SOAK.value: self.action_env.soak,
             EvalActions.DRY.value: self.action_env.dry,

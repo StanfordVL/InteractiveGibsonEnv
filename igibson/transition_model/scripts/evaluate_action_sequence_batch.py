@@ -44,6 +44,8 @@ def main(demo_dir,action_dir,rst_dir,headless=True):
             info.update({"error":str(e)})
 
         statistics.append(info)
+        with open(os.path.join(rst_dir,"statistics.json"), 'w') as f:
+            json.dump(statistics,f,indent=4)
     statistics.append(summary)
 
     # caculate the statistics
@@ -66,4 +68,4 @@ def main(demo_dir,action_dir,rst_dir,headless=True):
 if __name__ == "__main__":  # confirms that the code is under main function
     fire.Fire(main)
 
-# python D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\scripts\evaluate_action_sequence_batch.py "D:\GitHub\behavior-vllm-eval\igibson\data\virtual_reality" "D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\data\annotations" "D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\data\results"
+# python D:\GitHub_jameskrw\iGibson\igibson\transition_model\scripts\evaluate_action_sequence_batch.py "D:\GitHub_jameskrw\iGibson\igibson\data\virtual_reality" "D:\GitHub_jameskrw\iGibson\igibson\transition_model\data\human_annotations" "D:\GitHub_jameskrw\iGibson\igibson\transition_model_v3\data\human_results"

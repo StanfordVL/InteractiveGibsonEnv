@@ -13,11 +13,11 @@
     },
     {
         "action": "RIGHT_PLACE_ONTOP",
-        "object": "countertop_0"
+        "object": "countertop_31"
     },
     {
         "action": "LEFT_PLACE_ONTOP",
-        "object": "countertop_0"
+        "object": "countertop_31"
     },
     {
         "action": "RIGHT_GRASP",
@@ -25,18 +25,14 @@
     },
     {
         "action": "RIGHT_PLACE_ONTOP",
-        "object": "countertop_00"
+        "object": "countertop_31"
     },
     {
         "action": "RIGHT_GRASP",
-        "object": "towel_0"
+        "object": "hand_towel_0"
     },
     {
         "action": "TOGGLE_ON",
-        "object": "sink_37"
-    },
-    {
-        "action": "TOGGLE_OFF",
         "object": "sink_37"
     },
     {
@@ -45,11 +41,15 @@
     },
     {
         "action": "SOAK",
-        "object": "towel_0"
+        "object": "hand_towel_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_37"
     },
     {
         "action": "RIGHT_GRASP",
-        "object": "towel_0"
+        "object": "hand_towel_0"
     },
     {
         "action": "CLEAN",

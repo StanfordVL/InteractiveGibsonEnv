@@ -5,6 +5,7 @@ import io
 from contextlib import redirect_stdout
 import json
 import fire
+import traceback
 
 def evaluate_action_seqeunce(demo_path,action_path,rst_path,headless=True):
     env=EvalEnv(demo_path=demo_path,mode="headless" if headless else "gui_non_interactive",
@@ -44,7 +45,8 @@ def evaluate_action_seqeunce(demo_path,action_path,rst_path,headless=True):
 
             except Exception as e:
                 rst["unknown_execution_error"]=True
-                print("Execution Error:",e)
+                msg=traceback.format_exc()
+                print("Execution Error:",msg)
             print("************************************************")
 
         print("------------Action Execution Ends-------------")
@@ -61,13 +63,13 @@ def evaluate_action_seqeunce(demo_path,action_path,rst_path,headless=True):
     return rst
 
 import os
-def main(demo_name,action_dir="./igibson/transition_model_v3/data/human_annotations",demo_dir="./igibson/data/virtual_reality",rst_path="test.log"):
+def main(demo_name,action_dir="./igibson/transition_model/data/human_annotations",demo_dir="./igibson/data/virtual_reality",rst_path="test.log"):
     demo_path=os.path.join(demo_dir,demo_name+".hdf5")
     action_path=os.path.join(action_dir,demo_name+".json")
     evaluate_action_seqeunce(demo_path,action_path,rst_path)
 if __name__ == "__main__":
     fire.Fire(main)
 """
-python D:\GitHub_jameskrw\iGibson\igibson\transition_model_v3\scripts\evaluate_action_sequence.py bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46
+python D:\GitHub_jameskrw\iGibson\igibson\transition_model\scripts\evaluate_action_sequence.py bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46
 """
 

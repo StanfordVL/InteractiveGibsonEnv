@@ -4,12 +4,8 @@
         "object": "sink_48"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_48"
-    },
-    {
         "action": "RIGHT_GRASP",
-        "object": "scrub_brush_73"
+        "object": "scrub_brush_0"
     },
     {
         "action": "RIGHT_PLACE_INSIDE",
@@ -17,11 +13,15 @@
     },
     {
         "action": "SOAK",
-        "object": "scrub_brush_73"
+        "object": "scrub_brush_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_48"
     },
     {
         "action": "RIGHT_GRASP",
-        "object": "scrub_brush_73"
+        "object": "scrub_brush_0"
     },
     {
         "action": "CLEAN",
@@ -29,6 +29,6 @@
     },
     {
         "action": "RIGHT_RELEASE",
-        "object": "scrub_brush_73"
+        "object": "scrub_brush_0"
     }
 ]

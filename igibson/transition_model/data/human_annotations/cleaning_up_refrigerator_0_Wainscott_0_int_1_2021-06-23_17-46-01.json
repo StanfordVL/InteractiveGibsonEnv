@@ -1,7 +1,11 @@
 [
     {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
         "action": "RIGHT_GRASP",
-        "object": "soap_145"
+        "object": "soap_0"
     },
     {
         "action": "RIGHT_PLACE_INSIDE",
@@ -12,16 +16,12 @@
         "object": "sink_82"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_82"
-    },
-    {
         "action": "RIGHT_GRASP",
-        "object": "rag_144"
+        "object": "rag_0"
     },
     {
         "action": "LEFT_GRASP",
-        "object": "rag_143"
+        "object": "rag_1"
     },
     {
         "action": "RIGHT_PLACE_INSIDE",
@@ -33,15 +33,19 @@
     },
     {
         "action": "SOAK",
-        "object": "rag_143"
+        "object": "rag_1"
     },
     {
         "action": "SOAK",
-        "object": "rag_144"
+        "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_82"
     },
     {
         "action": "RIGHT_GRASP",
-        "object": "rag_144"
+        "object": "rag_0"
     },
     {
         "action": "OPEN",
@@ -49,15 +53,15 @@
     },
     {
         "action": "CLEAN",
-        "object": "tray_147"
+        "object": "tray_1"
     },
     {
         "action": "CLEAN",
-        "object": "tray_146"
+        "object": "tray_0"
     },
     {
         "action": "CLEAN",
-        "object": "bowl_148"
+        "object": "bowl_0"
     },
     {
         "action": "CLEAN",
@@ -65,14 +69,14 @@
     },
     {
         "action": "LEFT_GRASP",
-        "object": "bowl_148"
+        "object": "bowl_0"
     },
     {
         "action": "CLOSE",
         "object": "fridge_97"
     },
     {
-        "action": "LEFT_PLACE_INSIDE",
+        "action": "LEFT_PLACE_NEXTTO",
         "object": "sink_82"
     },
     {

@@ -1,14 +1,10 @@
 [
     {
         "action": "RIGHT_GRASP",
-        "object": "bath_towel_114"
+        "object": "bath_towel_0"
     },
     {
         "action": "TOGGLE_ON",
-        "object": "sink_49"
-    },
-    {
-        "action": "TOGGLE_OFF",
         "object": "sink_49"
     },
     {
@@ -17,11 +13,15 @@
     },
     {
         "action": "SOAK",
-        "object": "bath_towel_114"
+        "object": "bath_towel_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_49"
     },
     {
         "action": "RIGHT_GRASP",
-        "object": "bath_towel_114"
+        "object": "bath_towel_0"
     },
     {
         "action": "CLEAN",
@@ -29,6 +29,6 @@
     },
     {
         "action": "RIGHT_RELEASE",
-        "object": "bath_towel_114"
+        "object": "bath_towel_0"
     }
 ]

@@ -12,12 +12,12 @@
         "object": "sink_64"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_64"
-    },
-    {
         "action": "SOAK",
         "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_64"
     },
     {
         "action": "RIGHT_GRASP",

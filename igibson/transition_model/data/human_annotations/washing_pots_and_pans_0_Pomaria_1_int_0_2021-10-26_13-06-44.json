@@ -8,16 +8,16 @@
         "object": "sink_37"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_37"
-    },
-    {
         "action": "RIGHT_PLACE_INSIDE",
         "object": "sink_37"
     },
     {
         "action": "SOAK",
         "object": "scrub_brush_83"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_37"
     },
     {
         "action": "RIGHT_GRASP",
@@ -34,6 +34,10 @@
     {
         "action": "CLEAN",
         "object": "saucepan_80"
+    },
+    {
+        "action": "CLEAN",
+        "object": "frying_pan_82"
     },
     {
         "action": "CLEAN",
@@ -44,6 +48,10 @@
         "object": "scrub_brush_83"
     },
     {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_32"
+    },
+    {
         "action": "RIGHT_GRASP",
         "object": "saucepan_81"
     },
@@ -61,6 +69,14 @@
     },
     {
         "action": "RIGHT_GRASP",
+        "object": "frying_pan_82"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_no_top_32"
+    },
+    {
+        "action": "RIGHT_GRASP",
         "object": "teapot_78"
     },
     {
@@ -70,6 +86,10 @@
     {
         "action": "RIGHT_GRASP",
         "object": "kettle_79"
+    },
+    {
+        "action": "OPEN",
+        "object": "top_cabinet_27"
     },
     {
         "action": "RIGHT_PLACE_INSIDE",

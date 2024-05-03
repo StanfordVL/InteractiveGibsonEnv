@@ -24,16 +24,16 @@
         "object": "sink_82"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_82"
-    },
-    {
         "action": "SOAK",
         "object": "rag_0"
     },
     {
         "action": "SOAK",
         "object": "rag_1"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_82"
     },
     {
         "action": "RIGHT_GRASP",
