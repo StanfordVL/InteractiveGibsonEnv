@@ -49,4 +49,4 @@ def main(demo_dir,action_dir,rst_dir):
 if __name__ == "__main__":  # confirms that the code is under main function
     fire.Fire(main)
 
-# python D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\evaluation\action_sequence\get_llm_action_sequence_batch.py "D:\GitHub\behavior-vllm-eval\igibson\data\virtual_reality" "D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\data\annotations" "D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\data\gpt4_annotations"
+# python D:\GitHub_jameskrw\iGibson\igibson\transition_model\evaluation\action_sequence\get_llm_action_sequence_batch.py "D:\GitHub_jameskrw\iGibson\igibson\data\virtual_reality" "D:\GitHub_jameskrw\iGibson\igibson\transition_model\data\human_annotations" "D:\GitHub_jameskrw\iGibson\igibson\transition_model\data\gpt4_annotations"
