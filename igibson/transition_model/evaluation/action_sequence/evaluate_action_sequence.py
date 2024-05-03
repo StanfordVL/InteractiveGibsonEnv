@@ -69,7 +69,4 @@ def main(demo_name,action_dir="./igibson/transition_model/data/human_annotations
     evaluate_action_seqeunce(demo_path,action_path,rst_path)
 if __name__ == "__main__":
     fire.Fire(main)
-"""
-python D:\GitHub_jameskrw\iGibson\igibson\transition_model\scripts\evaluate_action_sequence.py bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46
-"""
 

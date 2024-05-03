@@ -1,6 +1,6 @@
 import fire
 from multiprocessing import Process
-from igibson.transition_model.scripts.evaluate_action_sequence import evaluate_action_seqeunce
+from igibson.transition_model.evaluation.action_sequence.evaluate_action_sequence import evaluate_action_seqeunce
 import  os
 import json
 
@@ -67,5 +67,3 @@ def main(demo_dir,action_dir,rst_dir,headless=True):
 
 if __name__ == "__main__":  # confirms that the code is under main function
     fire.Fire(main)
-
-# python D:\GitHub_jameskrw\iGibson\igibson\transition_model\scripts\evaluate_action_sequence_batch.py "D:\GitHub_jameskrw\iGibson\igibson\data\virtual_reality" "D:\GitHub_jameskrw\iGibson\igibson\transition_model\data\human_annotations" "D:\GitHub_jameskrw\iGibson\igibson\transition_model_v3\data\human_results"
