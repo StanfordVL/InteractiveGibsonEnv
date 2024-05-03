@@ -1,7 +1,7 @@
 import os
 import json
 import fire
-from action_sequence_evaluator import ActionSequenceEvaluator
+from igibson.transition_model.evaluation.action_sequence.action_sequence_evaluator import ActionSequenceEvaluator
 
 def get_llm_action_seqeunce(demo_path,rst_path):
     env=ActionSequenceEvaluator(demo_path=demo_path)
