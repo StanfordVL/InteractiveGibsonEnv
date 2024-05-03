@@ -1,6 +1,6 @@
 import fire
 from multiprocessing import Process
-from igibson.transition_model.evaluation.action_sequence.evaluate_action_sequence import evaluate_action_seqeunce
+from igibson.transition_model.scripts.evaluate_action_sequence import evaluate_action_seqeunce
 import  os
 import json
 
