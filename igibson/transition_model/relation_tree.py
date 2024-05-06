@@ -49,10 +49,7 @@ class BaseRelationTree:
         return successor_dict
     
     def get_relation_tree(self,obj_list):
-        self.root = RelationNode(None)
-        self.obj_to_node={}
         successor_dict=self.get_successor_dict(obj_list)
-
         # get the hierarchy of the tree
         hierarchy = []
         i=0
@@ -107,8 +104,14 @@ class BaseRelationTree:
         traverse(self.root)
 
     def __init__(self,obj_list) -> None:
+        self.root = RelationNode(None)
+        self.obj_to_node={}
         self.get_relation_tree(obj_list)
         self.get_teleport_type()
+
+    
+
+    
     
 class IgibsonRelationTree(BaseRelationTree):
     def is_ancestor(self,obj1,obj2)->Optional[TeleportType]:
@@ -155,7 +158,58 @@ class IgibsonRelationTree(BaseRelationTree):
         return print_tree(self.root,0)
 
 
-   
+class GraphRelationTree(BaseRelationTree):
+    def is_ancestor(self,obj1:str,obj2:str)->Optional[TeleportType]:
+        if self.teleport_relation_dict[obj2].get(obj1) == TeleportType.INSIDE:
+            return TeleportType.INSIDE
+        if self.teleport_relation_dict[obj2].get(obj1) == TeleportType.ONTOP:
+            return TeleportType.ONTOP
+        return None
+    
+    def __init__(self,name_to_obj:dict) -> None:
+        new_obj_list=[obj.name for obj in name_to_obj.values() if isinstance(obj, URDFObject)]
+        self.teleport_relation_dict=defaultdict(dict)
+        for obj1_name in new_obj_list:
+            for obj2_name in new_obj_list:
+                if obj1_name == obj2_name:
+                    continue
+                obj1=name_to_obj[obj1_name]
+                obj2=name_to_obj[obj2_name]
+                if obj1.states[object_states.Inside].get_value(obj2):
+                    self.teleport_relation_dict[obj1_name][obj2_name]=TeleportType.INSIDE
+                if obj1.states[object_states.OnTop].get_value(obj2):
+                    self.teleport_relation_dict[obj1_name][obj2_name]=TeleportType.ONTOP
+        super().__init__(new_obj_list)
+    
+    def get_node(self,obj:str)->RelationNode:
+        return self.obj_to_node[obj] 
+    
+    def change_ancestor(self,obj1:str,obj2:str,telport_type:TeleportType):
+        node1=self.get_node(obj1)
+        node2=self.get_node(obj2)
+        node1.parent.remove_node(node1)
+        node2.add_node(node1,telport_type)
+
+    def remove_ancestor(self,obj:str):
+        node=self.get_node(obj)
+        parent=node.parent
+        parent.remove_node(node)
+        self.root.add_node(node)
+
+    def __str__(self) -> str:
+        def print_tree(node:RelationNode,level):
+            res=""
+            for i in range(level):
+                res+="  "
+            
+            if node.obj is None:
+                res+="root\n"
+            else:
+                res+=str(node.obj)+' '+str(node.teleport_type)+'\n'
+            for child in node.children.values():
+                res+=print_tree(child,level+1)
+            return res
+        return print_tree(self.root,0)
 
 
         

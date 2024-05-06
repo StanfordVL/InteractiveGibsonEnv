@@ -44,6 +44,10 @@
         "object": "strawberry_61_part_1"
     },
     {
+        "action": "RIGHT_REALEASE",
+        "object": "carving_knife_66"
+    },
+    {
         "action": "RIGHT_GRASP",
         "object": "saucepan_65"
     },
