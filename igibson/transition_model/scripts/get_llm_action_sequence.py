@@ -18,11 +18,11 @@ def get_llm_action_seqeunce(demo_path,rst_path):
     }
     
 def main(demo_name,demo_dir="./igibson/data/virtual_reality",rst_path="test.json"):
-    demo_path=os.path.join(demo_dir,demo_name)
+    demo_path=os.path.join(demo_dir,demo_name+'.hdf5')
     get_llm_action_seqeunce(demo_path,rst_path)
 if __name__ == "__main__":
     fire.Fire(main)
 """
-python D:\GitHub\behavior-vllm-eval\igibson\transition_model_v3\evaluation\action_sequence\get_llm_action_sequence.py "D:\GitHub\behavior-vllm-eval\igibson\data\virtual_reality\bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46.hdf5"
+python D:\GitHub\behavior-vllm-eval\igibson\transition_model\evaluation\action_sequence\get_llm_action_sequence.py "D:\GitHub\behavior-vllm-eval\igibson\data\virtual_reality\bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46.hdf5"
 """
 
