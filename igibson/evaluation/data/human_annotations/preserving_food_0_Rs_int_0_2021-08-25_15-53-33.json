@@ -1,0 +1,82 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "strawberry_62"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "strawberry_61"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "saucepan_65"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "saucepan_65"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "carving_knife_66"
+    },
+    {
+        "action": "SLICE",
+        "object": "strawberry_62"
+    },
+    {
+        "action": "SLICE",
+        "object": "strawberry_61"
+    },
+    {
+        "action": "COOK",
+        "object": "strawberry_62_part_0"
+    },
+    {
+        "action": "COOK",
+        "object": "strawberry_62_part_1"
+    },
+    {
+        "action": "COOK",
+        "object": "strawberry_61_part_0"
+    },
+    {
+        "action": "COOK",
+        "object": "strawberry_61_part_1"
+    },
+    {
+        "action": "RIGHT_REALEASE",
+        "object": "carving_knife_66"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "saucepan_65"
+    },
+    {
+        "action": "RIGHT_TRANSFER_CONTENTS_INSIDE",
+        "object": "jar_64"
+    },
+    {
+        "action": "CLOSE",
+        "object": "jar_64"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_40"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "beef_63"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "fridge_40"
+    },
+    {
+        "action": "FREEZE",
+        "object": "beef_63"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_40"
+    }
+]

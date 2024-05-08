@@ -1,0 +1,154 @@
+[
+    {
+        "action": "OPEN",
+        "object": "top_cabinet_50"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "casserole_71"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "countertop_26"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chestnut_66"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chestnut_65"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "mushroom_63"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "mushroom_64"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "tomato_62"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "tomato_61"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_40"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "vidalia_onion_67"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "vidalia_onion_68"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "countertop_26"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "countertop_26"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "carving_knife_69"
+    },
+    {
+        "action": "SLICE",
+        "object": "chestnut_66"
+    },
+    {
+        "action": "SLICE",
+        "object": "chestnut_65"
+    },
+    {
+        "action": "SLICE",
+        "object": "mushroom_63"
+    },
+    {
+        "action": "SLICE",
+        "object": "mushroom_64"
+    },
+    {
+        "action": "SLICE",
+        "object": "tomato_62"
+    },
+    {
+        "action": "SLICE",
+        "object": "tomato_61"
+    },
+    {
+        "action": "SLICE",
+        "object": "vidalia_onion_67"
+    },
+    {
+        "action": "SLICE",
+        "object": "vidalia_onion_68"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "countertop_26"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "vidalia_onion_67_part_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "vidalia_onion_67_part_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "vidalia_onion_68_part_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "vidalia_onion_68_part_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "casserole_71"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "casserole_71"
+    }
+]

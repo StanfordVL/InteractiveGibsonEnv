@@ -1,0 +1,30 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hand_towel_102"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_51"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_51"
+    },
+    {
+        "action": "SOAK",
+        "object": "hand_towel_102"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hand_towel_102"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_utility_room_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_corridor_0"
+    }
+]
