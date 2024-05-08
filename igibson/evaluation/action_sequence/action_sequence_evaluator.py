@@ -3,8 +3,8 @@ from igibson.envs.igibson_env import iGibsonEnv
 from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGrouper
 from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
-from igibson.transition_model.evaluation.action_sequence.prompts.zero_shot import zero_shot
-from igibson.transition_model.evaluation.gpt_utils import call_gpt_with_retry
+from igibson.evaluation.action_sequence.prompts.zero_shot import zero_shot
+from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
 
 class ActionSequenceEvaluator(BaseEnv):
     def __init__(self, config=None,demo_path=None,**kwargs) -> None:
