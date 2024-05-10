@@ -3,7 +3,6 @@ from igibson.utils.utils import parse_config
 import os
 import igibson
 
-
 class BaseEnv:
     def defalt_init(self,demo_path):
         task = IGLogReader.read_metadata_attr(demo_path, "/metadata/atus_activity")
@@ -29,9 +28,11 @@ class BaseEnv:
         self.config = config
     
             
-    def __init__(self,config=None,demo_path=None,**kwargs) -> None:
-        assert config is not None or demo_path is not None
+    def __init__(self,config=None,demo_path=None,demo_dir=None,demo_name=None,**kwargs) -> None:
+        assert config is not None or demo_path is not None or demo_name is not None
         self.config=config
+        if demo_dir is not None and demo_name is not None:
+            demo_path=os.path.join(demo_dir,demo_name+'.hdf5')
         if demo_path is not None:
             self.defalt_init(demo_path)
 

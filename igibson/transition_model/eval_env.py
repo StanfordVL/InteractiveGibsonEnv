@@ -29,7 +29,6 @@ class EvalActions(IntEnum):
     LEFT_RELEASE =auto()
     OPEN =auto()
     CLOSE =auto()
-    BURN =auto()
     COOK =auto()
     CLEAN =auto()
     FREEZE =auto()

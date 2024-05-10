@@ -1,6 +1,6 @@
 import fire
 from multiprocessing import Process
-from igibson.evaluation.scripts.get_llm_action_sequence import get_llm_action_seqeunce
+from igibson.evaluation.scripts.get_prompt_action_sequence import get_llm_prompt
 import  os
 import json
 
@@ -14,29 +14,15 @@ def main(demo_dir,action_dir,rst_dir):
             abs_rst_path=os.path.join(rst_dir,action_path)
             args_list.append((abs_demo_path,abs_rst_path))
 
-    # procs = []
-    # for args in args_list:
-    #     proc = Process(target=evaluate_action_seqeunce, args=args)
-    #     procs.append(proc)
-    #     proc.start()
-
-    # for proc in procs:
-    #     proc.join()
-
     statistics=[]
     for args in args_list:
-        info={
-            "name":args[0].split("/")[-1],
-            }
         try:
-            rst=get_llm_action_seqeunce(*args)
-            info.update(rst)
+            rst=get_llm_prompt(*args)
+            statistics.append(rst)
         except Exception as e:
             print("Error in ",args[0])
             print(e)
-            info.update({"error":str(e)})
 
-        statistics.append(info)
         with open(os.path.join(rst_dir,"statistics.json"), 'w') as f:
             json.dump(statistics,f,indent=4)
 
@@ -48,4 +34,3 @@ def main(demo_dir,action_dir,rst_dir):
 
 if __name__ == "__main__": 
     fire.Fire(main)
-
