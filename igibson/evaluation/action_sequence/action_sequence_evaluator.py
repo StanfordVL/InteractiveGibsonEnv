@@ -5,13 +5,13 @@ from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
 from igibson.evaluation.action_sequence.prompts.zero_shot import zero_shot
 from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
-
-class ActionSequenceEvaluator(BaseEnv):
+from igibson.transition_model
+class ActionSequenceEvaluator():
     def __init__(self, config=None,demo_path=None,**kwargs) -> None:
-        super().__init__(config,demo_path,**kwargs)
-        self.env = iGibsonEnv(config_file=self.config,**kwargs)
+        self.transition_model=
         self.task = self.env.task
         self.get_name_mapping()
+        
 
     def get_name_mapping(self):
         self.name_mapping={}

@@ -1,4 +1,5 @@
 import networkx as nx
+from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGrouper
 from igibson import object_states
 from igibson.objects.articulated_object import URDFObject
 from igibson.transition_model.relation_tree import GraphRelationTree,TeleportType
@@ -69,16 +70,57 @@ class GraphState():
         self.graph=nx.DiGraph()
         self.robot_inventory = {'right_hand':None,'left_hand':None}
 
-
-
 class EvolvingGraph():
     def __init__(self,addressable_objects):
         self.addressable_objects=addressable_objects
         self.name_to_obj={obj.name:obj for obj in addressable_objects}
         self.cur_state=GraphState(self.name_to_obj)
         self.history_states=[]
+        self.get_name_mapping()
         self.build_graph()
 
+    def get_name_mapping(self):
+        self.name_mapping={}
+        for name, obj in self.task.object_scope.items():
+            category="_".join(name.split("_")[:-1])
+            if isinstance(obj, ObjectMultiplexer):
+                self.name_mapping[name]={"name":obj.name.rstrip("_multiplexer"),"category":category}
+            elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
+                self.name_mapping[name]={"name":obj.name,"category":category}
+
+
+    def get_initial_state(self):
+        initial_state=""
+        for goal_cond in self.task.initial_conditions:
+            a=goal_cond.terms
+            b=[]
+            for name in a:
+                if name in self.name_mapping:
+                    b.append(self.name_mapping[name]["name"])
+                else:
+                    b.append(name)
+            initial_state+=str(b)+"\n"
+        return initial_state
+    
+    def get_target_state(self):
+        target_state=""
+        for goal_cond in self.task.goal_conditions:
+            a=goal_cond.terms
+            b=[]
+            for name in a:
+                if name in self.name_mapping:
+                    b.append(self.name_mapping[name]["name"])
+                else:
+                    b.append(name)
+            target_state+=str(b)+"\n"
+        return target_state
+    
+    def get_objects(self):
+        objects=""
+        for name in self.name_mapping.values():
+            objects+=str(name)+"\n"
+        return objects
+    
     def add_node_with_attr(self,obj):
         self.cur_state.graph.add_node(obj.name)
         for state in obj.states.keys():
@@ -103,7 +145,8 @@ class EvolvingGraph():
             for state in self.history_states:
                 ## ignore print of the same error
                 if precond.check_precond(state,ignore_print=True):
-                    print(f"Temporal order is wrong, {ErrorType.WRONG_TEMPORAL_ORDER}")
+                    print(f"<Error> {ErrorType.WRONG_TEMPORAL_ORDER}")
+                    print(f"<Temporal order is wrong")
                     return False
             return False
         return True

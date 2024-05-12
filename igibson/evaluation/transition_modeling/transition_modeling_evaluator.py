@@ -11,7 +11,7 @@ import json
 import re
 from igibson.evaluation.transition_modeling.logic_score import calculate_logic_score
 DOMAIN_FILE_PATH = "igibson/evaluation/transition_modeling/resources/behavior.pddl"
-HUMAN_ANNOTATION_DIR="igibson/evaluation/data/human_annotations"
+HUMAN_ANNOTATION_PATH="igibson/evaluation/data/action_sequence_human_annotations"
 
 ACTION_HANDLER_MAPPING={
     "NAVIGATE_TO":"navigate_to",
@@ -37,14 +37,17 @@ ACTION_HANDLER_MAPPING={
 }
 
 class TransitionModelingEvaluator(BaseEnv):
-    def __init__(self, demo_dir,demo_name) -> None:
+    def __init__(self, demo_dir,demo_name,domain_file_path=DOMAIN_FILE_PATH,human_annotation_path=HUMAN_ANNOTATION_PATH) -> None:
         super().__init__(demo_dir=demo_dir,demo_name=demo_name)
         self.demo_name=demo_name
+        self.domain_file_path=domain_file_path
+        self.human_attotation_path=human_annotation_path
         self.problem_pddl=self.get_problem_pddl()
         self.domain_pddl=self.get_domain_pddl()
         self.gold_actions=self.extract_action_details(content=self.domain_pddl)
         self.human_annotations=self.get_human_annotation()
         self.action_handler_str=self.get_llm_input_action_handler()
+    
 
 
     def get_action_handler(self):
@@ -97,12 +100,12 @@ class TransitionModelingEvaluator(BaseEnv):
        
 
     def get_domain_pddl(self):
-        with open(DOMAIN_FILE_PATH) as f:
+        with open(self.domain_file_path) as f:
             domain_pddl=f.read()
         return domain_pddl
     
     def get_human_annotation(self):
-        human_path=os.path.join(HUMAN_ANNOTATION_DIR,self.demo_name+".json")
+        human_path=os.path.join(self.human_attotation_path,self.demo_name+".json")
         with open(human_path) as f:
             human_annotation=json.load(f)
         return human_annotation

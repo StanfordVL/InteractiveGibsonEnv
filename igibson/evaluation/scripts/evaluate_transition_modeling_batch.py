@@ -9,7 +9,7 @@ def evaluate_transition_modeling(demo_dir,demo_name,llm_response):
     return env.compute_score(parsed_llm_response)
     
     
-def main(demo_dir,responses_path,rst_path):
+def main(demo_dir,responses_path,rst_dir):
     with open(responses_path, 'r') as f:
         responses = json.load(f)
     summary=defaultdict(dict)
@@ -29,10 +29,16 @@ def main(demo_dir,responses_path,rst_path):
             summary[k]['precondition_score_avg']=sum(v['precondition_score'])/len(v['precondition_score'])
             summary[k]['effect_score_avg']=sum(v['effect_score'])/len(v['effect_score'])
 
-        with open(os.path.join(rst_path,'llm_result.json'), 'w') as f:
+        with open(os.path.join(rst_dir,'llm_result_eval.json'), 'w') as f:
             f.write(json.dumps(responses,indent=4))
-        with open(os.path.join(rst_path,'summary.json'), 'w') as f:
+        with open(os.path.join(rst_dir,'summary.json'), 'w') as f:
             f.write(json.dumps(summary,indent=4))
+    avg_summary=defaultdict(dict)
+    for k,v in summary.items():
+        avg_summary[k]['precondition_score_avg']=v['precondition_score_avg']
+        avg_summary[k]['effect_score_avg']=v['effect_score_avg']
+    with open(os.path.join(rst_dir,'avg_summary.json'), 'w') as f:
+        f.write(json.dumps(avg_summary,indent=4))
 
     
 
