@@ -81,7 +81,7 @@ class ActionEnv:
             return True
         
         if isinstance(obj,RoomFloor):
-            self.position_geometry._set_robot_floor_magic(obj.floor_obj)
+            self.position_geometry._set_robot_floor_magic(obj)
         else:
             self.position_geometry.set_robot_pos_for_obj(obj)
         for hand,invent_obj in self.robot_inventory.items():
@@ -276,11 +276,14 @@ class ActionEnv:
         
         ## post effects
         self.navigate_to_if_needed(tar_obj)
-        node=self.relation_tree.get_node(tar_obj)
-        if node.parent is not self.relation_tree.root:
-            self.relation_tree.change_ancestor(obj_in_hand,node.parent.obj,node.teleport_type)
-        else:
+        if isinstance(tar_obj,RoomFloor):
             self.relation_tree.remove_ancestor(obj_in_hand)
+        else:
+            node=self.relation_tree.get_node(tar_obj)
+            if node.parent is not self.relation_tree.root:
+                self.relation_tree.change_ancestor(obj_in_hand,node.parent.obj,node.teleport_type)
+            else:
+                self.relation_tree.remove_ancestor(obj_in_hand)
         self.position_geometry.set_next_to(obj_in_hand,tar_obj)
         self.teleport_relation(obj_in_hand)
         self.robot_inventory[hand]=None

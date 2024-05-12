@@ -76,50 +76,10 @@ class EvolvingGraph():
         self.name_to_obj={obj.name:obj for obj in addressable_objects}
         self.cur_state=GraphState(self.name_to_obj)
         self.history_states=[]
-        self.get_name_mapping()
         self.build_graph()
 
-    def get_name_mapping(self):
-        self.name_mapping={}
-        for name, obj in self.task.object_scope.items():
-            category="_".join(name.split("_")[:-1])
-            if isinstance(obj, ObjectMultiplexer):
-                self.name_mapping[name]={"name":obj.name.rstrip("_multiplexer"),"category":category}
-            elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
-                self.name_mapping[name]={"name":obj.name,"category":category}
-
-
-    def get_initial_state(self):
-        initial_state=""
-        for goal_cond in self.task.initial_conditions:
-            a=goal_cond.terms
-            b=[]
-            for name in a:
-                if name in self.name_mapping:
-                    b.append(self.name_mapping[name]["name"])
-                else:
-                    b.append(name)
-            initial_state+=str(b)+"\n"
-        return initial_state
     
-    def get_target_state(self):
-        target_state=""
-        for goal_cond in self.task.goal_conditions:
-            a=goal_cond.terms
-            b=[]
-            for name in a:
-                if name in self.name_mapping:
-                    b.append(self.name_mapping[name]["name"])
-                else:
-                    b.append(name)
-            target_state+=str(b)+"\n"
-        return target_state
-    
-    def get_objects(self):
-        objects=""
-        for name in self.name_mapping.values():
-            objects+=str(name)+"\n"
-        return objects
+  
     
     def add_node_with_attr(self,obj):
         self.cur_state.graph.add_node(obj.name)
@@ -145,8 +105,7 @@ class EvolvingGraph():
             for state in self.history_states:
                 ## ignore print of the same error
                 if precond.check_precond(state,ignore_print=True):
-                    print(f"<Error> {ErrorType.WRONG_TEMPORAL_ORDER}")
-                    print(f"<Temporal order is wrong")
+                    print(f"<Error> {ErrorType.WRONG_TEMPORAL_ORDER} <Reason> Temporal order is wrong")
                     return False
             return False
         return True
@@ -163,19 +122,19 @@ class EvolvingGraph():
             
             def grasp_precond(self,state:GraphState):
                 if isinstance(self.obj,RoomFloor):
-                    print(f"Cannot grasp floor, {ErrorType.AFFORDANCE_ERROR}")
+                    print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
                 if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>0.5*0.5*0.5:
-                    print(f"Object too big to grasp, {ErrorType.AFFORDANCE_ERROR}")
+                    print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
 
                 if state.robot_inventory[self.hand]==self.obj.name:
-                    print(f"Robot already holding {state.robot_inventory[self.hand]}, {ErrorType.ADDITIONAL_STEP}")
+                    print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object already in hand (GRASP)")
                     return False
             
                 if state.robot_inventory[self.hand] is not None:
-                    print(f"Robot already holding {state.robot_inventory[self.hand]}, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release first before grasp (GRASP)")
                     return False
                 return True
             
@@ -209,12 +168,12 @@ class EvolvingGraph():
                     successors = list(state.graph.successors(self.obj.name))
                     predecessors = list(state.graph.predecessors(self.obj.name))
                     if len(successors)!=0 or len(predecessors)!=0:
-                        print(f"Robot is not holding anything, {ErrorType.MISSING_STEP}")
+                        print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding anything (RELEASE)")
                         return False
-                    print(f"Robot is not holding anything, {ErrorType.ADDITIONAL_STEP}")
+                    print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Robot is not holding anything (RELEASE)")
                     return False
                 if self.obj is not None and state.robot_inventory[self.hand]!=self.obj.name:
-                    print(f"Robot is not holding {self.obj.name}, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding target object (RELEASE)")
                     return False
                 return True
             
@@ -245,12 +204,12 @@ class EvolvingGraph():
                 tar_obj=self.obj
                 if obj_in_hand.bounding_box[0]*obj_in_hand.bounding_box[1]*obj_in_hand.bounding_box[2]>\
                 tar_obj.bounding_box[0]*tar_obj.bounding_box[1]*tar_obj.bounding_box[2]:
-                    print(f"{obj_in_hand.name} is too big to place inside {tar_obj.name}, {ErrorType.AFFORDANCE_ERROR}")
+                    print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to place inside target object (PLACE_INSIDE)")
                     return False
                 
                 if object_states.Open in state.graph.nodes[tar_obj.name].keys() and \
                 not state.graph.nodes[tar_obj.name][object_states.Open]:
-                    print(f"{tar_obj.name} is closed, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Target object is closed (PLACE_INSIDE)")
                     return False
                 return True
         
@@ -367,12 +326,12 @@ class EvolvingGraph():
                     obj_inside=self.name_to_obj[obj_inside_name]
                     if obj_inside.bounding_box[0]*obj_inside.bounding_box[1]*obj_inside.bounding_box[2]> \
                     tar_obj.bounding_box[0]* tar_obj.bounding_box[1] * tar_obj.bounding_box[2]:
-                        print(f"{obj_inside.name} is bigger than {tar_obj.name}, cannot pour insidem {ErrorType.AFFORDANCE_ERROR}")
+                        print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to pour inside target object (POUR_INSIDE)")
                         return False
                 
                 if object_states.Open in state.graph.nodes[tar_obj.name].keys() and \
                 not state.graph.nodes[tar_obj.name][object_states.Open]:
-                    print(f"{tar_obj.name} is closed, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Target object is closed (POUR_INSIDE)")
                     return False
                 return True
             
@@ -418,7 +377,7 @@ class EvolvingGraph():
             def open_close_precond(self,state:GraphState):
                 if self.state_value==True and object_states.ToggledOn in state.graph.nodes[self.obj.name].keys() and \
                 state.graph.nodes[self.obj.name][object_states.ToggledOn]:
-                    print(f"{self.obj.name} is toggled on, cannot open, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is toggled on, cannot open (OPEN)")
                     return False
                 return True
             
@@ -441,7 +400,7 @@ class EvolvingGraph():
             def toggle_on_off_precond(self,state:GraphState):
                 if self.state_value==True and object_states.Open in state.graph.nodes[self.obj.name].keys() and \
                 state.graph.nodes[self.obj.name][object_states.Open]:
-                    print(f"{self.obj.name} is open, close first to toggle on, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is open, close first to toggle on (TOGGLE_ON)")
                     return False
                 return True
         precond=ToggleOnOffPrecond(obj,object_states.ToggledOn,on_off=='on',self.name_to_obj)
@@ -485,7 +444,7 @@ class EvolvingGraph():
                         has_slicer=True
                         break
                 if not has_slicer:
-                    print(f"Slice failed, no slicer in inventory, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No slicer in inventory (SLICE)")
                     return False
                 return True
         
@@ -561,7 +520,7 @@ class EvolvingGraph():
                         break
 
                 if not in_cleaner and not has_cleaner:
-                    print(f"Clean-dust failed, please place object in a toggled on cleaner or get a cleaner first, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No cleaner in inventory or object not in toggled on cleaner (CLEAN_DUST)")
                     return False
                 
                 return True
@@ -625,7 +584,7 @@ class EvolvingGraph():
                         break
 
                 if not in_cleaner and not has_soaked_cleaner:
-                    print(f"Clean-stain failed, please place object in a toggled on cleaner or get a soaked cleaner first, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)")
                     return False
                 
                 return True
@@ -665,7 +624,7 @@ class EvolvingGraph():
                             break
                         node=node.parent
                     if not in_sink:
-                        print(f"Soak failed, please place object in a toggled on sink first, {ErrorType.MISSING_STEP}")
+                        print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object not in toggled on sink or in a teapot(SOAK)")
                         return False
                     
                 return True       
@@ -711,7 +670,7 @@ class EvolvingGraph():
                         break
                     node=node.parent
                 if not in_cooker:
-                    print("Cook failed, please place object in a cooker first, {ErrorType.MISSING_STEP}")
+                    print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object not in a cooker (COOK)")
                     return False
                 return True
             
@@ -847,13 +806,13 @@ class BasePrecond:
             if (object_states.Open in state.graph.nodes[parent_obj.name].keys() and 
             not state.graph.nodes[parent_obj.name][object_states.Open] and
             node.teleport_type==TeleportType.INSIDE):
-                print(f"{self.obj.name} is inside closed {parent_obj.name}, {ErrorType.MISSING_STEP}")
+                print(f"{ErrorType.MISSING_STEP}, Object is inside a closed object")
                 return False
             node=node.parent
 
         if object_states.Sliced in state.graph.nodes[self.obj.name].keys() and \
         state.graph.nodes[self.obj.name][object_states.Sliced] and 'part' not in self.obj.name:
-            print(f"{self.obj.name} is sliced, you need to interact with parts of it, {ErrorType.AFFORDANCE_ERROR}")
+            print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object is sliced, you need to interact with parts of it")
             return False
 
         return True
@@ -868,11 +827,11 @@ class PlacePrecond(BasePrecond):
     
     def place_precond(self,state:GraphState):
         if state.robot_inventory[self.hand] is None:
-            print(f"Robot is not holding anything, {ErrorType.MISSING_STEP}")
+            print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding anything (PLACE)")
             return False
         
         if self.obj==self.name_to_obj[state.robot_inventory[self.hand]]:
-            print(f"{self.obj.name} is in robot's {self.hand}, {ErrorType.AFFORDANCE_ERROR}")
+            print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
             return False
         return True
     
@@ -885,13 +844,13 @@ class HighLevelActionPrecond(BasePrecond):
     
     def high_level_action_precond(self,state:GraphState):
         if state.robot_inventory['right_hand'] is not None and state.robot_inventory['left_hand'] is not None:
-            print(f"Robot's both hands are full, release first, {ErrorType.MISSING_STEP}")
+            print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot's both hands are full (HIGH_LEVEL_ACTION)")
             return False
         if self.object_state not in state.graph.nodes[self.obj.name]:
-            print(f"{self.obj.name} does not have {self.object_state}, {ErrorType.AFFORDANCE_ERROR}")
+            print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (HIGH_LEVEL_ACTION)")
             return False
         if state.graph.nodes[self.obj.name][self.object_state]==self.state_value:
-            print(f"{self.obj.name}'s state {self.object_state} is already {self.state_value}, {ErrorType.ADDITIONAL_STEP}")
+            print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object's state is already satisfied (HIGH_LEVEL_ACTION)")
             return False
         return True
 

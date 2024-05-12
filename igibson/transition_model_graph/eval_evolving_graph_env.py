@@ -51,12 +51,14 @@ class EvalActions(IntEnum):
     RIGHT_PLACE_UNDER=auto()
 
 class EvalGraphEnv(BaseEnv):
-    def __init__(self,config=None,demo_path=None,task=None,**kwargs) -> None:
-        super().__init__(config,demo_path,**kwargs)
+    def __init__(self,config=None,demo_path=None,demo_dir=None,demo_name=None,task=None,**kwargs) -> None:
+        assert config is not None or demo_path is not None or (demo_name is not None and demo_dir is not None) or task is not None
         if task is not None:
             self.task=task
         else:
+            super().__init__(config,demo_path,demo_dir,demo_name,**kwargs)
             self.env = iGibsonEnv(config_file=self.config,**kwargs)
+            self.task=self.env.task
         self.get_relevant_objects()
         self.action_env=EvolvingGraph(self.addressable_objects)
         self.control_function={
@@ -140,7 +142,7 @@ class EvalGraphEnv(BaseEnv):
             flag=self.control_function[action_idx](obj_list[0],obj_list[1])
         if flag:
             self.action_env.history_states.append(cur_state)
-        return None, None, None, None,flag
+        return flag
 
 
     

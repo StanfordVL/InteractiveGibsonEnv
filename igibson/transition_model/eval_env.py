@@ -53,8 +53,9 @@ class EvalActions(IntEnum):
     RIGHT_PLACE_UNDER=auto()
 
 class EvalEnv(BaseEnv):
-    def __init__(self,config=None,demo_path=None,**kwargs) -> None:
-        super().__init__(config,demo_path,**kwargs)
+    def __init__(self,config=None,demo_path=None,demo_dir=None,demo_name=None,**kwargs) -> None:
+        assert config is not None or demo_path is not None or (demo_name is not None and demo_dir is not None)
+        super().__init__(config,demo_path,demo_dir,demo_name,**kwargs)
         self.env = iGibsonEnv(config_file=self.config,**kwargs)
         self.robot=self.robots[0]
         self.simulator=self.env.simulator
@@ -149,7 +150,7 @@ class EvalEnv(BaseEnv):
             flag=self.control_function[action_idx](obj_list[0])
         else:
             flag=self.control_function[action_idx](obj_list[0],obj_list[1])
-        return None, None, None, None,flag
+        return flag
 
     def final_step(self):
         self.action_env.teleport_all()
