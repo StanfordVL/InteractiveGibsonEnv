@@ -1,0 +1,46 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_79"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "necklace_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sock_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "sock_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "gym_shoe_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "notebook_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "action": "OPEN",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_147"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cup_151"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_149"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bowl_144"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bowl_143"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_148"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cup_150"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_146"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "CLOSE",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "OPEN",
+        "object": "dishwasher_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "detergent_154"
+    },
+    {
+        "action": "CLEAN",
+        "object": "straight_chair_3"
+    },
+    {
+        "action": "CLEAN",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "LEFT_RELEASE",
+        "object": "detergent_154"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_152"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hamburger_153"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "paper_bag_145"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "paper_bag_145"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "paper_bag_145"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "room_floor_dining_room_0"
+    }
+]

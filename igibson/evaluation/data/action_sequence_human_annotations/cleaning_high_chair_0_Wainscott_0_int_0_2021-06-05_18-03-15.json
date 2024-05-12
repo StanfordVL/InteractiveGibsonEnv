@@ -1,0 +1,18 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "paper_towel_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "highchair_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "highchair_0"
+    }
+]

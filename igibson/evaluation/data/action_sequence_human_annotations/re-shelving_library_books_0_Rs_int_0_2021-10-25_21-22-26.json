@@ -1,0 +1,34 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hardback_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hardback_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "shelf_19"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "shelf_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hardback_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "shelf_19"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "shelf_19"
+    }
+]

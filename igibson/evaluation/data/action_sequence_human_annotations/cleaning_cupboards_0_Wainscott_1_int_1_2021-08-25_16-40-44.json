@@ -1,0 +1,98 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_28"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_25"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_24"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "pen_105"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bucket_113"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "highlighter_106"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bucket_113"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "highlighter_107"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bucket_113"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_110"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bottom_cabinet_25"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bottom_cabinet_28"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "bed_58"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hardback_104"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_102"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "bed_58"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "hardback_104"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hardback_103"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "notebook_102"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "screwdriver_108"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "trash_can_112"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_24"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_28"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_25"
+    }
+]
