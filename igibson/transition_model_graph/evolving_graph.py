@@ -806,7 +806,7 @@ class BasePrecond:
             if (object_states.Open in state.graph.nodes[parent_obj.name].keys() and 
             not state.graph.nodes[parent_obj.name][object_states.Open] and
             node.teleport_type==TeleportType.INSIDE):
-                print(f"{ErrorType.MISSING_STEP}, Object is inside a closed object")
+                print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is inside a closed object")
                 return False
             node=node.parent
 

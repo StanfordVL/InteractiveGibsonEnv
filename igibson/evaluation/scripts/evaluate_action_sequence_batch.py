@@ -54,8 +54,8 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
 
             final_rst.append(
                 {
-                    "demo_name":args[2],
-                    "rst":rst
+                    "identifier":args[2],
+                    "llm_rst":rst
                 }
             )
         except Exception as e:
@@ -63,13 +63,13 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
             print(e)
             final_rst.append(
                 {
-                    "demo_name":args[2],
-                    "rst":None
+                    "identifier":args[2],
+                    "llm_rst":None
                 }
             )
     
 
-    with open(os.path.join(rst_dir,'eval_result.json'), 'w') as f:
+    with open(os.path.join(rst_dir,'final_rst.json'), 'w') as f:
         f.write(json.dumps(final_rst,indent=4))
 
     return final_rst
