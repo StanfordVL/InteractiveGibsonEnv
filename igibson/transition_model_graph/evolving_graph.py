@@ -94,7 +94,18 @@ class GraphState():
             name=node_name
             category=name_mapping[node_name]["category"]
             properties=[state.__name__.lower() for state in self.graph.nodes[node_name].keys()]
+            relation_node=self.relation_tree.get_node(node_name)
+            if relation_node is not None: # assume everything is graspable except floor
+                properties.append("inhandofrobot")
+                properties.append("inlefthandofrobot")
+                properties.append("inrighthandofrobot")
             states=[state.__name__.lower() for state in self.graph.nodes[node_name].keys() if self.graph.nodes[node_name][state]]
+            if self.robot_inventory["left_hand"]==node_name:
+                 states.append("inlefthandofrobot")
+                 states.append("inhandofrobot")
+            elif self.robot_inventory["right_hand"]==node_name:
+                states.append("inrighthandofrobot")
+                states.append("inhandofrobot")
             state_dict["nodes"].append({"name":name,"category":category,"states":states,"properties":properties})
         for edge in self.graph.edges:
             from_name=edge[0]
