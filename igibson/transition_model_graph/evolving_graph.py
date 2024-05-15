@@ -4,6 +4,7 @@ from igibson import object_states
 from igibson.objects.articulated_object import URDFObject
 from igibson.transition_model.relation_tree import GraphRelationTree,TeleportType
 from igibson.object_states.on_floor import RoomFloor
+from igibson.tasks.behavior_task import BehaviorTask
 from collections import deque
 from enum import Enum, unique,auto
 import sys, os
@@ -28,11 +29,11 @@ UnaryStates=[
     object_states.Soaked,
     object_states.Stained,
     object_states.ToggledOn,
-    object_states.Burnt,
+    #object_states.Burnt,
     object_states.Slicer,
     object_states.CleaningTool,
-    object_states.HeatSourceOrSink,
-    object_states.WaterSource,
+    # object_states.HeatSourceOrSink,
+    # object_states.WaterSource,
 
 ]
 
@@ -57,6 +58,7 @@ TeleportBinaryStaets=[
     object_states.OnTop,
 ]
 
+
 class ErrorType(Enum):
     AFFORDANCE_ERROR=auto()
     MISSING_STEP=auto()
@@ -69,6 +71,54 @@ class GraphState():
         self.relation_tree=GraphRelationTree(name_to_obj)
         self.graph=nx.DiGraph()
         self.robot_inventory = {'right_hand':None,'left_hand':None}
+
+    def get_state_dict(self,task:BehaviorTask):
+        """
+                {
+        "nodes": [{"name": name, "category": category, "states": [states], "properties": [properties]}],
+        "edges": [{"from_name": name, "relation": relation, "to_name": name}]
+        }
+        """
+        def get_category_mapping(task:BehaviorTask):
+            category_mapping={}
+            for name, obj in task.object_scope.items():
+                category="_".join(name.split("_")[:-1])
+                if isinstance(obj, ObjectMultiplexer):
+                    category_mapping[obj.name.rstrip("_multiplexer")]={"name":name,"category":category}
+                elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
+                    category_mapping[obj.name]={"name":name,"category":category}
+            return category_mapping
+        name_mapping=get_category_mapping(task)
+        state_dict={"nodes":[],"edges":[]}
+        for node_name in self.graph.nodes:
+            name=node_name
+            category=name_mapping[node_name]["category"]
+            properties=[state.__name__.lower() for state in self.graph.nodes[node_name].keys()]
+            states=[state.__name__.lower() for state in self.graph.nodes[node_name].keys() if self.graph.nodes[node_name][state]]
+            state_dict["nodes"].append({"name":name,"category":category,"states":states,"properties":properties})
+        for edge in self.graph.edges:
+            from_name=edge[0]
+            to_name=edge[1]
+            relation=self.graph.edges[edge]["state"].__name__.lower()
+            state_dict["edges"].append({"from_name":from_name,"relation":relation,"to_name":to_name})
+        for node_name in self.graph.nodes:
+            relation_node=self.relation_tree.get_node(node_name)
+            if relation_node is None:
+                continue
+            while relation_node.parent is not self.relation_tree.root:
+                parent_name=relation_node.parent.obj
+                relation=self.relation_tree.is_ancestor(parent_name,node_name)
+                if relation==TeleportType.ONTOP:
+                    relation="ontop"
+                elif relation==TeleportType.INSIDE:
+                    relation="inside"
+                state_dict["edges"].append({"from_name":node_name,"relation":relation,"to_name":parent_name})
+                relation_node=relation_node.parent
+        return state_dict
+            
+        
+
+        
 
 class EvolvingGraph():
     def __init__(self,addressable_objects):

@@ -128,7 +128,7 @@ class IgibsonRelationTree(BaseRelationTree):
         super().__init__(new_obj_list)
 
     def get_node(self,obj)->RelationNode:
-        return self.obj_to_node[obj] 
+        return self.obj_to_node.get(obj,None)
     
     def change_ancestor(self,obj1,obj2,telport_type:TeleportType):
         node1=self.get_node(obj1)
@@ -182,7 +182,7 @@ class GraphRelationTree(BaseRelationTree):
         super().__init__(new_obj_list)
     
     def get_node(self,obj:str)->RelationNode:
-        return self.obj_to_node[obj] 
+        return self.obj_to_node.get(obj,None)
     
     def change_ancestor(self,obj1:str,obj2:str,telport_type:TeleportType):
         node1=self.get_node(obj1)
