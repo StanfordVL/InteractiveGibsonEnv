@@ -31,7 +31,7 @@ class RelationNode:
 
 class BaseRelationTree:
     @abstractmethod
-    def is_ancestor(self,obj1,obj2)->Optional[TeleportType]:
+    def _is_ancestor(self,obj1,obj2)->Optional[TeleportType]:
         pass
     
     def get_successor_dict(self,obj_list):
@@ -41,7 +41,7 @@ class BaseRelationTree:
             for obj2 in obj_list:
                 if obj1 == obj2:
                     continue
-                successor_type=self.is_ancestor(obj1,obj2)
+                successor_type=self._is_ancestor(obj1,obj2)
                 if successor_type is not None:
                     successor_dict[obj1].add(obj2)
                     if obj2 in successor_dict:
@@ -81,7 +81,7 @@ class BaseRelationTree:
             for node_1 in leaf_nodes:
                 picked_up=False
                 for node_2 in cur_level:
-                    if self.is_ancestor(node_2.obj,node_1.obj) is not None:
+                    if self._is_ancestor(node_2.obj,node_1.obj) is not None:
                         node_2.add_node(node_1)
                         picked_up=True
                         break
@@ -98,7 +98,7 @@ class BaseRelationTree:
     def get_teleport_type(self)->None:
         def traverse(node):
             for child in node.children.values():
-                teleport_type=self.is_ancestor(node.obj,child.obj)
+                teleport_type=self._is_ancestor(node.obj,child.obj)
                 child.teleport_type=teleport_type
                 traverse(child)
         traverse(self.root)
@@ -114,7 +114,7 @@ class BaseRelationTree:
     
     
 class IgibsonRelationTree(BaseRelationTree):
-    def is_ancestor(self,obj1,obj2)->Optional[TeleportType]:
+    def _is_ancestor(self,obj1,obj2)->Optional[TeleportType]:
         if not isinstance(obj1, URDFObject) or not isinstance(obj2, URDFObject):
             return None
         if obj2.states[object_states.Inside].get_value(obj1):
@@ -159,7 +159,7 @@ class IgibsonRelationTree(BaseRelationTree):
 
 
 class GraphRelationTree(BaseRelationTree):
-    def is_ancestor(self,obj1:str,obj2:str)->Optional[TeleportType]:
+    def _is_ancestor(self,obj1:str,obj2:str)->Optional[TeleportType]:
         if self.teleport_relation_dict[obj2].get(obj1) == TeleportType.INSIDE:
             return TeleportType.INSIDE
         if self.teleport_relation_dict[obj2].get(obj1) == TeleportType.ONTOP:

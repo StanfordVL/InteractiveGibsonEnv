@@ -72,6 +72,27 @@ class GraphState():
         self.graph=nx.DiGraph()
         self.robot_inventory = {'right_hand':None,'left_hand':None}
 
+    def get_category_mapping(self,task:BehaviorTask):
+        # map obj.name to category
+        category_mapping={}
+        for name, obj in task.object_scope.items():
+            category="_".join(name.split("_")[:-1])
+            if isinstance(obj, ObjectMultiplexer):
+                category_mapping[obj.name.rstrip("_multiplexer")]=category
+            elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
+                category_mapping[obj.name]=category
+        return category_mapping
+    
+    def get_name_mapping(self,task:BehaviorTask):
+        # map bddl name to obj.name
+        name_mapping={}
+        for name, obj in task.object_scope.items():
+            if isinstance(obj, ObjectMultiplexer):
+                name_mapping[name]=obj.name.rstrip("_multiplexer")
+            elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
+                name_mapping[name]=obj.name
+        return name_mapping
+    
     def get_state_dict(self,task:BehaviorTask):
         """
                 {
@@ -79,20 +100,11 @@ class GraphState():
         "edges": [{"from_name": name, "relation": relation, "to_name": name}]
         }
         """
-        def get_category_mapping(task:BehaviorTask):
-            category_mapping={}
-            for name, obj in task.object_scope.items():
-                category="_".join(name.split("_")[:-1])
-                if isinstance(obj, ObjectMultiplexer):
-                    category_mapping[obj.name.rstrip("_multiplexer")]={"name":name,"category":category}
-                elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
-                    category_mapping[obj.name]={"name":name,"category":category}
-            return category_mapping
-        name_mapping=get_category_mapping(task)
+        category_mapping=self.get_category_mapping(task)
         state_dict={"nodes":[],"edges":[]}
         for node_name in self.graph.nodes:
             name=node_name
-            category=name_mapping[node_name]["category"]
+            category=category_mapping[node_name]
             properties=[state.__name__.lower() for state in self.graph.nodes[node_name].keys()]
             relation_node=self.relation_tree.get_node(node_name)
             if relation_node is not None: # assume everything is graspable except floor
@@ -112,22 +124,77 @@ class GraphState():
             to_name=edge[1]
             relation=self.graph.edges[edge]["state"].__name__.lower()
             state_dict["edges"].append({"from_name":from_name,"relation":relation,"to_name":to_name})
+
+        # add teleport relations
         for node_name in self.graph.nodes:
-            relation_node=self.relation_tree.get_node(node_name)
-            if relation_node is None:
+            cur_node=self.relation_tree.get_node(node_name)
+            if cur_node is None or cur_node.parent is self.relation_tree.root:
                 continue
-            while relation_node.parent is not self.relation_tree.root:
-                parent_name=relation_node.parent.obj
-                relation=self.relation_tree.is_ancestor(parent_name,node_name)
-                if relation==TeleportType.ONTOP:
-                    relation="ontop"
-                elif relation==TeleportType.INSIDE:
-                    relation="inside"
-                state_dict["edges"].append({"from_name":node_name,"relation":relation,"to_name":parent_name})
-                relation_node=relation_node.parent
+
+            # for inside, consider all ancestors, for ontop, consider only parent
+            if cur_node.teleport_type==TeleportType.ONTOP:
+                state_dict["edges"].append({"from_name":cur_node.obj,"relation":"ontop","to_name":cur_node.parent.obj})
+            elif cur_node.teleport_type==TeleportType.INSIDE:
+                state_dict["edges"].append({"from_name":cur_node.obj,"relation":"inside","to_name":cur_node.parent.obj})
+            next_node=cur_node.parent
+            while next_node.parent is not self.relation_tree.root:
+                if relation==TeleportType.INSIDE:
+                    state_dict["edges"].append({"from_name":cur_node.obj,"relation":"inside","to_name":next_node.parent.obj})
+                next_node=next_node.parent
         return state_dict
             
-        
+    def check_success(self,task:BehaviorTask):
+        name_mapping=self.get_name_mapping(task)
+        state_dict=self.get_state_dict(task)
+
+
+        goal_combos=[]
+        for goal_combo in task.ground_goal_state_options:
+            goal_combos.append([head.terms for head in goal_combo])
+
+        for goal_combo in goal_combos:
+            if self.check_goal_combo(goal_combo,name_mapping,state_dict):
+                return True
+        return False
+
+    def check_goal_combo(self,goal_combo,name_mapping,state_dict):
+        for goal in goal_combo:
+            if not self.check_goal(goal,name_mapping,state_dict):
+                return False
+        return True
+    
+    def check_goal(self,goal,name_mapping,state_dict):
+        if 'not' in goal:
+            assert len(goal)==3
+            state=goal[1]
+            node_name=name_mapping[goal[2]]
+            target_node=None
+            for node in state_dict['nodes']:
+                if node['name']==node_name:
+                    target_node=node
+            assert target_node is not None
+            assert state in target_node['properties']
+            return state not in target_node['states']
+        elif len(goal)==2:
+            state=goal[0]
+            node_name=name_mapping[goal[1]]
+            target_node=None
+            for node in state_dict['nodes']:
+                if node['name']==node_name:
+                    target_node=node
+            assert target_node is not None
+            assert state in target_node['properties']
+            return state in target_node['states']
+        else:
+            assert len(goal)==3
+            relation=goal[0]
+            from_name=name_mapping[goal[1]]
+            to_name=name_mapping[goal[2]]
+            for edge in state_dict['edges']:
+                if edge['from_name']==from_name and edge['to_name']==to_name and edge['relation']==relation:
+                    return True
+            return False
+                
 
         
 

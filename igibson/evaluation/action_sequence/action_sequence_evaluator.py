@@ -6,7 +6,7 @@ from igibson.object_states.on_floor import RoomFloor
 from igibson.evaluation.action_sequence.prompts.zero_shot import zero_shot
 from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
 from igibson.transition_model.eval_env import EvalEnv
-from igibson.transition_model_graph.eval_evolving_graph_env import EvalGraphEnv
+from igibson.evolving_graph.eval_evolving_graph_env import EvalGraphEnv
 import platform
 from contextlib import redirect_stdout
 import io
