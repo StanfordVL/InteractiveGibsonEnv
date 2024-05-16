@@ -143,9 +143,3 @@ class EvalGraphEnv(BaseEnv):
         if flag:
             self.action_env.history_states.append(cur_state)
         return flag
-
-
-    
-        
-
-    
