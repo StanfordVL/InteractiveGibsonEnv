@@ -166,7 +166,3 @@ class EvalEnv(BaseEnv):
     @property
     def robots(self):
         return self.env.robots
-    
-        
-
-    
