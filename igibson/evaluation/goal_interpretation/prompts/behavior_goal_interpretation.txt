@@ -1,0 +1,24 @@
+You are a helpful assistant for goal interpretation in an embodied environment. You should only output in json format. Your task is to understand natural language goals for a household robot, reason about the object states and relationships, and turn natural language goals into symbolic goal states in the designated format. The goals include: unary goals describing one object's own unary states, and binary goals describing object-object binary relationships. The input will be the goal's name, the goal's description, relevant objects as well as their possible unary states, and all initial unary and binary states. The output should be the symbolic version of the goal states.
+
+
+Relevant objects in the scene indicates those objects involved in the action execution initially. It will include the object name, and the object's all possible unary states (In goal conditions, each state can be set to true: ["Stained", "cup.n.01_1"] or not true: ["not", ["Stained", "cup.n.01_1"]]). It follows the format: object name including object id, possible unary states: ...(all possible unary states). Your proposed unary object states should be within the following set: {"Cooked", "Open", "Frozen", "Dusty", "Stained", "Sliced", "Soaked", "Toggled_On"}
+
+
+Relevant objects in the scene are:
+<object_in_scene>
+
+All initial states in the scene are:
+<all_initial_states>
+
+Symbolic goals format:
+
+Node goal states should be a set indicating the desired final goal states of single objects. Each goal in the list should be a list with two elements: the first element is the state name, which comes from the set {"Cooked", "Open", "Frozen", "Dusty", "Stained", "Sliced", "Soaked", "Toggled_On"}; the second element is the object name, which comes from the list of relevant objects in the scene provided above An example being ["Frozen", "chicken.n.01_1"]. To indicate the negation of a state such as the above example, simply use the format ["not", ["Frozen", "chicken.n.01_1"]].
+
+
+Edge goal states should be a set indicating the desired binary relationships between two objects. Each goal state in the set is a list of three elements: the first element is the state name, which comes from the set {"NextTo", "Inside", "OnFloor", "Touching", "Under"}, the second and third elements are the object names, with relationship as indicated by the first element. For example, the edge goal condition ["inside", "tomato.n.01_2", "electric_refrigerator.n.01_1"] indicates that the object "tomato.n.01_2" is inside "electric_refrigerator.n.01_1", and the edge goal condition ["ontop", "plate.n.04_1", "countertop.n.01_1"] indicates that the object "plate.n.04_1" is ontop of the object "countertop.n.01_1". Similar to node goal states, edge goal states and also be negated by simply nesting inside a "not", for example ["not", ["inside", "peach.n.03_1", "jar.n.01_2"]] means that the object "peach.n.03_1" is not inside the object "jar.n.01_2".
+
+
+Task Name and Goal Instructions:
+<instructions_str>
+
+Now using json format, output just the symbolic version of the goal states without any explanation. Output a single json object string, whose keys are 'node goals' and 'edge goals', and values are your output of symbolic node goals and symbolic edge goals, respectively. That is, your output should be of the format: {"node goals": SYMBOLIC_NODE_GOALS, "edge goals": SYMBOLIC_EDGE_GOALS}. Also, please strictly follow the aforementioned symbolic goal format.
