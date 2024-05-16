@@ -226,6 +226,7 @@ class ActionSequenceEvaluator():
         
         return {
             'tot_steps':len(actions),
+            'all_goals_satisfied':self.evolving_graph.action_env.cur_state.check_success(self.task),
             'error_steps':error_steps,
             'action_errors':action_errors,
             'error_types':error_types,

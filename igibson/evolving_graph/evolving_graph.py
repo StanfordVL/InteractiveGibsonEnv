@@ -8,7 +8,7 @@ from igibson.tasks.behavior_task import BehaviorTask
 from collections import deque
 from enum import Enum, unique,auto
 import sys, os
-
+import copy
 import os, sys
 
 class HiddenPrints:
@@ -96,29 +96,33 @@ class GraphState():
     def get_state_dict(self,task:BehaviorTask):
         """
                 {
-        "nodes": [{"name": name, "category": category, "states": [states], "properties": [properties]}],
+        "nodes": {name:{"name": name, "category": category, "states": set(states), "properties": set(properties)}},
         "edges": [{"from_name": name, "relation": relation, "to_name": name}]
         }
         """
         category_mapping=self.get_category_mapping(task)
-        state_dict={"nodes":[],"edges":[]}
+        state_dict={"nodes":{},"edges":[]}
         for node_name in self.graph.nodes:
             name=node_name
-            category=category_mapping[node_name]
-            properties=[state.__name__.lower() for state in self.graph.nodes[node_name].keys()]
+            if '_part_' in node_name:
+                name=node_name.split('_part_')[0]
+                category=category_mapping[name]
+            else:
+                category=category_mapping[node_name]
+            properties=set(state.__name__.lower() for state in self.graph.nodes[node_name].keys())
             relation_node=self.relation_tree.get_node(node_name)
             if relation_node is not None: # assume everything is graspable except floor
-                properties.append("inhandofrobot")
-                properties.append("inlefthandofrobot")
-                properties.append("inrighthandofrobot")
-            states=[state.__name__.lower() for state in self.graph.nodes[node_name].keys() if self.graph.nodes[node_name][state]]
+                properties.add("inhandofrobot")
+                properties.add("inlefthandofrobot")
+                properties.add("inrighthandofrobot")
+            states=set([state.__name__.lower() for state in self.graph.nodes[node_name].keys() if self.graph.nodes[node_name][state]])
             if self.robot_inventory["left_hand"]==node_name:
-                 states.append("inlefthandofrobot")
-                 states.append("inhandofrobot")
+                 states.add("inlefthandofrobot")
+                 states.add("inhandofrobot")
             elif self.robot_inventory["right_hand"]==node_name:
-                states.append("inrighthandofrobot")
-                states.append("inhandofrobot")
-            state_dict["nodes"].append({"name":name,"category":category,"states":states,"properties":properties})
+                states.add("inrighthandofrobot")
+                states.add("inhandofrobot")
+            state_dict["nodes"][node_name]={"name":node_name,"category":category,"states":states,"properties":properties}
         for edge in self.graph.edges:
             from_name=edge[0]
             to_name=edge[1]
@@ -141,6 +145,23 @@ class GraphState():
                 if relation==TeleportType.INSIDE:
                     state_dict["edges"].append({"from_name":cur_node.obj,"relation":"inside","to_name":next_node.parent.obj})
                 next_node=next_node.parent
+
+
+        # update parts in state_dict
+        for obj in state_dict["nodes"].keys():
+            if "sliced" in state_dict["nodes"][obj]["states"] and "_part_" not in obj:
+                part_0=obj+"_part_0"
+                part_1=obj+"_part_1"
+                assert part_0 in state_dict["nodes"] and part_1 in state_dict["nodes"]
+                state_dict["nodes"][obj]["states"]=state_dict["nodes"][part_0]["states"].intersection(state_dict["nodes"][part_1]["states"])
+                part_1_edges=set([(edge["relation"],edge["to_name"]) for edge in state_dict["edges"] if edge["from_name"]==part_1])
+                part_0_edges=set([(edge["relation"],edge["to_name"]) for edge in state_dict["edges"] if edge["from_name"]==part_0])
+                obj_edges=part_0_edges.intersection(part_1_edges)
+                # delete all edges related to obj first
+                state_dict["edges"]=[edge for edge in state_dict["edges"] if edge["from_name"]!=obj]
+                for edge in list(obj_edges):
+                    state_dict["edges"].append({"from_name":obj,"relation":edge[0],"to_name":edge[1]})
+                    
         return state_dict
             
     def check_success(self,task:BehaviorTask):
@@ -165,35 +186,36 @@ class GraphState():
     
     def check_goal(self,goal,name_mapping,state_dict):
         if 'not' in goal:
-            assert len(goal)==3
-            state=goal[1]
-            node_name=name_mapping[goal[2]]
-            target_node=None
-            for node in state_dict['nodes']:
-                if node['name']==node_name:
-                    target_node=node
-            assert target_node is not None
-            assert state in target_node['properties']
-            return state not in target_node['states']
-        elif len(goal)==2:
-            state=goal[0]
-            node_name=name_mapping[goal[1]]
-            target_node=None
-            for node in state_dict['nodes']:
-                if node['name']==node_name:
-                    target_node=node
-            assert target_node is not None
-            assert state in target_node['properties']
-            return state in target_node['states']
+            assert len(goal)==3 or len(goal)==4
+            if len(goal)==3:
+                state=goal[1]
+                node_name=name_mapping[goal[2]]
+                assert state in state_dict["nodes"][node_name]['properties']
+                return state not in state_dict["nodes"][node_name]['states']
+            else:
+                relation=goal[1]
+                from_name=name_mapping[goal[2]]
+                to_name=name_mapping[goal[3]]
+                for edge in state_dict['edges']:
+                    if edge['from_name']==from_name and edge['to_name']==to_name and edge['relation']==relation:
+                        return False
+                return True
+            
         else:
-            assert len(goal)==3
-            relation=goal[0]
-            from_name=name_mapping[goal[1]]
-            to_name=name_mapping[goal[2]]
-            for edge in state_dict['edges']:
-                if edge['from_name']==from_name and edge['to_name']==to_name and edge['relation']==relation:
-                    return True
-            return False
+            assert len(goal)==2 or len(goal)==3
+            if len(goal)==2:
+                state=goal[0]
+                node_name=name_mapping[goal[1]]
+                assert state in state_dict["nodes"][node_name]['properties']
+                return state in state_dict["nodes"][node_name]['states']
+            else:
+                relation=goal[0]
+                from_name=name_mapping[goal[1]]
+                to_name=name_mapping[goal[2]]
+                for edge in state_dict['edges']:
+                    if edge['from_name']==from_name and edge['to_name']==to_name and edge['relation']==relation:
+                        return True
+                return False
                 
 
         
@@ -583,12 +605,15 @@ class EvolvingGraph():
         
         ## post effects
         self.cur_state.graph.nodes[obj.name][object_states.Sliced]=True
+        obj_parts=[add_obj for add_obj in self.addressable_objects if '_part_' in add_obj.name and obj.name in add_obj.name]
+        for part_obj in obj_parts:
+            self.cur_state.graph.nodes[part_obj.name].update(self.cur_state.graph.nodes[obj.name])
         print(f"Slice {obj.name} success")
 
         ## update nonteleport relation
-        obj_parts=[add_obj for add_obj in self.addressable_objects if 'part' in add_obj.name and obj.name in add_obj.name]
         successors = list(self.cur_state.graph.successors(obj.name))
         predecessors = list(self.cur_state.graph.predecessors(obj.name))
+
 
         for successor in successors:
             edge_state=self.cur_state.graph.edges[obj.name,successor]['state']

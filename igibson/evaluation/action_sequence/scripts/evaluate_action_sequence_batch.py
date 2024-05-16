@@ -43,6 +43,18 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
 
 
     final_rst=[]
+    summary_rst={'tot_tasks':0,
+                 'all_goals_satisfied':0,
+                 'execution_error':0,
+                 'tot_steps':0,
+                 'error_steps':0,
+                 'tot_goals':0,
+                 'satisfied_goals':0,
+                 'tot_edge_predicates': 0,
+                 'tot_node_predicates': 0,
+                 'satisfied_edge_predicates': 0,
+                 'satisfied_node_predicates': 0,}
+    
 
     for args in args_list:
         try:
@@ -57,19 +69,33 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
                     "llm_rst":rst
                 }
             )
+            summary_rst['tot_tasks']+=1
+            for k in summary_rst:
+                if k in rst:
+                    summary_rst[k]+=rst[k]
+
         except Exception as e:
             print(f"Error in {args[2]}")
             print(e)
             final_rst.append(
                 {
                     "identifier":args[2],
-                    "llm_rst":None
+                    "llm_rst":None,
+                    "error_info":str(e)
                 }
             )
+            summary_rst['execution_error']+=1
     
 
     with open(os.path.join(rst_dir,'final_rst.json'), 'w') as f:
         f.write(json.dumps(final_rst,indent=4))
+
+    summary_rst['goal_succ_rate']=summary_rst['satisfied_goals']/summary_rst['tot_goals'] if summary_rst['tot_goals']>0 else 0
+    summary_rst['edge_predicate_succ_rate']=summary_rst['satisfied_edge_predicates']/summary_rst['tot_edge_predicates'] if summary_rst['tot_edge_predicates']>0 else 0
+    summary_rst['node_predicate_succ_rate']=summary_rst['satisfied_node_predicates']/summary_rst['tot_node_predicates'] if summary_rst['tot_node_predicates']>0 else 0
+    summary_rst['step_succ_rate']=(summary_rst['tot_steps']-summary_rst['error_steps'])/summary_rst['tot_steps'] if summary_rst['tot_steps']>0 else 0
+    with open(os.path.join(rst_dir,'summary_rst.json'), 'w') as f:
+        f.write(json.dumps(summary_rst,indent=4))
 
     return final_rst
 

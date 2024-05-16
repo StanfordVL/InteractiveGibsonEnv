@@ -16,11 +16,11 @@
         "object": "bed_11"
     },
     {
-        "action": "LEFT_GRASP",
+        "action": "CLEAN",
         "object": "sweater_37"
     },
     {
-        "action": "CLEAN",
+        "action": "LEFT_GRASP",
         "object": "sweater_37"
     },
     {
@@ -28,11 +28,11 @@
         "object": "bed_11"
     },
     {
-        "action": "LEFT_GRASP",
+        "action": "CLEAN",
         "object": "sweater_38"
     },
     {
-        "action": "CLEAN",
+        "action": "LEFT_GRASP",
         "object": "sweater_38"
     },
     {
@@ -40,11 +40,11 @@
         "object": "bed_11"
     },
     {
-        "action": "LEFT_GRASP",
+        "action": "CLEAN",
         "object": "sweater_39"
     },
     {
-        "action": "CLEAN",
+        "action": "LEFT_GRASP",
         "object": "sweater_39"
     },
     {
