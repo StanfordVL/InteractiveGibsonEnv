@@ -116,11 +116,7 @@
         "object": "coffee_table_4"
     },
     {
-        "action": "LEFT_GRASP",
-        "object": "scrub_brush_84"
-    },
-    {
-        "action": "LEFT_PLACE_NEXTTO",
+        "action": "RIGHT_PLACE_NEXTTO",
         "object": "hand_towel_83"
     }
 

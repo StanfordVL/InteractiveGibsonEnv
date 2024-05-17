@@ -170,6 +170,7 @@ class ActionSequenceEvaluator():
         goal_rst={
         'tot_goals': len(self.task.goal_conditions),
         'satisfied_goals': len(goal_status['satisfied']),
+        'all_goal_satisfied_ig':len(self.task.goal_conditions)==len(self.task.goal_conditions),
         'tot_goal_predicates':tot_edge_predicates+tot_node_predicates,
         'tot_edge_predicates': tot_edge_predicates,
         'tot_node_predicates': tot_node_predicates,
@@ -226,7 +227,7 @@ class ActionSequenceEvaluator():
         
         return {
             'tot_steps':len(actions),
-            'all_goals_satisfied':self.evolving_graph.action_env.cur_state.check_success(self.task),
+            'all_goal_satisfied_graph':self.evolving_graph.action_env.cur_state.check_success(self.task),
             'error_steps':error_steps,
             'action_errors':action_errors,
             'error_types':error_types,
@@ -249,8 +250,8 @@ class ActionSequenceEvaluator():
                 
     def evaluate_action_sequence(self,actions):
         goal_rst={}
-        goal_rst['initial_state']=self.get_initial_state()
-        goal_rst['target_state']=self.get_target_state()
+        goal_rst['initial_state']=self.get_initial_state().strip().split("\n")
+        goal_rst['target_state']=self.get_target_state().strip().split("\n")
         goal_rst['objects']=self.name_mapping
         goal_rst.update(self.evaluate_goal(actions))
         trajectory_rst=self.evaluate_trajectory(actions)

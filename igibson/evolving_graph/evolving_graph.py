@@ -174,26 +174,32 @@ class GraphState():
             goal_combos.append([head.terms for head in goal_combo])
 
         for goal_combo in goal_combos:
-            if self.check_goal_combo(goal_combo,name_mapping,state_dict):
+            if self._check_goal_combo(goal_combo,name_mapping,state_dict):
                 return True
         return False
 
-    def check_goal_combo(self,goal_combo,name_mapping,state_dict):
+    def _check_goal_combo(self,goal_combo,name_mapping,state_dict):
         for goal in goal_combo:
-            if not self.check_goal(goal,name_mapping,state_dict):
+            if not self._check_goal(goal,name_mapping,state_dict):
                 return False
         return True
     
-    def check_goal(self,goal,name_mapping,state_dict):
+    def _check_goal(self,goal,name_mapping,state_dict):
+        SPECIAL_NAME_MAPPING={"toggled_on":"toggledon",
+                              }
         if 'not' in goal:
             assert len(goal)==3 or len(goal)==4
             if len(goal)==3:
                 state=goal[1]
                 node_name=name_mapping[goal[2]]
+                if state in SPECIAL_NAME_MAPPING:
+                    state=SPECIAL_NAME_MAPPING[state]
                 assert state in state_dict["nodes"][node_name]['properties']
                 return state not in state_dict["nodes"][node_name]['states']
             else:
                 relation=goal[1]
+                if relation in SPECIAL_NAME_MAPPING:
+                    relation=SPECIAL_NAME_MAPPING[relation]
                 from_name=name_mapping[goal[2]]
                 to_name=name_mapping[goal[3]]
                 for edge in state_dict['edges']:
@@ -205,11 +211,15 @@ class GraphState():
             assert len(goal)==2 or len(goal)==3
             if len(goal)==2:
                 state=goal[0]
+                if state in SPECIAL_NAME_MAPPING:
+                    state=SPECIAL_NAME_MAPPING[state]
                 node_name=name_mapping[goal[1]]
                 assert state in state_dict["nodes"][node_name]['properties']
                 return state in state_dict["nodes"][node_name]['states']
             else:
                 relation=goal[0]
+                if relation in SPECIAL_NAME_MAPPING:
+                    relation=SPECIAL_NAME_MAPPING[relation]
                 from_name=name_mapping[goal[1]]
                 to_name=name_mapping[goal[2]]
                 for edge in state_dict['edges']:
@@ -275,12 +285,16 @@ class EvolvingGraph():
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
-                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>0.5*0.5*0.5:
+                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1:
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
 
                 if state.robot_inventory[self.hand]==self.obj.name:
                     print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object already in hand (GRASP)")
+                    return False
+                
+                if self.obj.name in state.robot_inventory.values():
+                    print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object already in other hand (GRASP)")
                     return False
             
                 if state.robot_inventory[self.hand] is not None:
@@ -418,6 +432,22 @@ class EvolvingGraph():
         obj_in_hand=self.name_to_obj[obj_in_hand_name]
         self.cur_state.graph.add_edge(obj_in_hand.name,obj.name,state=object_states.Under)
         self.cur_state.robot_inventory[hand]=None
+
+        node=self.cur_state.relation_tree.get_node(obj.name)
+        if node is None:
+            assert isinstance(obj,RoomFloor)
+            self.cur_state.graph.add_edge(obj_in_hand.name,obj.name,state=object_states.OnFloor)
+        else: # ontop or inside
+            if node.parent is not self.cur_state.relation_tree.root:
+                self.cur_state.relation_tree.change_ancestor(obj_in_hand.name,node.parent.obj,node.teleport_type)
+            else: # onfloor
+                successors = list(self.cur_state.graph.successors(obj.name))
+                # find the edge with relation onfloor
+                for successor in successors:
+                    if self.cur_state.graph.edges[obj.name,successor]['state']==object_states.OnFloor:
+                        self.cur_state.graph.add_edge(obj_in_hand.name,successor,state=object_states.OnFloor)
+                        break
+                    
         print(f"Place {obj_in_hand.name} under {obj.name} success")
         return True
 
@@ -430,17 +460,32 @@ class EvolvingGraph():
         ## Posteffect
         obj_in_hand_name=self.cur_state.robot_inventory[hand]
         obj_in_hand=self.name_to_obj[obj_in_hand_name]
-        self.cur_state.graph.add_edge(obj.name,obj_in_hand.name,state=object_states.Under)
-        self.cur_state.graph.add_edge(obj_in_hand.name,obj.name,state=object_states.Under)
+        self.cur_state.graph.add_edge(obj.name,obj_in_hand.name,state=object_states.NextTo)
+        self.cur_state.graph.add_edge(obj_in_hand.name,obj.name,state=object_states.NextTo)
         self.cur_state.robot_inventory[hand]=None
+
+        node=self.cur_state.relation_tree.get_node(obj.name)
+        if node is None:
+            assert isinstance(obj,RoomFloor)
+            self.cur_state.graph.add_edge(obj_in_hand.name,obj.name,state=object_states.OnFloor)
+        else: # ontop or inside
+            if node.parent is not self.cur_state.relation_tree.root:
+                self.cur_state.relation_tree.change_ancestor(obj_in_hand.name,node.parent.obj,node.teleport_type)
+            else: # onfloor
+                successors = list(self.cur_state.graph.successors(obj.name))
+                # find the edge with relation onfloor
+                for successor in successors:
+                    if self.cur_state.graph.edges[obj.name,successor]['state']==object_states.OnFloor:
+                        self.cur_state.graph.add_edge(obj_in_hand.name,successor,state=object_states.OnFloor)
+                        break
         print(f"Place {obj_in_hand.name} next to {obj.name} success")
         return True
 
     def place_next_to_ontop(self,tar_obj1:URDFObject,tar_obj2,hand:str):
         ## Precondition check
-        precond1=PlacePrecond(tar_obj1,hand)
-        precond2=PlacePrecond(tar_obj2,hand)
-        if not precond1.check_precond(self.cur_state) or precond2.check_precond(self.cur_state):
+        precond1=PlacePrecond(tar_obj1,hand,self.name_to_obj)
+        precond2=PlacePrecond(tar_obj2,hand,self.name_to_obj)
+        if not precond1.check_precond(self.cur_state) or not precond2.check_precond(self.cur_state):
             return False
         
         
@@ -449,7 +494,10 @@ class EvolvingGraph():
         obj_in_hand=self.name_to_obj[obj_in_hand_name]
         self.cur_state.graph.add_edge(obj_in_hand.name,tar_obj1.name,state=object_states.NextTo)
         self.cur_state.graph.add_edge(tar_obj1.name,obj_in_hand.name,state=object_states.NextTo)
-        self.cur_state.relation_tree.change_ancestor(obj_in_hand.name,tar_obj2.name,TeleportType.ONTOP)
+        if not isinstance(tar_obj2,RoomFloor):
+            self.cur_state.relation_tree.change_ancestor(obj_in_hand.name,tar_obj2.name,TeleportType.ONTOP)
+        else:
+            self.cur_state.graph.add_edge(obj_in_hand.name,tar_obj2.name,state=object_states.OnFloor)
         self.cur_state.robot_inventory[hand]=None
         print(f"Place {obj_in_hand.name} next to {tar_obj1.name} and onto {tar_obj2.name} success")
         return True
@@ -639,7 +687,7 @@ class EvolvingGraph():
     
     def clean_dust(self,obj):
         ## pre conditions
-        class CleanDustPrecond(HighLevelActionPrecond):
+        class CleanDustPrecond(FoolHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_dust_precond)
@@ -689,7 +737,7 @@ class EvolvingGraph():
     
     def clean_stain(self,obj):
         ## pre conditions
-        class CleanStainPrecond(HighLevelActionPrecond):
+        class CleanStainPrecond(FoolHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_stain_precond)
@@ -999,6 +1047,22 @@ class HighLevelActionPrecond(BasePrecond):
         if state.robot_inventory['right_hand'] is not None and state.robot_inventory['left_hand'] is not None:
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot's both hands are full (HIGH_LEVEL_ACTION)")
             return False
+        if self.object_state not in state.graph.nodes[self.obj.name]:
+            print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (HIGH_LEVEL_ACTION)")
+            return False
+        if state.graph.nodes[self.obj.name][self.object_state]==self.state_value:
+            print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object's state is already satisfied (HIGH_LEVEL_ACTION)")
+            return False
+        return True
+    
+class FoolHandAllowedHighLevelPrecond(BasePrecond):
+    def __init__(self,obj,object_state,state_value,name_to_obj):
+        super().__init__(obj,name_to_obj)
+        self.precond_list.appendleft(self.high_level_action_precond)
+        self.object_state=object_state
+        self.state_value=state_value
+    
+    def high_level_action_precond(self,state:GraphState):
         if self.object_state not in state.graph.nodes[self.obj.name]:
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (HIGH_LEVEL_ACTION)")
             return False

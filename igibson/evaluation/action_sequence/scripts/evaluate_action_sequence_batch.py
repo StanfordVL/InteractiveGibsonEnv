@@ -44,7 +44,8 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
 
     final_rst=[]
     summary_rst={'tot_tasks':0,
-                 'all_goals_satisfied':0,
+                 'all_goal_satisfied_graph':0,
+                 'all_goal_satisfied_ig':0,
                  'execution_error':0,
                  'tot_steps':0,
                  'error_steps':0,
