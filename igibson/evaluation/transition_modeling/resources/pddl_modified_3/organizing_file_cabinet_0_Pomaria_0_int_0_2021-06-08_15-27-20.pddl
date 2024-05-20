@@ -1,0 +1,6 @@
+(define (problem organizing_file_cabinet)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 document_n_01_1 document_n_01_2 document_n_01_4 - document_n_01 floor_n_01_1 - floor_n_01 folder_n_02_2 - folder_n_02 table_n_02_1 - table_n_02)
+    (:init (inside document_n_01_2 cabinet_n_01_1) (inside document_n_01_4 cabinet_n_01_1) (onfloor folder_n_02_2 floor_n_01_1) (ontop document_n_01_1 table_n_02_1))
+    (:goal (and (inside folder_n_02_2 cabinet_n_01_1) (inside document_n_01_1 cabinet_n_01_1) (inside document_n_01_2 cabinet_n_01_1)))
+)

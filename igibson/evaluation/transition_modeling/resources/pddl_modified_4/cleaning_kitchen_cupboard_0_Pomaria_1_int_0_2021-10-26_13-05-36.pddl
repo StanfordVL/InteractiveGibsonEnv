@@ -1,0 +1,6 @@
+(define (problem cleaning_kitchen_cupboard)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bowl_n_01_1 bowl_n_01_2 - bowl_n_01 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 countertop_n_01_1 - countertop_n_01 cup_n_01_1 cup_n_01_2 - cup_n_01 piece_of_cloth_n_01_1 - piece_of_cloth_n_01)
+    (:init (dusty cabinet_n_01_1) (dusty cabinet_n_01_2) (inside bowl_n_01_2 cabinet_n_01_2) (inside cup_n_01_1 cabinet_n_01_2) (inside cup_n_01_2 cabinet_n_01_1) (ontop bowl_n_01_1 countertop_n_01_1) (ontop piece_of_cloth_n_01_1 countertop_n_01_1))
+    (:goal (and (not (inside bowl_n_01_1 cabinet_n_01_2)) (inside bowl_n_01_2 cabinet_n_01_1) (not (dusty cabinet_n_01_1))))
+)

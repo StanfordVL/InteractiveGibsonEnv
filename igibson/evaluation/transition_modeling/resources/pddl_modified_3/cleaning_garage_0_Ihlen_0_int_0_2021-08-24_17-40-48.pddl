@@ -1,0 +1,6 @@
+(define (problem cleaning_garage)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bin_n_01_1 - bin_n_01 bottle_n_01_1 bottle_n_01_2 - bottle_n_01 box_n_01_1 - box_n_01 broom_n_01_1 - broom_n_01 cabinet_n_01_1 - cabinet_n_01 floor_n_01_1 - floor_n_01 newspaper_n_03_1 newspaper_n_03_2 - newspaper_n_03 rag_n_01_1 - rag_n_01 table_n_02_1 - table_n_02)
+    (:init (dusty cabinet_n_01_1) (dusty floor_n_01_1) (onfloor bin_n_01_1 floor_n_01_1) (onfloor bottle_n_01_1 floor_n_01_1) (onfloor bottle_n_01_2 floor_n_01_1) (onfloor box_n_01_1 floor_n_01_1) (onfloor broom_n_01_1 floor_n_01_1) (onfloor newspaper_n_03_1 floor_n_01_1) (onfloor newspaper_n_03_2 floor_n_01_1) (ontop rag_n_01_1 table_n_02_1) (stained floor_n_01_1))
+    (:goal (and (not (stained cabinet_n_01_1)) (not (dusty floor_n_01_1)) (ontop bottle_n_01_1 table_n_02_1)))
+)

@@ -1,0 +1,6 @@
+(define (problem putting_away_toys)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent carton_n_02_1 - carton_n_02 floor_n_01_1 floor_n_01_2 - floor_n_01 plaything_n_01_1 plaything_n_01_4 plaything_n_01_6 - plaything_n_01)
+    (:init (onfloor carton_n_02_1 floor_n_01_1) (onfloor plaything_n_01_1 floor_n_01_1) (onfloor plaything_n_01_4 floor_n_01_1) (onfloor plaything_n_01_6 floor_n_01_2))
+    (:goal (and (inside plaything_n_01_1 carton_n_02_1) (inside plaything_n_01_4 carton_n_02_1) (inside plaything_n_01_6 carton_n_02_1)))
+)

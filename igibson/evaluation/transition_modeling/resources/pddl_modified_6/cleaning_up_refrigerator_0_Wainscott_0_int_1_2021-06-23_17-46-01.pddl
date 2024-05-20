@@ -1,0 +1,6 @@
+(define (problem cleaning_up_refrigerator)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bowl_n_01_1 - bowl_n_01 cabinet_n_01_1 - cabinet_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 rag_n_01_1 rag_n_01_2 - rag_n_01 sink_n_01_1 - sink_n_01 tray_n_01_1 tray_n_01_2 - tray_n_01)
+    (:init (dusty bowl_n_01_1) (inside bowl_n_01_1 electric_refrigerator_n_01_1) (inside rag_n_01_1 cabinet_n_01_1) (inside rag_n_01_2 cabinet_n_01_1) (inside tray_n_01_1 electric_refrigerator_n_01_1) (inside tray_n_01_2 electric_refrigerator_n_01_1) (not (soaked rag_n_01_1)) (not (soaked rag_n_01_2)) (stained electric_refrigerator_n_01_1) (stained tray_n_01_2))
+    (:goal (and (nextto rag_n_01_1 sink_n_01_1) (not (dusty bowl_n_01_1)) (nextto bowl_n_01_1 sink_n_01_1) (not (stained electric_refrigerator_n_01_1)) (inside tray_n_01_2 electric_refrigerator_n_01_1) (not (stained tray_n_01_2))))
+)

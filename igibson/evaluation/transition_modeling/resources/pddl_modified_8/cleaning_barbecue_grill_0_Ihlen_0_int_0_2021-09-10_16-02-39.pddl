@@ -1,0 +1,6 @@
+(define (problem cleaning_barbecue_grill)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent floor_n_01_1 - floor_n_01 grill_n_02_1 - grill_n_02 rag_n_01_1 - rag_n_01 sink_n_01_1 - sink_n_01 table_n_02_1 - table_n_02)
+    (:init (dusty grill_n_02_1) (onfloor grill_n_02_1 floor_n_01_1) (ontop rag_n_01_1 table_n_02_1) (stained grill_n_02_1))
+    (:goal (and (not (dusty grill_n_02_1)) (not (stained grill_n_02_1))))
+)

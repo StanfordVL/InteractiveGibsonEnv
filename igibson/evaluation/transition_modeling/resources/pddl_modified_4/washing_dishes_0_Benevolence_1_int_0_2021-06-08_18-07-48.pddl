@@ -1,0 +1,6 @@
+(define (problem washing_dishes)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bowl_n_01_1 - bowl_n_01 countertop_n_01_1 - countertop_n_01 cup_n_01_1 - cup_n_01 plate_n_04_1 plate_n_04_2 - plate_n_04 scrub_brush_n_01_1 - scrub_brush_n_01 sink_n_01_1 - sink_n_01)
+    (:init (inside scrub_brush_n_01_1 sink_n_01_1) (ontop bowl_n_01_1 countertop_n_01_1) (ontop cup_n_01_1 countertop_n_01_1) (ontop plate_n_04_1 countertop_n_01_1) (ontop plate_n_04_2 countertop_n_01_1) (stained bowl_n_01_1) (stained cup_n_01_1) (stained plate_n_04_1) (stained plate_n_04_2))
+    (:goal (and (not (stained plate_n_04_1)) (not (stained plate_n_04_2)) (not (stained cup_n_01_1)) (not (stained bowl_n_01_1))))
+)

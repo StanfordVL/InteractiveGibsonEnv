@@ -1,0 +1,6 @@
+(define (problem rearranging_furniture)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bed_n_01_1 - bed_n_01 door_n_01_1 - door_n_01 floor_n_01_1 - floor_n_01 lamp_n_02_1 lamp_n_02_2 - lamp_n_02 seat_n_03_2 - seat_n_03 window_n_01_1 - window_n_01)
+    (:init (onfloor lamp_n_02_1 floor_n_01_1) (onfloor lamp_n_02_2 floor_n_01_1) (ontop seat_n_03_2 bed_n_01_1))
+    (:goal (and (nextto lamp_n_02_1 door_n_01_1) (nextto lamp_n_02_2 window_n_01_1) (nextto seat_n_03_2 window_n_01_1)))
+)

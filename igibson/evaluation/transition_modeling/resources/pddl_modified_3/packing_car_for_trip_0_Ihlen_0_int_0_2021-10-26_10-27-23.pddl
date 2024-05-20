@@ -1,0 +1,6 @@
+(define (problem packing_car_for_trip)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent briefcase_n_01_1 - briefcase_n_01 car_n_01_1 - car_n_01 duffel_bag_n_01_1 - duffel_bag_n_01 floor_n_01_1 floor_n_01_2 - floor_n_01 pencil_box_n_01_1 - pencil_box_n_01 table_n_02_1 - table_n_02)
+    (:init (onfloor briefcase_n_01_1 floor_n_01_2) (onfloor car_n_01_1 floor_n_01_1) (onfloor duffel_bag_n_01_1 floor_n_01_2) (ontop pencil_box_n_01_1 table_n_02_1))
+    (:goal (and (inside briefcase_n_01_1 car_n_01_1) (inside pencil_box_n_01_1 car_n_01_1) (inside duffel_bag_n_01_1 car_n_01_1)))
+)

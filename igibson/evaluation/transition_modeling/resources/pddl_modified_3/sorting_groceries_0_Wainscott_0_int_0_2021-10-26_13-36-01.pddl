@@ -1,0 +1,6 @@
+(define (problem sorting_groceries)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent apple_n_01_1 - apple_n_01 cheese_n_01_1 - cheese_n_01 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 meat_n_01_1 - meat_n_01 orange_n_01_1 orange_n_01_2 orange_n_01_3 - orange_n_01 soup_n_01_1 - soup_n_01 table_n_02_1 - table_n_02 yogurt_n_01_1 - yogurt_n_01)
+    (:init (ontop apple_n_01_1 countertop_n_01_1) (ontop cheese_n_01_1 table_n_02_1) (ontop meat_n_01_1 table_n_02_1) (ontop orange_n_01_1 table_n_02_1) (ontop orange_n_01_2 table_n_02_1) (ontop orange_n_01_3 table_n_02_1) (ontop soup_n_01_1 table_n_02_1) (ontop yogurt_n_01_1 table_n_02_1))
+    (:goal (and (ontop orange_n_01_3 table_n_02_1) (ontop orange_n_01_2 table_n_02_1) (inside apple_n_01_1 electric_refrigerator_n_01_1)))
+)

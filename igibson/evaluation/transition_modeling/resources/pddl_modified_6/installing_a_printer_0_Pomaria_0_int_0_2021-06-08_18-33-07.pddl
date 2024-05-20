@@ -1,0 +1,6 @@
+(define (problem installing_a_printer)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent floor_n_01_1 - floor_n_01 printer_n_03_1 - printer_n_03 table_n_02_1 - table_n_02)
+    (:init (not (toggled_on printer_n_03_1)) (onfloor printer_n_03_1 floor_n_01_1))
+    (:goal (and (ontop printer_n_03_1 table_n_02_1) (toggled_on printer_n_03_1)))
+)

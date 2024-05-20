@@ -1,0 +1,6 @@
+(define (problem making_tea)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 knife_n_01_1 - knife_n_01 lemon_n_01_1 - lemon_n_01 stove_n_01_1 - stove_n_01 tea_bag_n_01_1 - tea_bag_n_01 teapot_n_01_1 - teapot_n_01)
+    (:init (inside knife_n_01_1 cabinet_n_01_1) (inside lemon_n_01_1 electric_refrigerator_n_01_1) (inside tea_bag_n_01_1 cabinet_n_01_1) (inside teapot_n_01_1 cabinet_n_01_1))
+    (:goal (and (inside tea_bag_n_01_1 teapot_n_01_1) (toggled_on stove_n_01_1) (ontop teapot_n_01_1 stove_n_01_1) (sliced lemon_n_01_1) (soaked tea_bag_n_01_1)))
+)

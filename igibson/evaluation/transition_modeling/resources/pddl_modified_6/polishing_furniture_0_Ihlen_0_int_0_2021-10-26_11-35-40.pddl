@@ -1,0 +1,6 @@
+(define (problem polishing_furniture)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent rag_n_01_1 - rag_n_01 shelf_n_01_1 - shelf_n_01 table_n_02_1 - table_n_02)
+    (:init (dusty shelf_n_01_1) (dusty table_n_02_1) (ontop rag_n_01_1 table_n_02_1))
+    (:goal (and (not (dusty shelf_n_01_1)) (not (dusty table_n_02_1)) (under rag_n_01_1 table_n_02_1)))
+)

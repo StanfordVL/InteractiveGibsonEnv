@@ -1,0 +1,6 @@
+(define (problem cleaning_up_after_a_meal)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent dishwasher_n_01_1 - dishwasher_n_01 floor_n_01_1 - floor_n_01 hamburger_n_01_2 - hamburger_n_01 plate_n_04_2 plate_n_04_3 - plate_n_04 sack_n_01_1 - sack_n_01 table_n_02_1 - table_n_02)
+    (:init (onfloor hamburger_n_01_2 floor_n_01_1) (ontop plate_n_04_2 table_n_02_1) (ontop plate_n_04_3 table_n_02_1) (ontop sack_n_01_1 table_n_02_1) (stained plate_n_04_2) (stained plate_n_04_3))
+    (:goal (and (inside hamburger_n_01_2 sack_n_01_1) (not (stained plate_n_04_2)) (not (stained plate_n_04_3))))
+)

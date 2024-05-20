@@ -1,0 +1,6 @@
+(define (problem packing_lunches)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent apple_n_01_1 - apple_n_01 banana_n_02_1 - banana_n_02 carton_n_02_1 carton_n_02_2 - carton_n_02 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 floor_n_01_2 - floor_n_01 salad_n_01_1 - salad_n_01)
+    (:init (inside salad_n_01_1 electric_refrigerator_n_01_1) (onfloor carton_n_02_1 floor_n_01_2) (onfloor carton_n_02_2 floor_n_01_2) (ontop apple_n_01_1 countertop_n_01_1) (ontop banana_n_02_1 countertop_n_01_1))
+    (:goal (and (not (inside salad_n_01_1 carton_n_02_1)) (inside banana_n_02_1 carton_n_02_1) (inside apple_n_01_1 carton_n_02_2)))
+)

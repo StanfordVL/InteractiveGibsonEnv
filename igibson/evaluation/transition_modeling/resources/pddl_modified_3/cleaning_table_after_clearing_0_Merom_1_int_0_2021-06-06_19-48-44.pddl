@@ -1,0 +1,6 @@
+(define (problem cleaning_table_after_clearing)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 dishtowel_n_01_1 - dishtowel_n_01 table_n_02_1 - table_n_02)
+    (:init (inside dishtowel_n_01_1 cabinet_n_01_1) (stained table_n_02_1))
+    (:goal (not (stained table_n_02_1)))
+)

@@ -1,0 +1,6 @@
+(define (problem laying_tile_floors)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent floor_n_01_1 floor_n_01_2 - floor_n_01 tile_n_01_1 tile_n_01_2 tile_n_01_4 - tile_n_01)
+    (:init (onfloor tile_n_01_1 floor_n_01_1) (onfloor tile_n_01_2 floor_n_01_1) (onfloor tile_n_01_4 floor_n_01_1))
+    (:goal (and (onfloor tile_n_01_1 floor_n_01_2) (onfloor tile_n_01_2 floor_n_01_2) (onfloor tile_n_01_4 floor_n_01_2)))
+)

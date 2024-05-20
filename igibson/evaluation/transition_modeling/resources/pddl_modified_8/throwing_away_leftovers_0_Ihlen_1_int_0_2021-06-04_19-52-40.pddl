@@ -1,0 +1,6 @@
+(define (problem throwing_away_leftovers)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent ashcan_n_01_1 - ashcan_n_01 floor_n_01_1 - floor_n_01 hamburger_n_01_1 hamburger_n_01_2 hamburger_n_01_3 - hamburger_n_01 plate_n_04_1 plate_n_04_2 plate_n_04_3 - plate_n_04)
+    (:init (onfloor ashcan_n_01_1 floor_n_01_1) (ontop hamburger_n_01_1 plate_n_04_1) (ontop hamburger_n_01_2 plate_n_04_3) (ontop hamburger_n_01_3 plate_n_04_2))
+    (:goal (and (inside hamburger_n_01_1 ashcan_n_01_1) (inside hamburger_n_01_2 ashcan_n_01_1) (inside hamburger_n_01_3 ashcan_n_01_1)))
+)

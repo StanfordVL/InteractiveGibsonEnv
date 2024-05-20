@@ -1,0 +1,6 @@
+(define (problem cleaning_the_pool)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent detergent_n_02_1 - detergent_n_02 floor_n_01_1 - floor_n_01 pool_n_01_1 - pool_n_01 scrub_brush_n_01_1 - scrub_brush_n_01 shelf_n_01_1 - shelf_n_01 sink_n_01_1 - sink_n_01)
+    (:init (onfloor agent_n_01_1 floor_n_01_1) (onfloor detergent_n_02_1 floor_n_01_1) (onfloor pool_n_01_1 floor_n_01_1) (onfloor scrub_brush_n_01_1 floor_n_01_1) (stained pool_n_01_1))
+    (:goal (and (onfloor detergent_n_02_1 floor_n_01_1) (onfloor pool_n_01_1 floor_n_01_1) (ontop scrub_brush_n_01_1 shelf_n_01_1) (not (stained pool_n_01_1))))
+)

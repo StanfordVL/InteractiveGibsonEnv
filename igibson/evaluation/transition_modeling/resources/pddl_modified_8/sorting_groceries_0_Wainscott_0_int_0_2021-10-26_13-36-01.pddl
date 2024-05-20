@@ -1,0 +1,6 @@
+(define (problem sorting_groceries)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent apple_n_01_1 - apple_n_01 bread_n_01_1 - bread_n_01 broccoli_n_02_1 - broccoli_n_02 cabinet_n_01_1 - cabinet_n_01 carrot_n_03_1 carrot_n_03_2 - carrot_n_03 chair_n_01_1 - chair_n_01 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 milk_n_01_1 - milk_n_01 orange_n_01_2 orange_n_01_3 - orange_n_01 table_n_02_1 - table_n_02)
+    (:init (ontop apple_n_01_1 countertop_n_01_1) (ontop bread_n_01_1 countertop_n_01_1) (ontop broccoli_n_02_1 countertop_n_01_1) (ontop carrot_n_03_1 countertop_n_01_1) (ontop carrot_n_03_2 countertop_n_01_1) (ontop milk_n_01_1 chair_n_01_1) (ontop orange_n_01_2 table_n_02_1) (ontop orange_n_01_3 table_n_02_1))
+    (:goal (and (inside broccoli_n_02_1 electric_refrigerator_n_01_1) (nextto orange_n_01_2 orange_n_01_2) (nextto orange_n_01_3 orange_n_01_2) (inside bread_n_01_1 cabinet_n_01_1) (nextto apple_n_01_1 apple_n_01_1) (nextto carrot_n_03_2 carrot_n_03_2) (nextto carrot_n_03_1 carrot_n_03_2) (inside milk_n_01_1 electric_refrigerator_n_01_1)))
+)

@@ -1,0 +1,6 @@
+(define (problem locking_every_door)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent door_n_01_1 door_n_01_2 - door_n_01)
+    (:init (open door_n_01_1) (open door_n_01_2))
+    (:goal (and (not (open door_n_01_1)) (not (open door_n_01_2))))
+)

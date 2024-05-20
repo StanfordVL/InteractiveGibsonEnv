@@ -1,0 +1,6 @@
+(define (problem cleaning_out_drawers)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 piece_of_cloth_n_01_1 - piece_of_cloth_n_01 sink_n_01_1 - sink_n_01 spoon_n_01_1 spoon_n_01_2 - spoon_n_01)
+    (:init (inside piece_of_cloth_n_01_1 cabinet_n_01_1) (inside spoon_n_01_1 cabinet_n_01_2) (inside spoon_n_01_2 cabinet_n_01_2))
+    (:goal (and (nextto piece_of_cloth_n_01_1 sink_n_01_1) (nextto spoon_n_01_2 sink_n_01_1) (nextto spoon_n_01_1 sink_n_01_1)))
+)

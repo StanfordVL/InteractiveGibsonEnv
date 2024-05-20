@@ -1,0 +1,6 @@
+(define (problem collecting_aluminum_cans)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bed_n_01_1 - bed_n_01 bucket_n_01_1 - bucket_n_01 floor_n_01_1 - floor_n_01 pop_n_02_1 pop_n_02_4 pop_n_02_5 pop_n_02_6 - pop_n_02)
+    (:init (onfloor pop_n_02_4 floor_n_01_1) (onfloor pop_n_02_5 floor_n_01_1) (onfloor pop_n_02_6 floor_n_01_1) (ontop bucket_n_01_1 bed_n_01_1) (ontop pop_n_02_1 bed_n_01_1))
+    (:goal (and (inside pop_n_02_1 bucket_n_01_1) (inside pop_n_02_5 bucket_n_01_1) (inside pop_n_02_4 bucket_n_01_1) (inside pop_n_02_6 bucket_n_01_1)))
+)

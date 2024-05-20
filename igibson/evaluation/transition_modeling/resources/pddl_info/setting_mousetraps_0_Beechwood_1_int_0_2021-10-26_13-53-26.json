@@ -1,0 +1,87 @@
+{
+    "initial_condition": [
+        [
+            "ontop",
+            "mousetrap.n.01_1",
+            "bed.n.01_1"
+        ],
+        [
+            "ontop",
+            "mousetrap.n.01_2",
+            "bed.n.01_1"
+        ],
+        [
+            "ontop",
+            "mousetrap.n.01_3",
+            "bed.n.01_1"
+        ],
+        [
+            "ontop",
+            "mousetrap.n.01_4",
+            "bed.n.01_1"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_2"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "onfloor",
+            "mousetrap.n.01_1",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "mousetrap.n.01_2",
+            "floor.n.01_1"
+        ],
+        [
+            "nextto",
+            "mousetrap.n.01_3",
+            "toilet.n.02_1"
+        ],
+        [
+            "nextto",
+            "mousetrap.n.01_4",
+            "toilet.n.02_1"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "onfloor",
+                "mousetrap.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "onfloor",
+                "mousetrap.n.01_2",
+                "floor.n.01_1"
+            ],
+            [
+                "nextto",
+                "mousetrap.n.01_3",
+                "toilet.n.02_1"
+            ],
+            [
+                "nextto",
+                "mousetrap.n.01_4",
+                "toilet.n.02_1"
+            ]
+        ]
+    ],
+    "name_category": {
+        "mousetrap.n.01_1": "mousetrap.n.01",
+        "mousetrap.n.01_2": "mousetrap.n.01",
+        "mousetrap.n.01_3": "mousetrap.n.01",
+        "mousetrap.n.01_4": "mousetrap.n.01",
+        "sink.n.01_1": "sink.n.01",
+        "floor.n.01_1": "floor.n.01",
+        "floor.n.01_2": "floor.n.01",
+        "toilet.n.02_1": "toilet.n.02",
+        "bed.n.01_1": "bed.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

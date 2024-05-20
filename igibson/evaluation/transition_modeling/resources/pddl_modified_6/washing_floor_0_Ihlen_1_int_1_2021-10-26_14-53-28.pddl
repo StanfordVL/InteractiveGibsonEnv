@@ -1,0 +1,6 @@
+(define (problem washing_floor)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bucket_n_01_1 - bucket_n_01 floor_n_01_1 - floor_n_01 sink_n_01_1 - sink_n_01 soap_n_01_1 - soap_n_01 towel_n_01_1 - towel_n_01)
+    (:init (dusty floor_n_01_1) (not (stained towel_n_01_1)) (onfloor agent_n_01_1 floor_n_01_1) (onfloor bucket_n_01_1 floor_n_01_1) (onfloor soap_n_01_1 floor_n_01_1) (onfloor towel_n_01_1 floor_n_01_1) (ontop soap_n_01_1 towel_n_01_1) (stained floor_n_01_1))
+    (:goal (and (not (dusty floor_n_01_1)) (not (stained floor_n_01_1))))
+)

@@ -1,0 +1,6 @@
+(define (problem packing_child_s_bag)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent backpack_n_01_1 - backpack_n_01 bed_n_01_1 - bed_n_01 bracelet_n_02_1 - bracelet_n_02 earphone_n_01_1 - earphone_n_01 floor_n_01_1 - floor_n_01 sunglass_n_01_1 - sunglass_n_01)
+    (:init (onfloor backpack_n_01_1 floor_n_01_1) (ontop bracelet_n_02_1 bed_n_01_1) (ontop earphone_n_01_1 bed_n_01_1) (ontop sunglass_n_01_1 bed_n_01_1))
+    (:goal (and (inside sunglass_n_01_1 backpack_n_01_1) (inside earphone_n_01_1 backpack_n_01_1) (inside bracelet_n_02_1 backpack_n_01_1)))
+)

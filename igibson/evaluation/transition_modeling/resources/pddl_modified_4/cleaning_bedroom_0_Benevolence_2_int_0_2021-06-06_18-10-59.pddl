@@ -1,0 +1,6 @@
+(define (problem cleaning_bedroom)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent apparel_n_01_1 apparel_n_01_2 - apparel_n_01 bed_n_01_1 - bed_n_01 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 floor_n_01_1 - floor_n_01 hand_towel_n_01_1 - hand_towel_n_01 painting_n_01_1 - painting_n_01 sheet_n_03_1 - sheet_n_03 vacuum_n_04_1 - vacuum_n_04)
+    (:init (dusty cabinet_n_01_1) (dusty cabinet_n_01_2) (not (dusty vacuum_n_04_1)) (onfloor hand_towel_n_01_1 floor_n_01_1) (onfloor sheet_n_03_1 floor_n_01_1) (onfloor vacuum_n_04_1 floor_n_01_1) (ontop apparel_n_01_1 bed_n_01_1) (ontop apparel_n_01_2 bed_n_01_1) (ontop painting_n_01_1 bed_n_01_1))
+    (:goal (and (not (dusty cabinet_n_01_1)) (inside apparel_n_01_2 cabinet_n_01_2) (nextto vacuum_n_04_1 bed_n_01_1) (ontop sheet_n_03_1 bed_n_01_1)))
+)

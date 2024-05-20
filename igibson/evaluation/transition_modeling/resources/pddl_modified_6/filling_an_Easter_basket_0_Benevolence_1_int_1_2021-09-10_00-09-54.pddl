@@ -1,0 +1,6 @@
+(define (problem filling_an_Easter_basket)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent ball_n_01_1 - ball_n_01 basket_n_01_1 basket_n_01_2 - basket_n_01 book_n_02_1 - book_n_02 bow_n_08_2 - bow_n_08 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 candy_n_01_1 - candy_n_01 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 jewelry_n_01_1 - jewelry_n_01)
+    (:init (inside book_n_02_1 cabinet_n_01_1) (inside bow_n_08_2 cabinet_n_01_2) (ontop ball_n_01_1 countertop_n_01_1) (ontop basket_n_01_1 countertop_n_01_1) (ontop basket_n_01_2 countertop_n_01_1) (ontop candy_n_01_1 electric_refrigerator_n_01_1) (ontop jewelry_n_01_1 countertop_n_01_1))
+    (:goal (and (nextto book_n_02_1 basket_n_01_2) (inside candy_n_01_1 basket_n_01_2) (inside jewelry_n_01_1 basket_n_01_1) (ontop bow_n_08_2 basket_n_01_2) (ontop basket_n_01_2 countertop_n_01_1) (ontop basket_n_01_1 countertop_n_01_1)))
+)

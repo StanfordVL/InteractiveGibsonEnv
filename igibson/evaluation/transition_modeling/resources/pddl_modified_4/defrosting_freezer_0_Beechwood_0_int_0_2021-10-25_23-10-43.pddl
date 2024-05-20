@@ -1,0 +1,6 @@
+(define (problem defrosting_freezer)
+    (:domain igibson)
+    (:objects agent_n_01_1 - agent bucket_n_01_1 - bucket_n_01 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 floor_n_01_1 - floor_n_01 food_n_02_1 food_n_02_2 food_n_02_3 - food_n_02 rag_n_01_1 - rag_n_01 receptacle_n_01_1 - receptacle_n_01 scraper_n_01_1 - scraper_n_01 towel_n_01_1 - towel_n_01)
+    (:init (inside food_n_02_1 electric_refrigerator_n_01_1) (inside food_n_02_2 electric_refrigerator_n_01_1) (inside food_n_02_3 electric_refrigerator_n_01_1) (not (stained towel_n_01_1)) (onfloor bucket_n_01_1 floor_n_01_1) (onfloor receptacle_n_01_1 floor_n_01_1) (ontop rag_n_01_1 countertop_n_01_1) (ontop scraper_n_01_1 countertop_n_01_1) (ontop towel_n_01_1 countertop_n_01_1))
+    (:goal (and (ontop scraper_n_01_1 electric_refrigerator_n_01_1) (ontop towel_n_01_1 countertop_n_01_1) (inside food_n_02_1 bucket_n_01_1) (nextto receptacle_n_01_1 electric_refrigerator_n_01_1)))
+)
