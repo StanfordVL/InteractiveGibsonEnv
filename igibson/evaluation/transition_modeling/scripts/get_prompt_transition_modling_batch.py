@@ -4,14 +4,26 @@ from igibson.evaluation.transition_modeling.scripts.get_prompt_transition_modlin
 import  os
 import json
 
-def main(demo_dir,action_dir,rst_dir):
+def main(demo_dir,name_dir,rst_dir):
     os.makedirs(rst_dir,exist_ok=True)
+
+    name_in_demo_dir=set()
+    for demo in os.listdir(demo_dir):
+        demo_name=demo.split(".")[0]
+        name_in_demo_dir.add(demo_name)
+    name_in_save_dir=set()
+    for info in os.listdir(rst_dir):
+        name_in_save_dir.add(info.split(".")[0])
     args_list=[]
-    for action_path in os.listdir(action_dir):
-        if action_path.endswith(".json"):
-            abs_demo_name=os.path.join(action_path.replace(".json",""))
-            abs_rst_path=os.path.join(rst_dir,action_path)
-            args_list.append((demo_dir,abs_demo_name,abs_rst_path))
+    for demo_name in os.listdir(name_dir):
+        demo_name=demo_name.split(".")[0].strip()
+        if demo_name not in name_in_demo_dir:
+            continue
+        if demo_name in name_in_save_dir:
+            continue
+        abs_rst_path=os.path.join(rst_dir,demo_name+".json")
+        args_list.append((demo_dir,demo_name,abs_rst_path))
+
 
     statistics=[]
     for args in args_list:
