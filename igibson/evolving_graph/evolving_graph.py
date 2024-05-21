@@ -1070,6 +1070,3 @@ class FoolHandAllowedHighLevelPrecond(BasePrecond):
             print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object's state is already satisfied (HIGH_LEVEL_ACTION)")
             return False
         return True
-
-                    
-
