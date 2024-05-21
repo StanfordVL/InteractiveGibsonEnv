@@ -58,6 +58,8 @@ TeleportBinaryStaets=[
     object_states.OnTop,
 ]
 
+SPECIAL_NAME_MAPPING={"toggled_on":"toggledon",
+                              }
 
 class ErrorType(Enum):
     AFFORDANCE_ERROR=auto()
@@ -185,8 +187,6 @@ class GraphState():
         return True
     
     def _check_goal(self,goal,name_mapping,state_dict):
-        SPECIAL_NAME_MAPPING={"toggled_on":"toggledon",
-                              }
         if 'not' in goal:
             assert len(goal)==3 or len(goal)==4
             if len(goal)==3:
