@@ -62,7 +62,6 @@ class EvalGraphEnv(BaseEnv):
         self.get_relevant_objects()
         self.action_env=EvolvingGraph(self.addressable_objects)
         self.control_function={
-            EvalActions.NAVIGATE_TO.value: self.action_env.navigate,
             EvalActions.LEFT_GRASP.value: self.action_env.left_grasp,
             EvalActions.RIGHT_GRASP.value: self.action_env.right_grasp,
             EvalActions.LEFT_PLACE_ONTOP.value: self.action_env.left_place_ontop,

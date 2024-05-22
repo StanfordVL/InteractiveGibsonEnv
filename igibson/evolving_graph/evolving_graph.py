@@ -883,10 +883,7 @@ class EvolvingGraph():
         self.cur_state.graph.nodes[obj.name][object_states.Cooked]=True
         print(f"Cook {obj.name} success")
         return True
-    ##################### for behavior task eval #####################
-    def navigate(self,obj:URDFObject):
-        return self.navigate_to(obj)
-    
+    ##################### for behavior task eval #####################    
     def left_grasp(self,obj:URDFObject):
         return self.grasp(obj,'left_hand')
     
