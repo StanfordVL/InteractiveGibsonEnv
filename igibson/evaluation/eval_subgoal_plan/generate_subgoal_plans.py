@@ -12,7 +12,7 @@ os.environ['HTTP_PROXY'] = 'http://127.0.0.1:10809'
 os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:10809'
 client = openai.OpenAI(api_key=os.environ.get('MANLING_OPENAI_KEY'))
 
-def get_openai_output(messages:list, model="gpt-4-turbo", temperature=0.7, max_tokens=3500):
+def get_openai_output(messages:list, model="gpt-3.5-turbo", temperature=0.7, max_tokens=3500):
     isFail = False
     try:
         completion = client.chat.completions.create(
@@ -75,6 +75,77 @@ def get_tl_category(obj_list):
     return category_map
 
 
+def convert_dict_to_list(dict_file_path, list_dict_path):
+    with open(dict_file_path, 'r') as f:
+        dict_data = json.load(f)
+    list_data = []
+    for task_name, task_info in dict_data.items():
+        list_data.append(task_info)
+    with open(list_dict_path, 'w') as f:
+        json.dump(list_data, f, indent=4)
+
+
+def generate_input_prompt(demo_name, demo_dir, prompt_components, log_path):
+    if not os.path.exists(log_path):
+        with open(log_path, 'w') as f:
+            json.dump({}, f)
+    with open(log_path, 'r') as f:
+        logs = json.load(f)
+    demo_path = os.path.join(demo_dir, demo_name + '.hdf5')
+    if demo_name in logs:
+        print(f'Demo {demo_name} has been processed before.')
+        return
+    env = ActionSequenceEvaluator(demo_path=demo_path)
+    task_name = env.transition_model.config['task']
+    objects_str = env.get_objects_str().strip()
+    initial_states_str = env.get_initial_state().strip()
+    goal_states_str = env.get_target_state().strip()
+    objects_in_scene = objects_str.split('\n')
+    objects_in_scene = [ast.literal_eval(obj) for obj in objects_in_scene]
+    initial_states = initial_states_str.split('\n')
+    initial_states = [ast.literal_eval(state) for state in initial_states]
+    goal_states = goal_states_str.split('\n')
+    goal_states = [ast.literal_eval(state) for state in goal_states]
+    name_mapping = env.name_mapping
+
+    tl_category_map = get_tl_category(objects_in_scene)
+
+    tl_objs = []
+    for obj in objects_in_scene:
+        obj_name = obj['name']
+        obj_category = obj['category']
+        tl_obj_name = translate_addressable_obj_into_tl_obj(obj_name)
+        tl_obj_category = tl_category_map[obj_category]
+        tl_obj = {'name': tl_obj_name, 'category': tl_obj_category}
+        tl_objs.append(str(tl_obj))
+    tl_exps = []
+    for condition in initial_states:
+        tl_condition = [translate_addressable_obj_into_tl_obj(obj) for obj in condition]
+        primitive = tl_condition[0]
+        if primitive == 'not':
+            next_primitive = tl_condition[1]
+            tl_exp = f'{next_primitive}({", ".join(tl_condition[2:])})' if len(tl_condition) > 2 else next_primitive
+            tl_exp = f'not {tl_exp}'
+        else:
+            tl_exp = f'{primitive}({", ".join(tl_condition[1:])})' if len(tl_condition) > 1 else primitive
+        tl_exps.append(tl_exp)
+
+    s_tl_goal_conditions = []
+    s_tl_goal_conditions = translate_bddl_final_states_into_simplified_tl(name_mapping, tl_category_map, env.task.goal_conditions)
+
+    info_prompt = prompt_components['Background'] + prompt_components['StateInfo'] + prompt_components['SupplementInfo'] + "\n".join(prompt_components['GoldExamples'])
+    task_prompt = prompt_components['TargetTask'].replace('<task_name>', task_name).replace('<relevant_objects>', '\n'.join(tl_objs)).replace('<initial_states>', '\n'.join(tl_exps)).replace('<goal_states>', '\n'.join(s_tl_goal_conditions))
+    
+    input_prompt = info_prompt + task_prompt
+    logs[demo_name] = {
+        "identifier": demo_name,
+        "llm_prompt": input_prompt,
+        "reference": ""
+    }
+    with open(log_path, 'w') as f:
+        json.dump(logs, f, indent=4)
+    return
+
 def eval_manual_craft_prompt(demo_path, prompt_components, log_path, headless=True):
     if not os.path.exists(log_path):
         with open(log_path, 'w') as f:
@@ -83,9 +154,11 @@ def eval_manual_craft_prompt(demo_path, prompt_components, log_path, headless=Tr
         logs = json.load(f)
 
     task_name = IGLogReader.read_metadata_attr(demo_path, "/metadata/atus_activity")
-    # if task_name in logs:
-    #     # print(f'Task {task_name} has been processed before.')
-    #     return
+    # replace_task_list = ['boxing_books_up_for_storage', 'organizing_boxes_in_garage', 'organizing_file_cabinet']
+    replace_task_list = []
+    if task_name in logs and task_name not in replace_task_list:
+        # print(f'Task {task_name} has been processed before.')
+        return
     env=ActionSequenceEvaluator(demo_path=demo_path)
     task_name = env.transition_model.config['task']
     objects_str = env.get_objects_str().strip()
@@ -176,13 +249,43 @@ def get_task_list():
     task_list = [t1, t2, t3, t4, t5, t6, t7, t9, t10]
     return task_list
 
-def main(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
-    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\eval_subgoal_plan\\resources\\subgoal_plan_prompt_s_ltl.json'
-    log_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\eval_subgoal_plan\\resources\\log5-16-00.json'
+def main_generate_input_prompt(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
+    json_format = False
+    final_file = 'subgoal_plan_prompt_s_ltl.json' if not json_format else 'subgoal_plan_prompt_s_ltl_json.json'
+    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources'
+    prompt_file_path = os.path.join(prompt_file_path, final_file)
+    log_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\fake_all_prompt.json'
     with open(prompt_file_path, 'r') as f:
         prompt_components = json.load(f)
-    task_list = get_test_task_list()
-    # task_list = get_all_task_list()
+    task_list = get_all_task_list()
+    total_num_tasks = len(task_list)
+    faild_task_list = []
+    for i, task in tqdm.tqdm(enumerate(task_list), desc="Processing tasks", unit="task", total=total_num_tasks):
+        demo_name = task
+        assert demo_name is not None, 'Please specify the demo name.'
+        try:
+            generate_input_prompt(demo_name, demo_dir, prompt_components, log_path)
+        except Exception as e:
+            print(f'Error in processing task {demo_name}: {e}')
+            faild_task_list.append(demo_name)
+            continue
+    print('Statistics:')
+    print(f'Total number of tasks: {total_num_tasks}')
+    print(f'Number of failed tasks: {len(faild_task_list)}')
+    print(f'Failed tasks:')
+    for task in faild_task_list:
+        print(task)
+
+def main(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
+    json_format = True
+    final_file = 'subgoal_plan_prompt_s_ltl.json' if not json_format else 'subgoal_plan_prompt_s_ltl_json.json'
+    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources'
+    log_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\log5-19-17-gpt35-json-new.json'
+    prompt_file_path = os.path.join(prompt_file_path, final_file)
+    with open(prompt_file_path, 'r') as f:
+        prompt_components = json.load(f)
+    # task_list = get_test_task_list()
+    task_list = get_all_task_list()
     total_num_tasks = len(task_list)
     faild_task_list = []
     for i, task in tqdm.tqdm(enumerate(task_list), desc="Processing tasks", unit="task", total=total_num_tasks):
@@ -203,5 +306,12 @@ def main(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
     for task in faild_task_list:
         print(task)
 
+def main_convert():
+    dict_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\fake_all_prompt.json'
+    list_dict_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_generation_behavior.json'
+    convert_dict_to_list(dict_file_path, list_dict_path)
+
 if __name__ == '__main__':
-    fire.Fire(main)
+    # fire.Fire(main)
+    main_generate_input_prompt()
+    # main_convert()

@@ -65,8 +65,23 @@ def build_tl_expr_from_bddl_condition_recursively(bddl_body:List, special_symbol
         exists_body = replace_wildcard_name(exists_body, category_name_2, special_symbol_id+1)
         special_symbol_id += 2
         tl_exists_body = build_tl_expr_from_bddl_condition_recursively(exists_body, special_symbol_id, level+1)
-        tl_expr_1 = f'forall {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or exists {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or {tl_exists_body}))'
-        tl_expr_2 = f'forall {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or exists {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or {tl_exists_body}))'
+        tl_expr_1 = f'forall {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or forn 1. {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or {tl_exists_body}))'
+        tl_expr_2 = f'forall {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or forn 1. {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or {tl_exists_body}))'
+        tl_expr = f'{tl_expr_1} and {tl_expr_2}'
+        if level > 0:
+            tl_expr = f'({tl_expr})'
+    elif connective_or_primitive == 'fornpairs':
+        num = bddl_body[1][0]
+        category_name_1 = bddl_body[2][2]
+        category_name_2 = bddl_body[3][2]
+        special_symbol_1 = f'x{special_symbol_id}'
+        special_symbol_2 = f'x{special_symbol_id+1}'
+        exists_body = replace_wildcard_name(bddl_body[4], category_name_1, special_symbol_id)
+        exists_body = replace_wildcard_name(exists_body, category_name_2, special_symbol_id+1)
+        special_symbol_id += 2
+        tl_exists_body = build_tl_expr_from_bddl_condition_recursively(exists_body, special_symbol_id, level+1)
+        tl_expr_1 = f'forn {num}. {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or forn 1. {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or {tl_exists_body}))'
+        tl_expr_2 = f'forn {num}. {special_symbol_2}. (not {category_name_2}({special_symbol_2}) or forn 1. {special_symbol_1}. (not {category_name_1}({special_symbol_1}) or {tl_exists_body}))'
         tl_expr = f'{tl_expr_1} and {tl_expr_2}'
         if level > 0:
             tl_expr = f'({tl_expr})'
@@ -227,6 +242,13 @@ def build_simplified_tl_expr_from_bddl_condition_recursively(bddl_body:List, lev
         exists_body = bddl_body[3]
         s_tl_exists_body = build_simplified_tl_expr_from_bddl_condition_recursively(exists_body, level+1)
         s_tl_expr = f'forpairs({category_name_1}, {category_name_2}, {s_tl_exists_body})'
+    elif connective_or_primitive == 'fornpairs':
+        num = bddl_body[1][0]
+        category_name_1 = bddl_body[2][2]
+        category_name_2 = bddl_body[3][2]
+        exists_body = bddl_body[4]
+        s_tl_exists_body = build_simplified_tl_expr_from_bddl_condition_recursively(exists_body, level+1)
+        s_tl_expr = f'fornpairs({num}, {category_name_1}, {category_name_2}, {s_tl_exists_body})'
     elif connective_or_primitive == 'and':
         and_statements = [build_simplified_tl_expr_from_bddl_condition_recursively(part, level+1) for part in bddl_body[1:]]
         s_tl_expr = ' and '.join(and_statements)

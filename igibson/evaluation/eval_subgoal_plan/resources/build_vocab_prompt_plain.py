@@ -14,15 +14,15 @@ The state is represented as a first-order predicate, which is a tuple of a predi
 | under | (obj1.id, obj2.id) | obj1 is under obj2 |
 | onfloor | (obj1.id, floor2.id) | obj1 is on the floor2 |
 | touching | (obj1.id, obj2.id) | obj1 is touching or next to obj2 |
-| cooked | (obj1.id) | obj1 is cooked |
-| burnt | (obj1.id) | obj1 is burnt |
-| dusty | (obj1.id) | obj1 is dusty. If want to change dusty(obj1.id) to "not dusty(obj1.id)", there are two ways to do it, depending on task conditions. Here, all objects other than obj1 are types but not instances: 1. [inside(obj1.id, dishwasher or sink), toggleon(dishwasher or sink)] 2. holding other cleanning tool |
+| cooked | (obj1.id) | obj1 is cooked. To achieve this state, there must be a state inside(obj1.id, saucepan or other cooker) before the cooked state.  |
+| burnt | (obj1.id) | obj1 is burnt. To achieve this state, there must be a state inside(obj1.id, saucepan or other cooker) before the burnt state. |
+| dusty | (obj1.id) | obj1 is dusty. If want to change dusty(obj1.id) to "not dusty(obj1.id)", there are two ways to do it, depending on task conditions. Here, all objects other than obj1 are types but not instances: 1. [inside(obj1.id, dishwasher or sink), toggledon(dishwasher or sink)] 2. holding other cleanning tool |
 | frozen | (obj1.id) | obj1 is frozen |
 | open | (obj1.id) | obj1 is open |
 | sliced | (obj1.id) | obj1 is sliced. If want to change "not sliced(obj1.id)" to "sliced(obj1.id)", one must have a slicer. | 
-| soaked | (obj1.id) | obj1 is soaked |
-| stained | (obj1.id) | obj1 is stained. If want to change stained(obj1.id) to "not stained(obj1.id)", there are three ways to do it, depending on task conditions. Here, all objects other than obj1 are types but not instances: 1. [inside(obj1.id, sink), toggleon(sink)] 2. [soaked(cleaner)] 3. holding detergent. |
-| toggleon | (obj1.id) | obj1 is toggled on |
+| soaked | (obj1.id) | obj1 is soaked, if want to soak obj1, obj1 must be either inside a toggled on sink or inside a teapot. |
+| stained | (obj1.id) | obj1 is stained. If want to change stained(obj1.id) to "not stained(obj1.id)", there are three ways to do it, depending on task conditions. Here, all objects other than obj1 are types but not instances: 1. [inside(obj1.id, sink), toggledon(sink)] 2. [soaked(cleaner)] 3. holding detergent. |
+| toggledon | (obj1.id) | obj1 is toggled on |
 | holds_rh | (obj1.id) | obj1 is in the right hand of the robot |
 | holds_lh | (obj1.id) | obj1 is in the left hand of the robot |
 ## Available Connectives
@@ -105,7 +105,7 @@ f'''
 ## Goal States
 <goal_states>
 
-## Output: Based on initial states, achieve final goal states logically and reasonably. It does not matter which state should be satisfied first, as long as all goal states can be satisfied at the end.'''
+## Output: Based on initial states, achieve final goal states logically and reasonably. It does not matter which state should be satisfied first, as long as all goal states can be satisfied at the end. Output concrete states and do not use quantifiers like "forall" or "exists".'''
 
 
 import json
@@ -127,5 +127,5 @@ def generate_prompt_scratch(prompt_file_path):
         json.dump(prompts, f, indent=4)
 
 if __name__ == '__main__':
-    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\eval_subgoal_plan\\resources\\subgoal_plan_prompt_s_ltl.json'
+    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_prompt_s_ltl.json'
     generate_prompt_scratch(prompt_file_path)

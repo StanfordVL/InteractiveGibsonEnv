@@ -12,7 +12,7 @@ from typing import List
 import lark
 from lark import Transformer, v_args
 
-import simple_tl as tl
+import igibson.evaluation.eval_subgoal_plan.tl_formula.simple_tl as tl
 
 grammar = r"""
 

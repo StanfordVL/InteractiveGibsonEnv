@@ -572,6 +572,72 @@ def extract_propositions_and_actions(expression: SimpleTLExpression, special_var
         actions.extend(sub_actions)
     return propositions, actions
 
+def extract_args(expression: SimpleTLExpression) -> Set[str]:
+    propositions, actions = extract_propositions_and_actions(expression)
+    args = set()
+    for prop in propositions:
+        args.update(prop.args)
+    for action in actions:
+        args.update(action.args)
+    # remove '<wildcard>' from args
+    args.discard('<wildcard>')
+    return args
+
+def demorgan_expassion(expression: SimpleTLNot) -> SimpleTLExpression:
+    '''Apply De Morgan's law to the expression.
+
+    Args:
+        expression: the expression to apply De Morgan's law.
+
+    Returns:
+        SimpleTLExpression: the expression after applying De Morgan's law.
+    '''
+    arg = expression.arg
+    if isinstance(arg, SimpleTLPrimitive):
+        return expression
+    elif isinstance(arg, SimpleTLAnd):
+        return SimpleTLOr(*[SimpleTLNot(sub_arg) for sub_arg in arg.args]) # not (a and b and c) = not a or not b or not c3
+    elif isinstance(arg, SimpleTLOr):
+        return SimpleTLAnd(*[SimpleTLNot(sub_arg) for sub_arg in arg.args]) # not (a or b or c) = not a and not b and not c
+    elif isinstance(arg, SimpleTLNot):
+        return arg.arg
+    elif isinstance(arg, SimpleTLImplies):
+        return SimpleTLAnd(arg.left, SimpleTLNot(arg.right)) # not (a -> b) = a and not b
+    elif isinstance(arg, SimpleTLThen):
+        raise ValueError('De Morgan\'s law is not applicable to temporal order.')
+    elif isinstance(arg, SimpleTLForall):
+        return SimpleTLExists(arg.var, SimpleTLNot(arg.arg)) # not forall x, P(x) = exists x, not P(x)
+    elif isinstance(arg, SimpleTLExists):
+        return SimpleTLForall(arg.var, SimpleTLNot(arg.arg)) # not exists x, P(x) = forall x, not P(x)
+    elif isinstance(arg, SimpleTLForN):
+        raise NotImplementedError('De Morgan\'s law is not implemented for ForN.')
+    else:
+        raise ValueError('Unknown expression type.')
+
+def sample_a_determined_path_from_tl_expr(expression: SimpleTLExpression) -> List[Union[SimpleTLNot, SimpleTLPrimitive]]:
+    cur_extracted_list = []
+    if isinstance(expression, SimpleTLPrimitive):
+        cur_extracted_list.append(expression)
+    elif isinstance(expression, (SimpleTLThen, SimpleTLAnd)): # temporal order
+        for arg in expression.args:
+            cur_extracted_list.extend(sample_a_determined_path_from_tl_expr(arg))
+    elif isinstance(expression, SimpleTLNot):
+        expr = demorgan_expassion(expression)
+        if isinstance(expr.arg, SimpleTLPrimitive):
+            cur_extracted_list.append(expr)
+        else:
+            cur_extracted_list.extend(sample_a_determined_path_from_tl_expr(expr))
+    elif isinstance(expression, SimpleTLOr):
+        # randomly choose one of the arguments
+        import random
+        chosen_arg = random.choice(expression.args)
+        cur_extracted_list.extend(sample_a_determined_path_from_tl_expr(chosen_arg))
+    else:
+        raise ValueError('Unknown expression type.')
+    return cur_extracted_list
+
+
+
 def test_extract_prop_actions():
     # expression_tree = SimpleTLThen(SimpleTLOr(SimpleTLAnd(SimpleTLPrimitive(Proposition('P', ['obj1'])), SimpleTLPrimitive(Proposition('Q', ['obj2']))), SimpleTLPrimitive(Proposition('S', ['obj4.4', 'obj5.5', 'obj6.6']))), SimpleTLPrimitive(Proposition('R', ['obj3'])))
     expression_tree = SimpleTLThen(SimpleTLForall("x", SimpleTLOr(SimpleTLPrimitive(Proposition('P1', ['x'])), SimpleTLExists('y', SimpleTLAnd(SimpleTLPrimitive(Proposition('P2', ['obj3', 'y'])), SimpleTLPrimitive(Action('Q1', ['x', 'y'])))))), SimpleTLPrimitive(Proposition('R1', ['obj1'])), SimpleTLExists('x', SimpleTLNot(SimpleTLPrimitive(Proposition('P3', ['x', 'y'])))))
