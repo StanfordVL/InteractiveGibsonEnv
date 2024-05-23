@@ -3,7 +3,7 @@ from multiprocessing import Process
 import  os
 import json
 from igibson.evaluation.action_sequence.action_sequence_evaluator import ActionSequenceEvaluator
-
+from collections import defaultdict
 
 def evaluate_action_sequence_parsed(demo_dir,actions,demo_name,rst_path):
     os.makedirs(os.path.dirname(rst_path),exist_ok=True)
@@ -21,6 +21,42 @@ def evaluate_action_sequence_raw(demo_dir,actions_raw,demo_name,rst_path):
     with open(rst_path, 'w') as t_f:
         json.dump(rst,t_f,indent=4)
     return rst
+
+def evaluate_trajectory(final_rst_path, rst_dir):
+    with open(final_rst_path, 'r') as f:
+        final_rst = json.load(f)
+    summary_rst = {
+        'tot_tasks': 0,
+        'trajectory_error': 0,
+        'error_type': defaultdict(int),
+    }
+    for demostat in final_rst:
+        summary_rst['tot_tasks'] += 1
+        if demostat['llm_rst']["all_goal_satisfied_ig"]:
+            continue
+        for action in demostat['llm_rst']["execution_info"]:
+            if action['action']=='teleport_all':
+                continue
+            if "execution_success" in action and action["execution_success"]:
+                continue
+            error_type=None
+            if "errors" not in action:
+                print('--------------------')
+                print(action)
+            for error in action["errors"]:
+                error_type = error["error_type"]
+                if error_type=="ErrorType.WRONG_TEMPORAL_ORDER":
+                    continue
+                break
+
+            if error_type is not None:
+                summary_rst['error_type'][error_type] += 1
+                summary_rst['trajectory_error'] += 1
+                break
+    summary_rst['trajectory_error_rate'] = summary_rst['trajectory_error'] / summary_rst['tot_tasks'] if summary_rst['tot_tasks'] > 0 else 0
+    with open(os.path.join(rst_dir, 'trajectory_rst.json'), 'w') as f:
+        f.write(json.dumps(summary_rst, indent=4))
+    return summary_rst
 
 def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_output_dir=None):
     assert llm_output_path is not None or llm_output_dir is not None
@@ -103,5 +139,8 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
 
     return final_rst
 
+def main(demo_dir, rst_dir,llm_output_path=None,llm_output_dir=None):
+    evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=llm_output_path,llm_output_dir=llm_output_dir)
+    evaluate_trajectory(os.path.join(rst_dir,'final_rst.json'),rst_dir)
 if __name__ == "__main__":
-    fire.Fire(evaluate_action_sequence_batch)
+    fire.Fire(main)
