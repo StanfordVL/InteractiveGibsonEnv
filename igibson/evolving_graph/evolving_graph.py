@@ -73,6 +73,7 @@ class ErrorInfo:
         self.error_type = []
         self.error_info = []
         self.hidden_add = False
+        self.special_function_1 = False # this function is used to handle clean, False is dusty related, while True is stained related
     def update_error(self, error_type: ErrorType, error_info):
         if not self.hidden_add:
             self.error_type.append(str(error_type))
@@ -1018,6 +1019,10 @@ class EvolvingGraph():
     
     def clean(self, error_info: ErrorInfo, obj):
         # clean will clean both dust and stain
+        if error_info.special_function_1:
+            return self.clean_stain(error_info, obj)
+        else:
+            return self.clean_dust(error_info, obj)
         flag1 = self.clean_dust(error_info, obj)
         flag2 = self.clean_stain(error_info, obj)
         rst = flag1 and flag2

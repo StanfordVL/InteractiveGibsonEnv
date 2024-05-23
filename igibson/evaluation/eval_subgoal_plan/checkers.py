@@ -9,7 +9,7 @@ from igibson.evaluation.eval_subgoal_plan.state_action_translator import StateAc
 from igibson.evolving_graph.eval_evolving_graph_env import EvalGraphEnv
 from igibson.evolving_graph.evolving_graph import EvolvingGraph, GraphState, ErrorType, ErrorInfo
 from igibson.evaluation.eval_subgoal_plan.tl_formula.simple_tl_parser import parse_simple_tl
-from igibson.evaluation.eval_subgoal_plan.tl_formula.simple_tl import SimpleTLExpression, Proposition, Action
+from igibson.evaluation.eval_subgoal_plan.tl_formula.simple_tl import SimpleTLExpression, Proposition, Action, SimpleTLNot, SimpleTLPrimitive
 from igibson.evaluation.eval_subgoal_plan.tl_formula.simple_tl import extract_args, extract_propositions_and_actions, sample_a_determined_path_from_tl_expr
 from typing import List, Dict, Any, Optional, Tuple, Union
 
@@ -157,7 +157,6 @@ class SyntacticChecker(BaseChecker):
         self.error_info = error_info
 
     
-
     def run_checker(self) -> bool:
         try:
             self.parsed_tl_expression = parse_simple_tl(self.tl_formula, self.vocab.predicate_list, self.vocab.action_list)
@@ -244,6 +243,15 @@ class RuntimeChecker(BaseChecker):
         self.error_info = []
         self.executable = False
         self.run_result = self.run_checker() if semantic_rst else False
+
+    def get_special_state(self, subgoal: SimpleTLExpression):
+        if isinstance(subgoal, SimpleTLNot) and isinstance(subgoal.arg, SimpleTLPrimitive):
+            state_name = subgoal.arg.prop_or_action.name
+            if 'stained' in state_name:
+                return 'stained'
+            if 'dusty' in state_name:
+                return 'dusty'
+        return None
     
     def execute_subgoal_plan(self):
         prev_action_env_state = copy.deepcopy(self.env.action_env.cur_state)
@@ -285,6 +293,7 @@ class RuntimeChecker(BaseChecker):
                 next_subgoal = cur_remained_subgoals[1] if len(cur_remained_subgoals) > 1 else None
                 self.env.update_evolving_graph_state(copy.deepcopy(prev_action_env_state), copy.deepcopy(prev_saved_history_state))
                 is_combined_states, action_candidates = self.state_action_translator.map_subgoal_to_action_sequence_dynamic_version(cur_subgoal, next_subgoal, self.env.action_env)
+                special_state = self.get_special_state(cur_subgoal)
                 for action_set in action_candidates:
                     self.env.update_evolving_graph_state(copy.deepcopy(prev_action_env_state), copy.deepcopy(prev_saved_history_state))
                     cur_error_info_list = copy.deepcopy(prev_error_info_list)
@@ -293,12 +302,12 @@ class RuntimeChecker(BaseChecker):
                     for action in action_set:
                         action_name = action['action']
                         action_args = action['object']
-                        rst, error_info = self.env.eval_subgoal_apply_action(action_name, action_args)
+                        rst, error_info = self.env.eval_subgoal_apply_action(action_name, action_args, special_state)
                         if not rst:
                             error_dict = error_info.report_error()
                             error_type = error_dict['error_type']
                             cur_error_info_list.append([error_info.report_error(), cur_subgoal, action])
-                            if error_type[0] != str(ErrorType.ADDITIONAL_STEP):
+                            if all(t != str(ErrorType.ADDITIONAL_STEP) for t in error_type):
                                 success = False
                                 failed_action_seq = copy.deepcopy(cur_executed_action_list) + action_set
                                 failed_error_info_list = copy.deepcopy(cur_error_info_list)

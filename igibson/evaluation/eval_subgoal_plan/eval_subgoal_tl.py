@@ -136,7 +136,7 @@ def get_all_task_list():
     return task_list
 
 def get_test_task_list():
-    t1 = 'cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08'
+    t1 = 'cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44'
     return [t1]
 
 counter = multiprocessing.Value('i', 0)
@@ -176,7 +176,7 @@ def eval_subgoal_plan():
     eval_stat_path = './igibson/log/all_checking_gpt4.json'
     eval_statistics = EvalStatistics(task_list, eval_stat_path)
     real_task_list = [task_name for task_name in task_list if not eval_statistics.check_evaluated_task(task_name)]
-    real_task_list = real_task_list[:18] if len(real_task_list) > 18 else real_task_list
+    real_task_list = real_task_list[:12] if len(real_task_list) > 12 else real_task_list
     print(len(real_task_list))
 
     n_proc = min(multiprocessing.cpu_count(), len(real_task_list), 6)
@@ -197,7 +197,7 @@ def eval_subgoal_plan():
 def eval_subgoal_plan_single():
     demo_dir = './igibson/data/virtual_reality'
     plan_path = './igibson/evaluation/eval_subgoal_plan/resources/log5-16-00.json'
-    eval_stat_path = './igibson/log/all_checking.json'
+    eval_stat_path = './igibson/log/all_checking_gpt4.json'
     # task_list = get_all_task_list()
     task_list = get_test_task_list()
     # eval_statistics = EvalStatistics(task_list, eval_stat_path)

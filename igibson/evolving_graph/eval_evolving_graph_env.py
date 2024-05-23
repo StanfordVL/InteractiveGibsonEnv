@@ -183,9 +183,13 @@ class EvalGraphEnv(BaseEnv):
             self.action_env.history_states.append(cur_state)
         return flag
     
-    def eval_subgoal_apply_action(self, action, obj):
+    def eval_subgoal_apply_action(self, action, obj, special_state=None):
         cur_state=deepcopy(self.action_env.cur_state)
         cur_action_error_info = ErrorInfo()
+        if action == 'CLEAN' and special_state == 'stained':
+            cur_action_error_info.special_function_1 = True
+        elif action == 'CLEAN' and special_state == 'dusty':
+            cur_action_error_info.special_function_1 = False
         if isinstance(action,str):
             action_idx=EvalActions[action].value
         obj_list=[self.obj_name_to_obj[obj_name.strip()] for obj_name in obj.strip().split(",")]

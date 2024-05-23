@@ -49,6 +49,8 @@ for task, task_info in stats.items():
             error_type = error_info['error_type']
             real_info = error_info['error_info']
             tot_runtime_errors += len(error_type)
+            if len(error_type) >= 2:
+                print(task, error_type)
             for t in error_type:
                 if 'missing_step' in t.lower():
                     missing_step_errors += 1

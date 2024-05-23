@@ -146,7 +146,6 @@ class StateActionTranslator:
                 important_list.append(inventory_obj)
         return important_list
 
-
     def spare_hand_not_important(self, cur_hand_state: Dict[str, Any], important_items: List[str]):
         left_hand_holding = cur_hand_state['left_hand']
         right_hand_holding = cur_hand_state['right_hand']
