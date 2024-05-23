@@ -91,6 +91,9 @@ def evaluate_action_sequence_batch(demo_dir, rst_dir,llm_output_path=None,llm_ou
     with open(os.path.join(rst_dir,'final_rst.json'), 'w') as f:
         f.write(json.dumps(final_rst,indent=4))
 
+    summary_rst['tot_predicates']=summary_rst['tot_edge_predicates']+summary_rst['tot_node_predicates']
+    summary_rst['satisfied_predicates']=summary_rst['satisfied_edge_predicates']+summary_rst['satisfied_node_predicates']
+    summary_rst['predicate_succ_rate']=summary_rst['satisfied_predicates']/summary_rst['tot_predicates'] if summary_rst['tot_predicates']>0 else 0
     summary_rst['goal_succ_rate']=summary_rst['satisfied_goals']/summary_rst['tot_goals'] if summary_rst['tot_goals']>0 else 0
     summary_rst['edge_predicate_succ_rate']=summary_rst['satisfied_edge_predicates']/summary_rst['tot_edge_predicates'] if summary_rst['tot_edge_predicates']>0 else 0
     summary_rst['node_predicate_succ_rate']=summary_rst['satisfied_node_predicates']/summary_rst['tot_node_predicates'] if summary_rst['tot_node_predicates']>0 else 0

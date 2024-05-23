@@ -859,10 +859,21 @@ class ActionEnv:
     def right_place_under(self,obj:URDFObject):
         return self.place_under(obj,'right_hand')
     
-    def clean(self,obj:URDFObject):
+    def clean(self,obj):
         # clean will clean both dust and stain
-        flag1=self.clean_dust(obj)
-        flag2=self.clean_stain(obj)
+        flag1=False
+        flag2=False
+        try_clean_dust=False
+        try_clean_stain=False
+        if not (object_states.Dusty in obj.states and obj.states[object_states.Dusty].get_value()==False):
+            flag1=self.clean_dust(obj)
+            try_clean_dust=True
+        if not (object_states.Stained in obj.states and obj.states[object_states.Stained].get_value()==False):
+            flag2=self.clean_stain(obj)
+            try_clean_stain=True
+        if not (try_clean_dust or try_clean_stain):
+            print("Clean failed, object is already clean")
+            return False
         return flag1 or flag2
 
     

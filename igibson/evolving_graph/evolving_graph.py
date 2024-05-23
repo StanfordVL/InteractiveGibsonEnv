@@ -687,7 +687,7 @@ class EvolvingGraph():
     
     def clean_dust(self,obj):
         ## pre conditions
-        class CleanDustPrecond(FoolHandAllowedHighLevelPrecond):
+        class CleanDustPrecond(FullHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_dust_precond)
@@ -737,7 +737,7 @@ class EvolvingGraph():
     
     def clean_stain(self,obj):
         ## pre conditions
-        class CleanStainPrecond(FoolHandAllowedHighLevelPrecond):
+        class CleanStainPrecond(FullHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_stain_precond)
@@ -971,8 +971,19 @@ class EvolvingGraph():
     
     def clean(self,obj):
         # clean will clean both dust and stain
-        flag1=self.clean_dust(obj)
-        flag2=self.clean_stain(obj)
+        flag1=False
+        flag2=False
+        try_clean_dust=False
+        try_clean_stain=False
+        if not (object_states.Dusty in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Dusty]==False):
+            flag1=self.clean_dust(obj)
+            try_clean_dust=True
+        if not (object_states.Stained in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Stained]==False):
+            flag2=self.clean_stain(obj)
+            try_clean_stain=True
+        if not (try_clean_dust or try_clean_stain):
+            print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object is not dusty or stained (CLEAN)")
+            return False
         return flag1 or flag2
 
     
@@ -1052,7 +1063,7 @@ class HighLevelActionPrecond(BasePrecond):
             return False
         return True
     
-class FoolHandAllowedHighLevelPrecond(BasePrecond):
+class FullHandAllowedHighLevelPrecond(BasePrecond):
     def __init__(self,obj,object_state,state_value,name_to_obj):
         super().__init__(obj,name_to_obj)
         self.precond_list.appendleft(self.high_level_action_precond)

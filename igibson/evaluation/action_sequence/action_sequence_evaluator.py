@@ -170,7 +170,7 @@ class ActionSequenceEvaluator():
         goal_rst={
         'tot_goals': len(self.task.goal_conditions),
         'satisfied_goals': len(goal_status['satisfied']),
-        'all_goal_satisfied_ig':len(self.task.goal_conditions)==len(self.task.goal_conditions),
+        'all_goal_satisfied_ig':len(goal_status['satisfied'])==len(self.task.goal_conditions),
         'tot_goal_predicates':tot_edge_predicates+tot_node_predicates,
         'tot_edge_predicates': tot_edge_predicates,
         'tot_node_predicates': tot_node_predicates,
