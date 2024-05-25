@@ -5,7 +5,7 @@ from igibson.evaluation.action_sequence.action_sequence_evaluator import ActionS
 
 def get_llm_prompt(demo_path,rst_path):
     env=ActionSequenceEvaluator(demo_path=demo_path)
-    prompt=env.get_prompt_zeroshot()
+    prompt=env.get_prompt()
     demo_name=demo_path.split("\\")[-1].replace(".hdf5","")
     rst={
         "identifier":demo_name,
