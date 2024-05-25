@@ -32,6 +32,11 @@ UNARY_STATES=[
     'burnt',
 ]
 
+ACTION_PARAMETER_LENGTH={
+    "LEFT_PLACE_NEXTTO_ONTOP":2,
+    "RIGHT_PLACE_NEXTTO_ONTOP":2,
+}
+
 class ActionSequenceEvaluator():
     def __init__(self, headless=True,**kwargs) -> None:
         self.transition_model=EvalEnv(mode="headless" if headless else "gui_non_interactive",
@@ -39,6 +44,28 @@ class ActionSequenceEvaluator():
         self.task = self.transition_model.task
         self.evolving_graph=EvalGraphEnv(task=self.task,**kwargs)
         self.get_name_mapping()
+        self.evaluation_info={
+            "error_type":{
+                "output_parsable":None,
+                "parameter_error":None,
+            },
+            "goal_rst":{
+                "all_goal_satisfied_ig":None,
+                "all_goal_satisfied_graph":None,
+                "tot_predicates":None,
+                "tot_edge_predicates":None,
+                "tot_node_predicates":None,
+                "satisfied_predicates":None,
+                "satisfied_edge_predicates":None,
+                "satisfied_node_predicates":None,
+            },
+            'initial_state':None,
+            'target_state':None,
+            'satisfication_info':None,
+            'objects':None,
+            "predicate_info":None,
+            "execution_info":None,
+        }
         
 
     def get_name_mapping(self):
@@ -106,36 +133,23 @@ class ActionSequenceEvaluator():
             new_action=[]
         return new_action
     
+    def evaluate_format(self,actions):
+        if len(actions)==0:
+            self.evaluation_info["error_type"]["output_parsable"]="No actions found"
+            return False
+        for action in actions:
+            if "action" not in action or "object" not in action:
+                self.evaluation_info["error_type"]["output_parsable"]="action or object not found"
+                return False
+            parameter_length=len(action["object"].strip().split(","))
+            if parameter_length>1:
+                action_name=action["action"].strip()
+                if action_name not in ACTION_PARAMETER_LENGTH:
+                    self.evaluation_info["error_type"]["parameter_correct"]=f"{action_name} only support 1 parameter"
+                    return False
+        return True
     
-    def evaluate_goal(self,actions):
-
-        execution_info=[]
-        for idx,action in enumerate(actions):
-            rst={}
-            try:
-                action_name=action["action"]
-                obj=action["object"]
-                rst["action"]=action_name
-                rst['object']=obj
-                flag=self.transition_model.apply_action(action_name,obj)
-                rst['execution_success']=flag
-            except Exception as e:
-                msg=traceback.format_exc()
-                rst["unknown_execution_error"]=str(e)+msg
-                rst["execution_success"]=False
-            rst['step']=idx
-            rst['current_goal_condition']=self.task.check_success()
-            execution_info.append(rst)
-
-        if not self.task.check_success()[0]:
-            self.transition_model.final_step()
-            rst={
-                'action':"teleport_all",
-                'step':len(actions),
-                'current_goal_condition':self.task.check_success(),
-            }
-
-        execution_info.append(rst)
+    def get_goal_state(self):
         _,goal_status=self.task.check_success()
 
         edge_predicates=defaultdict(list)
@@ -171,11 +185,12 @@ class ActionSequenceEvaluator():
         'tot_goals': len(self.task.goal_conditions),
         'satisfied_goals': len(goal_status['satisfied']),
         'all_goal_satisfied_ig':len(goal_status['satisfied'])==len(self.task.goal_conditions),
-        'tot_goal_predicates':tot_edge_predicates+tot_node_predicates,
+        'tot_predicates':tot_edge_predicates+tot_node_predicates,
         'tot_edge_predicates': tot_edge_predicates,
         'tot_node_predicates': tot_node_predicates,
         'satisfied_edge_predicates': tot_edge_predicates_satisfied,
         'satisfied_node_predicates': tot_node_predicates_satisfied,
+        "satisfied_predicates":tot_edge_predicates_satisfied+tot_node_predicates_satisfied,
         'edge_predicates_succ_rate': tot_edge_predicates_satisfied/tot_edge_predicates if tot_edge_predicates>0 else 0,
         'node_predicates_succ_rate': tot_node_predicates_satisfied/tot_node_predicates if tot_node_predicates>0 else 0,
         'tot_predicates_succ_rate': (tot_edge_predicates_satisfied+tot_node_predicates_satisfied)/(tot_edge_predicates+tot_node_predicates) if (tot_edge_predicates+tot_node_predicates)>0 else 0,
@@ -183,10 +198,51 @@ class ActionSequenceEvaluator():
         'node_predicates':node_predicates,
         'edge_predicates':edge_predicates,
         'predicate_info':predicate_info,
-        'execution_info':execution_info,
+        "satisfication_info":goal_status,
+        # 'execution_info':execution_info,
         }
-
+        for k,v in self.evaluation_info.items():
+            if isinstance(v,dict):
+                for kk,vv in v.items():
+                    if kk in goal_rst:
+                        self.evaluation_info[k][kk]=goal_rst[kk]        
+            elif k in goal_rst:
+                self.evaluation_info[k]=goal_rst[k]
         return goal_rst
+
+
+    def evaluate_goal(self,actions,ending_step=None):
+
+        execution_info=[]
+        for idx,action in enumerate(actions):
+            if ending_step is not None and idx>ending_step:
+                break
+            rst={}
+            try:
+                action_name=action["action"]
+                obj=action["object"]
+                rst["action"]=action_name
+                rst['object']=obj
+                flag=self.transition_model.apply_action(action_name,obj)
+                rst['execution_success']=flag
+            except Exception as e:
+                msg=traceback.format_exc()
+                rst["unknown_execution_error"]=str(e)+msg
+                rst["execution_success"]=False
+            rst['step']=idx
+            rst['current_goal_condition']=self.task.check_success()
+            execution_info.append(rst)
+
+        if not self.task.check_success()[0]:
+            self.transition_model.final_step()
+            rst={
+                'action':"teleport_all",
+                'step':len(actions),
+                'current_goal_condition':self.task.check_success(),
+            }
+
+        execution_info.append(rst)
+        return self.get_goal_state()
     
 
     def evaluate_trajectory(self,actions):
@@ -204,36 +260,39 @@ class ActionSequenceEvaluator():
                 rst_str=f.getvalue()
                 rst['execution_success']=flag
                 if not flag:
-                    rst.update(self.evaluate_trajectory_parse_error(rst_str))
+                    errors=self.evaluate_trajectory_parse_error(rst_str)
+                    for error in errors["errors"]:
+                        self.evaluation_info["error_type"][error['error_type']]=error['error_reason']
+                    rst.update(errors)
             except Exception as e:
                 msg=traceback.format_exc()
                 rst["errors"]=[{
-                    "error_type":"Syntax Error",
+                    "error_type":"name_hullucination",
                     "error_reason":str(e)+msg
                 }]
-                rst["execution_success"]=False
+                flag=False
+                rst["execution_success"]=flag
+                self.evaluation_info["name_hullucination"]=str(e)+msg
             rst['step']=idx
             execution_info.append(rst)
+            self.evaluation_info
+            if not flag:
+                break
 
-        action_errors=defaultdict(list)
-        error_types=defaultdict(list)
-        error_steps=0
-        for idx,info in enumerate(execution_info):
-            if "errors" in info:
-                error_steps+=1
-                for error in info["errors"]:
-                    action_errors[info["action"]].append(error)
-                    error_types[error["error_type"]].append(error)
-        
-        return {
+        goal_rst={
             'tot_steps':len(actions),
+            'tot_executed_steps':len(execution_info),
             'all_goal_satisfied_graph':self.evolving_graph.action_env.cur_state.check_success(self.task),
-            'error_steps':error_steps,
-            'action_errors':action_errors,
-            'error_types':error_types,
-            'error_summary':{k:len(v) for k,v in error_types.items()},
             'execution_info':execution_info
         }
+        for k,v in self.evaluation_info.items():
+            if isinstance(v,dict):
+                for kk,vv in v.items():
+                    if kk in goal_rst:
+                        self.evaluation_info[k][kk]=goal_rst[kk]        
+            elif k in goal_rst:
+                self.evaluation_info[k]=goal_rst[k]
+        return goal_rst
             
     def evaluate_trajectory_parse_error(self,rst_str):
         lines=rst_str.strip().split("\n")
@@ -247,23 +306,26 @@ class ActionSequenceEvaluator():
                     "error_reason":error_reason
                 })
         return {"errors":errors}
-                
-    def evaluate_action_sequence(self,actions):
-        goal_rst={}
-        goal_rst['initial_state']=self.get_initial_state().strip().split("\n")
-        goal_rst['target_state']=self.get_target_state().strip().split("\n")
-        goal_rst['objects']=self.name_mapping
-        goal_rst.update(self.evaluate_goal(actions))
-        trajectory_rst=self.evaluate_trajectory(actions)
-        execution_info=[]
-        for idx,info in enumerate(goal_rst['execution_info']):
-            execution_info.append(info)
-        for idx,info in enumerate(trajectory_rst['execution_info']):
-            execution_info[idx].update(info)
-        goal_rst.update(trajectory_rst)
-        goal_rst.update({"execution_info":execution_info})
-        return goal_rst
     
+    def evaluate_parsed(self,actions):
+        self.evaluation_info['initial_state']=self.get_initial_state().strip().split("\n")
+        self.evaluation_info['target_state']=self.get_target_state().strip().split("\n")
+        self.evaluation_info['objects']=self.name_mapping
+        tr_rst=self.evaluate_trajectory(actions)
+        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executed_steps']+1)
+        return self.evaluation_info
+    
+    def evaluate_all(self,response):
+        self.evaluation_info['initial_state']=self.get_initial_state().strip().split("\n")
+        self.evaluation_info['target_state']=self.get_target_state().strip().split("\n")
+        self.evaluation_info['objects']=self.name_mapping
+        actions=self.parse_response(response)
+        if not self.evaluate_format(actions):
+            self.get_goal_state()
+            return self.evaluation_info
+        tr_rst=self.evaluate_trajectory(actions)
+        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executed_steps']+1)
+        return self.evaluation_info
 
     
 

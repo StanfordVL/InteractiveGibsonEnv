@@ -36,7 +36,7 @@
         "object": "sink_37"
     },
     {
-        "action": "LEFT_PLACE_INSIDE",
+        "action": "LEFT_PLACE_NEXTTO",
         "object": "sink_37"
     },
     {
