@@ -78,7 +78,7 @@ def get_summary(output,rst_dir,file_name='summary.json'):
                 if isinstance(v,dict):
                     for kk,vv in v.items():
                         if vv is not None:
-                            if isinstance(vv,int):
+                            if isinstance(vv,int) or isinstance(vv,float):
                                 summary[k][kk]=summary[k].get(kk,0)+vv
                             elif isinstance(vv,bool):
                                 summary[k][kk]=summary[k].get(kk,0)+int(vv)

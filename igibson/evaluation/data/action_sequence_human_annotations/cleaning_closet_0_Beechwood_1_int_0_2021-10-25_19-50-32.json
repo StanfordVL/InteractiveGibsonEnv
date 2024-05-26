@@ -12,10 +12,6 @@
         "object": "paper_towel_0"
     },
     {
-        "action": "SOAK",
-        "object": "paper_towel_0"
-    },
-    {
         "action": "CLEAN",
         "object": "room_floor_closet_0"
     },

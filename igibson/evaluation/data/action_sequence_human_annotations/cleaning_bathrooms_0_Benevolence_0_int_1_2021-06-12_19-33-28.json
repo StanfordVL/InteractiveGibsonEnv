@@ -37,10 +37,6 @@
     },
     {
         "action": "CLEAN",
-        "object": "bathtub_4"
-    },
-    {
-        "action": "CLEAN",
         "object": "toilet_6"
     },
     {

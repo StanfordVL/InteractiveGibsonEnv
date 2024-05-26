@@ -85,6 +85,18 @@ class GraphState():
                 category_mapping[obj.name]=category
         return category_mapping
     
+    def get_all_inhand_objects(self,hand):
+        inhand_objects=[]
+        def traverse(node):
+            inhand_objects.append(node.obj)
+            for child in node.children.keys():
+                inhand_objects.append(child)
+                traverse(node.children[child])
+        v=self.robot_inventory[hand]
+        if v is not None:
+            traverse(self.relation_tree.get_node(v))
+        return set(inhand_objects)
+    
     def get_name_mapping(self,task:BehaviorTask):
         # map bddl name to obj.name
         name_mapping={}
@@ -170,15 +182,23 @@ class GraphState():
         name_mapping=self.get_name_mapping(task)
         state_dict=self.get_state_dict(task)
 
-
-        goal_combos=[]
-        for goal_combo in task.ground_goal_state_options:
-            goal_combos.append([head.terms for head in goal_combo])
-
-        for goal_combo in goal_combos:
-            if self._check_goal_combo(goal_combo,name_mapping,state_dict):
-                return True
-        return False
+        subgoals=[]
+        subgoal_success=[]
+        for cond in task.goal_conditions:
+            subgoals.append(cond.terms)
+            subgoal_options=cond.flattened_condition_options
+            flag=False
+            for subgoal_option in subgoal_options:
+                flag=self._check_goal_combo(subgoal_option,name_mapping,state_dict)
+                if flag:
+                    break
+            subgoal_success.append(flag)
+        return {
+            "success":all(subgoal_success),
+            "subgoals":subgoals,
+            "subgoal_success":subgoal_success
+        }
+                    
 
     def _check_goal_combo(self,goal_combo,name_mapping,state_dict):
         for goal in goal_combo:
@@ -187,7 +207,19 @@ class GraphState():
         return True
     
     def _check_goal(self,goal,name_mapping,state_dict):
+        #remove inner [] in goal, only keep the first level
+        def remove_inner_brackets(input_list):
+            result = []
+            for element in input_list:
+                if isinstance(element, list):
+                    result.extend(remove_inner_brackets(element))
+                else:
+                    result.append(element)
+            return result
+        goal=remove_inner_brackets(goal)
         if 'not' in goal:
+            if not (len(goal)==3 or len(goal)==4):
+                print(goal)
             assert len(goal)==3 or len(goal)==4
             if len(goal)==3:
                 state=goal[1]
@@ -208,6 +240,8 @@ class GraphState():
                 return True
             
         else:
+            if not (len(goal)==2 or len(goal)==3):
+                print(goal)
             assert len(goal)==2 or len(goal)==3
             if len(goal)==2:
                 state=goal[0]
@@ -269,6 +303,7 @@ class EvolvingGraph():
                     return False
             return False
         return True
+    
 
 
     def grasp(self,obj:URDFObject,hand:str):
@@ -285,7 +320,7 @@ class EvolvingGraph():
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
-                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1:
+                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1.5:
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
 
@@ -316,6 +351,16 @@ class EvolvingGraph():
             self.cur_state.graph.remove_edge(predecessor,obj.name)
         self.cur_state.robot_inventory[hand]=obj.name
         self.cur_state.relation_tree.remove_ancestor(obj.name)
+        node=self.cur_state.relation_tree.get_node(obj.name)
+        node_to_remove=[]
+        obj_volumn=obj.bounding_box[0]*obj.bounding_box[1]*obj.bounding_box[2]
+        if node is not None:
+            for child_name in node.children.keys():
+                child_obj=self.name_to_obj[child_name]
+                if child_obj.bounding_box[0]*child_obj.bounding_box[1]*child_obj.bounding_box[2]>5*obj_volumn:
+                    node_to_remove.append(child_name)
+        for child_name in node_to_remove:
+            self.cur_state.relation_tree.remove_ancestor(child_name)
         print(f"Grasp {obj.name} success")
         return True
 
@@ -1040,6 +1085,10 @@ class PlacePrecond(BasePrecond):
             return False
         
         if self.obj==self.name_to_obj[state.robot_inventory[self.hand]]:
+            print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
+            return False
+        
+        if self.obj.name in state.get_all_inhand_objects(self.hand):
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
             return False
         return True

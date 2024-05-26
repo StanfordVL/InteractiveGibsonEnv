@@ -154,19 +154,27 @@ class ActionSequenceEvaluator():
 
         edge_predicates=defaultdict(list)
         node_predicates=defaultdict(list)
+        tot_edge_predicates=0
+        tot_node_predicates=0
+        tot_edge_predicates_satisfied=0
+        tot_node_predicates_satisfied=0
         for idx,goal_condition in enumerate(self.task.goal_conditions):
+            flag_node=False
+            flag_edge=False
             flag=True if idx in goal_status['satisfied'] else False
             for relation in BINARY_STATES:
                 if relation in goal_condition.terms:
                     edge_predicates[relation].append(flag)
+                    flag_edge=True
             for relation in UNARY_STATES:
                 if relation in goal_condition.terms:
                     node_predicates[relation].append(flag)
-
-        tot_edge_predicates=sum([len(v) for v in edge_predicates.values()])
-        tot_node_predicates=sum([len(v) for v in node_predicates.values()])
-        tot_edge_predicates_satisfied=sum([sum(v) for v in edge_predicates.values()])
-        tot_node_predicates_satisfied=sum([sum(v) for v in node_predicates.values()])
+                    flag_node=True
+            tot_edge_predicates+=int(flag_edge)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+            tot_node_predicates+=int(flag_node)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+            if flag:
+                tot_edge_predicates_satisfied+=int(flag_edge)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+                tot_node_predicates_satisfied+=int(flag_node)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
 
         predicate_info={}
         for k,v in edge_predicates.items():
@@ -282,7 +290,7 @@ class ActionSequenceEvaluator():
         goal_rst={
             'tot_steps':len(actions),
             'tot_executed_steps':len(execution_info),
-            'all_goal_satisfied_graph':self.evolving_graph.action_env.cur_state.check_success(self.task),
+            'all_goal_satisfied_graph':self.evolving_graph.action_env.cur_state.check_success(self.task)["success"],
             'execution_info':execution_info
         }
         for k,v in self.evaluation_info.items():

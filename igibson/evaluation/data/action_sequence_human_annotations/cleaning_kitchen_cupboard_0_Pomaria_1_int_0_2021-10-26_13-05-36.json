@@ -4,10 +4,6 @@
         "object": "sink_37"
     },
     {
-        "action": "TOGGLE_OFF",
-        "object": "sink_37"
-    },
-    {
         "action": "RIGHT_GRASP",
         "object": "paper_towel_0"
     },
@@ -18,6 +14,10 @@
     {
         "action": "SOAK",
         "object": "paper_towel_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_37"
     },
     {
         "action": "RIGHT_GRASP",
