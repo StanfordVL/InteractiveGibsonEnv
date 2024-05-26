@@ -1,7 +1,5 @@
-zero_shot="""
-You are a software engineer who will be writing action definitions for a household robot in the PDDL planning language given the problem file and predicates in domain file_
-
-The following is predicates defined in this domain file_ Pay attention to the types for each predicate_
+prompt="""
+The following is predicates defined in this domain file. Pay attention to the types for each predicate.
 (define (domain igibson)
 
     (:requirements :strips :adl :typing :negative-preconditions)
@@ -46,28 +44,74 @@ The following is predicates defined in this domain file_ Pay attention to the ty
         (holding ?obj1 - object)
         (handsfull ?agent1 - agent)
         (in_reach_of_agent ?obj1 - object)
+        (same_obj ?obj1 - object ?obj2 - object)
     )
     ;; Actions to be predicted
 )
-
-Objective: Given the problem file of pddl, which defines objects in the task (:objects), initial conditions (:init) and goal conditions (:goal), write the body of PDDL actions (:precondition and :effect) given specific action names and parameters_ 
-
-Each PDDL action definition consists of four main components: action name, parameters, precondition, and effect_ Here is the general format to follow:
+Objective: Given the problem file of pddl, which defines objects in the task (:objects), initial conditions (:init) and goal conditions (:goal), write the body of PDDL actions (:precondition and :effect) given specific action names and parameters. 
+Each PDDL action definition consists of four main components: action name, parameters, precondition, and effect. Here is the general format to follow:
 (:action [action name]
   :parameters ([action parameters])
   :precondition ([action precondition])
   :effect ([action effect]) 
 )
+The :parameters is the list of variables on which the action operates. It lists variable names and variable types. 
+The :precondition is a first-order logic sentence specifying preconditions for an action. The precondition consists of predicates and 3 possible logical operators: or, and, and not. The precondition should be structured in Disjunctive Normal Form (DNF), meaning an OR of ANDs. The not operator should only be used within these conjunctions. For example, (or (and (predicate1 ?x) (predicate2 ?y)) (and (predicate3 ?x)))
+The :effect lists the changes which the action imposes on the current state. The precondition consists of predicates and 3 possible logical operators: and, not and when. 1. The effects should generally be several effects connected by AND operators. 2. For each effect, if it is a conditional effect, use WHEN to check the conditions. The semantics of (when [condition] [effect]) are as follows: If [condition] is true before the action, then [effect] occurs afterwards. 3. If it is not a conditional effect, use predicates directly. 4. The NOT operator is used to negate a predicate, signifying that the condition will not hold after the action is executed. And example of effect is (and (when (predicate1 ?x) (not (predicate2 ?y))) (predicate3 ?x))
+In any case, the occurrence of a predicate should agree with its declaration in terms of number and types of arguments defined in DOMAIN FILE at the beginning.
+Here are some other commonly used actions and their PDDL definition:
+(:action navigate_to
+        :parameters (?objto - object ?agent - agent)
+        :precondition (not (in_reach_of_agent ?objto))
+        :effect (and (in_reach_of_agent ?objto) 
+                    (forall 
+                        (?objfrom - object) 
+                        (when 
+                            (and 
+                                (in_reach_of_agent ?objfrom) 
+                                (not (same_obj ?objfrom ?objto))
+                            )
+                            (not (in_reach_of_agent ?objfrom))
+                        )
+                    )
+                )
+)
+(:action grasp
+:parameters (?obj - object ?agent - agent)
+:precondition (and (not (holding ?obj))
+                    (not (handsfull ?agent)) 
+                    (in_reach_of_agent ?obj)
+                    (not (exists (?obj2 - object) (and (inside ?obj ?obj2) (not (open ?obj2)))))
+                )
+:effect (and (holding ?obj) 
+                (handsfull ?agent)
+                ;; Conditional effects for all predicates involving ?obj and ?other_obj
+                (forall (?other_obj - object)
+                    (and (not (inside ?obj ?other_obj))
+                            (not (ontop ?obj ?other_obj))
+                            (not (under ?obj ?other_obj))
+                            (not (under ?other_obj ?obj))
+                            (not (nextto ?obj ?other_obj))
+                            (not (nextto ?other_obj ?obj))
+                            (not (onfloor ?obj ?other_obj))
+                            ;; Add other predicates as needed
+                    )
+                )
+            )
+)
 
-The :parameters is the list of variables on which the action operates_ It lists variable names and variable types_ 
+hint: 
+1. In many cases WHEN is not necessary. Don't enforce the use of WHEN
+2. You MUST only use predicates and object types exactly as they appear in the domain file at the beginning. Now given the input, please fill in the action body for each provided actions in PDDL format. 
+For actions to be finished, write their preconditions and effects, and return in standard PDDL format:
+(:action [action name]
+  :parameters ([action parameters])
+  :precondition ([action precondition])
+  :effect ([action effect]) 
+)
+Concatenate all actions PDDL string into a single string. Output in json format where key is "output" and value is your output string: {{"output": YOUR OUTPUT STRING}}
 
-The :precondition is a first-order logic sentence specifying preconditions for an action_ The precondition consists of predicates and 3 possible logical operators: or, and, and not_ The precondition should be structured in Disjunctive Normal Form (DNF), meaning an OR of ANDs_ The not operator should only be used within these conjunctions_ For example, (or (and (predicate1 ?x) (predicate2 ?y)) (and (predicate3 ?x)))
-
-The :effect lists the changes which the action imposes on the current state_ The precondition consists of predicates and 3 possible logical operators: and, not and when_ 1_ The effects should generally be several effects connected by AND operators_ 2_ For each effect, if it is a conditional effect, use WHEN to check the conditions_ The semantics of (when [condition] [effect]) are as follows: If [condition] is true before the action, then [effect] occurs afterwards_ 3_ If it is not a conditional effect, use predicates directly_ 4_ The NOT operator is used to negate a predicate, signifying that the condition will not hold after the action is executed_ And example of effect is (and (when (predicate1 ?x) (not (predicate2 ?y))) (predicate3 ?x))
-
-In any case, the occurrence of a predicate should agree with its declaration in terms of number and types of arguments defined in DOMAIN FILE at the beginning_
-
-Here is an example of the input problem file and unfinished actions after ; is a comment to explain the meaning of each line
+Here is an example of the input problem file and unfinished action:
 Input:
 Problem file:
 (define (problem cleaning_floor_0)
@@ -117,7 +161,7 @@ Action to be finished:
   :effect ()
 )
 Output:
-(:action navigate_to
+{{"output":"(:action navigate_to
         :parameters (?objto - object ?agent - agent)
         :precondition (not (in_reach_of_agent ?objto))
         :effect (and (in_reach_of_agent ?objto) 
@@ -126,7 +170,7 @@ Output:
                         (when 
                             (and 
                                 (in_reach_of_agent ?objfrom) 
-                                (not (= ?objfrom ?objto))
+                                (not (same_obj ?objfrom ?objto))
                             )
                             (not (in_reach_of_agent ?objfrom))
                         )
@@ -154,20 +198,12 @@ Output:
                       (in_reach_of_agent ?sink)
                       (toggled_on ?sink))
   :effect (soaked ?rag)
-)
-
-Above is a good example of given predicates in domain file, problem file, action names and parameters, how to write the action body in PDDL_ REMEMBER: You MUST only use predicates and object types exactly as they appear in the domain file at the beginning_ Now given the input, please fill in the action body for each provided actions in PDDL format_ 
+)"}}
 
 Input:
 Problem file:
 {problem_file}
 Action to be finished:
 {action_handler}
-
 Output:
 """
-
-
-if __name__ == "__main__":
-    print(zero_shot.format(problem_file=123,action_handler=456))
-    
