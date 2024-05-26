@@ -67,7 +67,7 @@ The :effect lists the changes which the action imposes on the current state_ The
 
 In any case, the occurrence of a predicate should agree with its declaration in terms of number and types of arguments defined in DOMAIN FILE at the beginning_
 
-Here is an example of the input problem file and unfinished action_ after ; is a comment to explain the meaning of each line_
+Here is an example of the input problem file and unfinished actions after ; is a comment to explain the meaning of each line
 Input:
 Problem file:
 (define (problem cleaning_floor_0)

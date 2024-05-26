@@ -5,7 +5,7 @@ from igibson.evaluation.transition_modeling.transition_modeling_evaluator import
 
 def get_transition_modling_prompt(demo_dir,demo_name,rst_path):
     env=TransitionModelingEvaluator(demo_dir=demo_dir,demo_name=demo_name)
-    prompt=env.get_prompt_zeroshot()
+    prompt=env.get_prompt()
     rst={
         "identifier":demo_name,
         "llm_prompt":prompt,

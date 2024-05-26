@@ -7,7 +7,7 @@ from pddl.parser.problem import ProblemParser
 from pddl.formatter import problem_to_string
 import re
 RANDOM_SEED = 0
-NUM_GOALS = 6
+NUM_GOALS = 4
 random.seed(RANDOM_SEED)
 class PDDLGenerator():
     def __init__(self, demo_dir,info_dir, demo_name):
@@ -102,6 +102,8 @@ class PDDLGenerator():
         relevant_all=self.get_relevant_init_cond_and_obj(relevant_objects)
         objects = relevant_all["objects"]
         init_cond = relevant_all["init_cond"]
+        for obj in objects:
+            init_cond.append(["same_obj", obj, obj])
 
         goal_str=""
         for goal in goals:
@@ -132,6 +134,7 @@ def get_problem_pddl(demo_dir, info_dir, demo_name):
     pddl=pddl_generator.generate_pddl(rb"D:\GitHub_jameskrw\iGibson\igibson\evaluation\transition_modeling\resources\pddl_template.txt")
     return pddl
 def get_problem_pddl_batch(demo_dir, info_dir, name_dir,save_dir):
+    pddl_files=[]
     os.makedirs(save_dir,exist_ok=True)
     name_in_demo_dir=set()
     for demo in os.listdir(demo_dir):
@@ -149,7 +152,13 @@ def get_problem_pddl_batch(demo_dir, info_dir, name_dir,save_dir):
         pddl= get_problem_pddl(demo_dir, info_dir, demo_name)
         with open(os.path.join(save_dir,f"{demo_name}.pddl"),"w") as f:
             f.write(pddl)
+        pddl_files.append({
+            "identifier": demo_name,
+            "problem_file": pddl
+        })
         print(f"PDDL for {demo_name} is saved")
+    with open(os.path.join(save_dir,"pddl_files.json"),"w") as f:
+        json.dump(pddl_files,f,indent=4)
 if __name__ == "__main__":
     fire.Fire(get_problem_pddl_batch)
 

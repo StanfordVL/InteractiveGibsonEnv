@@ -11,7 +11,7 @@ client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
 @retry(wait=wait_random_exponential(min=0.1, max=1), stop=stop_after_attempt(6))
-def call_gpt_with_retry(prompt, sys_content="You are an AI assistant that speaks English.",
+def call_gpt_with_retry(prompt, sys_content="You are a software engineer who will be writing action definitions for a household robot in the PDDL planning language given the problem file and predicates in domain file. Please output in json format. Don't include any notes or explanations with the output json string.",
     model="gpt-4o",history=None,temperature=0,**kwargs):
 
     messages=[

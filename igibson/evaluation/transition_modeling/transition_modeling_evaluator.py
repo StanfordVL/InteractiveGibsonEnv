@@ -3,7 +3,7 @@ from igibson.envs.igibson_env import iGibsonEnv
 from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGrouper
 from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
-from igibson.evaluation.transition_modeling.prompts.zero_shot import zero_shot
+from igibson.evaluation.transition_modeling.prompts.new_prompts import prompt
 from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
 from bddl.config import get_definition_filename
 import os
@@ -143,8 +143,8 @@ class TransitionModelingEvaluator(BaseEnv):
     def get_modified_pddl(self,gt_data=GT_DATA)->str:
         return gt_data[self.demo_name]['problem_pddl']
     
-    def get_prompt_zeroshot(self,gt_data=GT_DATA):
-        return zero_shot.format(problem_file=self.get_modified_pddl(gt_data),action_handler=self.get_llm_input_action_handler())
+    def get_prompt(self,gt_data=GT_DATA):
+        return prompt.format(problem_file=self.get_modified_pddl(gt_data),action_handler=self.get_llm_input_action_handler())
 
     def get_raw_response(self,prompt):
         return call_gpt_with_retry(prompt)

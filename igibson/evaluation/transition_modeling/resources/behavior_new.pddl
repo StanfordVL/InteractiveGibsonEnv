@@ -42,6 +42,7 @@
         (holding ?obj1 - object)
         (handsfull ?agent1 - agent)
         (in_reach_of_agent ?obj1 - object)
+        (same_obj ?obj1 - object ?obj2 - object)
     )
 
     (:action navigate_to
@@ -53,7 +54,7 @@
                         (when 
                             (and 
                                 (in_reach_of_agent ?objfrom) 
-                                (not (= ?objfrom ?objto))
+                                (not (same_obj ?objfrom ?objto))
                             )
                             (not (in_reach_of_agent ?objfrom))
                         )
