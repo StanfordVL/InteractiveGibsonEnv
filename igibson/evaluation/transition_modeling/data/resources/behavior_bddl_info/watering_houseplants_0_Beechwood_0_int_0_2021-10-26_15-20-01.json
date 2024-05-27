@@ -1,0 +1,76 @@
+{
+    "initial_condition": [
+        [
+            "onfloor",
+            "pot_plant.n.01_1",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "pot_plant.n.01_2",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "pot_plant.n.01_3",
+            "floor.n.01_2"
+        ],
+        [
+            "not",
+            "soaked",
+            "pot_plant.n.01_1"
+        ],
+        [
+            "not",
+            "soaked",
+            "pot_plant.n.01_2"
+        ],
+        [
+            "not",
+            "soaked",
+            "pot_plant.n.01_3"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_2"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "forall",
+            "pot_plant.n.01",
+            "-",
+            "pot_plant.n.01",
+            "soaked",
+            "pot_plant.n.01"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "soaked",
+                "pot_plant.n.01_1"
+            ],
+            [
+                "soaked",
+                "pot_plant.n.01_2"
+            ],
+            [
+                "soaked",
+                "pot_plant.n.01_3"
+            ]
+        ]
+    ],
+    "name_category": {
+        "pot_plant.n.01_1": "pot_plant.n.01",
+        "pot_plant.n.01_2": "pot_plant.n.01",
+        "pot_plant.n.01_3": "pot_plant.n.01",
+        "floor.n.01_1": "floor.n.01",
+        "floor.n.01_2": "floor.n.01",
+        "sink.n.01_1": "sink.n.01",
+        "table.n.02_1": "table.n.02",
+        "countertop.n.01_1": "countertop.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

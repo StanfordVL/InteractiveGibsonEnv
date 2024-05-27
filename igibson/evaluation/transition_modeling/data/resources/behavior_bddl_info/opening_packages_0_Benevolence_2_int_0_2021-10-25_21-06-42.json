@@ -1,0 +1,57 @@
+{
+    "initial_condition": [
+        [
+            "onfloor",
+            "package.n.02_1",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "package.n.02_2",
+            "floor.n.01_1"
+        ],
+        [
+            "not",
+            "open",
+            "package.n.02_1"
+        ],
+        [
+            "not",
+            "open",
+            "package.n.02_2"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_1"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "forall",
+            "package.n.02",
+            "-",
+            "package.n.02",
+            "open",
+            "package.n.02"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "open",
+                "package.n.02_1"
+            ],
+            [
+                "open",
+                "package.n.02_2"
+            ]
+        ]
+    ],
+    "name_category": {
+        "package.n.02_1": "package.n.02",
+        "package.n.02_2": "package.n.02",
+        "floor.n.01_1": "floor.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

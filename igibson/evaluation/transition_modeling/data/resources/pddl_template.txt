@@ -1,0 +1,18 @@
+(define (problem <problem_name>)
+    (:domain igibson)
+
+    (:objects
+     	<objects>
+        agent_n_01_1 - agent
+    )
+    
+    (:init 
+        <init_cond>
+    )
+    
+    (:goal 
+        (and 
+            <goal>
+        )
+    )
+)
