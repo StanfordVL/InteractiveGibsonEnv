@@ -7,6 +7,7 @@ from igibson.evaluation.action_sequence.prompts.one_shot import prompt
 from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
 from igibson.transition_model.eval_env import EvalEnv
 from igibson.evolving_graph.eval_evolving_graph_env import EvalGraphEnv
+from igibson.evolving_graph.eval_evolving_graph_env import EvalActions
 import platform
 from contextlib import redirect_stdout
 import io
@@ -37,6 +38,8 @@ ACTION_PARAMETER_LENGTH={
     "RIGHT_PLACE_NEXTTO_ONTOP":2,
 }
 
+
+
 class ActionSequenceEvaluator():
     def __init__(self, headless=True,**kwargs) -> None:
         self.transition_model=EvalEnv(mode="headless" if headless else "gui_non_interactive",
@@ -46,8 +49,10 @@ class ActionSequenceEvaluator():
         self.get_name_mapping()
         self.evaluation_info={
             "error_type":{
-                "output_parsable":None,
-                "parameter_error":None,
+                "parsing":None,
+                "hullucination":None,
+                "arguments":None,
+                "execution_success":True,
             },
             "goal_rst":{
                 "all_goal_satisfied_ig":None,
@@ -66,6 +71,8 @@ class ActionSequenceEvaluator():
             "predicate_info":None,
             "execution_info":None,
         }
+        self.object_name=set(self.evolving_graph.obj_name_to_obj.keys())
+        self.action_name=set([action.name for action in EvalActions])
         
 
     def get_name_mapping(self):
@@ -135,18 +142,35 @@ class ActionSequenceEvaluator():
     
     def evaluate_format(self,actions):
         if len(actions)==0:
-            self.evaluation_info["error_type"]["output_parsable"]="No actions found"
+            self.evaluation_info["error_type"]["parsing"]="No actions found"
             return False
         for action in actions:
             if "action" not in action or "object" not in action:
-                self.evaluation_info["error_type"]["output_parsable"]="action or object not found"
+                self.evaluation_info["error_type"]["parsing"]="action or object not found"
                 return False
-            parameter_length=len(action["object"].strip().split(","))
-            if parameter_length>1:
-                action_name=action["action"].strip()
-                if action_name not in ACTION_PARAMETER_LENGTH:
-                    self.evaluation_info["error_type"]["parameter_correct"]=f"{action_name} only support 1 parameter"
+        for action in actions:
+            action_name=action["action"]
+            if action_name not in self.action_name:
+                self.evaluation_info["error_type"]["hullucination"]=f"action {action_name} not found"
+                return False
+            for obj in action["object"].strip().split(","):
+                obj_name=obj.strip()
+                if obj_name not in self.object_name:
+                    self.evaluation_info["error_type"]["hullucination"]=f"object {obj_name} not found"
                     return False
+        for action in actions:
+            len_arguments=len(action["object"].strip().split(","))
+            action_name=action["action"]
+            objects=action["object"]
+            if len_arguments!=1 and len_arguments!=2:
+                self.evaluation_info["error_type"]["arguments"]=f"wrong arguments: {objects}"
+                return False
+            if len_arguments==2 and action["action"] not in ACTION_PARAMETER_LENGTH:
+                self.evaluation_info["error_type"]["arguments"]=f"wrong arguments: {objects} for action {action_name}"
+                return False
+            if len_arguments==1 and action["action"] in ACTION_PARAMETER_LENGTH:
+                self.evaluation_info["error_type"]["arguments"]=f"wrong arguments: {objects} for action {action_name}"
+                return False
         return True
     
     def get_goal_state(self):
@@ -237,6 +261,7 @@ class ActionSequenceEvaluator():
                 msg=traceback.format_exc()
                 rst["unknown_execution_error"]=str(e)+msg
                 rst["execution_success"]=False
+
             rst['step']=idx
             rst['current_goal_condition']=self.task.check_success()
             execution_info.append(rst)
@@ -257,6 +282,7 @@ class ActionSequenceEvaluator():
         execution_info=[]
         for idx,action in enumerate(actions):
             rst={}
+            flag=True
             try:
                 action_name=action["action"]
                 obj=action["object"]
@@ -269,22 +295,31 @@ class ActionSequenceEvaluator():
                 rst['execution_success']=flag
                 if not flag:
                     errors=self.evaluate_trajectory_parse_error(rst_str)
-                    for error in errors["errors"]:
-                        self.evaluation_info["error_type"][error['error_type']]=error['error_reason']
                     rst.update(errors)
+                    error_dict={error['error_type']:error['error_reason'] for error in errors["errors"]}
+                    if "ErrorType.ADDITIONAL_STEP" in error_dict:
+                        self.evaluation_info["error_type"]["ErrorType.ADDITIONAL_STEP"]=error_dict["ErrorType.ADDITIONAL_STEP"]
+                        flag=True
+                        continue
+                    if "ErrorType.AFFORDANCE_ERROR" in error_dict:
+                        self.evaluation_info["error_type"]["ErrorType.AFFORDANCE_ERROR"]=error_dict["ErrorType.AFFORDANCE_ERROR"]
+                    elif "ErrorType.WRONG_TEMPORAL_ORDER" in error_dict:
+                        self.evaluation_info["error_type"]["ErrorType.WRONG_TEMPORAL_ORDER"]=error_dict["ErrorType.WRONG_TEMPORAL_ORDER"]
+                    elif "ErrorType.MISSING_STEP" in error_dict:
+                        self.evaluation_info["error_type"]["ErrorType.MISSING_STEP"]=error_dict["ErrorType.MISSING_STEP"]
             except Exception as e:
                 msg=traceback.format_exc()
                 rst["errors"]=[{
-                    "error_type":"name_hullucination",
+                    "error_type":"unknown_execution_error",
                     "error_reason":str(e)+msg
                 }]
                 flag=False
                 rst["execution_success"]=flag
-                self.evaluation_info["name_hullucination"]=str(e)+msg
+                self.evaluation_info["unknown_execution_error"]=str(e)+msg
             rst['step']=idx
             execution_info.append(rst)
-            self.evaluation_info
             if not flag:
+                self.evaluation_info["error_type"]["execution_success"]=False
                 break
 
         goal_rst={
@@ -330,6 +365,7 @@ class ActionSequenceEvaluator():
         actions=self.parse_response(response)
         if not self.evaluate_format(actions):
             self.get_goal_state()
+            self.evaluation_info["error_type"]["execution_success"]=False
             return self.evaluation_info
         tr_rst=self.evaluate_trajectory(actions)
         ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executed_steps']+1)
