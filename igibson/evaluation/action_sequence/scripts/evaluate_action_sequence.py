@@ -93,20 +93,6 @@ def eval_one_llm_all(demo_dir,llm_response_path,rst_dir,llm_name):
     output=evaluate_llm_response_batch(demo_dir,llm_response_path,rst_dir,llm_name+'_rst.json')
     get_summary(output,rst_dir,llm_name+'_summary.json')
 
-from multiprocessing import Process
-def eval_all_llm(demo_dir,llm_response_dir,rst_dir):
-    os.makedirs(rst_dir,exist_ok=True)
-    llm_response_files=os.listdir(llm_response_dir)
-    processes=[]
-    for llm_response_file in llm_response_files:
-        llm_name=llm_response_file.split('.')[0]
-        p=Process(target=eval_one_llm_all,args=(demo_dir,os.path.join(llm_response_dir,llm_response_file),rst_dir,llm_name))
-        p.start()
-        processes.append(p)
-
-    for p in processes:
-        p.join()
-
 if __name__ == "__main__":
     fire.Fire(eval_one_llm_all)
     
