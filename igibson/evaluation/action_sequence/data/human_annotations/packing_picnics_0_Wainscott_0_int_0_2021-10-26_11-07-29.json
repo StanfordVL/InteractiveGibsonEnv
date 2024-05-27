@@ -1,0 +1,270 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cantaloup_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hamburger_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hamburger_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hamburger_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "chip_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chip_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "water_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "water_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "water_3"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "water_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "grape_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "grape_3"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "grape_1"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "grape_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "strawberry_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "strawberry_3"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "strawberry_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "strawberry_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "peach_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "strawberry_2"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "peach_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "strawberry_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "beer_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "peach_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "beer_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "peach_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "beer_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "grape_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "beer_1"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "grape_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pop_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "pop_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "pop_1"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "pop_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "grape_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "strawberry_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "grape_2"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "strawberry_1"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_97"
+    }
+]

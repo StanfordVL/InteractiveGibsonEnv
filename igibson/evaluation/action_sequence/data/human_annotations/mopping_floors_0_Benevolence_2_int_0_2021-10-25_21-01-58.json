@@ -1,0 +1,63 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bucket_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_28"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "broom_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_28"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "soap_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bucket_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "dishtowel_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_28"
+    },
+    
+    {
+        "action": "RIGHT_GRASP",
+        "object": "dishtowel_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_28"
+    },
+    {
+        "action": "SOAK",
+        "object": "dishtowel_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_28"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "dishtowel_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_corridor_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_bathroom_0"
+    }
+]

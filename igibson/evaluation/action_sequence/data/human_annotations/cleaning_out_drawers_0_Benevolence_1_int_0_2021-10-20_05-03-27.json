@@ -1,0 +1,74 @@
+ [
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_16"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_15"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bowl_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bowl_1"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bath_towel_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bowl_1"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bowl_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "spoon_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "spoon_1"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_19"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_no_top_16"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_no_top_15"
+    }
+]

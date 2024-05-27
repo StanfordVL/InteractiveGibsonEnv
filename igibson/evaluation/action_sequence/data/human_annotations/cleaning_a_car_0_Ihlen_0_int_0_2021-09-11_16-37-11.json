@@ -1,0 +1,22 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "soap_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bucket_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "car_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bucket_0"
+    }
+]

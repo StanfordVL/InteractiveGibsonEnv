@@ -1,0 +1,106 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "ball_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bracelet_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_15"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_16"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bow_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bow_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lollipop_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "lollipop_1"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_27"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "egg_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "egg_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "notebook_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_0"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "basket_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "basket_1"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_27"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_no_top_15"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_no_top_16"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "action": "OPEN",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "bed_58"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pencil_103"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pen_104"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "calculator_105"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "folder_107"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hardback_106"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "backpack_108"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "highlighter_102"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "backpack_108"
+    }
+]

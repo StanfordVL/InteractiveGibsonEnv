@@ -1,0 +1,42 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "sticky_note_118"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sticky_note_117"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "trash_can_116"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "trash_can_116"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pop_121"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sticky_note_119"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "trash_can_116"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "trash_can_116"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pop_120"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "trash_can_116"
+    }
+]

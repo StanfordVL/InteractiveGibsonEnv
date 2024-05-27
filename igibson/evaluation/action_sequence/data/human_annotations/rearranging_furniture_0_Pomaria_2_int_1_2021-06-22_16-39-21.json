@@ -1,0 +1,26 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "table_lamp_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "door_29"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "floor_lamp_1"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "window_27"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chaise_longue_1"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "window_27"
+    }
+]
