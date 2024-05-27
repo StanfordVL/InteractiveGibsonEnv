@@ -1,6 +1,0 @@
-(define (problem picking_up_take-out_food)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent carton_n_02_1 - carton_n_02 floor_n_01_1 - floor_n_01 hamburger_n_01_1 - hamburger_n_01 sushi_n_01_1 - sushi_n_01 table_n_02_1 - table_n_02)
-    (:init (inside hamburger_n_01_1 carton_n_02_1) (inside sushi_n_01_1 carton_n_02_1) (onfloor carton_n_02_1 floor_n_01_1))
-    (:goal (and (inside hamburger_n_01_1 carton_n_02_1) (inside sushi_n_01_1 carton_n_02_1) (ontop carton_n_02_1 table_n_02_1)))
-)

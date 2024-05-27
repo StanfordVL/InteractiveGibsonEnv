@@ -1,6 +1,0 @@
-(define (problem boxing_books_up_for_storage)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent book_n_02_2 book_n_02_5 book_n_02_6 book_n_02_7 - book_n_02 carton_n_02_1 - carton_n_02 floor_n_01_1 - floor_n_01 shelf_n_01_1 - shelf_n_01)
-    (:init (onfloor book_n_02_2 floor_n_01_1) (onfloor book_n_02_5 floor_n_01_1) (onfloor carton_n_02_1 floor_n_01_1) (ontop book_n_02_6 shelf_n_01_1) (ontop book_n_02_7 shelf_n_01_1))
-    (:goal (and (inside book_n_02_5 carton_n_02_1) (inside book_n_02_2 carton_n_02_1) (inside book_n_02_7 carton_n_02_1) (inside book_n_02_6 carton_n_02_1)))
-)

@@ -1,6 +1,0 @@
-(define (problem putting_dishes_away_after_cleaning)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 countertop_n_01_1 countertop_n_01_2 - countertop_n_01 plate_n_04_1 plate_n_04_2 plate_n_04_6 - plate_n_04)
-    (:init (ontop plate_n_04_1 countertop_n_01_1) (ontop plate_n_04_2 countertop_n_01_1) (ontop plate_n_04_6 countertop_n_01_2))
-    (:goal (and (inside plate_n_04_6 cabinet_n_01_1) (inside plate_n_04_1 cabinet_n_01_1) (inside plate_n_04_2 cabinet_n_01_1)))
-)

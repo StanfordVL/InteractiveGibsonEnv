@@ -1,6 +1,0 @@
-(define (problem installing_a_modem)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent modem_n_01_1 - modem_n_01 table_n_02_1 - table_n_02)
-    (:init (not (toggled_on modem_n_01_1)) (ontop modem_n_01_1 table_n_02_1))
-    (:goal (and (under modem_n_01_1 table_n_02_1) (toggled_on modem_n_01_1)))
-)

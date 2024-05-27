@@ -1,6 +1,0 @@
-(define (problem storing_the_groceries)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent broccoli_n_02_2 - broccoli_n_02 cabinet_n_01_1 - cabinet_n_01 cereal_n_03_1 cereal_n_03_2 - cereal_n_03 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 pork_n_01_1 pork_n_01_2 - pork_n_01)
-    (:init (ontop broccoli_n_02_2 countertop_n_01_1) (ontop cereal_n_03_1 countertop_n_01_1) (ontop cereal_n_03_2 countertop_n_01_1) (ontop pork_n_01_1 countertop_n_01_1) (ontop pork_n_01_2 countertop_n_01_1))
-    (:goal (and (inside pork_n_01_1 electric_refrigerator_n_01_1) (nextto pork_n_01_1 pork_n_01_2) (inside pork_n_01_2 electric_refrigerator_n_01_1) (inside broccoli_n_02_2 electric_refrigerator_n_01_1) (inside cereal_n_03_2 cabinet_n_01_1) (inside cereal_n_03_1 cabinet_n_01_1)))
-)

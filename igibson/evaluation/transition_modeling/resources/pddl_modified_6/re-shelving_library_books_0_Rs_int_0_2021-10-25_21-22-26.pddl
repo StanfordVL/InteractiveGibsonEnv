@@ -1,6 +1,0 @@
-(define (problem re-shelving_library_books)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent book_n_02_1 book_n_02_2 book_n_02_3 book_n_02_4 book_n_02_5 book_n_02_6 book_n_02_7 book_n_02_8 - book_n_02 shelf_n_01_1 - shelf_n_01 table_n_02_1 - table_n_02)
-    (:init (ontop book_n_02_1 table_n_02_1) (ontop book_n_02_2 table_n_02_1) (ontop book_n_02_3 table_n_02_1) (ontop book_n_02_4 table_n_02_1) (ontop book_n_02_5 table_n_02_1) (ontop book_n_02_6 table_n_02_1) (ontop book_n_02_7 table_n_02_1) (ontop book_n_02_8 table_n_02_1))
-    (:goal (and (ontop book_n_02_2 shelf_n_01_1) (ontop book_n_02_6 table_n_02_1) (ontop book_n_02_4 shelf_n_01_1) (ontop book_n_02_8 table_n_02_1) (ontop book_n_02_3 shelf_n_01_1) (ontop book_n_02_7 table_n_02_1)))
-)

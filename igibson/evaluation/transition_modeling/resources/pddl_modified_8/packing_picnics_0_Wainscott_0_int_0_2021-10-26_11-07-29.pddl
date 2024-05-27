@@ -1,6 +1,0 @@
-(define (problem packing_picnics)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent beer_n_01_1 - beer_n_01 cabinet_n_01_1 - cabinet_n_01 carton_n_02_2 carton_n_02_3 - carton_n_02 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 floor_n_01_2 - floor_n_01 grape_n_01_3 grape_n_01_4 - grape_n_01 peach_n_03_2 - peach_n_03 pop_n_02_2 - pop_n_02 sandwich_n_01_2 sandwich_n_01_3 - sandwich_n_01 water_n_06_4 - water_n_06)
-    (:init (inside beer_n_01_1 electric_refrigerator_n_01_1) (inside grape_n_01_3 electric_refrigerator_n_01_1) (inside grape_n_01_4 electric_refrigerator_n_01_1) (inside peach_n_03_2 electric_refrigerator_n_01_1) (inside pop_n_02_2 electric_refrigerator_n_01_1) (inside water_n_06_4 cabinet_n_01_1) (onfloor carton_n_02_2 floor_n_01_2) (onfloor carton_n_02_3 floor_n_01_2) (ontop sandwich_n_01_2 countertop_n_01_1) (ontop sandwich_n_01_3 countertop_n_01_1))
-    (:goal (and (inside sandwich_n_01_3 carton_n_02_2) (inside sandwich_n_01_2 carton_n_02_2) (inside beer_n_01_1 carton_n_02_3) (inside peach_n_03_2 carton_n_02_3) (inside water_n_06_4 carton_n_02_3) (inside pop_n_02_2 carton_n_02_3) (inside grape_n_01_3 carton_n_02_3) (inside grape_n_01_4 carton_n_02_3)))
-)

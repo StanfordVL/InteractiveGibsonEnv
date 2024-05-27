@@ -1,6 +1,0 @@
-(define (problem mopping_floors)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bucket_n_01_1 - bucket_n_01 floor_n_01_1 - floor_n_01 piece_of_cloth_n_01_1 - piece_of_cloth_n_01 sink_n_01_1 - sink_n_01 soap_n_01_1 - soap_n_01)
-    (:init (onfloor agent_n_01_1 floor_n_01_1) (onfloor bucket_n_01_1 floor_n_01_1) (onfloor piece_of_cloth_n_01_1 floor_n_01_1) (onfloor soap_n_01_1 floor_n_01_1) (stained floor_n_01_1))
-    (:goal (and (inside soap_n_01_1 bucket_n_01_1) (nextto bucket_n_01_1 sink_n_01_1) (not (stained floor_n_01_1))))
-)

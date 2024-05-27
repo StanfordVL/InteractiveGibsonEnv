@@ -1,6 +1,0 @@
-(define (problem washing_pots_and_pans)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 countertop_n_01_2 - countertop_n_01 kettle_n_01_1 - kettle_n_01 pan_n_01_3 - pan_n_01 scrub_brush_n_01_1 - scrub_brush_n_01)
-    (:init (ontop kettle_n_01_1 countertop_n_01_2) (ontop pan_n_01_3 countertop_n_01_2) (ontop scrub_brush_n_01_1 countertop_n_01_2) (soaked scrub_brush_n_01_1) (stained kettle_n_01_1) (stained pan_n_01_3))
-    (:goal (and (inside pan_n_01_3 cabinet_n_01_1) (not (stained pan_n_01_3)) (not (stained kettle_n_01_1))))
-)

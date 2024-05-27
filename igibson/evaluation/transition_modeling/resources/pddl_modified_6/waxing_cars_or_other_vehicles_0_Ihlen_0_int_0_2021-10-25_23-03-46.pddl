@@ -1,6 +1,0 @@
-(define (problem waxing_cars_or_other_vehicles)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent floor_n_01_1 - floor_n_01 rag_n_01_1 - rag_n_01 shelf_n_01_1 - shelf_n_01 vehicle_n_01_1 - vehicle_n_01)
-    (:init (dusty vehicle_n_01_1) (inside rag_n_01_1 shelf_n_01_1) (onfloor vehicle_n_01_1 floor_n_01_1))
-    (:goal (not (dusty vehicle_n_01_1)))
-)

@@ -1,6 +1,0 @@
-(define (problem cleaning_up_the_kitchen_only)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent apple_n_01_1 - apple_n_01 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 casserole_n_02_1 - casserole_n_02 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 plate_n_04_1 - plate_n_04 rag_n_01_1 - rag_n_01 sink_n_01_1 - sink_n_01 soap_n_01_1 - soap_n_01 vegetable_oil_n_01_1 - vegetable_oil_n_01)
-    (:init (dusty cabinet_n_01_2) (inside apple_n_01_1 electric_refrigerator_n_01_1) (inside casserole_n_02_1 electric_refrigerator_n_01_1) (inside plate_n_04_1 electric_refrigerator_n_01_1) (inside rag_n_01_1 cabinet_n_01_1) (inside soap_n_01_1 cabinet_n_01_1) (inside vegetable_oil_n_01_1 electric_refrigerator_n_01_1) (not (soaked rag_n_01_1)))
-    (:goal (and (not (dusty cabinet_n_01_2)) (nextto soap_n_01_1 sink_n_01_1) (inside casserole_n_02_1 electric_refrigerator_n_01_1)))
-)

@@ -1,6 +1,0 @@
-(define (problem putting_up_Christmas_decorations_inside)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bow_n_08_1 bow_n_08_3 - bow_n_08 candle_n_01_1 - candle_n_01 carton_n_02_1 - carton_n_02 christmas_tree_n_05_1 - christmas_tree_n_05 floor_n_01_1 - floor_n_01 sofa_n_01_1 - sofa_n_01 table_n_02_1 - table_n_02 wrapping_n_01_1 - wrapping_n_01)
-    (:init (inside bow_n_08_1 carton_n_02_1) (inside bow_n_08_3 carton_n_02_1) (inside candle_n_01_1 carton_n_02_1) (onfloor christmas_tree_n_05_1 floor_n_01_1) (onfloor wrapping_n_01_1 floor_n_01_1))
-    (:goal (and (ontop bow_n_08_1 sofa_n_01_1) (nextto wrapping_n_01_1 christmas_tree_n_05_1) (ontop bow_n_08_3 sofa_n_01_1) (ontop candle_n_01_1 table_n_02_1)))
-)

@@ -1,6 +1,0 @@
-(define (problem serving_a_meal)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bread_n_01_1 bread_n_01_2 - bread_n_01 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 cake_n_03_1 - cake_n_03 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 fork_n_01_2 - fork_n_01 knife_n_01_2 - knife_n_01 plate_n_04_1 plate_n_04_2 - plate_n_04 salad_n_01_2 - salad_n_01 soup_n_01_1 soup_n_01_2 - soup_n_01 spoon_n_01_2 - spoon_n_01 table_n_02_1 - table_n_02)
-    (:init (inside bread_n_01_1 electric_refrigerator_n_01_1) (inside bread_n_01_2 electric_refrigerator_n_01_1) (inside cake_n_03_1 electric_refrigerator_n_01_1) (inside fork_n_01_2 cabinet_n_01_1) (inside knife_n_01_2 cabinet_n_01_1) (inside plate_n_04_1 cabinet_n_01_2) (inside plate_n_04_2 cabinet_n_01_1) (inside salad_n_01_2 electric_refrigerator_n_01_1) (inside spoon_n_01_2 cabinet_n_01_1) (ontop soup_n_01_1 table_n_02_1) (ontop soup_n_01_2 table_n_02_1))
-    (:goal (and (ontop plate_n_04_2 table_n_02_1) (nextto salad_n_01_2 plate_n_04_1) (nextto bread_n_01_1 plate_n_04_1) (ontop fork_n_01_2 table_n_02_1) (nextto cake_n_03_1 plate_n_04_1) (ontop knife_n_01_2 table_n_02_1) (nextto spoon_n_01_2 soup_n_01_2) (nextto bread_n_01_2 plate_n_04_2)))
-)

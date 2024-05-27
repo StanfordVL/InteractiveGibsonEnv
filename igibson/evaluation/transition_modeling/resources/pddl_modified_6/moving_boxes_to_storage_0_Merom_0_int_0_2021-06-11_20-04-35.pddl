@@ -1,6 +1,0 @@
-(define (problem moving_boxes_to_storage)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent carton_n_02_1 carton_n_02_2 - carton_n_02 floor_n_01_1 floor_n_01_2 - floor_n_01)
-    (:init (onfloor agent_n_01_1 floor_n_01_2) (onfloor carton_n_02_1 floor_n_01_1) (onfloor carton_n_02_2 floor_n_01_1))
-    (:goal (and (onfloor carton_n_02_1 floor_n_01_2) (ontop carton_n_02_2 carton_n_02_1)))
-)

@@ -1,6 +1,0 @@
-(define (problem packing_bags_or_suitcase)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent backpack_n_01_1 - backpack_n_01 bed_n_01_1 - bed_n_01 floor_n_01_1 - floor_n_01 hardback_n_01_1 - hardback_n_01 shampoo_n_01_1 - shampoo_n_01 toothbrush_n_01_1 - toothbrush_n_01 toothpaste_n_01_1 - toothpaste_n_01 underwear_n_01_1 underwear_n_01_2 - underwear_n_01)
-    (:init (onfloor backpack_n_01_1 floor_n_01_1) (ontop hardback_n_01_1 bed_n_01_1) (ontop shampoo_n_01_1 bed_n_01_1) (ontop toothbrush_n_01_1 bed_n_01_1) (ontop toothpaste_n_01_1 bed_n_01_1) (ontop underwear_n_01_1 bed_n_01_1) (ontop underwear_n_01_2 bed_n_01_1))
-    (:goal (and (inside underwear_n_01_2 backpack_n_01_1) (inside toothpaste_n_01_1 backpack_n_01_1) (ontop backpack_n_01_1 bed_n_01_1) (inside underwear_n_01_1 backpack_n_01_1) (inside hardback_n_01_1 backpack_n_01_1) (inside shampoo_n_01_1 backpack_n_01_1) (inside toothbrush_n_01_1 backpack_n_01_1)))
-)

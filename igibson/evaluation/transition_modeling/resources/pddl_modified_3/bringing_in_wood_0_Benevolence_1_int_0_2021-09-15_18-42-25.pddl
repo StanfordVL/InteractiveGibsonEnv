@@ -1,6 +1,0 @@
-(define (problem bringing_in_wood)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent floor_n_01_1 floor_n_01_2 - floor_n_01 plywood_n_01_1 plywood_n_01_2 plywood_n_01_3 - plywood_n_01)
-    (:init (onfloor plywood_n_01_1 floor_n_01_1) (onfloor plywood_n_01_2 floor_n_01_1) (onfloor plywood_n_01_3 floor_n_01_1))
-    (:goal (and (onfloor plywood_n_01_2 floor_n_01_2) (onfloor plywood_n_01_1 floor_n_01_2) (onfloor plywood_n_01_3 floor_n_01_2)))
-)

@@ -1,6 +1,0 @@
-(define (problem cleaning_a_car)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bucket_n_01_1 - bucket_n_01 car_n_01_1 - car_n_01 floor_n_01_1 - floor_n_01 rag_n_01_1 - rag_n_01 shelf_n_01_1 - shelf_n_01 soap_n_01_1 - soap_n_01)
-    (:init (dusty car_n_01_1) (not (soaked rag_n_01_1)) (onfloor bucket_n_01_1 floor_n_01_1) (onfloor car_n_01_1 floor_n_01_1) (ontop rag_n_01_1 shelf_n_01_1) (ontop soap_n_01_1 shelf_n_01_1))
-    (:goal (and (not (dusty car_n_01_1)) (inside soap_n_01_1 bucket_n_01_1) (inside rag_n_01_1 bucket_n_01_1)))
-)

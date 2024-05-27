@@ -1,6 +1,0 @@
-(define (problem thawing_frozen_food)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent electric_refrigerator_n_01_1 - electric_refrigerator_n_01 fish_n_02_2 fish_n_02_4 - fish_n_02 olive_n_04_1 - olive_n_04 sink_n_01_1 - sink_n_01)
-    (:init (frozen fish_n_02_2) (frozen fish_n_02_4) (frozen olive_n_04_1) (inside fish_n_02_2 electric_refrigerator_n_01_1) (inside fish_n_02_4 electric_refrigerator_n_01_1) (inside olive_n_04_1 electric_refrigerator_n_01_1))
-    (:goal (and (nextto fish_n_02_2 sink_n_01_1) (nextto olive_n_04_1 sink_n_01_1) (nextto fish_n_02_4 sink_n_01_1)))
-)

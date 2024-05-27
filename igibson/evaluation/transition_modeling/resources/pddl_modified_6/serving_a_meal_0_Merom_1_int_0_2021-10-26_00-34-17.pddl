@@ -1,6 +1,0 @@
-(define (problem serving_a_meal)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bread_n_01_2 - bread_n_01 cabinet_n_01_1 cabinet_n_01_2 - cabinet_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 fork_n_01_1 fork_n_01_2 - fork_n_01 plate_n_04_1 plate_n_04_2 - plate_n_04 soup_n_01_1 soup_n_01_2 - soup_n_01 table_n_02_1 - table_n_02 water_n_06_1 water_n_06_2 - water_n_06)
-    (:init (inside bread_n_01_2 electric_refrigerator_n_01_1) (inside fork_n_01_1 cabinet_n_01_1) (inside fork_n_01_2 cabinet_n_01_1) (inside plate_n_04_1 cabinet_n_01_2) (inside plate_n_04_2 cabinet_n_01_1) (inside water_n_06_1 electric_refrigerator_n_01_1) (inside water_n_06_2 electric_refrigerator_n_01_1) (ontop soup_n_01_1 table_n_02_1) (ontop soup_n_01_2 table_n_02_1))
-    (:goal (and (ontop plate_n_04_1 table_n_02_1) (ontop fork_n_01_2 table_n_02_1) (ontop water_n_06_2 table_n_02_1) (ontop water_n_06_1 table_n_02_1) (nextto bread_n_01_2 plate_n_04_2) (ontop fork_n_01_1 table_n_02_1)))
-)

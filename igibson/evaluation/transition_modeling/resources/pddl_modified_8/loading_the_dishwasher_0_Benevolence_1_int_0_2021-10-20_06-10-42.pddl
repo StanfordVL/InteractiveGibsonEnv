@@ -1,6 +1,0 @@
-(define (problem loading_the_dishwasher)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bowl_n_01_1 bowl_n_01_2 - bowl_n_01 countertop_n_01_1 - countertop_n_01 dishwasher_n_01_1 - dishwasher_n_01 mug_n_04_1 - mug_n_04 plate_n_04_1 plate_n_04_2 plate_n_04_3 - plate_n_04)
-    (:init (ontop bowl_n_01_1 countertop_n_01_1) (ontop bowl_n_01_2 countertop_n_01_1) (ontop mug_n_04_1 countertop_n_01_1) (ontop plate_n_04_1 countertop_n_01_1) (ontop plate_n_04_2 countertop_n_01_1) (ontop plate_n_04_3 countertop_n_01_1) (stained bowl_n_01_1) (stained bowl_n_01_2) (stained mug_n_04_1) (stained plate_n_04_1) (stained plate_n_04_2) (stained plate_n_04_3))
-    (:goal (and (inside bowl_n_01_2 dishwasher_n_01_1) (inside plate_n_04_1 dishwasher_n_01_1) (inside bowl_n_01_1 dishwasher_n_01_1) (inside plate_n_04_3 dishwasher_n_01_1) (inside plate_n_04_2 dishwasher_n_01_1) (inside mug_n_04_1 dishwasher_n_01_1)))
-)

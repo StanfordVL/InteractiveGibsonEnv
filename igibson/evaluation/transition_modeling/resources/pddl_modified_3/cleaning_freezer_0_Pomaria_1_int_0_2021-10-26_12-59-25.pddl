@@ -1,6 +1,0 @@
-(define (problem cleaning_freezer)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent electric_refrigerator_n_01_1 - electric_refrigerator_n_01 food_n_01_1 food_n_01_2 food_n_01_3 - food_n_01 table_n_02_1 - table_n_02 towel_n_01_1 - towel_n_01)
-    (:init (inside food_n_01_1 electric_refrigerator_n_01_1) (inside food_n_01_2 electric_refrigerator_n_01_1) (inside food_n_01_3 electric_refrigerator_n_01_1) (ontop towel_n_01_1 table_n_02_1) (stained electric_refrigerator_n_01_1))
-    (:goal (and (not (stained electric_refrigerator_n_01_1)) (not (inside food_n_01_2 electric_refrigerator_n_01_1)) (not (inside food_n_01_1 electric_refrigerator_n_01_1))))
-)

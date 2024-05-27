@@ -1,6 +1,0 @@
-(define (problem putting_away_Halloween_decorations)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 caldron_n_01_1 - caldron_n_01 candle_n_01_1 candle_n_01_2 candle_n_01_3 - candle_n_01 floor_n_01_1 - floor_n_01 pumpkin_n_02_1 pumpkin_n_02_2 - pumpkin_n_02 sheet_n_03_1 - sheet_n_03 table_n_02_1 - table_n_02)
-    (:init (onfloor caldron_n_01_1 floor_n_01_1) (onfloor candle_n_01_1 floor_n_01_1) (onfloor candle_n_01_2 floor_n_01_1) (onfloor candle_n_01_3 floor_n_01_1) (onfloor pumpkin_n_02_1 floor_n_01_1) (onfloor pumpkin_n_02_2 floor_n_01_1) (ontop sheet_n_03_1 table_n_02_1))
-    (:goal (and (inside candle_n_01_2 cabinet_n_01_1) (inside candle_n_01_1 cabinet_n_01_1) (nextto sheet_n_03_1 table_n_02_1) (nextto caldron_n_01_1 table_n_02_1) (inside pumpkin_n_02_2 cabinet_n_01_1) (inside candle_n_01_3 cabinet_n_01_1) (inside pumpkin_n_02_1 cabinet_n_01_1)))
-)

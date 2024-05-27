@@ -1,6 +1,0 @@
-(define (problem installing_a_scanner)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent scanner_n_02_1 - scanner_n_02 table_n_02_1 - table_n_02)
-    (:init (not (toggled_on scanner_n_02_1)) (ontop scanner_n_02_1 table_n_02_1))
-    (:goal (and (toggled_on scanner_n_02_1) (under scanner_n_02_1 table_n_02_1)))
-)

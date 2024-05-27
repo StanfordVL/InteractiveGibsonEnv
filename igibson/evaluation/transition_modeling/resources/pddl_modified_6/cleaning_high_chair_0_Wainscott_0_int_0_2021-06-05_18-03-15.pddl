@@ -1,6 +1,0 @@
-(define (problem cleaning_high_chair)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 floor_n_01_2 - floor_n_01 highchair_n_01_1 - highchair_n_01 piece_of_cloth_n_01_1 - piece_of_cloth_n_01)
-    (:init (dusty highchair_n_01_1) (inside piece_of_cloth_n_01_1 cabinet_n_01_1) (onfloor highchair_n_01_1 floor_n_01_2))
-    (:goal (not (dusty highchair_n_01_1)))
-)

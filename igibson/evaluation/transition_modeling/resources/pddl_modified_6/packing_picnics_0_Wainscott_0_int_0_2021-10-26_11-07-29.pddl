@@ -1,6 +1,0 @@
-(define (problem packing_picnics)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 carton_n_02_1 carton_n_02_3 - carton_n_02 chip_n_04_2 - chip_n_04 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 floor_n_01_1 floor_n_01_2 - floor_n_01 sandwich_n_01_1 - sandwich_n_01 strawberry_n_01_1 strawberry_n_01_2 - strawberry_n_01 water_n_06_3 water_n_06_4 - water_n_06)
-    (:init (inside chip_n_04_2 cabinet_n_01_1) (inside strawberry_n_01_1 electric_refrigerator_n_01_1) (inside strawberry_n_01_2 electric_refrigerator_n_01_1) (inside water_n_06_3 cabinet_n_01_1) (inside water_n_06_4 cabinet_n_01_1) (onfloor carton_n_02_1 floor_n_01_1) (onfloor carton_n_02_3 floor_n_01_2) (ontop sandwich_n_01_1 countertop_n_01_1))
-    (:goal (and (inside sandwich_n_01_1 carton_n_02_3) (inside water_n_06_4 carton_n_02_3) (inside water_n_06_3 carton_n_02_3) (inside strawberry_n_01_1 carton_n_02_1) (inside strawberry_n_01_2 carton_n_02_1) (inside chip_n_04_2 carton_n_02_3)))
-)

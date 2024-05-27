@@ -1,6 +1,0 @@
-(define (problem collect_misplaced_items)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent cabinet_n_01_1 - cabinet_n_01 floor_n_01_1 floor_n_01_2 - floor_n_01 gym_shoe_n_01_1 - gym_shoe_n_01 necklace_n_01_1 - necklace_n_01 notebook_n_01_1 - notebook_n_01 sock_n_01_1 sock_n_01_2 - sock_n_01 sofa_n_01_1 - sofa_n_01 table_n_02_1 table_n_02_2 - table_n_02)
-    (:init (inside necklace_n_01_1 cabinet_n_01_1) (onfloor gym_shoe_n_01_1 floor_n_01_2) (onfloor sock_n_01_2 floor_n_01_1) (ontop sock_n_01_1 sofa_n_01_1) (under gym_shoe_n_01_1 table_n_02_1) (under notebook_n_01_1 table_n_02_2))
-    (:goal (and (ontop sock_n_01_2 table_n_02_2) (ontop sock_n_01_1 table_n_02_2) (ontop notebook_n_01_1 table_n_02_2) (ontop gym_shoe_n_01_1 table_n_02_2) (ontop necklace_n_01_1 table_n_02_2)))
-)

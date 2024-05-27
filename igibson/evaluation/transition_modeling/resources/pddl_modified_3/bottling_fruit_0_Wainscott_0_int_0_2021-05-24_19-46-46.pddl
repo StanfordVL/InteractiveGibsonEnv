@@ -1,6 +1,0 @@
-(define (problem bottling_fruit)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent carving_knife_n_01_1 - carving_knife_n_01 countertop_n_01_1 - countertop_n_01 electric_refrigerator_n_01_1 - electric_refrigerator_n_01 jar_n_01_1 jar_n_01_2 - jar_n_01 peach_n_03_1 - peach_n_03 strawberry_n_01_1 - strawberry_n_01)
-    (:init (inside peach_n_03_1 electric_refrigerator_n_01_1) (inside strawberry_n_01_1 electric_refrigerator_n_01_1) (not (sliced peach_n_03_1)) (not (sliced strawberry_n_01_1)) (ontop carving_knife_n_01_1 countertop_n_01_1) (ontop jar_n_01_1 countertop_n_01_1) (ontop jar_n_01_2 countertop_n_01_1))
-    (:goal (and (sliced strawberry_n_01_1) (sliced peach_n_03_1) (inside peach_n_03_1 jar_n_01_1)))
-)

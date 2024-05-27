@@ -1,6 +1,0 @@
-(define (problem cleaning_cupboards)
-    (:domain igibson)
-    (:objects agent_n_01_1 - agent bed_n_01_1 - bed_n_01 book_n_02_1 book_n_02_2 book_n_02_3 - book_n_02 bucket_n_01_1 - bucket_n_01 cabinet_n_01_1 cabinet_n_01_2 cabinet_n_01_3 - cabinet_n_01 marker_n_03_1 marker_n_03_2 - marker_n_03 pen_n_01_1 - pen_n_01 rag_n_01_1 - rag_n_01 screwdriver_n_01_1 - screwdriver_n_01 scrub_brush_n_01_1 - scrub_brush_n_01)
-    (:init (dusty cabinet_n_01_1) (dusty cabinet_n_01_2) (inside book_n_02_1 cabinet_n_01_1) (inside book_n_02_2 cabinet_n_01_2) (inside book_n_02_3 cabinet_n_01_2) (inside marker_n_03_1 cabinet_n_01_2) (inside marker_n_03_2 cabinet_n_01_2) (inside pen_n_01_1 cabinet_n_01_1) (inside rag_n_01_1 cabinet_n_01_1) (inside screwdriver_n_01_1 cabinet_n_01_3) (inside scrub_brush_n_01_1 cabinet_n_01_1) (ontop bucket_n_01_1 bed_n_01_1))
-    (:goal (and (not (inside book_n_02_3 cabinet_n_01_2)) (not (inside book_n_02_3 cabinet_n_01_1)) (not (inside book_n_02_1 cabinet_n_01_1)) (not (inside book_n_02_1 cabinet_n_01_2)) (not (dusty cabinet_n_01_3)) (inside marker_n_03_1 bucket_n_01_1)))
-)
