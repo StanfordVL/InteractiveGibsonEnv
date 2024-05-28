@@ -354,6 +354,7 @@ class EvolvingGraph():
         node=self.cur_state.relation_tree.get_node(obj.name)
         node_to_remove=[]
         obj_volumn=obj.bounding_box[0]*obj.bounding_box[1]*obj.bounding_box[2]
+        # remove teleport relation if child is too big
         if node is not None:
             for child_name in node.children.keys():
                 child_obj=self.name_to_obj[child_name]

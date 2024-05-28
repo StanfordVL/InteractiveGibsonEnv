@@ -321,10 +321,11 @@ class ActionSequenceEvaluator():
             if not flag:
                 self.evaluation_info["error_type"]["execution_success"]=False
                 break
-
+            
+        all_action_executable=self.evaluation_info["error_type"]["execution_success"]
         goal_rst={
             'tot_steps':len(actions),
-            'tot_executed_steps':len(execution_info),
+            'tot_executable_steps':len(execution_info) if all_action_executable else len(execution_info)-1,
             'all_goal_satisfied_graph':self.evolving_graph.action_env.cur_state.check_success(self.task)["success"],
             'execution_info':execution_info
         }
@@ -355,7 +356,7 @@ class ActionSequenceEvaluator():
         self.evaluation_info['target_state']=self.get_target_state().strip().split("\n")
         self.evaluation_info['objects']=self.name_mapping
         tr_rst=self.evaluate_trajectory(actions)
-        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executed_steps']+1)
+        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executable_steps']-1)
         return self.evaluation_info
     
     def evaluate_all(self,response):
@@ -368,7 +369,8 @@ class ActionSequenceEvaluator():
             self.evaluation_info["error_type"]["execution_success"]=False
             return self.evaluation_info
         tr_rst=self.evaluate_trajectory(actions)
-        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executed_steps']+1)
+        
+        ig_rst=self.evaluate_goal(actions,ending_step=tr_rst['tot_executable_steps']-1)
         return self.evaluation_info
 
     
