@@ -77,7 +77,7 @@ Please pay specail attention:
 5. If you want to perform an action to an target object, you must make sure the target object is not inside a closed object.
 6. For actions like OPEN, CLOSE, SLICE, COOK, CLEAN, SOAK, DRY, FREEZE, UNFREEZE, TOGGLE_ON, TOGGLE_OFF, at least one of the robot's hands must be empty, and the target object must have the corresponding property like they're openable, toggleable, etc.
 7. For PLACE actions and RELEASE actions, the robot must hold an object in the corresponding hand.
-8. Before slicing an object, the robot can only interact with the object (e.g. peach_0), after slicing the object, the robot can only interact with the sliced object (e.g. peach_0_part_0). 
+8. Before slicing an object, the robot can only interact with the object (e.g. peach_0), after slicing the object, the robot can only interact with the sliced object (e.g. peach_0_part_0).
 
 
 Examples: after# is the explanation.

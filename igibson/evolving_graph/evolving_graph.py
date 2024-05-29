@@ -550,7 +550,7 @@ class EvolvingGraph():
 
     def pour_inside(self,tar_obj:URDFObject,hand:str):
         ## Precondition check
-        class PourInsidePrecond(PlacePrecond):
+        class PourInsidePrecond(PourPrecond):
             def __init__(self,obj,hand,name_to_obj):
                 super().__init__(obj,hand,name_to_obj)
                 self.precond_list.appendleft(self.pour_inside_precond)
@@ -588,7 +588,6 @@ class EvolvingGraph():
         obj_in_hand=self.name_to_obj[obj_in_hand_name]
         for obj_inside_name in self.cur_state.relation_tree.get_node(obj_in_hand.name).children.keys():
             self.cur_state.relation_tree.change_ancestor(obj_inside_name,tar_obj.name,TeleportType.INSIDE)
-        self.cur_state.robot_inventory[hand]=None
         print(f"Pour {obj_in_hand.name} inside {tar_obj.name} success")
         return True
         
@@ -596,7 +595,7 @@ class EvolvingGraph():
 
     def pour_onto(self,tar_obj:URDFObject,hand:str):
         ## Precondition check
-        precond=PlacePrecond(tar_obj,hand,self.name_to_obj)
+        precond=PourPrecond(tar_obj,hand,self.name_to_obj)
         if not precond.check_precond(self.cur_state):
             return False
         
@@ -606,7 +605,6 @@ class EvolvingGraph():
         for obj_inside_name in self.cur_state.relation_tree.get_node(obj_in_hand.name).children.keys():
             obj_inside=self.name_to_obj[obj_inside_name]
             self.cur_state.relation_tree.change_ancestor(obj_inside.name,tar_obj.name,TeleportType.ONTOP)
-        self.cur_state.robot_inventory[hand]=None
         print(f"Pour {obj_in_hand.name} onto {tar_obj.name} success")
         return True
     
@@ -1016,15 +1014,19 @@ class EvolvingGraph():
         return self.place_under(obj,'right_hand')
     
     def clean(self,obj):
+
+        if object_states.Dusty not in self.cur_state.graph.nodes[obj.name] and \
+        object_states.Stained not in self.cur_state.graph.nodes[obj.name]:
+            print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (CLEAN)")
+            return False
+
         # clean will clean both dust and stain
-        flag1=False
-        flag2=False
         try_clean_dust=False
         try_clean_stain=False
-        if not (object_states.Dusty in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Dusty]==False):
+        if object_states.Dusty in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Dusty]==True:
             flag1=self.clean_dust(obj)
             try_clean_dust=True
-        if not (object_states.Stained in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Stained]==False):
+        if object_states.Stained in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Stained]==True:
             flag2=self.clean_stain(obj)
             try_clean_stain=True
         if not (try_clean_dust or try_clean_stain):
@@ -1091,6 +1093,18 @@ class PlacePrecond(BasePrecond):
         
         if self.obj.name in state.get_all_inhand_objects(self.hand):
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
+            return False
+        return True
+
+class PourPrecond(PlacePrecond):
+    def __init__(self,obj,hand,name_to_obj):
+        super().__init__(obj,hand,name_to_obj)
+        self.precond_list.appendleft(self.pour_precond)
+    
+    def pour_precond(self,state:GraphState):
+        in_hand_objs=state.get_all_inhand_objects(self.hand)
+        if len(in_hand_objs)==1:
+            print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Only holding one obj in {self.hand}, nothing to pour")
             return False
         return True
     

@@ -63,6 +63,13 @@ class ActionSequenceEvaluator():
                 "satisfied_predicates":None,
                 "satisfied_edge_predicates":None,
                 "satisfied_node_predicates":None,
+                "pure_edge_predicates":None,
+                "pure_node_predicates":None,
+                "mixed_predicates":None,
+                "satisfied_pure_edge_predicates":None,
+                "satisfied_pure_node_predicates":None,
+                "satisfied_mixed_predicates":None,
+
             },
             'initial_state':None,
             'target_state':None,
@@ -70,6 +77,7 @@ class ActionSequenceEvaluator():
             'objects':None,
             "predicate_info":None,
             "execution_info":None,
+            "parsed_actions":None,
         }
         self.object_name=set(self.evolving_graph.obj_name_to_obj.keys())
         self.action_name=set([action.name for action in EvalActions])
@@ -138,6 +146,7 @@ class ActionSequenceEvaluator():
         except Exception as e:
             print(e)
             new_action=[]
+        self.evaluation_info["parsed_actions"]=new_action
         return new_action
     
     def evaluate_format(self,actions):
@@ -180,8 +189,14 @@ class ActionSequenceEvaluator():
         node_predicates=defaultdict(list)
         tot_edge_predicates=0
         tot_node_predicates=0
-        tot_edge_predicates_satisfied=0
-        tot_node_predicates_satisfied=0
+        satisfied_edge_predicates=0
+        satisfied_node_predicates=0
+        pure_edge_predicates=0
+        pure_node_predicates=0
+        satisfied_pure_edge_predicates=0
+        satisfied_pure_node_predicates=0
+        mixed_predicates=0
+        satisfied_mixed_predicates=0
         for idx,goal_condition in enumerate(self.task.goal_conditions):
             flag_node=False
             flag_edge=False
@@ -197,8 +212,20 @@ class ActionSequenceEvaluator():
             tot_edge_predicates+=int(flag_edge)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
             tot_node_predicates+=int(flag_node)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
             if flag:
-                tot_edge_predicates_satisfied+=int(flag_edge)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
-                tot_node_predicates_satisfied+=int(flag_node)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+                satisfied_edge_predicates+=int(flag_edge)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+                satisfied_node_predicates+=int(flag_node)/(int(flag_edge)+int(flag_node)) if flag_edge or flag_node else 0
+            if flag_edge and not flag_node:
+                pure_edge_predicates+=1
+                if flag:
+                    satisfied_pure_edge_predicates+=1
+            if flag_node and not flag_edge:
+                pure_node_predicates+=1
+                if flag:
+                    satisfied_pure_node_predicates+=1
+            if flag_edge and flag_node:
+                mixed_predicates+=1
+                if flag:
+                    satisfied_mixed_predicates+=1
 
         predicate_info={}
         for k,v in edge_predicates.items():
@@ -220,17 +247,17 @@ class ActionSequenceEvaluator():
         'tot_predicates':tot_edge_predicates+tot_node_predicates,
         'tot_edge_predicates': tot_edge_predicates,
         'tot_node_predicates': tot_node_predicates,
-        'satisfied_edge_predicates': tot_edge_predicates_satisfied,
-        'satisfied_node_predicates': tot_node_predicates_satisfied,
-        "satisfied_predicates":tot_edge_predicates_satisfied+tot_node_predicates_satisfied,
-        'edge_predicates_succ_rate': tot_edge_predicates_satisfied/tot_edge_predicates if tot_edge_predicates>0 else 0,
-        'node_predicates_succ_rate': tot_node_predicates_satisfied/tot_node_predicates if tot_node_predicates>0 else 0,
-        'tot_predicates_succ_rate': (tot_edge_predicates_satisfied+tot_node_predicates_satisfied)/(tot_edge_predicates+tot_node_predicates) if (tot_edge_predicates+tot_node_predicates)>0 else 0,
-        'tot_goal_succ_rate': len(goal_status['satisfied'])/len(self.task.goal_conditions) if len(self.task.goal_conditions)>0 else 0,
-        'node_predicates':node_predicates,
-        'edge_predicates':edge_predicates,
+        'satisfied_edge_predicates': satisfied_edge_predicates,
+        'satisfied_node_predicates': satisfied_node_predicates,
+        "satisfied_predicates":satisfied_edge_predicates+satisfied_node_predicates,
         'predicate_info':predicate_info,
         "satisfication_info":goal_status,
+        'pure_edge_predicates':pure_edge_predicates,
+        'pure_node_predicates':pure_node_predicates,
+        'mixed_predicates':mixed_predicates,
+        'satisfied_pure_edge_predicates':satisfied_pure_edge_predicates,
+        'satisfied_pure_node_predicates':satisfied_pure_node_predicates,
+        'satisfied_mixed_predicates':satisfied_mixed_predicates,
         # 'execution_info':execution_info,
         }
         for k,v in self.evaluation_info.items():
@@ -244,37 +271,18 @@ class ActionSequenceEvaluator():
 
 
     def evaluate_goal(self,actions,ending_step=None):
-
-        execution_info=[]
         for idx,action in enumerate(actions):
             if ending_step is not None and idx>ending_step:
                 break
-            rst={}
             try:
                 action_name=action["action"]
                 obj=action["object"]
-                rst["action"]=action_name
-                rst['object']=obj
                 flag=self.transition_model.apply_action(action_name,obj)
-                rst['execution_success']=flag
             except Exception as e:
                 msg=traceback.format_exc()
-                rst["unknown_execution_error"]=str(e)+msg
-                rst["execution_success"]=False
-
-            rst['step']=idx
-            rst['current_goal_condition']=self.task.check_success()
-            execution_info.append(rst)
-
+                
         if not self.task.check_success()[0]:
             self.transition_model.final_step()
-            rst={
-                'action':"teleport_all",
-                'step':len(actions),
-                'current_goal_condition':self.task.check_success(),
-            }
-
-        execution_info.append(rst)
         return self.get_goal_state()
     
 
@@ -300,7 +308,6 @@ class ActionSequenceEvaluator():
                     if "ErrorType.ADDITIONAL_STEP" in error_dict:
                         self.evaluation_info["error_type"]["ErrorType.ADDITIONAL_STEP"]=error_dict["ErrorType.ADDITIONAL_STEP"]
                         flag=True
-                        continue
                     if "ErrorType.AFFORDANCE_ERROR" in error_dict:
                         self.evaluation_info["error_type"]["ErrorType.AFFORDANCE_ERROR"]=error_dict["ErrorType.AFFORDANCE_ERROR"]
                     elif "ErrorType.WRONG_TEMPORAL_ORDER" in error_dict:
