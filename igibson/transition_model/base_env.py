@@ -23,8 +23,8 @@ class BaseEnv:
         config["task_id"] = task_id
         config["scene_id"] = scene_id
         config["robot"]["show_visual_head"] = True
-        config["image_width"]=512
-        config["image_height"]=512
+        config["image_width"]=1024
+        config["image_height"]=1024
         self.config = config
     
             

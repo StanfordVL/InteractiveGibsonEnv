@@ -4,7 +4,6 @@ from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGroupe
 from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
 from igibson.evaluation.action_sequence.prompts.one_shot import prompt
-from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
 from igibson.transition_model.eval_env import EvalEnv
 from igibson.evolving_graph.eval_evolving_graph_env import EvalGraphEnv
 from igibson.evolving_graph.eval_evolving_graph_env import EvalActions
@@ -129,8 +128,8 @@ class ActionSequenceEvaluator():
     def get_prompt(self):
         return prompt.format(init_state=self.get_initial_state(),target_state=self.get_target_state(),obj_list=self.get_objects_str())
 
-    def get_raw_response(self,prompt):
-        return call_gpt_with_retry(prompt)
+    # def get_raw_response(self,prompt):
+    #     return call_gpt_with_retry(prompt)
     
     def parse_response(self,response):
         # find [ and ]

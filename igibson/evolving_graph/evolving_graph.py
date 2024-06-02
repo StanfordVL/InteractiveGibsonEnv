@@ -1023,6 +1023,8 @@ class EvolvingGraph():
         # clean will clean both dust and stain
         try_clean_dust=False
         try_clean_stain=False
+        flag1=False
+        flag2=False
         if object_states.Dusty in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Dusty]==True:
             flag1=self.clean_dust(obj)
             try_clean_dust=True
