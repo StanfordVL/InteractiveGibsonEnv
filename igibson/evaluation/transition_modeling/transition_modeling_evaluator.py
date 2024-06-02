@@ -3,16 +3,15 @@ from igibson.envs.igibson_env import iGibsonEnv
 from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGrouper
 from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
-from igibson.evaluation.transition_modeling.prompts.new_prompts import prompt
-from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
+from igibson.evaluation.transition_modeling.prompts.prompts import prompt2 as prompt
 from bddl.config import get_definition_filename
 import os
 import json
 import re
 from igibson.evaluation.transition_modeling.logic_score import calculate_logic_score
-DOMAIN_FILE_PATH = "igibson/evaluation/transition_modeling/resources/behavior_new.pddl"
+DOMAIN_FILE_PATH = "igibson/evaluation/transition_modeling/data/resources/behavior_new.pddl"
 HUMAN_ANNOTATION_PATH="igibson/evaluation/data/action_sequence_human_annotations"
-GT_DATA_PATH="igibson/evaluation/transition_modeling/resources/gt_file.json"
+GT_DATA_PATH="igibson/evaluation/transition_modeling/data/resources/problem_pddl.json"
 
 with open(GT_DATA_PATH) as f:
     GT_DATA=json.load(f)
@@ -145,9 +144,6 @@ class TransitionModelingEvaluator(BaseEnv):
     
     def get_prompt(self,gt_data=GT_DATA):
         return prompt.format(problem_file=self.get_modified_pddl(gt_data),action_handler=self.get_llm_input_action_handler())
-
-    def get_raw_response(self,prompt):
-        return call_gpt_with_retry(prompt)
     
     def parse_response(self,response):
         parsed_actions=self.extract_action_details(content=response)
