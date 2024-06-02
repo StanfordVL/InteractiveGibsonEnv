@@ -307,7 +307,7 @@ class ActionSequenceEvaluator():
                     if "ErrorType.ADDITIONAL_STEP" in error_dict:
                         self.evaluation_info["error_type"]["ErrorType.ADDITIONAL_STEP"]=error_dict["ErrorType.ADDITIONAL_STEP"]
                         flag=True
-                    if "ErrorType.AFFORDANCE_ERROR" in error_dict:
+                    elif "ErrorType.AFFORDANCE_ERROR" in error_dict:
                         self.evaluation_info["error_type"]["ErrorType.AFFORDANCE_ERROR"]=error_dict["ErrorType.AFFORDANCE_ERROR"]
                     elif "ErrorType.WRONG_TEMPORAL_ORDER" in error_dict:
                         self.evaluation_info["error_type"]["ErrorType.WRONG_TEMPORAL_ORDER"]=error_dict["ErrorType.WRONG_TEMPORAL_ORDER"]
