@@ -34,10 +34,10 @@ def main(demo_dir,name_dir,rst_dir):
             print("Error in ",args[1])
             print(e)
 
-        with open(os.path.join(rst_dir,"transition_modeling_prompt.json"), 'w') as f:
+        with open(os.path.join(rst_dir,"transition_modeling_prompts.json"), 'w') as f:
             json.dump(statistics,f,indent=4)
 
-    with open(os.path.join(rst_dir,"transition_modeling_prompt.json"), 'w') as f:
+    with open(os.path.join(rst_dir,"transition_modeling_prompts.json"), 'w') as f:
         json.dump(statistics,f,indent=4)
     
     print("All Done!")
