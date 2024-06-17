@@ -1,0 +1,402 @@
+{
+    "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task assembling_gift_baskets\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"inside\", \"params\": [\"bow.0\", \"basket.0\"]}, {\"operator\": \"inside\", \"params\": [\"bow.1\", \"basket.1\"]}, {\"operator\": \"inside\", \"params\": [\"bow.2\", \"basket.2\"]}, {\"operator\": \"inside\", \"params\": [\"bow.3\", \"basket.3\"]}]\nError Info: Expecting ',' delimiter: line 1 column 259 (char 258)"
+    },
+    "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task bottling_fruit\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [{\"operator\": \"open\", \"params\": [\"jar.0\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"open\", \"params\": [\"jar.1\"]}]}\nError Info: Expecting ',' delimiter: line 1 column 182 (char 181)"
+    },
+    "boxing_books_up_for_storage_0_Benevolence_1_int_0_2021-09-10_15-35-47": {
+        "success": true,
+        "error_info": ""
+    },
+    "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25": {
+        "success": true,
+        "error_info": ""
+    },
+    "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task brushing_lint_off_clothing\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"sweater.36\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"sweater.37\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"sweater.38\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"sweater.39\"]}]}}\nError Info: Expecting ',' delimiter: line 1 column 358 (char 357)"
+    },
+    "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task chopping_vegetables\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"inside\", \"params\": [\"vidalia_onion.67\", \"casserole.70\"]}\nError Info: Expecting ',' delimiter: line 1 column 102 (char 101)"
+    },
+    "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_barbecue_grill\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"grill.50\"]}]\nError Info: Expecting ',' delimiter: line 1 column 78 (char 77)"
+    },
+    "cleaning_bathrooms_0_Benevolence_0_int_1_2021-06-12_19-33-28": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_bathrooms\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"toilet.6\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"bathtub.4\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"sink.7\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"room_floor_bathroom.0\"]}]}]\nError Info: Expecting ',' delimiter: line 1 column 371 (char 370)"
+    },
+    "cleaning_bathtub_0_Pomaria_0_int_0_2021-09-10_16-22-10": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_bathtub\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"bathtub.35\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"bathtub.35\"]}]}]\nError Info: Expecting ',' delimiter: line 1 column 199 (char 198)"
+    },
+    "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_bedroom\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"nextto\", \"params\": [\"vacuum.51\", \"bed.10\"]}, {\"operator\": \"ontop\", \"params\": [\"painting.50\", \"sheet.53\"]}]\nError Info: Expecting ',' delimiter: line 1 column 152 (char 151)"
+    },
+    "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_carpets\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"room_floor_corridor.0\"]}]\nError Info: Expecting ',' delimiter: line 1 column 93 (char 92)"
+    },
+    "cleaning_closet_0_Beechwood_1_int_0_2021-10-25_19-50-32": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_closet\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"room_floor_closet.0\"]}]\nError Info: Expecting ',' delimiter: line 1 column 89 (char 88)"
+    },
+    "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48": {
+        "success": false,
+        "error_info": "sequence item 0: expected str instance, dict found"
+    },
+    "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_kitchen_cupboard\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"inside\", \"params\": [\"bowl.0\", \"top_cabinet.24\"]}]\nError Info: Expecting ',' delimiter: line 1 column 95 (char 94)"
+    },
+    "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_microwave_oven\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"microwave.36\"]}]\nError Info: Expecting ',' delimiter: line 1 column 84 (char 83)"
+    },
+    "cleaning_out_drawers_0_Benevolence_1_int_0_2021-10-20_05-03-27": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_oven\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"oven.24\"]}]\nError Info: Expecting ',' delimiter: line 1 column 79 (char 78)"
+    },
+    "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_sneakers\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"under\", \"params\": [\"gym_shoe.78\", \"coffee_table.4\"]}, {\"operator\": \"under\", \"params\": [\"gym_shoe.79\", \"coffee_table.4\"]]}}\nError Info: Expecting ',' delimiter: line 1 column 165 (char 164)"
+    },
+    "cleaning_stove_0_Wainscott_0_int_0_2021-09-11_12-51-07": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_stove\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [\"dusty(stove.88)\"]}, {\"operator\": \"not\", \"params\": [\"stained(stove.88)\"]}]\nError Info: Expecting ',' delimiter: line 1 column 137 (char 136)"
+    },
+    "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_the_hot_tub\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"onfloor\", \"params\": [\"pool.50\", \"room_floor_garage.0\"]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"pool.50\"]}]}]\nError Info: Expecting ',' delimiter: line 1 column 183 (char 182)"
+    },
+    "cleaning_the_pool_0_Ihlen_0_int_0_2021-06-01_15-30-31": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_toilet_0_Merom_0_int_1_2021-06-23_17-35-48": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_toilet\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"onfloor\", \"params\": [\"scrub_brush.70\", \"room_floor_bathroom.0\"]}, {\"operator\": \"onfloor\", \"params\": [\"detergent.71\", \"room_floor_bathroom.0\"]}]\nError Info: Expecting ',' delimiter: line 1 column 189 (char 188)"
+    },
+    "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24": {
+        "success": true,
+        "error_info": ""
+    },
+    "cleaning_up_refrigerator_0_Wainscott_0_int_1_2021-06-23_17-46-01": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_up_refrigerator\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [\"dusty(bowl.0)\"]}, {\"operator\": \"not\", \"params\": [\"stained(fridge.97)\"]}]\nError Info: Expecting ',' delimiter: line 1 column 136 (char 135)"
+    },
+    "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task cleaning_up_the_kitchen_only\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"inside\", \"params\": [\"casserole.84\", \"fridge.20\"]}, {\"operator\": \"inside\", \"params\": [\"apple.87\", \"fridge.20\"]}]\nError Info: Expecting ',' delimiter: line 1 column 157 (char 156)"
+    },
+    "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05": {
+        "success": true,
+        "error_info": ""
+    },
+    "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51": {
+        "success": true,
+        "error_info": ""
+    },
+    "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28": {
+        "success": true,
+        "error_info": ""
+    },
+    "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task collect_misplaced_items\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"ontop\", \"params\": [\"gym_shoe.0\", \"breakfast_table.1\"]}, {\"operator\": \"ontop\", \"params\": [\"necklace.0\", \"breakfast_table.1\"]}, {\"operator\": \"ontop\", \"params\": [\"notebook.0\", \"breakfast_table.1\"]}, {\"operator\": \"forall\", \"params\": [\"sock_n_01\", {\"operator\": \"ontop\", \"params\": [\"sock_n_01\", \"breakfast_table.1\"]}]}]\nError Info: Expecting ',' delimiter: line 1 column 359 (char 358)"
+    },
+    "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43": {
+        "success": true,
+        "error_info": ""
+    },
+    "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task filling_an_Easter_basket\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"forpairs\", \"params\": [\"book_n_02\", \"basket_n_01\", {\"operator\": \"nextto\", \"params\": [\"book_n_02\", \"basket_n_01\"]}]\nError Info: Expecting ',' delimiter: line 1 column 128 (char 127)"
+    },
+    "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42": {
+        "success": true,
+        "error_info": ""
+    },
+    "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24": {
+        "success": true,
+        "error_info": ""
+    },
+    "installing_a_fax_machine_0_Beechwood_0_int_0_2021-10-25_20-22-22": {
+        "success": true,
+        "error_info": ""
+    },
+    "installing_a_modem_0_Beechwood_0_int_0_2021-10-25_20-28-55": {
+        "success": true,
+        "error_info": ""
+    },
+    "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07": {
+        "success": true,
+        "error_info": ""
+    },
+    "installing_a_scanner_0_Pomaria_0_int_0_2021-06-08_18-34-59": {
+        "success": true,
+        "error_info": ""
+    },
+    "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23": {
+        "success": true,
+        "error_info": ""
+    },
+    "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59": {
+        "success": true,
+        "error_info": ""
+    },
+    "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42": {
+        "success": true,
+        "error_info": ""
+    },
+    "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14": {
+        "success": true,
+        "error_info": ""
+    },
+    "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task locking_every_window\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"not\", \"params\": [{\"operator\": \"open\", \"params\": [\"window.81\"]}]\nError Info: Expecting ',' delimiter: line 1 column 78 (char 77)"
+    },
+    "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task making_tea\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"soaked\", \"params\": [\"tea_bag.0\"]}, {\"operator\": \"toggled_on\", \"params\": [\"stove.88\"]}]\nError Info: Expecting ',' delimiter: line 1 column 132 (char 131)"
+    },
+    "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task mopping_floors\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [\nError Info: Expecting value: line 1 column 32 (char 31)"
+    },
+    "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35": {
+        "success": true,
+        "error_info": ""
+    },
+    "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42": {
+        "success": true,
+        "error_info": ""
+    },
+    "opening_presents_0_Benevolence_2_int_0_2021-10-25_21-10-48": {
+        "success": true,
+        "error_info": ""
+    },
+    "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54": {
+        "success": true,
+        "error_info": ""
+    },
+    "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20": {
+        "success": true,
+        "error_info": ""
+    },
+    "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24": {
+        "success": true,
+        "error_info": ""
+    },
+    "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15": {
+        "success": true,
+        "error_info": ""
+    },
+    "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task packing_bags_or_suitcase\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"or\", \"params\": [\nError Info: Expecting value: line 1 column 31 (char 30)"
+    },
+    "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19": {
+        "success": true,
+        "error_info": ""
+    },
+    "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23": {
+        "success": true,
+        "error_info": ""
+    },
+    "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11": {
+        "success": true,
+        "error_info": ""
+    },
+    "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task packing_food_for_work\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"or\", \"params\": [{\"operator\": \"onfloor\", \"params\": [\"carton.0\", \"room_floor_kitchen.0\"]}, {\"operator\": \"ontop\", \"params\": [\"carton.0\", \"countertop.81\"]}]\nError Info: Expecting ',' delimiter: line 1 column 167 (char 166)"
+    },
+    "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task packing_lunches\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"or\", \"params\": [{\"operator\": \"inside\", \"params\": [\"apple.0\", \"carton.1\"]}, {\"operator\": \"inside\", \"params\": [\"banana.0\", \"carton.1\"]}]\nError Info: Expecting ',' delimiter: line 1 column 149 (char 148)"
+    },
+    "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29": {
+        "success": false,
+        "error_info": "sequence item 1: expected str instance, list found"
+    },
+    "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43": {
+        "success": true,
+        "error_info": ""
+    },
+    "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49": {
+        "success": true,
+        "error_info": ""
+    },
+    "polishing_furniture_0_Ihlen_0_int_0_2021-10-26_11-35-40": {
+        "success": true,
+        "error_info": ""
+    },
+    "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31": {
+        "success": true,
+        "error_info": ""
+    },
+    "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task polishing_silver\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [\nError Info: Expecting value: line 1 column 32 (char 31)"
+    },
+    "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task preparing_a_shower_for_child\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"onfloor\", \"params\": [\"dishtowel.0\", \"room_floor_bathroom.0\"]}, {\"operator\": \"onfloor\", \"params\": [\"shampoo.0\", \"room_floor_bathroom.0\"]]}\nError Info: Expecting ',' delimiter: line 1 column 181 (char 180)"
+    },
+    "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task preparing_salad\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"sliced\", \"params\": [\"tomato.82\"]}, {\"operator\": \"sliced\", \"params\": [\"tomato.83\"]}]\nError Info: Expecting ',' delimiter: line 1 column 129 (char 128)"
+    },
+    "preserving_food_0_Rs_int_0_2021-08-25_15-53-33": {
+        "success": true,
+        "error_info": ""
+    },
+    "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25": {
+        "success": true,
+        "error_info": ""
+    },
+    "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task putting_away_Halloween_decorations\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"or\", \"params\": [{\"operator\": \"nextto\", \"params\": [\"sheet.0\", \"coffee_table.5\"]}, {\"operator\": \"ontop\", \"params\": [\"sheet.0\", \"coffee_table.5\"]}]\nError Info: Expecting ',' delimiter: line 1 column 159 (char 158)"
+    },
+    "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44": {
+        "success": true,
+        "error_info": ""
+    },
+    "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09": {
+        "success": true,
+        "error_info": ""
+    },
+    "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57": {
+        "success": true,
+        "error_info": ""
+    },
+    "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09": {
+        "success": true,
+        "error_info": ""
+    },
+    "re-shelving_library_books_0_Rs_int_0_2021-10-25_21-22-26": {
+        "success": true,
+        "error_info": ""
+    },
+    "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21": {
+        "success": true,
+        "error_info": ""
+    },
+    "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17": {
+        "success": true,
+        "error_info": ""
+    },
+    "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task serving_hors_d_oeuvres\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [\nError Info: Expecting value: line 1 column 32 (char 31)"
+    },
+    "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task setting_mousetraps\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"nextto\", \"params\": [\"mousetrap.102\", \"toilet.64\"]}, {\"operator\": \"nextto\", \"params\": [\"mousetrap.103\", \"toilet.64\"]}]\nError Info: Expecting ',' delimiter: line 1 column 163 (char 162)"
+    },
+    "setting_up_candles_0_Wainscott_0_int_0_2021-10-26_13-40-51": {
+        "success": true,
+        "error_info": ""
+    },
+    "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18": {
+        "success": true,
+        "error_info": ""
+    },
+    "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task sorting_groceries\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [\nError Info: Expecting value: line 1 column 32 (char 31)"
+    },
+    "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16": {
+        "success": true,
+        "error_info": ""
+    },
+    "storing_food_0_Rs_int_0_2021-10-25_21-27-36": {
+        "success": true,
+        "error_info": ""
+    },
+    "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47": {
+        "success": true,
+        "error_info": ""
+    },
+    "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33": {
+        "success": true,
+        "error_info": ""
+    },
+    "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40": {
+        "success": true,
+        "error_info": ""
+    },
+    "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34": {
+        "success": true,
+        "error_info": ""
+    },
+    "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55": {
+        "success": true,
+        "error_info": ""
+    },
+    "washing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_22-38-10": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task washing_cars_or_other_vehicles\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"not\", \"params\": [{\"operator\": \"dusty\", \"params\": [\"car.0\"]}]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"car.0\"]}]}]\nError Info: Expecting ',' delimiter: line 1 column 187 (char 186)"
+    },
+    "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48": {
+        "success": true,
+        "error_info": ""
+    },
+    "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task washing_floor\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"soaked\", \"params\": [\"bath_towel.0\"]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"bath_towel.0\"]}]}}\nError Info: Expecting ',' delimiter: line 1 column 168 (char 167)"
+    },
+    "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44": {
+        "success": false,
+        "error_info": "In get_subgoal_plan, failed to load the subgoal plan for task washing_pots_and_pans\nError Info: In load_plan_str, failed to load the plan string:\n{\"operator\": \"and\", \"params\": [{\"operator\": \"inside\", \"params\": [\"soap.84\", \"sink.37\"]}, {\"operator\": \"not\", \"params\": [{\"operator\": \"stained\", \"params\": [\"soap.84\"]}]}}\nError Info: Expecting ',' delimiter: line 1 column 169 (char 168)"
+    },
+    "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01": {
+        "success": true,
+        "error_info": ""
+    },
+    "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46": {
+        "success": true,
+        "error_info": ""
+    }
+}

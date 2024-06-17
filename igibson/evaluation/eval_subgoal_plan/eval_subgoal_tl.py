@@ -6,13 +6,14 @@ import random
 from igibson.evolving_graph.eval_evolving_graph_env import EvalGraphEnv
 from igibson.tasks.behavior_task import BehaviorTask
 from typing import List, Dict, Any, Optional, Tuple, Union
-from igibson.evaluation.eval_subgoal_plan.subgoal_plan import SubgoalPlan, SubgoalPlanJSON, SubgoalPlanPlain
+from igibson.evaluation.eval_subgoal_plan.subgoal_plan import SubgoalPlan, SubgoalPlanJSON, SubgoalPlanPlain, SubgoalPlanHalfJson
 from igibson.evaluation.eval_subgoal_plan.checkers import Vocab, SyntacticChecker, SemanticChecker, RuntimeChecker
 from igibson.evaluation.eval_subgoal_plan.state_action_translator import StateActionTranslator
 from igibson.evaluation.eval_subgoal_plan.tl_formula.bddl_to_tl import translate_addressable_obj_into_tl_obj, translate_tl_obj_into_addressable_obj
 import io
 import sys
 import multiprocessing
+import argparse
 
 class EvalStatistics:
     def __init__(self, task_list: List[str], log_path: str) -> None:
@@ -30,13 +31,15 @@ class EvalStatistics:
         for task_name in self.task_list:
             eval_dict[task_name] = {
                 'success': False,
-                'info': None
+                'info': None,
+                'goal_info': None
             }
         return eval_dict
     
-    def update_eval_rst_dict(self, task_name:str, success:bool, error_info:Union[str, None]):
+    def update_eval_rst_dict(self, task_name:str, success:bool, error_info:Union[str, None], goal_info: Union[Dict[str, Any], None]=None):
         self.eval_rst_dict[task_name]['success'] = success
         self.eval_rst_dict[task_name]['info'] = error_info
+        self.eval_rst_dict[task_name]['goal_info'] = goal_info
     
     def get_eval_rst_dict(self) -> Dict[str, Dict[str, Any]]:
         return self.eval_rst_dict
@@ -60,7 +63,11 @@ class EvalSubgoalPlan:
         self.tl_name_mapping = self.get_tl_name_mapping(self.igibson_name_mapping, self.category_map) #type:ignore
         self.tl_relevant_objects = [obj['name'] for obj in self.tl_name_mapping]
         self.task_name = self.env.task.behavior_activity #type:ignore
-        self.subgoal_plan = SubgoalPlanPlain(plan_path, self.task_name) if not json_format else SubgoalPlanJSON(plan_path, self.task_name)
+        # self.subgoal_plan = SubgoalPlanPlain(plan_path, self.task_name) if not json_format else SubgoalPlanJSON(plan_path, self.task_name)
+        try:
+            self.subgoal_plan = SubgoalPlanHalfJson(plan_path, self.task_name)
+        except Exception as e:
+            raise e
     
     def get_tl_category(self, igibson_name_mapping:List[Dict[str, str]]) -> Dict[str, str]:
         category_map = {}
@@ -87,22 +94,31 @@ class EvalSubgoalPlan:
         syntactic_rst = syntactic_checker.run_result
         if not syntactic_rst:
             syntactic_report = syntactic_checker.report()
-            error_tuple = ('format', syntactic_report)
+            error_type = syntactic_report['error_type']
+            error_category = ''
+            if error_type == 'NotParseable':
+                error_category = 'NotParseable'
+            elif error_type == 'UnknownPrimitive':
+                error_category = 'Hallucination'
+            else:
+                assert False, 'Unknown error type'
+            error_tuple = (error_category, syntactic_report, None)
             return error_tuple
         tl_expression = syntactic_checker.get_parsed_tl_expression()
         semantic_checker = SemanticChecker(self.subgoal_plan, vocab, tl_expression, True)
         semantic_rst = semantic_checker.run_result
         if not semantic_rst:
             semantic_report = semantic_checker.report()
-            error_tuple = ('hallucination', semantic_report)
+            error_tuple = ('Hallucination', semantic_report, None)
             return error_tuple
         runtime_checker = RuntimeChecker(self.env, self.subgoal_plan, vocab, tl_expression, True)
         runtime_report = runtime_checker.report()
         runtime_rst = runtime_checker.run_result
         if not runtime_rst:
-            error_tuple = ('runtime', runtime_checker.executable, runtime_report)
+            error_category = 'Runtime' if not runtime_checker.executable else 'GoalUnreachable'
+            error_tuple = (error_category, runtime_checker.executable, runtime_report, runtime_checker.goal_info)
             return error_tuple
-        return ('correct', runtime_checker.executable, runtime_checker.feasible_action_seqs, runtime_report)
+        return ('Correct', runtime_checker.executable, runtime_checker.feasible_action_seqs, runtime_report, runtime_checker.goal_info)
         
 
     # def evaluate_first_two_part(self):
@@ -136,7 +152,7 @@ def get_all_task_list():
     return task_list
 
 def get_test_task_list():
-    t1 = 'cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44'
+    t1 = 'washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48'
     return [t1]
 
 counter = multiprocessing.Value('i', 0)
@@ -153,33 +169,78 @@ def evaluate_task(task_name, demo_dir, plan_path, eval_stat_path, test_mode=Fals
     global lock
     global counter
     demo_path = os.path.join(demo_dir, task_name + '.hdf5')
-    eval_subgoal_plan = EvalSubgoalPlan(demo_path, plan_path)
-    report = eval_subgoal_plan.evaluate_subgoal_plan()
+    try:
+        eval_subgoal_plan = EvalSubgoalPlan(demo_path, plan_path)
+        report = eval_subgoal_plan.evaluate_subgoal_plan()
+    except Exception as e:
+        report = ('NotParseable', str(e), None)
     # eval_subgoal_plan.test_eval_graph_env()
     if test_mode == True:
         return report
     with lock:
         counter.value += 1
         print(f'Current task number: {counter.value}')
+        goal_info = report[-1]
         eval_statistics = EvalStatistics(get_all_task_list(), eval_stat_path)
-        if report[0] != 'correct':
-            eval_statistics.update_eval_rst_dict(task_name, False, str(report))
+        if report[0] != 'Correct':
+            eval_statistics.update_eval_rst_dict(task_name, False, str(report[:-1]), goal_info)
         else:
-            eval_statistics.update_eval_rst_dict(task_name, True, str(report))
+            eval_statistics.update_eval_rst_dict(task_name, True, str(report[:-1]), goal_info)
         eval_statistics.save_eval_rst_dict()
     return report
 
-def eval_subgoal_plan():
+def get_one_raw_task_goal(demo_dir, task_name, error_list_dict, error_path):
+    demo_path = os.path.join(demo_dir, task_name + '.hdf5')
+    env = EvalGraphEnv(demo_path=demo_path)
+    success_dict = env.action_env.cur_state.check_success(env.task)
+    with lock:
+        counter.value += 1
+        error_list_dict[task_name] = success_dict
+        with open(error_path, 'w') as f:
+            json.dump(error_list_dict, f, indent=4)
+    
+def get_all_raw_task_goal():
     demo_dir = './igibson/data/virtual_reality'
-    plan_path = './igibson/evaluation/eval_subgoal_plan/resources/log5-16-00.json'
+    error_list_dict_path = './igibson/evaluation/eval_subgoal_plan/error_list_dict.json'
+    if os.path.exists(error_list_dict_path):
+        with open(error_list_dict_path, 'r') as f:
+            error_list_dict = json.load(f)
+    else:
+        error_list_dict = {}
     task_list = get_all_task_list()
-    eval_stat_path = './igibson/log/all_checking_gpt4.json'
+    real_task_list = [task_name for task_name in task_list if not task_name in error_list_dict.keys()]
+    print(f'remaining task number: {len(real_task_list)}')
+    real_task_list = real_task_list[:10] if len(real_task_list) > 10 else real_task_list
+
+    n_proc = min(multiprocessing.cpu_count(), len(real_task_list), 5)
+    for task_name in real_task_list:
+        get_one_raw_task_goal(demo_dir, task_name, error_list_dict, error_list_dict_path)
+
+
+    # with multiprocessing.Pool(processes=n_proc, initializer=init_globals, initargs=(counter, lock)) as pool:
+    #     try:
+    #         results = [pool.apply_async(get_one_raw_task_goal, (demo_dir, task_name, error_list_dict, error_list_dict_path)) for task_name in real_task_list]
+    #         for result in results:
+    #             result.get()
+    #     except KeyboardInterrupt:
+    #         pool.terminate()
+    #     finally:
+    #         pool.close()
+    #         pool.join()
+
+
+
+
+def eval_subgoal_plan(plan_path, eval_stat_path):
+    demo_dir = './igibson/data/virtual_reality'
+    task_list = get_all_task_list()
+    # task_list = get_test_task_list()
     eval_statistics = EvalStatistics(task_list, eval_stat_path)
     real_task_list = [task_name for task_name in task_list if not eval_statistics.check_evaluated_task(task_name)]
-    real_task_list = real_task_list[:12] if len(real_task_list) > 12 else real_task_list
+    real_task_list = real_task_list[:10] if len(real_task_list) > 10 else real_task_list
     print(len(real_task_list))
 
-    n_proc = min(multiprocessing.cpu_count(), len(real_task_list), 6)
+    n_proc = min(multiprocessing.cpu_count(), len(real_task_list), 5)
     
     with multiprocessing.Pool(processes=n_proc, initializer=init_globals, initargs=(counter, lock)) as pool:
         eval_stat_path = eval_stat_path
@@ -194,10 +255,8 @@ def eval_subgoal_plan():
             pool.close()
             pool.join()
 
-def eval_subgoal_plan_single():
+def eval_subgoal_plan_single(plan_path, eval_stat_path):
     demo_dir = './igibson/data/virtual_reality'
-    plan_path = './igibson/evaluation/eval_subgoal_plan/resources/log5-16-00.json'
-    eval_stat_path = './igibson/log/all_checking_gpt4.json'
     # task_list = get_all_task_list()
     task_list = get_test_task_list()
     # eval_statistics = EvalStatistics(task_list, eval_stat_path)
@@ -208,76 +267,24 @@ def eval_subgoal_plan_single():
         report = evaluate_task(task_name, demo_dir, plan_path, eval_stat_path)
         print(report)
 
-# -----------------------------------------------
-# ---------Below is the test code----------------
-# -----------------------------------------------
-
-def test_load_evolving_graph():
-    demo_name = 'bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46'
-    demo_dir = './igibson/data/virtual_reality'
-    demo_path = os.path.join(demo_dir, demo_name + '.hdf5')
-    env = EvalGraphEnv(demo_path=demo_path)
-    task_name = env.task.behavior_activity
-    print(task_name)
-    action_env = env.action_env
-    print(action_env.name_to_obj)
-    assert isinstance(env.task, BehaviorTask)
-    print(action_env.cur_state.get_name_mapping(env.task))
-    # print(action_env.cur_state.get_name_mapping())
-
-
-
-def test_json_correctness(record_path):
-    if not os.path.exists(record_path):
-        with open(record_path, 'w') as f:
-            json.dump({}, f)
-    with open(record_path, 'r') as f:
-        logs = json.load(f)
-    
-    demo_dir = './igibson/data/virtual_reality'
-    plan_path = './igibson/evaluation/eval_subgoal_plan/resources/log5-19-17-gpt35-json-new.json'
-    task_list = get_all_task_list()
-    cur_num = 0
-    load_success_num = 0
-    for task_name in task_list:
-        demo_path = os.path.join(demo_dir, task_name + '.hdf5')
-        cur_num += 1
-        if task_name in logs:
-            task_success = logs[task_name]['success']
-            if task_success:
-                load_success_num += 1
-            continue
-        result = True
-        try:
-            eval_subgoal_plan = EvalSubgoalPlan(demo_path, plan_path, True)
-            load_success_num += 1
-            error_info = ""
-        except Exception as e:
-            result = False
-            error_info = str(e)
-            print(e)
-        finally:
-            temp = {
-                "success": result,
-                "error_info": error_info,
-            }
-            logs[task_name] = temp
-            with open(record_path, 'w') as f:
-                json.dump(logs, f, indent=4)
-        print("========================")
-        print("Current statistics:")
-        print(f'Cur Total number of tasks: {cur_num}, Number of successfully loaded tasks: {load_success_num}')
-        print("========================")
-
 
 if __name__ == '__main__':
-    # test_load_subgoal_plan()
-    # Redirect stdout to a file
-    # record_path = './igibson/log/json_new.json'
-    # sys.stdout = open('./igibson/log/see_json_new.log', 'a+')
-    # try:
-    #     test_json_correctness(record_path=record_path)
-    # finally:
-    #     sys.stdout.close()
-    eval_subgoal_plan()
-    # eval_subgoal_plan_single()
+    parser = argparse.ArgumentParser(description='Evaluate subgoal plan')
+    parser.add_argument('--llm_name', type=str,  default='gpt-4-turbo-2024-04-09_outputs', help='Name of the LLM')
+    args = parser.parse_args()
+
+    llm_name = args.llm_name
+    base_plan_path = './igibson/evaluation/eval_subgoal_plan/goal_inter_and_subgoal/llm_outputs'
+    plan_path = os.path.join(base_plan_path, llm_name + '.json')
+    base_stat_path = './igibson/evaluation/eval_subgoal_plan/goal_inter_and_subgoal/eval_stats'
+    base_state_name = 'eval_'
+    stat_name = llm_name.replace('_outputs', '')
+    eval_stat_path = os.path.join(base_stat_path, base_state_name + stat_name + '.json')
+
+    get_all_raw_task_goal()
+
+    # eval_subgoal_plan(plan_path, eval_stat_path)
+    # eval_subgoal_plan_single(plan_path, eval_stat_path)
+    # print(f'{llm_name} is called.')
+
+

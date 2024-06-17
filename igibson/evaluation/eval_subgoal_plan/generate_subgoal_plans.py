@@ -13,6 +13,7 @@ os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:10809'
 client = openai.OpenAI(api_key=os.environ.get('MANLING_OPENAI_KEY'))
 
 def get_openai_output(messages:list, model="gpt-3.5-turbo", temperature=0.7, max_tokens=3500):
+    print("Using model: {}".format(model))
     isFail = False
     try:
         completion = client.chat.completions.create(
@@ -84,6 +85,19 @@ def convert_dict_to_list(dict_file_path, list_dict_path):
     with open(list_dict_path, 'w') as f:
         json.dump(list_data, f, indent=4)
 
+def new_convert_dict_to_list(dict_file_path, list_dict_path):
+    with open(dict_file_path, 'r') as f:
+        dict_data = json.load(f)
+    list_data = []
+    for task_name, task_info in dict_data.items():
+        tmp = {
+            "identifier": task_name,
+            "llm_prompt": task_info['llm_prompt']
+        }
+        list_data.append(tmp)
+    with open(list_dict_path, 'w') as f:
+        json.dump(list_data, f, indent=4)
+
 
 def generate_input_prompt(demo_name, demo_dir, prompt_components, log_path):
     if not os.path.exists(log_path):
@@ -133,14 +147,16 @@ def generate_input_prompt(demo_name, demo_dir, prompt_components, log_path):
     s_tl_goal_conditions = []
     s_tl_goal_conditions = translate_bddl_final_states_into_simplified_tl(name_mapping, tl_category_map, env.task.goal_conditions)
 
-    info_prompt = prompt_components['Background'] + prompt_components['StateInfo'] + prompt_components['SupplementInfo'] + "\n".join(prompt_components['GoldExamples'])
-    task_prompt = prompt_components['TargetTask'].replace('<task_name>', task_name).replace('<relevant_objects>', '\n'.join(tl_objs)).replace('<initial_states>', '\n'.join(tl_exps)).replace('<goal_states>', '\n'.join(s_tl_goal_conditions))
+    # info_prompt = prompt_components['']
+    # info_prompt = prompt_components['Background'] + prompt_components['StateInfo'] + prompt_components['SupplementInfo'] + "\n".join(prompt_components['GoldExamples'])
+    task_prompt = prompt_components['target_task']
+    task_prompt = task_prompt.replace('<task_name>', task_name).replace('<relevant_objects>', '\n'.join(tl_objs)).replace('<initial_states>', '\n'.join(tl_exps)).replace('<goal_states>', '\n'.join(s_tl_goal_conditions))
+    # task_prompt = prompt_components['TargetTask'].replace('<task_name>', task_name).replace('<relevant_objects>', '\n'.join(tl_objs)).replace('<initial_states>', '\n'.join(tl_exps)).replace('<goal_states>', '\n'.join(s_tl_goal_conditions))
     
-    input_prompt = info_prompt + task_prompt
+    input_prompt = task_prompt
     logs[demo_name] = {
-        "identifier": demo_name,
-        "llm_prompt": input_prompt,
-        "reference": ""
+        "identifier": task_name,
+        "llm_prompt": input_prompt
     }
     with open(log_path, 'w') as f:
         json.dump(logs, f, indent=4)
@@ -250,11 +266,8 @@ def get_task_list():
     return task_list
 
 def main_generate_input_prompt(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
-    json_format = False
-    final_file = 'subgoal_plan_prompt_s_ltl.json' if not json_format else 'subgoal_plan_prompt_s_ltl_json.json'
-    prompt_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources'
-    prompt_file_path = os.path.join(prompt_file_path, final_file)
-    log_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\fake_all_prompt.json'
+    prompt_file_path = './igibson/evaluation/eval_subgoal_plan/resources/subgoal_plan_final_prompt_behavior_meta.json'
+    log_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_final_input_prompt_with_name.json'
     with open(prompt_file_path, 'r') as f:
         prompt_components = json.load(f)
     task_list = get_all_task_list()
@@ -275,6 +288,45 @@ def main_generate_input_prompt(demo_name=None, demo_dir='./igibson/data/virtual_
     print(f'Failed tasks:')
     for task in faild_task_list:
         print(task)
+
+
+def evaluate_on_gpt4o(user_prompt_path, system_prompt, log_path):
+    model = 'gpt-4o'
+    with open(user_prompt_path, 'r') as f:
+        user_prompt = json.load(f)
+    if os.path.exists(log_path):
+        with open(log_path, 'r') as f:
+            logs = json.load(f)
+    else:
+        logs = {}
+    for demo_name, task_info in user_prompt.items():
+        task_name = task_info['identifier']
+        user_input = task_info['llm_prompt']
+        if task_name in logs:
+            print(f'Task {task_name} has been processed before.')
+            continue
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_input}
+        ]
+        output = get_openai_output(messages, model=model)
+        logs[task_name] = {
+            "system_input": system_prompt,
+            "user_input": user_input,
+            "output": output
+        }
+        with open(log_path, 'w') as f:
+            json.dump(logs, f, indent=4)
+    return
+
+def main_run_gpt4o():
+    system_prompt_path = './igibson/evaluation/eval_subgoal_plan/resources/subgoal_plan_final_prompt_behavior_meta.json'
+    user_prompt_path = './igibson/evaluation/eval_subgoal_plan/resources/subgoal_plan_final_input_prompt_with_name.json'
+    log_path = './igibson/evaluation/eval_subgoal_plan/resources/subgoal_plan_final_results_gpt4o.json'
+    with open(system_prompt_path, 'r') as f:
+        meta_prompts = json.load(f)
+    system_prompt = meta_prompts['system_prompt']
+    evaluate_on_gpt4o(user_prompt_path, system_prompt, log_path)
 
 def main(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
     json_format = True
@@ -307,11 +359,12 @@ def main(demo_name=None, demo_dir='./igibson/data/virtual_reality'):
         print(task)
 
 def main_convert():
-    dict_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\fake_all_prompt.json'
-    list_dict_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_generation_behavior.json'
-    convert_dict_to_list(dict_file_path, list_dict_path)
+    dict_file_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_final_input_prompt_with_name.json'
+    list_dict_path = 'F:\\Projects\\Research\\embodiedAI\\kangrui\\iGibson\\igibson\\evaluation\\eval_subgoal_plan\\resources\\subgoal_plan_final_input_prompt_universal.json'
+    new_convert_dict_to_list(dict_file_path, list_dict_path)
 
 if __name__ == '__main__':
     # fire.Fire(main)
     main_generate_input_prompt()
+    # main_run_gpt4o()
     # main_convert()

@@ -73,7 +73,7 @@ class ErrorInfo:
         self.error_type = []
         self.error_info = []
         self.hidden_add = False
-        self.special_function_1 = False # this function is used to handle clean, False is dusty related, while True is stained related
+        self.special_function_1 = None # this function is used to handle clean, False is dusty related, while True is stained related
     def update_error(self, error_type: ErrorType, error_info):
         if not self.hidden_add:
             self.error_type.append(str(error_type))
@@ -91,11 +91,14 @@ class ErrorInfo:
     def reset_hidden_add(self):
         self.hidden_add = False
 
+SPECIAL_NAME_MAPPING={"toggled_on":"toggledon"}
+
 class GraphState():
     def __init__(self,name_to_obj):
         self.relation_tree=GraphRelationTree(name_to_obj)
         self.graph=nx.DiGraph()
         self.robot_inventory = {'right_hand':None,'left_hand':None}
+        
 
     def get_category_mapping(self,task:BehaviorTask):
         # map obj.name to category
@@ -107,6 +110,18 @@ class GraphState():
             elif isinstance(obj, RoomFloor) or isinstance(obj, URDFObject):
                 category_mapping[obj.name]=category
         return category_mapping
+    
+    def get_all_inhand_objects(self,hand):
+        inhand_objects=[]
+        def traverse(node):
+            inhand_objects.append(node.obj)
+            for child in node.children.keys():
+                inhand_objects.append(child)
+                traverse(node.children[child])
+        v=self.robot_inventory[hand]
+        if v is not None:
+            traverse(self.relation_tree.get_node(v))
+        return set(inhand_objects)
     
     def get_name_mapping(self,task:BehaviorTask):
         # map bddl name to obj.name
@@ -166,7 +181,7 @@ class GraphState():
             elif cur_node.teleport_type==TeleportType.INSIDE:
                 state_dict["edges"].append({"from_name":cur_node.obj,"relation":"inside","to_name":cur_node.parent.obj})
             next_node=cur_node.parent
-            while next_node.parent is not self.relation_tree.root:
+            while next_node.parent is not self.relation_tree.root and next_node != next_node.parent.parent:
                 if relation==TeleportType.INSIDE:
                     state_dict["edges"].append({"from_name":cur_node.obj,"relation":"inside","to_name":next_node.parent.obj})
                 next_node=next_node.parent
@@ -194,14 +209,22 @@ class GraphState():
         state_dict=self.get_state_dict(task)
 
 
-        goal_combos=[]
-        for goal_combo in task.ground_goal_state_options:
-            goal_combos.append([head.terms for head in goal_combo])
-
-        for goal_combo in goal_combos:
-            if self._check_goal_combo(goal_combo,name_mapping,state_dict):
-                return True
-        return False
+        subgoals=[]
+        subgoal_success=[]
+        for cond in task.goal_conditions:
+            subgoals.append(cond.terms)
+            subgoal_options=cond.flattened_condition_options
+            flag=False
+            for subgoal_option in subgoal_options:
+                flag=self._check_goal_combo(subgoal_option,name_mapping,state_dict)
+                if flag:
+                    break
+            subgoal_success.append(flag)
+        return {
+            "success":all(subgoal_success),
+            "subgoals":subgoals,
+            "subgoal_success":subgoal_success
+        }
 
     def _check_goal_combo(self,goal_combo,name_mapping,state_dict):
         for goal in goal_combo:
@@ -210,9 +233,19 @@ class GraphState():
         return True
     
     def _check_goal(self,goal,name_mapping,state_dict):
-        SPECIAL_NAME_MAPPING={"toggled_on":"toggledon",
-                              }
+        #remove inner [] in goal, only keep the first level
+        def remove_inner_brackets(input_list):
+            result = []
+            for element in input_list:
+                if isinstance(element, list):
+                    result.extend(remove_inner_brackets(element))
+                else:
+                    result.append(element)
+            return result
+        goal=remove_inner_brackets(goal)
         if 'not' in goal:
+            if not (len(goal)==3 or len(goal)==4):
+                print(goal)
             assert len(goal)==3 or len(goal)==4
             if len(goal)==3:
                 state=goal[1]
@@ -231,8 +264,10 @@ class GraphState():
                     if edge['from_name']==from_name and edge['to_name']==to_name and edge['relation']==relation:
                         return False
                 return True
-            
+
         else:
+            if not (len(goal)==2 or len(goal)==3):
+                print(goal)
             assert len(goal)==2 or len(goal)==3
             if len(goal)==2:
                 state=goal[0]
@@ -312,7 +347,7 @@ class EvolvingGraph():
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
-                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1:
+                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1.5:
                     error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {self.obj.name} too big to grasp")
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
@@ -347,6 +382,16 @@ class EvolvingGraph():
             self.cur_state.graph.remove_edge(predecessor,obj.name)
         self.cur_state.robot_inventory[hand]=obj.name
         self.cur_state.relation_tree.remove_ancestor(obj.name)
+        node=self.cur_state.relation_tree.get_node(obj.name)
+        node_to_remove=[]
+        obj_volumn=obj.bounding_box[0]*obj.bounding_box[1]*obj.bounding_box[2]
+        if node is not None:
+            for child_name in node.children.keys():
+                child_obj=self.name_to_obj[child_name]
+                if child_obj.bounding_box[0]*child_obj.bounding_box[1]*child_obj.bounding_box[2]>5*obj_volumn:
+                    node_to_remove.append(child_name)
+        for child_name in node_to_remove:
+            self.cur_state.relation_tree.remove_ancestor(child_name)
         print(f"Grasp {obj.name} success")
         return True
 
@@ -739,6 +784,7 @@ class EvolvingGraph():
                     node=state.relation_tree.get_node(obj.name)
                     allowed_cleaners=["dishwasher","sink"]
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         if object_states.ToggledOn in state.graph.nodes[parent_obj.name].keys() \
@@ -790,6 +836,7 @@ class EvolvingGraph():
                     node=state.relation_tree.get_node(obj.name)
                     allowed_cleaners=["sink"]
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         if object_states.ToggledOn in state.graph.nodes[parent_obj.name].keys() \
@@ -856,6 +903,7 @@ class EvolvingGraph():
                     in_sink=False
                     node=state.relation_tree.get_node(obj.name)
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         for allowed_soaker in allowed_soakers:
@@ -905,6 +953,7 @@ class EvolvingGraph():
                 allowered_cookers=["saucepan"]
                 node=state.relation_tree.get_node(obj.name)
                 while node.parent is not state.relation_tree.root:
+                    assert node != node.parent.parent
                     parent_obj_name=node.parent.obj
                     parent_obj=self.name_to_obj[parent_obj_name]
                     for allowered_cooker in allowered_cookers:
@@ -1019,16 +1068,18 @@ class EvolvingGraph():
     
     def clean(self, error_info: ErrorInfo, obj):
         # clean will clean both dust and stain
-        if error_info.special_function_1:
+        if error_info.special_function_1 is None:
+            flag1 = self.clean_dust(error_info, obj)
+            flag2 = self.clean_stain(error_info, obj)
+            rst = flag1 and flag2
+            if rst:
+                error_info.reset_error()
+            return rst
+        elif error_info.special_function_1:
             return self.clean_stain(error_info, obj)
         else:
             return self.clean_dust(error_info, obj)
-        flag1 = self.clean_dust(error_info, obj)
-        flag2 = self.clean_stain(error_info, obj)
-        rst = flag1 and flag2
-        if rst:
-            error_info.reset_error()
-        return rst
+        
     
 class BasePrecond:
     def __init__(self,obj,name_to_obj):
@@ -1056,6 +1107,7 @@ class BasePrecond:
             return True
         node=state.relation_tree.get_node(self.obj.name)
         while node.parent is not state.relation_tree.root:
+            assert node != node.parent.parent
             parent_obj_name=node.parent.obj
             parent_obj=self.name_to_obj[parent_obj_name]
             if (object_states.Open in state.graph.nodes[parent_obj.name].keys() and 
@@ -1091,6 +1143,11 @@ class PlacePrecond(BasePrecond):
         if self.obj==self.name_to_obj[state.robot_inventory[self.hand]]:
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
             error_info.update_error(ErrorType.MISSING_STEP, "Release target obj first before place (PLACE)")
+            return False
+        
+        if self.obj.name in state.get_all_inhand_objects(self.hand):
+            print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
+            error_info.update_error(ErrorType.MISSING_STEP, f"Release target obj {self.obj.name} first before place (PLACE)")
             return False
         return True
     

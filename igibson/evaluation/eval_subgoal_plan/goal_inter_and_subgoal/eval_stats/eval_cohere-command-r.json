@@ -1,0 +1,2478 @@
+{
+    "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'basket_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'basket_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'basket_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'basket_3'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'candle_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'candle_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'candle_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'candle_3'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'cookie_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'cookie_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'cookie_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}, {'action': 'RIGHT_GRASP', 'object': 'cookie_3'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_13'}], 'failed_subgoal': 'cooked(cookie.0)', 'failed_action': {'action': 'COOK', 'object': 'cookie_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object cookie_0 not in a cooker (COOK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "candle.n.01",
+                    "-",
+                    "candle.n.01",
+                    "inside",
+                    "candle.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "cheese.n.01",
+                    "-",
+                    "cheese.n.01",
+                    "inside",
+                    "cheese.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "cookie.n.01",
+                    "-",
+                    "cookie.n.01",
+                    "inside",
+                    "cookie.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "bow.n.08",
+                    "-",
+                    "bow.n.08",
+                    "inside",
+                    "bow.n.08",
+                    "basket.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carving_knife_0'}], 'failed_subgoal': 'sliced(strawberry.0)', 'failed_action': {'action': 'SLICE', 'object': 'strawberry_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_97 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "and",
+                    "inside",
+                    "strawberry.n.01_1",
+                    "jar.n.01",
+                    "not",
+                    "inside",
+                    "peach.n.03_1",
+                    "jar.n.01"
+                ],
+                [
+                    "exists",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "and",
+                    "inside",
+                    "peach.n.03_1",
+                    "jar.n.01",
+                    "not",
+                    "inside",
+                    "strawberry.n.01_1",
+                    "jar.n.01"
+                ],
+                [
+                    "forall",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "not",
+                    "open",
+                    "jar.n.01"
+                ],
+                [
+                    "sliced",
+                    "strawberry.n.01_1"
+                ],
+                [
+                    "sliced",
+                    "peach.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true,
+                false,
+                false
+            ]
+        }
+    },
+    "boxing_books_up_for_storage_0_Benevolence_1_int_0_2021-09-10_15-35-47": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'boxing_books_up_for_storage', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object duster is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'bringing_in_wood', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches 'o' in the current parser context, at line 1 col 294\\n\\nd.1) and soaked(plywood.2) then holding other soap then stained(plywood.0) and s\\n                                        ^\\nExpected one of: \\n\\t* LPAR\\n\"})",
+        "goal_info": null
+    },
+    "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_40'}, {'action': 'CLEAN', 'object': 'sweater_36'}, {'action': 'CLEAN', 'object': 'sweater_37'}, {'action': 'CLEAN', 'object': 'sweater_38'}, {'action': 'CLEAN', 'object': 'sweater_39'}, {'action': 'LEFT_GRASP', 'object': 'sweater_36'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}, {'action': 'LEFT_GRASP', 'object': 'sweater_37'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}, {'action': 'LEFT_GRASP', 'object': 'sweater_38'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}, {'action': 'LEFT_GRASP', 'object': 'sweater_39'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "sweater.n.01",
+                    "-",
+                    "sweater.n.01",
+                    "not",
+                    "dusty",
+                    "sweater.n.01"
+                ],
+                [
+                    "forall",
+                    "sweater.n.01",
+                    "-",
+                    "sweater.n.01",
+                    "ontop",
+                    "sweater.n.01",
+                    "bed.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'tomato_61'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'tomato_62'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'mushroom_63'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'mushroom_64'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'chestnut_65'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'chestnut_66'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_26'}, {'action': 'RIGHT_GRASP', 'object': 'carving_knife_69'}, {'action': 'SLICE', 'object': 'tomato_61'}, {'action': 'SLICE', 'object': 'tomato_62'}, {'action': 'SLICE', 'object': 'mushroom_63'}, {'action': 'SLICE', 'object': 'mushroom_64'}, {'action': 'SLICE', 'object': 'chestnut_65'}, {'action': 'SLICE', 'object': 'chestnut_66'}], 'failed_subgoal': 'inside(vidalia_onion.67, fridge.40)', 'failed_action': {'action': 'LEFT_GRASP', 'object': 'vidalia_onion_67'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_40 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "tomato.n.01",
+                    "-",
+                    "tomato.n.01",
+                    "and",
+                    "exists",
+                    "dish.n.01",
+                    "-",
+                    "dish.n.01",
+                    "inside",
+                    "tomato.n.01",
+                    "dish.n.01",
+                    "sliced",
+                    "tomato.n.01"
+                ],
+                [
+                    "forall",
+                    "mushroom.n.05",
+                    "-",
+                    "mushroom.n.05",
+                    "and",
+                    "exists",
+                    "dish.n.01",
+                    "-",
+                    "dish.n.01",
+                    "inside",
+                    "mushroom.n.05",
+                    "dish.n.01",
+                    "sliced",
+                    "mushroom.n.05"
+                ],
+                [
+                    "forall",
+                    "chestnut.n.03",
+                    "-",
+                    "chestnut.n.03",
+                    "and",
+                    "exists",
+                    "dish.n.01",
+                    "-",
+                    "dish.n.01",
+                    "inside",
+                    "chestnut.n.03",
+                    "dish.n.01",
+                    "sliced",
+                    "chestnut.n.03"
+                ],
+                [
+                    "forall",
+                    "vidalia_onion.n.01",
+                    "-",
+                    "vidalia_onion.n.01",
+                    "and",
+                    "exists",
+                    "dish.n.01",
+                    "-",
+                    "dish.n.01",
+                    "inside",
+                    "vidalia_onion.n.01",
+                    "dish.n.01",
+                    "sliced",
+                    "vidalia_onion.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bucket_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_38'}, {'action': 'TOGGLE_ON', 'object': 'sink_38'}, {'action': 'SOAK', 'object': 'rag_0'}, {'action': 'LEFT_GRASP', 'object': 'soap_0'}], 'failed_subgoal': 'Not(stained(soap.0))', 'failed_action': {'action': 'CLEAN', 'object': 'soap_0'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object soap_0 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "car.n.01_1"
+                ],
+                [
+                    "inside",
+                    "soap.n.01_1",
+                    "bucket.n.01_1"
+                ],
+                [
+                    "inside",
+                    "rag.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'cleaning_barbecue_grill', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches '[' in the current parser context, at line 1 col 129\\n\\nbucket.52, room_floor_garage.0) then or([inside(grill.50, sink.32) and toggledon\\n                                        ^\\nExpected one of: \\n\\t* RPAR\\n\\t* VARNAME\\n\\t* VARNAMEWITHID\\n\"})",
+        "goal_info": null
+    },
+    "cleaning_bathrooms_0_Benevolence_0_int_1_2021-06-12_19-33-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_7'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'sink_7'}, {'action': 'CLEAN', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'toilet_6'}, {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'Not(dusty(sink.7))', 'failed_action': {'action': 'CLEAN', 'object': 'sink_7'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_7'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'sink_7'}, {'action': 'CLEAN', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'toilet_6'}, {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'Not(dusty(bathtub.4))', 'failed_action': {'action': 'CLEAN', 'object': 'bathtub_4'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_7'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'sink_7'}, {'action': 'CLEAN', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'toilet_6'}, {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'Not(dusty(toilet.6))', 'failed_action': {'action': 'CLEAN', 'object': 'toilet_6'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_7'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'sink_7'}, {'action': 'CLEAN', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'toilet_6'}, {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'Not(dusty(room_floor_bathroom.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_7'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'sink_7'}, {'action': 'CLEAN', 'object': 'bathtub_4'}, {'action': 'CLEAN', 'object': 'toilet_6'}, {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'soaked(rag.0)', 'failed_action': {'action': 'SOAK', 'object': 'rag_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object rag_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "toilet.n.02_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "bathtub.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "sink.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ],
+                [
+                    "and",
+                    "soaked",
+                    "rag.n.01_1",
+                    "inside",
+                    "rag.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_bathtub_0_Pomaria_0_int_0_2021-09-10_16-22-10": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_bathtub', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'vacuum_51'}, {'action': 'RIGHT_GRASP', 'object': 'vacuum_51'}], 'failed_subgoal': 'Not(dusty(vacuum.51))', 'failed_action': {'action': 'CLEAN', 'object': 'vacuum_51'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'vacuum_51'}, {'action': 'RIGHT_GRASP', 'object': 'vacuum_51'}], 'failed_subgoal': 'soaked(hand_towel.52)', 'failed_action': {'action': 'SOAK', 'object': 'hand_towel_52'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object hand_towel_52 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "apparel.n.01",
+                    "-",
+                    "apparel.n.01",
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "inside",
+                    "apparel.n.01",
+                    "cabinet.n.01"
+                ],
+                [
+                    "and",
+                    "inside",
+                    "jewelry.n.01_1",
+                    "cabinet.n.01_1",
+                    "inside",
+                    "perfume.n.02_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "sheet.n.03_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "dusty",
+                    "cabinet.n.01"
+                ],
+                [
+                    "nextto",
+                    "vacuum.n.04_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "painting.n.01_1",
+                    "sheet.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_carpets', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: toggleoff'})",
+        "goal_info": null
+    },
+    "cleaning_closet_0_Beechwood_1_int_0_2021-10-25_19-50-32": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_closet', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object bottom_cabinet.31 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'Not(dusty(bottom_cabinet.28))', 'failed_action': {'action': 'CLEAN', 'object': 'bottom_cabinet_28'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No cleaner in inventory or object not in toggled on cleaner (CLEAN_DUST)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "dusty",
+                    "cabinet.n.01"
+                ],
+                [
+                    "forall",
+                    "book.n.02",
+                    "-",
+                    "book.n.02",
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "inside",
+                    "book.n.02",
+                    "cabinet.n.01"
+                ],
+                [
+                    "inside",
+                    "screwdriver.n.01_1",
+                    "bin.n.01_1"
+                ],
+                [
+                    "forall",
+                    "marker.n.03",
+                    "-",
+                    "marker.n.03",
+                    "inside",
+                    "marker.n.03",
+                    "bucket.n.01_1"
+                ],
+                [
+                    "inside",
+                    "pen.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'broom_0'}, {'action': 'CLEAN', 'object': 'dustpan_0'}, {'action': 'RIGHT_GRASP', 'object': 'broom_0'}, {'action': 'LEFT_GRASP', 'object': 'dustpan_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_48'}, {'action': 'TOGGLE_ON', 'object': 'sink_48'}, {'action': 'LEFT_GRASP', 'object': 'scrub_brush_0'}, {'action': 'RIGHT_RELEASE', 'object': 'broom_0'}], 'failed_subgoal': 'Not(dusty(broom.0))', 'failed_action': {'action': 'CLEAN', 'object': 'broom_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'broom_0'}, {'action': 'CLEAN', 'object': 'dustpan_0'}, {'action': 'RIGHT_GRASP', 'object': 'broom_0'}, {'action': 'LEFT_GRASP', 'object': 'dustpan_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_48'}, {'action': 'TOGGLE_ON', 'object': 'sink_48'}, {'action': 'LEFT_GRASP', 'object': 'scrub_brush_0'}, {'action': 'RIGHT_RELEASE', 'object': 'broom_0'}], 'failed_subgoal': 'Not(dusty(dustpan.0))', 'failed_action': {'action': 'CLEAN', 'object': 'dustpan_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'broom_0'}, {'action': 'CLEAN', 'object': 'dustpan_0'}, {'action': 'RIGHT_GRASP', 'object': 'broom_0'}, {'action': 'LEFT_GRASP', 'object': 'dustpan_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_48'}, {'action': 'TOGGLE_ON', 'object': 'sink_48'}, {'action': 'LEFT_GRASP', 'object': 'scrub_brush_0'}, {'action': 'RIGHT_RELEASE', 'object': 'broom_0'}], 'failed_subgoal': 'soaked(scrub_brush.0)', 'failed_action': {'action': 'SOAK', 'object': 'scrub_brush_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object scrub_brush_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'OPEN', 'object': 'fridge_20'}, {'action': 'RIGHT_GRASP', 'object': 'pop_0'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_0'}, {'action': 'RIGHT_GRASP', 'object': 'pop_1'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_1'}, {'action': 'RIGHT_GRASP', 'object': 'pop_2'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_2'}, {'action': 'RIGHT_GRASP', 'object': 'toothpaste_0'}, {'action': 'LEFT_GRASP', 'object': 'hand_towel_0'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'breakfast_table_6'}], 'failed_subgoal': 'Not(stained(fridge.20))', 'failed_action': {'action': 'CLEAN', 'object': 'fridge_20'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "forall",
+                    "food.n.01",
+                    "-",
+                    "food.n.01",
+                    "not",
+                    "inside",
+                    "food.n.01",
+                    "electric_refrigerator.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'Not(stained(room_floor_garage.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_garage_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "forall",
+                    "newspaper.n.03",
+                    "-",
+                    "newspaper.n.03",
+                    "or",
+                    "inside",
+                    "newspaper.n.03",
+                    "bin.n.01_1",
+                    "not",
+                    "onfloor",
+                    "newspaper.n.03",
+                    "floor.n.01_1"
+                ],
+                [
+                    "forall",
+                    "bottle.n.01",
+                    "-",
+                    "bottle.n.01",
+                    "ontop",
+                    "bottle.n.01",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_high_chair', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'cleaning_kitchen_cupboard', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches ';' in the current parser context, at line 1 col 285\\n\\np.1) then inside(bowl.1, top_cabinet.24); inside(cup.0, top_cabinet.24); inside(\\n                                        ^\\nExpected one of: \\n\\t* AND\\n\\t* OR\\n\\t* THEN\\n\"})",
+        "goal_info": null
+    },
+    "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}], 'failed_subgoal': 'Not(dusty(microwave.36))', 'failed_action': {'action': 'CLEAN', 'object': 'microwave_36'}, 'error_info': {'error_type': ['ErrorType.WRONG_TEMPORAL_ORDER'], 'error_info': ['Temporal order is wrong']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "microwave.n.02_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "microwave.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_out_drawers_0_Benevolence_1_int_0_2021-10-20_05-03-27": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(bowl.0, bottom_cabinet_no_top.16)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'bowl_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_16 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "piece_of_cloth.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bowl.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bowl.n.01_2",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "spoon.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "spoon.n.01_2",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(soap.0, bottom_cabinet_no_top.15)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'soap_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_15 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "rag.n.01",
+                    "-",
+                    "rag.n.01",
+                    "soaked",
+                    "rag.n.01"
+                ],
+                [
+                    "soaked",
+                    "scrub_brush.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "oven.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_shoes', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(soap.82, top_cabinet.24)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'soap_82'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['top_cabinet_24 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "ontop",
+                    "towel.n.01_1",
+                    "countertop.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "brush.n.02_1",
+                    "towel.n.01_1"
+                ],
+                [
+                    "inside",
+                    "soap.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "forall",
+                    "gym_shoe.n.01",
+                    "-",
+                    "gym_shoe.n.01",
+                    "not",
+                    "dusty",
+                    "gym_shoe.n.01"
+                ],
+                [
+                    "forall",
+                    "gym_shoe.n.01",
+                    "-",
+                    "gym_shoe.n.01",
+                    "not",
+                    "stained",
+                    "gym_shoe.n.01"
+                ],
+                [
+                    "forn",
+                    "2",
+                    "gym_shoe.n.01",
+                    "-",
+                    "gym_shoe.n.01",
+                    "nextto",
+                    "gym_shoe.n.01",
+                    "table.n.02_1"
+                ],
+                [
+                    "forn",
+                    "2",
+                    "gym_shoe.n.01",
+                    "-",
+                    "gym_shoe.n.01",
+                    "under",
+                    "gym_shoe.n.01",
+                    "table.n.02_1"
+                ],
+                [
+                    "forall",
+                    "gym_shoe.n.01",
+                    "-",
+                    "gym_shoe.n.01",
+                    "onfloor",
+                    "gym_shoe.n.01",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_stove_0_Wainscott_0_int_0_2021-09-11_12-51-07": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(soap.0, bottom_cabinet_no_top.80)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'soap_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "stove.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "stove.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "rag.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "dishtowel.n.01_1",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(soap.0, bottom_cabinet.49)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'soap_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_49 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'scrub_brush_51'}], 'failed_subgoal': 'Not(dusty(room_floor_garage.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_garage_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'scrub_brush_51'}], 'failed_subgoal': 'Not(stained(pool.50))', 'failed_action': {'action': 'CLEAN', 'object': 'pool_50'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "onfloor",
+                    "pool.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "pool.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false
+            ]
+        }
+    },
+    "cleaning_the_pool_0_Ihlen_0_int_0_2021-06-01_15-30-31": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_the_pool', 'IncorrectParamLength': False, 'ObjectNotInScene': False, 'error_info': 'Primitive onfloor(pool.50) has incorrect number of parameters\\nObject water.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "cleaning_toilet_0_Merom_0_int_1_2021-06-23_17-35-48": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_70'}], 'failed_subgoal': 'Not(stained(toilet.45))', 'failed_action': {'action': 'CLEAN', 'object': 'toilet_45'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "toilet.n.02_1"
+                ],
+                [
+                    "onfloor",
+                    "scrub_brush.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "detergent.n.02_1",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_up_after_a_meal', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object armchair.22 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "cleaning_up_refrigerator_0_Wainscott_0_int_1_2021-06-23_17-46-01": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(rag.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'rag_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "rag.n.01",
+                    "-",
+                    "rag.n.01",
+                    "nextto",
+                    "rag.n.01",
+                    "sink.n.01_1"
+                ],
+                [
+                    "inside",
+                    "soap.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "forall",
+                    "tray.n.01",
+                    "-",
+                    "tray.n.01",
+                    "inside",
+                    "tray.n.01",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "tray.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "tray.n.01_2"
+                ],
+                [
+                    "nextto",
+                    "bowl.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "bowl.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "electric_refrigerator.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_up_the_kitchen_only', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(toothpaste.0, bottom_cabinet_no_top.80)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'toothpaste_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "and",
+                    "soaked",
+                    "rag.n.01_1",
+                    "soaked",
+                    "rag.n.01_2"
+                ],
+                [
+                    "and",
+                    "not",
+                    "dusty",
+                    "window.n.01_1",
+                    "not",
+                    "dusty",
+                    "window.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'clearing_the_table_after_dinner', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object detergent.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}]], [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(dusty(bed.33))', 'failed_action': {'action': 'CLEAN', 'object': 'bed_33'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.112))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_112'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.113))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_113'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.114))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_114'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.115))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_115'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.116))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_116'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'LEFT_GRASP', 'object': 'pop_113'}, {'action': 'RIGHT_RELEASE', 'object': 'pop_112'}, {'action': 'CLEAN', 'object': 'bed_33'}, {'action': 'RIGHT_GRASP', 'object': 'pop_112'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'UNFREEZE', 'object': 'pop_112'}, {'action': 'UNFREEZE', 'object': 'pop_113'}, {'action': 'UNFREEZE', 'object': 'pop_114'}, {'action': 'UNFREEZE', 'object': 'pop_115'}, {'action': 'UNFREEZE', 'object': 'pop_116'}, {'action': 'UNFREEZE', 'object': 'pop_117'}, {'action': 'RIGHT_GRASP', 'object': 'pop_114'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_115'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}, {'action': 'RIGHT_GRASP', 'object': 'pop_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_118'}], 'failed_subgoal': 'Not(frozen(pop.117))', 'failed_action': {'action': 'UNFREEZE', 'object': 'pop_117'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "pop.n.02",
+                    "-",
+                    "pop.n.02",
+                    "inside",
+                    "pop.n.02",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'collect_misplaced_items', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches ')' in the current parser context, at line 1 col 399\\n\\n) and holds_rh(rag) then stained(sock.0)) then holds_lh(gym_shoe.0) and onfloor(\\n                                        ^\\nExpected one of: \\n\\t* THEN\\n\\t* OR\\n\\t* AND\\n\"})",
+        "goal_info": null
+    },
+    "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'defrosting_freezer', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': 'Error trying to process rule \"and_stmt\":\\n\\nMixed state and temporal goals are not allowed in a conjunction.'})",
+        "goal_info": null
+    },
+    "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'filling_an_Easter_basket', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object soap is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'filling_a_Christmas_stocking', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object duster is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'alarm_0'}, {'action': 'LEFT_GRASP', 'object': 'alarm_1'}, {'action': 'RIGHT_RELEASE', 'object': 'alarm_0'}, {'action': 'TOGGLE_ON', 'object': 'alarm_0'}, {'action': 'TOGGLE_ON', 'object': 'alarm_1'}, {'action': 'RIGHT_GRASP', 'object': 'alarm_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_20'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'coffee_table_27'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "alarm.n.02",
+                    "-",
+                    "alarm.n.02",
+                    "table.n.02",
+                    "-",
+                    "table.n.02",
+                    "ontop",
+                    "alarm.n.02",
+                    "table.n.02"
+                ],
+                [
+                    "forall",
+                    "alarm.n.02",
+                    "-",
+                    "alarm.n.02",
+                    "toggled_on",
+                    "alarm.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_fax_machine_0_Beechwood_0_int_0_2021-10-25_20-22-22": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'facsimile_0'}, {'action': 'TOGGLE_OFF', 'object': 'facsimile_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_37'}, {'action': 'TOGGLE_ON', 'object': 'facsimile_0'}]], [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'facsimile_0'}, {'action': 'TOGGLE_OFF', 'object': 'facsimile_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_37'}, {'action': 'TOGGLE_ON', 'object': 'facsimile_0'}], 'failed_subgoal': 'Not(toggledon(facsimile.0))', 'failed_action': {'action': 'TOGGLE_OFF', 'object': 'facsimile_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "ontop",
+                    "facsimile.n.02_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "toggled_on",
+                    "facsimile.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_modem_0_Beechwood_0_int_0_2021-10-25_20-28-55": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'CLEAN', 'object': 'breakfast_table_37'}, {'action': 'CLEAN', 'object': 'room_floor_home_office_0'}, {'action': 'RIGHT_GRASP', 'object': 'modem_0'}, {'action': 'TOGGLE_ON', 'object': 'modem_0'}, {'action': 'RIGHT_PLACE_UNDER', 'object': 'breakfast_table_37'}]], [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'breakfast_table_37'}, {'action': 'CLEAN', 'object': 'room_floor_home_office_0'}, {'action': 'RIGHT_GRASP', 'object': 'modem_0'}, {'action': 'TOGGLE_ON', 'object': 'modem_0'}, {'action': 'RIGHT_PLACE_UNDER', 'object': 'breakfast_table_37'}], 'failed_subgoal': 'Not(stained(breakfast_table.37))', 'failed_action': {'action': 'CLEAN', 'object': 'breakfast_table_37'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'breakfast_table_37'}, {'action': 'CLEAN', 'object': 'room_floor_home_office_0'}, {'action': 'RIGHT_GRASP', 'object': 'modem_0'}, {'action': 'TOGGLE_ON', 'object': 'modem_0'}, {'action': 'RIGHT_PLACE_UNDER', 'object': 'breakfast_table_37'}], 'failed_subgoal': 'Not(stained(room_floor_home_office.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_home_office_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "toggled_on",
+                    "modem.n.01_1"
+                ],
+                [
+                    "under",
+                    "modem.n.01_1",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'printer_0'}, {'action': 'CLEAN', 'object': 'printer_0'}, {'action': 'TOGGLE_ON', 'object': 'printer_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'breakfast_table_3'}], 'failed_subgoal': 'Not(dusty(printer.0))', 'failed_action': {'action': 'CLEAN', 'object': 'printer_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'printer_0'}, {'action': 'CLEAN', 'object': 'printer_0'}, {'action': 'TOGGLE_ON', 'object': 'printer_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'breakfast_table_3'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "ontop",
+                    "printer.n.03_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "toggled_on",
+                    "printer.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "installing_a_scanner_0_Pomaria_0_int_0_2021-06-08_18-34-59": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'installing_a_scanner', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches '[' in the current parser context, at line 1 col 174\\n\\nontop(scanner.0, breakfast_table.3) and [inside(rag.0, dishwasher) then toggledo\\n                                        ^\\nExpected one of: \\n\\t* FORN\\n\\t* VARNAME\\n\\t* NOT\\n\\t* EXISTS\\n\\t* LPAR\\n\\t* FORALL\\n\"})",
+        "goal_info": null
+    },
+    "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'laying_tile_floors', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object sink is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plywood_78'}, {'action': 'CLEAN', 'object': 'plywood_79'}, {'action': 'CLEAN', 'object': 'plywood_80'}, {'action': 'CLEAN', 'object': 'plywood_81'}, {'action': 'RIGHT_GRASP', 'object': 'saw_83'}, {'action': 'LEFT_GRASP', 'object': 'plywood_78'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_79'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_80'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_81'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}], 'failed_subgoal': 'Not(stained(plywood.78))', 'failed_action': {'action': 'CLEAN', 'object': 'plywood_78'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plywood_78'}, {'action': 'CLEAN', 'object': 'plywood_79'}, {'action': 'CLEAN', 'object': 'plywood_80'}, {'action': 'CLEAN', 'object': 'plywood_81'}, {'action': 'RIGHT_GRASP', 'object': 'saw_83'}, {'action': 'LEFT_GRASP', 'object': 'plywood_78'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_79'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_80'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_81'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}], 'failed_subgoal': 'Not(stained(plywood.79))', 'failed_action': {'action': 'CLEAN', 'object': 'plywood_79'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plywood_78'}, {'action': 'CLEAN', 'object': 'plywood_79'}, {'action': 'CLEAN', 'object': 'plywood_80'}, {'action': 'CLEAN', 'object': 'plywood_81'}, {'action': 'RIGHT_GRASP', 'object': 'saw_83'}, {'action': 'LEFT_GRASP', 'object': 'plywood_78'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_79'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_80'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_81'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}], 'failed_subgoal': 'Not(stained(plywood.80))', 'failed_action': {'action': 'CLEAN', 'object': 'plywood_80'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plywood_78'}, {'action': 'CLEAN', 'object': 'plywood_79'}, {'action': 'CLEAN', 'object': 'plywood_80'}, {'action': 'CLEAN', 'object': 'plywood_81'}, {'action': 'RIGHT_GRASP', 'object': 'saw_83'}, {'action': 'LEFT_GRASP', 'object': 'plywood_78'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_79'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_80'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_81'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}], 'failed_subgoal': 'Not(stained(plywood.81))', 'failed_action': {'action': 'CLEAN', 'object': 'plywood_81'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plywood_78'}, {'action': 'CLEAN', 'object': 'plywood_79'}, {'action': 'CLEAN', 'object': 'plywood_80'}, {'action': 'CLEAN', 'object': 'plywood_81'}, {'action': 'RIGHT_GRASP', 'object': 'saw_83'}, {'action': 'LEFT_GRASP', 'object': 'plywood_78'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_79'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_80'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'LEFT_GRASP', 'object': 'plywood_81'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plywood.n.01",
+                    "-",
+                    "plywood.n.01",
+                    "onfloor",
+                    "plywood.n.01",
+                    "floor.n.01_2"
+                ],
+                [
+                    "forall",
+                    "plywood.n.01",
+                    "-",
+                    "plywood.n.01",
+                    "or",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_1",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_2",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_3",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_4"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false
+            ]
+        }
+    },
+    "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'plate_59'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'plate_60'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'plate_61'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'mug_62'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_63'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_64'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_18'}, {'action': 'RIGHT_GRASP', 'object': 'mug_62'}], 'failed_subgoal': 'Not(stained(plate.59))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_59'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "dishwasher.n.01_1"
+                ],
+                [
+                    "forall",
+                    "bowl.n.01",
+                    "-",
+                    "bowl.n.01",
+                    "inside",
+                    "bowl.n.01",
+                    "dishwasher.n.01_1"
+                ],
+                [
+                    "inside",
+                    "mug.n.04_1",
+                    "dishwasher.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'locking_every_door', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: closed'})",
+        "goal_info": null
+    },
+    "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'locking_every_window', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: closed'})",
+        "goal_info": null
+    },
+    "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(carving_knife.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'carving_knife_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "sliced",
+                    "lemon.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "teapot.n.01_1",
+                    "stove.n.01_1"
+                ],
+                [
+                    "inside",
+                    "tea_bag.n.01_1",
+                    "teapot.n.01_1"
+                ],
+                [
+                    "soaked",
+                    "tea_bag.n.01_1"
+                ],
+                [
+                    "toggled_on",
+                    "stove.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'broom_0'}, {'action': 'LEFT_GRASP', 'object': 'bucket_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_28'}], 'failed_subgoal': 'Not(stained(room_floor_bathroom.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bucket.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "inside",
+                    "soap.n.01_1",
+                    "bucket.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "broom.n.01_1",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'moving_boxes_to_storage', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches 'd' in the current parser context, at line 1 col 194\\n\\n) and not stained(shelf.7) then holding detergent then nextto(carton.70, room_fl\\n                                        ^\\nExpected one of: \\n\\t* LPAR\\n\"})",
+        "goal_info": null
+    },
+    "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'package_0'}, {'action': 'LEFT_GRASP', 'object': 'package_1'}, {'action': 'RIGHT_RELEASE', 'object': 'package_0'}, {'action': 'OPEN', 'object': 'package_0'}, {'action': 'OPEN', 'object': 'package_1'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "package.n.02",
+                    "-",
+                    "package.n.02",
+                    "open",
+                    "package.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "opening_presents_0_Benevolence_2_int_0_2021-10-25_21-10-48": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'OPEN', 'object': 'package_0'}, {'action': 'OPEN', 'object': 'package_1'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "package.n.02",
+                    "-",
+                    "package.n.02",
+                    "open",
+                    "package.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(room_floor_garage.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_garage_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(ball.0))', 'failed_action': {'action': 'CLEAN', 'object': 'ball_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(ball.1))', 'failed_action': {'action': 'CLEAN', 'object': 'ball_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(plate.0))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(plate.1))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(plate.2))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_2'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(bottom_cabinet.15))', 'failed_action': {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(saucepan.0))', 'failed_action': {'action': 'CLEAN', 'object': 'saucepan_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'Not(stained(shelf.16))', 'failed_action': {'action': 'CLEAN', 'object': 'shelf_16'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'room_floor_garage_0'}, {'action': 'CLEAN', 'object': 'ball_0'}, {'action': 'CLEAN', 'object': 'ball_1'}, {'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'bottom_cabinet_15'}, {'action': 'CLEAN', 'object': 'saucepan_0'}, {'action': 'CLEAN', 'object': 'shelf_16'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "ball.n.01",
+                    "-",
+                    "ball.n.01",
+                    "inside",
+                    "ball.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "carton.n.02",
+                    "inside",
+                    "saucepan.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "forall",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "onfloor",
+                    "carton.n.02",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'organizing_file_cabinet', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object cleaner is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'organizing_school_stuff', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object rag.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hanger_113'}, {'action': 'LEFT_GRASP', 'object': 'lipstick_114'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'lipstick_115'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'toothbrush_118'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'mouse_119'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'CLEAN', 'object': 'backpack_112'}, {'action': 'OPEN', 'object': 'backpack_112'}, {'action': 'LEFT_GRASP', 'object': 'backpack_112'}, {'action': 'RIGHT_RELEASE', 'object': 'hanger_113'}, {'action': 'RIGHT_GRASP', 'object': 'bracelet_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_112'}, {'action': 'RIGHT_GRASP', 'object': 'necklace_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_112'}], 'failed_subgoal': 'Not(dusty(backpack.112))', 'failed_action': {'action': 'CLEAN', 'object': 'backpack_112'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hanger_113'}, {'action': 'LEFT_GRASP', 'object': 'lipstick_114'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'lipstick_115'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'toothbrush_118'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'LEFT_GRASP', 'object': 'mouse_119'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_33'}, {'action': 'CLEAN', 'object': 'backpack_112'}, {'action': 'OPEN', 'object': 'backpack_112'}, {'action': 'LEFT_GRASP', 'object': 'backpack_112'}, {'action': 'RIGHT_RELEASE', 'object': 'hanger_113'}, {'action': 'RIGHT_GRASP', 'object': 'bracelet_116'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_112'}, {'action': 'RIGHT_GRASP', 'object': 'necklace_117'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_112'}], 'failed_subgoal': 'Not(stained(lipstick.114))', 'failed_action': {'action': 'CLEAN', 'object': 'lipstick_114'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object lipstick_114 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "jewelry.n.01",
+                    "-",
+                    "jewelry.n.01",
+                    "inside",
+                    "jewelry.n.01",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "forall",
+                    "makeup.n.01",
+                    "-",
+                    "makeup.n.01",
+                    "inside",
+                    "makeup.n.01",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "toothbrush.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "mouse.n.04_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "backpack.n.01_1",
+                    "floor.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'OPEN', 'object': 'backpack_97'}, {'action': 'CLEAN', 'object': 'backpack_97'}, {'action': 'FREEZE', 'object': 'shampoo_99'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_98'}, {'action': 'FREEZE', 'object': 'toothpaste_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'shampoo_99'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'hardback_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'toothpaste_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'backpack_97'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_bedroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'backpack_97'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_7'}], 'failed_subgoal': 'Not(stained(backpack.97))', 'failed_action': {'action': 'CLEAN', 'object': 'backpack_97'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'OPEN', 'object': 'backpack_97'}, {'action': 'CLEAN', 'object': 'backpack_97'}, {'action': 'FREEZE', 'object': 'shampoo_99'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_98'}, {'action': 'FREEZE', 'object': 'toothpaste_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'shampoo_99'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'hardback_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'toothpaste_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_97'}, {'action': 'RIGHT_GRASP', 'object': 'backpack_97'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_bedroom_0'}, {'action': 'RIGHT_GRASP', 'object': 'backpack_97'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_7'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "underwear.n.01",
+                    "-",
+                    "underwear.n.01",
+                    "inside",
+                    "underwear.n.01",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "toothbrush.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "shampoo.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "hardback.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "toothpaste.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "or",
+                    "ontop",
+                    "backpack.n.01_1",
+                    "bed.n.01_1",
+                    "onfloor",
+                    "backpack.n.01_1",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true,
+                true,
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_boxes_for_household_move_or_trip', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: holding'})",
+        "goal_info": null
+    },
+    "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'packing_car_for_trip', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches 'd' in the current parser context, at line 1 col 126\\n\\nnot stained(duffel_bag.54) then holding detergent then stained(car.50) and stain\\n                                        ^\\nExpected one of: \\n\\t* LPAR\\n\"})",
+        "goal_info": null
+    },
+    "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_child_s_bag', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object cleaner is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_food_for_work', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object freezer_n_01 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'ontop(salad.0, countertop.56)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'salad_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_57 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "chip.n.04",
+                    "-",
+                    "chip.n.04",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "inside",
+                    "chip.n.04",
+                    "carton.n.02"
+                ],
+                [
+                    "forpairs",
+                    "cookie.n.01",
+                    "-",
+                    "cookie.n.01",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "inside",
+                    "cookie.n.01",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "inside",
+                    "salad.n.01_1",
+                    "carton.n.02",
+                    "inside",
+                    "juice.n.01_1",
+                    "carton.n.02",
+                    "not",
+                    "inside",
+                    "sandwich.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "inside",
+                    "sandwich.n.01_1",
+                    "carton.n.02",
+                    "inside",
+                    "pop.n.02_1",
+                    "carton.n.02",
+                    "not",
+                    "inside",
+                    "salad.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "or",
+                    "inside",
+                    "apple.n.01_1",
+                    "carton.n.02_1",
+                    "inside",
+                    "banana.n.02_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "or",
+                    "inside",
+                    "apple.n.01_1",
+                    "carton.n.02_2",
+                    "inside",
+                    "banana.n.02_1",
+                    "carton.n.02_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_kitchen_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'OPEN', 'object': 'carton_2'}], 'failed_subgoal': 'open(carton.0)', 'failed_action': {'action': 'OPEN', 'object': 'carton_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_kitchen_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'OPEN', 'object': 'carton_2'}], 'failed_subgoal': 'open(carton.1)', 'failed_action': {'action': 'OPEN', 'object': 'carton_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_kitchen_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'OPEN', 'object': 'carton_2'}], 'failed_subgoal': 'open(carton.2)', 'failed_action': {'action': 'OPEN', 'object': 'carton_2'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_kitchen_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'OPEN', 'object': 'carton_2'}], 'failed_subgoal': 'inside(chip.0, bottom_cabinet_no_top.80)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'chip_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "chip.n.04",
+                    "-",
+                    "chip.n.04",
+                    "inside",
+                    "chip.n.04",
+                    "carton.n.02",
+                    "forall",
+                    "sandwich.n.01",
+                    "-",
+                    "sandwich.n.01",
+                    "inside",
+                    "sandwich.n.01",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "inside",
+                    "strawberry.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "grape.n.01",
+                    "-",
+                    "grape.n.01",
+                    "inside",
+                    "grape.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "peach.n.03",
+                    "-",
+                    "peach.n.03",
+                    "inside",
+                    "peach.n.03",
+                    "carton.n.02",
+                    "nextto",
+                    "melon.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "pop.n.02",
+                    "-",
+                    "pop.n.02",
+                    "inside",
+                    "pop.n.02",
+                    "carton.n.02",
+                    "forall",
+                    "beer.n.01",
+                    "-",
+                    "beer.n.01",
+                    "inside",
+                    "beer.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "water.n.06",
+                    "-",
+                    "water.n.06",
+                    "inside",
+                    "water.n.06",
+                    "carton.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'sushi_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_19'}], 'failed_subgoal': 'open(carton.0)', 'failed_action': {'action': 'OPEN', 'object': 'carton_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'sushi_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_19'}], 'failed_subgoal': 'cooked(sushi.0)', 'failed_action': {'action': 'COOK', 'object': 'sushi_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object sushi_0 not in a cooker (COOK)']}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "ontop",
+                    "carton.n.02",
+                    "table.n.02_1"
+                ],
+                [
+                    "inside",
+                    "sushi.n.01_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "inside",
+                    "hamburger.n.01_1",
+                    "carton.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'Not(dusty(sticky_note.117))', 'failed_action': {'action': 'CLEAN', 'object': 'sticky_note_117'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object sticky_note_117 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pad.n.01",
+                    "-",
+                    "pad.n.01",
+                    "inside",
+                    "pad.n.01",
+                    "ashcan.n.01_1"
+                ],
+                [
+                    "forall",
+                    "pop.n.02",
+                    "-",
+                    "pop.n.02",
+                    "inside",
+                    "pop.n.02",
+                    "ashcan.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "polishing_furniture_0_Ihlen_0_int_0_2021-10-26_11-35-40": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'polishing_furniture', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object dishwasher is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_145'}], 'failed_subgoal': 'soaked(rag.145)', 'failed_action': {'action': 'SOAK', 'object': 'rag_145'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object rag_145 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "rag.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "soaked",
+                    "rag.n.01_1"
+                ],
+                [
+                    "and",
+                    "not",
+                    "stained",
+                    "shoe.n.01_1",
+                    "not",
+                    "stained",
+                    "shoe.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(rag.101, bottom_cabinet.49)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'rag_101'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_49 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_2"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_3"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_4"
+                ],
+                [
+                    "not",
+                    "inside",
+                    "rag.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_3",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_4",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'preparing_a_shower_for_child', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object bucket.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'lettuce_78'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}, {'action': 'RIGHT_GRASP', 'object': 'lettuce_79'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}, {'action': 'RIGHT_GRASP', 'object': 'apple_80'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}, {'action': 'RIGHT_GRASP', 'object': 'apple_81'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}, {'action': 'RIGHT_GRASP', 'object': 'radish_84'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}, {'action': 'RIGHT_GRASP', 'object': 'radish_85'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_31'}], 'failed_subgoal': 'holds_rh(carving_knife.86)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'carving_knife_86'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['top_cabinet_27 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "lettuce.n.03",
+                    "-",
+                    "lettuce.n.03",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "ontop",
+                    "lettuce.n.03",
+                    "plate.n.04"
+                ],
+                [
+                    "forpairs",
+                    "apple.n.01",
+                    "-",
+                    "apple.n.01",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "and",
+                    "sliced",
+                    "apple.n.01",
+                    "ontop",
+                    "apple.n.01",
+                    "plate.n.04"
+                ],
+                [
+                    "forpairs",
+                    "tomato.n.01",
+                    "-",
+                    "tomato.n.01",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "and",
+                    "ontop",
+                    "tomato.n.01",
+                    "plate.n.04",
+                    "sliced",
+                    "tomato.n.01"
+                ],
+                [
+                    "forpairs",
+                    "radish.n.01",
+                    "-",
+                    "radish.n.01",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "ontop",
+                    "radish.n.01",
+                    "plate.n.04"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "preserving_food_0_Rs_int_0_2021-08-25_15-53-33": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carving_knife_66'}, {'action': 'SLICE', 'object': 'strawberry_61'}, {'action': 'SLICE', 'object': 'strawberry_62'}, {'action': 'LEFT_GRASP', 'object': 'saucepan_65'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_26'}], 'failed_subgoal': 'toggledon(saucepan.65)', 'failed_action': {'action': 'TOGGLE_ON', 'object': 'saucepan_65'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object saucepan_65 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "sliced",
+                    "strawberry.n.01"
+                ],
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "cooked",
+                    "strawberry.n.01"
+                ],
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "inside",
+                    "strawberry.n.01",
+                    "jar.n.01_1"
+                ],
+                [
+                    "not",
+                    "open",
+                    "jar.n.01_1"
+                ],
+                [
+                    "inside",
+                    "beef.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "frozen",
+                    "beef.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'putting_away_Christmas_decorations', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object duster is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'putting_away_Halloween_decorations', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches 'o' in the current parser context, at line 1 col 219\\n\\ndle.1) and dusty(candle.2) then holding other cleaning tool then stained(sheet.0\\n                                        ^\\nExpected one of: \\n\\t* LPAR\\n\"})",
+        "goal_info": null
+    },
+    "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.0))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.2))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_2'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.3))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_3'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.4))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_4'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.5))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_5'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.6))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_6'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'Not(dusty(toy.7))', 'failed_action': {'action': 'CLEAN', 'object': 'toy_7'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'open(carton.0)', 'failed_action': {'action': 'OPEN', 'object': 'carton_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'open(carton.1)', 'failed_action': {'action': 'OPEN', 'object': 'carton_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'toy_0'}, {'action': 'LEFT_GRASP', 'object': 'toy_1'}, {'action': 'CLEAN', 'object': 'toy_2'}, {'action': 'CLEAN', 'object': 'toy_3'}, {'action': 'CLEAN', 'object': 'toy_4'}, {'action': 'CLEAN', 'object': 'toy_5'}, {'action': 'CLEAN', 'object': 'toy_6'}, {'action': 'CLEAN', 'object': 'toy_7'}, {'action': 'OPEN', 'object': 'carton_0'}, {'action': 'OPEN', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'toy_4'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_5'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_6'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'toy_7'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plaything.n.01",
+                    "-",
+                    "plaything.n.01",
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "inside",
+                    "plaything.n.01",
+                    "carton.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.0))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.1))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.2))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_2'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.3))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_3'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.4))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_4'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.5))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_5'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.6))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_6'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'Not(dusty(plate.7))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_7'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'CLEAN', 'object': 'plate_4'}, {'action': 'CLEAN', 'object': 'plate_5'}, {'action': 'CLEAN', 'object': 'plate_6'}, {'action': 'CLEAN', 'object': 'plate_7'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'LEFT_GRASP', 'object': 'plate_1'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_2'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}, {'action': 'LEFT_GRASP', 'object': 'plate_3'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'countertop_81'}], 'failed_subgoal': 'inside(plate.0, top_cabinet.62)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'top_cabinet_62'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object top_cabinet_62 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'mayonnaise_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_0'}, {'action': 'LEFT_GRASP', 'object': 'mayonnaise_0'}, {'action': 'RIGHT_RELEASE', 'object': 'spaghetti_sauce_0'}, {'action': 'OPEN', 'object': 'fridge_61'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_61'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'fridge_61'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_61'}, {'action': 'RIGHT_GRASP', 'object': 'spaghetti_sauce_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_61'}], 'failed_subgoal': 'Not(open(countertop.79))', 'failed_action': {'action': 'CLOSE', 'object': 'countertop_79'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object countertop_79 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pasta.n.02",
+                    "-",
+                    "pasta.n.02",
+                    "inside",
+                    "pasta.n.02",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "forall",
+                    "sauce.n.01",
+                    "-",
+                    "sauce.n.01",
+                    "inside",
+                    "sauce.n.01",
+                    "electric_refrigerator.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'putting_up_Christmas_decorations_inside', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object mop is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "re-shelving_library_books_0_Rs_int_0_2021-10-25_21-22-26": {
+        "success": false,
+        "info": "('NotParseable', 'Failed to get the plan string for task re-shelving_library_books')",
+        "goal_info": null
+    },
+    "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'table_lamp_0'}, {'action': 'LEFT_GRASP', 'object': 'floor_lamp_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'door_29'}, {'action': 'LEFT_PLACE_NEXTTO', 'object': 'window_27'}, {'action': 'RIGHT_GRASP', 'object': 'chaise_longue_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_11'}, {'action': 'RIGHT_GRASP', 'object': 'chaise_longue_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bed_11'}, {'action': 'RIGHT_GRASP', 'object': 'chaise_longue_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'window_27'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "lamp.n.02_1",
+                    "door.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "lamp.n.02_2",
+                    "window.n.01_1"
+                ],
+                [
+                    "touching",
+                    "seat.n.03_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "seat.n.03_2",
+                    "window.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false,
+                true
+            ]
+        }
+    },
+    "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'serving_a_meal', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object oven.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'serving_hors_d_oeuvres', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object microwave_oven is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'Not(dusty(mousetrap.100))', 'failed_action': {'action': 'CLEAN', 'object': 'mousetrap_100'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'Not(dusty(mousetrap.101))', 'failed_action': {'action': 'CLEAN', 'object': 'mousetrap_101'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'Not(dusty(mousetrap.102))', 'failed_action': {'action': 'CLEAN', 'object': 'mousetrap_102'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'toggledon(sink.73)', 'failed_action': {'action': 'TOGGLE_ON', 'object': 'sink_73'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'Not(dusty(mousetrap.103))', 'failed_action': {'action': 'CLEAN', 'object': 'mousetrap_103'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'toggledon(sink.73)', 'failed_action': {'action': 'TOGGLE_ON', 'object': 'sink_73'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'LEFT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_RELEASE', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_100'}, {'action': 'CLEAN', 'object': 'mousetrap_101'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'CLEAN', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'CLEAN', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_73'}, {'action': 'TOGGLE_ON', 'object': 'sink_73'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_100'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_101'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_102'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'toilet_64'}, {'action': 'RIGHT_GRASP', 'object': 'mousetrap_103'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'toilet_64'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "onfloor",
+                    "mousetrap.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "mousetrap.n.01_2",
+                    "floor.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "mousetrap.n.01_3",
+                    "toilet.n.02_1"
+                ],
+                [
+                    "nextto",
+                    "mousetrap.n.01_4",
+                    "toilet.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false,
+                true
+            ]
+        }
+    },
+    "setting_up_candles_0_Wainscott_0_int_0_2021-10-26_13-40-51": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'setting_up_candles', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object cleaner is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_books', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object duster is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_groceries', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object carving_knife.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_mail', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object duster is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "storing_food_0_Rs_int_0_2021-10-25_21-27-36": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'storing_food', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object sponge is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'cereal_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'cereal_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'lettuce_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'lettuce_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'broccoli_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'broccoli_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'raspberry_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'raspberry_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'pork_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'pork_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'OPEN', 'object': 'fridge_57'}, {'action': 'OPEN', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'cereal_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'cereal_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'lettuce_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'lettuce_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'broccoli_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'broccoli_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'raspberry_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'raspberry_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'pork_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}, {'action': 'RIGHT_GRASP', 'object': 'pork_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_54'}], 'failed_subgoal': 'cooked(broccoli.0)', 'failed_action': {'action': 'COOK', 'object': 'broccoli_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object broccoli_0 not in a cooker (COOK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "inside",
+                    "cereal.n.03_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "cereal.n.03_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "cereal.n.03_1",
+                    "cereal.n.03_2"
+                ],
+                [
+                    "inside",
+                    "lettuce.n.03_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "lettuce.n.03_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "lettuce.n.03_1",
+                    "lettuce.n.03_2"
+                ],
+                [
+                    "inside",
+                    "broccoli.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "broccoli.n.02_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "broccoli.n.02_1",
+                    "broccoli.n.02_2"
+                ],
+                [
+                    "inside",
+                    "raspberry.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "raspberry.n.02_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "raspberry.n.02_1",
+                    "raspberry.n.02_2"
+                ],
+                [
+                    "inside",
+                    "pork.n.01_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "pork.n.01_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "pork.n.01_1",
+                    "pork.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(container_date.0, fridge.20)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'container_date_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_20 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "date.n.08_1",
+                    "fish.n.02_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_2",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_3",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_4",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "olive.n.04_1",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'plate_112'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'plate_113'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'plate_114'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'plate_115'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_79'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'plate_112'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_118'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'plate_113'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_117'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'plate_114'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_118'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_116'}], 'failed_subgoal': 'cooked(hamburger.116)', 'failed_action': {'action': 'COOK', 'object': 'hamburger_116'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object hamburger_116 not in a cooker (COOK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "hamburger.n.01",
+                    "-",
+                    "hamburger.n.01",
+                    "inside",
+                    "hamburger.n.01",
+                    "ashcan.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'CLEAN', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_1'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'notebook_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'CLEAN', 'object': 'sofa_10'}], 'failed_subgoal': 'Not(stained(room_floor_living_room.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_living_room_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'CLEAN', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_1'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'notebook_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'CLEAN', 'object': 'sofa_10'}], 'failed_subgoal': 'Not(stained(sofa.10))', 'failed_action': {'action': 'CLEAN', 'object': 'sofa_10'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_living_room_0'}, {'action': 'CLEAN', 'object': 'room_floor_living_room_0'}, {'action': 'RIGHT_GRASP', 'object': 'toothbrush_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_0'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'LEFT_GRASP', 'object': 'sock_1'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'notebook_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'CLEAN', 'object': 'sofa_10'}], 'failed_subgoal': 'inside(room_floor_living_room.0, sofa.10)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'room_floor_living_room_0'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Cannot grasp floor room_floor_living_room_0']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "onfloor",
+                    "carton.n.02_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "forall",
+                    "sock.n.01",
+                    "-",
+                    "sock.n.01",
+                    "ontop",
+                    "sock.n.01",
+                    "sofa.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "perfume.n.02_1",
+                    "sofa.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "toothbrush.n.01_1",
+                    "sofa.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "notebook.n.01_1",
+                    "sofa.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'vacuuming_floors', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches ']' in the current parser context, at line 1 col 114\\n\\noor_bedroom.0) then holding_lh(vacuum.0)] then inside(vacuum.0, room_floor_bedro\\n                                        ^\\nExpected one of: \\n\\t* THEN\\n\\t* AND\\n\\t* OR\\n\"})",
+        "goal_info": null
+    },
+    "washing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_22-38-10": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'washing_cars_or_other_vehicles', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches ']' in the current parser context, at line 1 col 208\\n\\nnd not dusty(car.0) then holds_lh(rag.0)] then inside(soap.0, bucket.0) and stai\\n                                        ^\\nExpected one of: \\n\\t* OR\\n\\t* THEN\\n\\t* AND\\n\"})",
+        "goal_info": null
+    },
+    "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'washing_dishes', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: toggleOn'})",
+        "goal_info": null
+    },
+    "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bucket_0'}], 'failed_subgoal': 'Not(stained(room_floor_bathroom.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "or",
+                    "dusty",
+                    "floor.n.01_1",
+                    "stained",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'washing_pots_and_pans', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: toggleOn'})",
+        "goal_info": null
+    },
+    "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01": {
+        "success": false,
+        "info": "('NotParseable', {'task_name': 'watering_houseplants', 'syntactic_check': False, 'error_type': 'NotParseable', 'error_info': \"No terminal matches '&' in the current parser context, at line 1 col 48\\n\\n(pot_plant.0, room_floor_dining_room.0) && onfloor(pot_plant.1, room_floor_dinin\\n                                        ^\\nExpected one of: \\n\\t* OR\\n\\t* AND\\n\\t* THEN\\n\"})",
+        "goal_info": null
+    },
+    "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'rag_52'}, {'action': 'CLEAN', 'object': 'car_50'}, {'action': 'RIGHT_RELEASE', 'object': 'rag_52'}, {'action': 'RIGHT_GRASP', 'object': 'rag_52'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "vehicle.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    }
+}
