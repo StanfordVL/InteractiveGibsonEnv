@@ -67,6 +67,29 @@ class ErrorType(Enum):
     ADDITIONAL_STEP=auto()
     WRONG_TEMPORAL_ORDER=auto()
     
+class ErrorInfo:
+    def __init__(self):
+        self.error_type = []
+        self.error_info = []
+        self.hidden_add = False
+        self.special_function_1 = None # this function is used to handle clean, False is dusty related, while True is stained related
+    def update_error(self, error_type: ErrorType, error_info):
+        if not self.hidden_add:
+            self.error_type.append(str(error_type))
+            self.error_info.append(error_info)
+    def report_error(self):
+        return {
+            'error_type': self.error_type,
+            'error_info': self.error_info
+        }
+    def reset_error(self):
+        self.error_type = []
+        self.error_info = []
+    def set_hidden_add(self):
+        self.hidden_add = True
+    def reset_hidden_add(self):
+        self.hidden_add = False
+
 
 class GraphState():
     def __init__(self,name_to_obj):
@@ -109,7 +132,7 @@ class GraphState():
     
     def get_state_dict(self,task:BehaviorTask):
         """
-                {
+        {
         "nodes": {name:{"name": name, "category": category, "states": set(states), "properties": set(properties)}},
         "edges": [{"from_name": name, "relation": relation, "to_name": name}]
         }
@@ -273,7 +296,7 @@ class EvolvingGraph():
         self.build_graph()
 
     
-  
+    
     
     def add_node_with_attr(self,obj):
         self.cur_state.graph.add_node(obj.name)
@@ -294,19 +317,19 @@ class EvolvingGraph():
         
 ## ---------------------------Action functions--------------------------------
 
-    def check_precondition(self,precond):
-        if not precond.check_precond(self.cur_state):
+    def check_precondition(self, error_info: ErrorInfo, precond):
+        if not precond.check_precond(error_info, self.cur_state):
             for state in self.history_states:
                 ## ignore print of the same error
-                if precond.check_precond(state,ignore_print=True):
+                if precond.check_precond(error_info, state,ignore_print=True):
+                    error_info.update_error(ErrorType.WRONG_TEMPORAL_ORDER,"Temporal order is wrong")
                     print(f"<Error> {ErrorType.WRONG_TEMPORAL_ORDER} <Reason> Temporal order is wrong")
                     return False
             return False
         return True
-    
 
 
-    def grasp(self,obj:URDFObject,hand:str):
+    def grasp(self, error_info: ErrorInfo, obj:URDFObject,hand:str):
 
         ## Precondition check
         class GraspPrecond(BasePrecond):
@@ -315,30 +338,35 @@ class EvolvingGraph():
                 self.precond_list.appendleft(self.grasp_precond)
                 self.hand=hand
             
-            def grasp_precond(self,state:GraphState):
+            def grasp_precond(self, error_info:ErrorInfo, state:GraphState):
                 if isinstance(self.obj,RoomFloor):
+                    error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Cannot grasp floor {self.obj.name}")
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
                 if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1.5:
+                    error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {self.obj.name} too big to grasp")
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
 
                 if state.robot_inventory[self.hand]==self.obj.name:
+                    error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Object {self.obj.name} already in hand")
                     print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object already in hand (GRASP)")
                     return False
                 
                 if self.obj.name in state.robot_inventory.values():
+                    error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Object {self.obj.name} already in other hand")
                     print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object already in other hand (GRASP)")
                     return False
             
                 if state.robot_inventory[self.hand] is not None:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"{self.hand} hand full, release first before grasp")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release first before grasp (GRASP)")
                     return False
                 return True
             
         precond=GraspPrecond(obj,hand,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         
 
@@ -365,7 +393,7 @@ class EvolvingGraph():
         print(f"Grasp {obj.name} success")
         return True
 
-    def release(self,hand:str,obj=None):
+    def release(self, error_info: ErrorInfo, hand:str,obj=None):
         ## Precondition check
         class ReleasePrecond(BasePrecond):
             def __init__(self,obj,hand,name_to_obj):
@@ -373,22 +401,25 @@ class EvolvingGraph():
                 self.precond_list.appendleft(self.release_precond)
                 self.hand=hand
             
-            def release_precond(self,state:GraphState):
+            def release_precond(self, error_info: ErrorInfo, state:GraphState):
                 if state.robot_inventory[self.hand] is None:
                     successors = list(state.graph.successors(self.obj.name))
                     predecessors = list(state.graph.predecessors(self.obj.name))
                     if len(successors)!=0 or len(predecessors)!=0:
+                        error_info.update_error(ErrorType.MISSING_STEP, f"Object {self.obj.name} not in hand")
                         print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding anything (RELEASE)")
                         return False
+                    error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Robot is not holding anything")
                     print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Robot is not holding anything (RELEASE)")
                     return False
                 if self.obj is not None and state.robot_inventory[self.hand]!=self.obj.name:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"Robot is not holding target object")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding target object (RELEASE)")
                     return False
                 return True
             
         precond=ReleasePrecond(obj,hand,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         
 
@@ -397,7 +428,7 @@ class EvolvingGraph():
         print(f"Release {obj.name} success")
         return True
 
-    def place_inside(self,obj:URDFObject,hand:str):
+    def place_inside(self, error_info: ErrorInfo, obj:URDFObject,hand:str):
         ## Precondition check
         class PlaceInsidePrecond(PlacePrecond):
             def __init__(self,obj,hand,name_to_obj):
@@ -406,7 +437,7 @@ class EvolvingGraph():
                 self.obj=obj
                 self.hand=hand
             
-            def place_inside_precond(self,state:GraphState):
+            def place_inside_precond(self,error_info: ErrorInfo, state:GraphState):
                 obj_in_hand_name=state.robot_inventory[self.hand]
                 if obj_in_hand_name is None:
                     return True
@@ -414,17 +445,19 @@ class EvolvingGraph():
                 tar_obj=self.obj
                 if obj_in_hand.bounding_box[0]*obj_in_hand.bounding_box[1]*obj_in_hand.bounding_box[2]>\
                 tar_obj.bounding_box[0]*tar_obj.bounding_box[1]*tar_obj.bounding_box[2]:
+                    error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {obj_in_hand.name} too big to place inside {tar_obj.name}")
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to place inside target object (PLACE_INSIDE)")
                     return False
                 
                 if object_states.Open in state.graph.nodes[tar_obj.name].keys() and \
                 not state.graph.nodes[tar_obj.name][object_states.Open]:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"Target object {tar_obj.name} is closed")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Target object is closed (PLACE_INSIDE)")
                     return False
                 return True
         
         precond=PlaceInsidePrecond(obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -436,10 +469,10 @@ class EvolvingGraph():
         return True
                 
 
-    def place_ontop(self,obj:URDFObject,hand:str):
+    def place_ontop(self, error_info: ErrorInfo, obj:URDFObject,hand:str):
         ## Precondition check
         precond=PlacePrecond(obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -453,10 +486,10 @@ class EvolvingGraph():
 
 
 
-    def place_ontop_floor(self,obj,hand):
+    def place_ontop_floor(self, error_info:ErrorInfo, obj,hand):
         ## Precondition check
         precond=PlacePrecond(obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -467,10 +500,10 @@ class EvolvingGraph():
         print(f"Place {obj_in_hand.name} on floor {obj.name} success")
         return True
     
-    def place_under(self,obj,hand):
+    def place_under(self, error_info: ErrorInfo, obj,hand):
         ## Precondition check
         precond=PlacePrecond(obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -497,10 +530,10 @@ class EvolvingGraph():
         print(f"Place {obj_in_hand.name} under {obj.name} success")
         return True
 
-    def place_next_to(self,obj,hand):
+    def place_next_to(self, error_info:ErrorInfo, obj,hand):
         ## Precondition check
         precond=PlacePrecond(obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -527,11 +560,11 @@ class EvolvingGraph():
         print(f"Place {obj_in_hand.name} next to {obj.name} success")
         return True
 
-    def place_next_to_ontop(self,tar_obj1:URDFObject,tar_obj2,hand:str):
+    def place_next_to_ontop(self, error_info: ErrorInfo, tar_obj1:URDFObject,tar_obj2,hand:str):
         ## Precondition check
         precond1=PlacePrecond(tar_obj1,hand,self.name_to_obj)
         precond2=PlacePrecond(tar_obj2,hand,self.name_to_obj)
-        if not precond1.check_precond(self.cur_state) or not precond2.check_precond(self.cur_state):
+        if not precond1.check_precond(error_info, self.cur_state) or not precond2.check_precond(error_info, self.cur_state):
             return False
         
         
@@ -548,9 +581,9 @@ class EvolvingGraph():
         print(f"Place {obj_in_hand.name} next to {tar_obj1.name} and onto {tar_obj2.name} success")
         return True
 
-    def pour_inside(self,tar_obj:URDFObject,hand:str):
+    def pour_inside(self, error_info: ErrorInfo, tar_obj:URDFObject,hand:str):
         ## Precondition check
-        class PourInsidePrecond(PourPrecond):
+        class PourInsidePrecond(PlacePrecond):
             def __init__(self,obj,hand,name_to_obj):
                 super().__init__(obj,hand,name_to_obj)
                 self.precond_list.appendleft(self.pour_inside_precond)
@@ -558,7 +591,7 @@ class EvolvingGraph():
                 self.hand=hand
                 self.name_to_obj=name_to_obj
             
-            def pour_inside_precond(self,state:GraphState):
+            def pour_inside_precond(self, error_info:ErrorInfo, state:GraphState):
                 obj_in_hand_name=state.robot_inventory[self.hand]
                 if obj_in_hand_name is None:
                     return True
@@ -570,17 +603,19 @@ class EvolvingGraph():
                     obj_inside=self.name_to_obj[obj_inside_name]
                     if obj_inside.bounding_box[0]*obj_inside.bounding_box[1]*obj_inside.bounding_box[2]> \
                     tar_obj.bounding_box[0]* tar_obj.bounding_box[1] * tar_obj.bounding_box[2]:
+                        error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {obj_inside.name} too big to pour inside {tar_obj.name}")
                         print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to pour inside target object (POUR_INSIDE)")
                         return False
                 
                 if object_states.Open in state.graph.nodes[tar_obj.name].keys() and \
                 not state.graph.nodes[tar_obj.name][object_states.Open]:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"Target object {tar_obj.name} is closed")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Target object is closed (POUR_INSIDE)")
                     return False
                 return True
             
         precond=PourInsidePrecond(tar_obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -593,10 +628,10 @@ class EvolvingGraph():
         
 
 
-    def pour_onto(self,tar_obj:URDFObject,hand:str):
+    def pour_onto(self, error_info: ErrorInfo, tar_obj:URDFObject,hand:str):
         ## Precondition check
         precond=PourPrecond(tar_obj,hand,self.name_to_obj)
-        if not precond.check_precond(self.cur_state):
+        if not precond.check_precond(error_info, self.cur_state):
             return False
         
         ## Posteffect
@@ -609,22 +644,23 @@ class EvolvingGraph():
         return True
     
     #################high level actions#####################
-    def open_or_close(self,obj:URDFObject,open_close:str):
+    def open_or_close(self, error_info: ErrorInfo, obj:URDFObject,open_close:str):
         assert open_close in ['open','close']
         ## pre conditions
         class OpenClosePrecond(HighLevelActionPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.open_close_precond)
-            def open_close_precond(self,state:GraphState):
+            def open_close_precond(self, error_info: ErrorInfo, state:GraphState):
                 if self.state_value==True and object_states.ToggledOn in state.graph.nodes[self.obj.name].keys() and \
                 state.graph.nodes[self.obj.name][object_states.ToggledOn]:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"Object {self.obj.name} is toggled on, cannot open")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is toggled on, cannot open (OPEN)")
                     return False
                 return True
             
         precond=OpenClosePrecond(obj,object_states.Open,open_close=='open',self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
 
         ## post effects
@@ -632,21 +668,22 @@ class EvolvingGraph():
         self.cur_state.graph.nodes[obj.name][object_states.Open]=(open_close=='open')
         return True
     
-    def toggle_on_off(self,obj:URDFObject,on_off:str):
+    def toggle_on_off(self, error_info: ErrorInfo, obj:URDFObject,on_off:str):
         assert on_off in ['on','off']
         ## pre conditions
         class ToggleOnOffPrecond(HighLevelActionPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.toggle_on_off_precond)
-            def toggle_on_off_precond(self,state:GraphState):
+            def toggle_on_off_precond(self, error_info:ErrorInfo, state:GraphState):
                 if self.state_value==True and object_states.Open in state.graph.nodes[self.obj.name].keys() and \
                 state.graph.nodes[self.obj.name][object_states.Open]:
+                    error_info.update_error(ErrorType.MISSING_STEP, f"Object {self.obj.name} is open, close first to toggle on")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is open, close first to toggle on (TOGGLE_ON)")
                     return False
                 return True
         precond=ToggleOnOffPrecond(obj,object_states.ToggledOn,on_off=='on',self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
 
         ## post effects
@@ -668,14 +705,14 @@ class EvolvingGraph():
                     break
         return True
 
-    def slice(self,obj:URDFObject):
+    def slice(self, error_info: ErrorInfo, obj:URDFObject):
         ## pre conditions
         class SlicePrecond(HighLevelActionPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.appendleft(self.slice_precond)
             
-            def slice_precond(self,state:GraphState):
+            def slice_precond(self, error_info:ErrorInfo, state:GraphState):
                 has_slicer=False
                 for inventory_obj_name in state.robot_inventory.values():
                     if inventory_obj_name is None:
@@ -686,12 +723,13 @@ class EvolvingGraph():
                         has_slicer=True
                         break
                 if not has_slicer:
+                    error_info.update_error(ErrorType.MISSING_STEP, "No slicer in inventory (SLICE)")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No slicer in inventory (SLICE)")
                     return False
                 return True
         
         precond=SlicePrecond(obj,object_states.Sliced,True,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
     
         
@@ -729,19 +767,20 @@ class EvolvingGraph():
 
         return True
     
-    def clean_dust(self,obj):
+    def clean_dust(self, error_info: ErrorInfo, obj):
         ## pre conditions
         class CleanDustPrecond(FullHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_dust_precond)
             
-            def clean_dust_precond(self,state:GraphState):
+            def clean_dust_precond(self, error_info:ErrorInfo, state:GraphState):
                 in_cleaner=False
                 if not isinstance(self.obj,RoomFloor):
                     node=state.relation_tree.get_node(obj.name)
                     allowed_cleaners=["dishwasher","sink"]
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         if object_states.ToggledOn in state.graph.nodes[parent_obj.name].keys() \
@@ -765,12 +804,13 @@ class EvolvingGraph():
                         break
 
                 if not in_cleaner and not has_cleaner:
+                    error_info.update_error(ErrorType.MISSING_STEP, "No cleaner in inventory or object not in toggled on cleaner (CLEAN_DUST)")
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No cleaner in inventory or object not in toggled on cleaner (CLEAN_DUST)")
                     return False
                 
                 return True
         precond=CleanDustPrecond(obj,object_states.Dusty,False,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
 
 
@@ -779,19 +819,20 @@ class EvolvingGraph():
         print(f"Clean-dust {obj.name} success")
         return True
     
-    def clean_stain(self,obj):
+    def clean_stain(self, error_info: ErrorInfo, obj):
         ## pre conditions
         class CleanStainPrecond(FullHandAllowedHighLevelPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.clean_stain_precond)
             
-            def clean_stain_precond(self,state:GraphState):
+            def clean_stain_precond(self, error_info:ErrorInfo, state:GraphState):
                 in_cleaner=False
                 if not isinstance(self.obj,RoomFloor):
                     node=state.relation_tree.get_node(obj.name)
                     allowed_cleaners=["sink"]
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         if object_states.ToggledOn in state.graph.nodes[parent_obj.name].keys() \
@@ -830,12 +871,13 @@ class EvolvingGraph():
 
                 if not in_cleaner and not has_soaked_cleaner:
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)")
+                    error_info.update_error(ErrorType.MISSING_STEP, "No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)")
                     return False
                 
                 return True
                 
         precond=CleanStainPrecond(obj,object_states.Stained,False,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         
         ## post effects
@@ -843,20 +885,21 @@ class EvolvingGraph():
         print(f"Clean-stain {obj.name} success")
         return True
     
-    def soak_dry(self,obj,soak_or_dry:str):
+    def soak_dry(self, error_info: ErrorInfo, obj,soak_or_dry:str):
         ## pre conditions
         class soakDryPrecond(HighLevelActionPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.soak_dry_precond)
             
-            def soak_dry_precond(self,state:GraphState):
+            def soak_dry_precond(self, error_info: ErrorInfo, state:GraphState):
                 # if soak_or_dry=='soak', obj must be put in a toggled sink
                 allowed_soakers=["sink","teapot"]
                 if self.state_value==True:
                     in_sink=False
                     node=state.relation_tree.get_node(obj.name)
                     while node.parent is not state.relation_tree.root:
+                        assert node != node.parent.parent
                         parent_obj_name=node.parent.obj
                         parent_obj=self.name_to_obj[parent_obj_name]
                         for allowed_soaker in allowed_soakers:
@@ -870,22 +913,23 @@ class EvolvingGraph():
                         node=node.parent
                     if not in_sink:
                         print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object not in toggled on sink or in a teapot(SOAK)")
+                        error_info.update_error(ErrorType.MISSING_STEP, f'Object {obj.name} not in toggled on sink or in a teapot(SOAK)')
                         return False
                     
                 return True       
         precond=soakDryPrecond(obj,object_states.Soaked,soak_or_dry=='soak',self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         ## post effects
         self.cur_state.graph.nodes[obj.name][object_states.Soaked]=(soak_or_dry=='soak')
         print(f"{soak_or_dry.capitalize()} {obj.name} success")
         return True
     
-    def freeze_unfreeze(self,obj,freeze_or_unfreeze:str):
+    def freeze_unfreeze(self, error_info:ErrorInfo, obj,freeze_or_unfreeze:str):
         assert freeze_or_unfreeze in ['freeze','unfreeze']
         ## pre conditions
         precond=HighLevelActionPrecond(obj,object_states.Frozen,freeze_or_unfreeze=='freeze',self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         
         ## post effects
@@ -893,18 +937,19 @@ class EvolvingGraph():
         print(f"{freeze_or_unfreeze.capitalize()} {obj.name} success")
         return True
     
-    def cook(self,obj):
+    def cook(self, error_info: ErrorInfo, obj):
         ## pre conditions
         class CookPrecond(HighLevelActionPrecond):
             def __init__(self,obj,object_state,state_value,name_to_obj):
                 super().__init__(obj,object_state,state_value,name_to_obj)
                 self.precond_list.append(self.cook_precond)
             
-            def cook_precond(self,state:GraphState):
+            def cook_precond(self, error_info:ErrorInfo, state:GraphState):
                 in_cooker=False
                 allowered_cookers=["saucepan"]
                 node=state.relation_tree.get_node(obj.name)
                 while node.parent is not state.relation_tree.root:
+                    assert node != node.parent.parent
                     parent_obj_name=node.parent.obj
                     parent_obj=self.name_to_obj[parent_obj_name]
                     for allowered_cooker in allowered_cookers:
@@ -916,108 +961,109 @@ class EvolvingGraph():
                     node=node.parent
                 if not in_cooker:
                     print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object not in a cooker (COOK)")
+                    error_info.update_error(ErrorType.MISSING_STEP, f'Object {obj.name} not in a cooker (COOK)')
                     return False
                 return True
             
         precond=CookPrecond(obj,object_states.Cooked,True,self.name_to_obj)
-        if not self.check_precondition(precond):
+        if not self.check_precondition(error_info, precond):
             return False
         
         ## post effects
         self.cur_state.graph.nodes[obj.name][object_states.Cooked]=True
         print(f"Cook {obj.name} success")
         return True
-    ##################### for behavior task eval #####################    
-    def left_grasp(self,obj:URDFObject):
-        return self.grasp(obj,'left_hand')
+    ##################### for behavior task eval #####################
+    def left_grasp(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.grasp(error_info, obj,'left_hand')
     
-    def right_grasp(self,obj:URDFObject):
-        return self.grasp(obj,'right_hand')
+    def right_grasp(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.grasp(error_info, obj,'right_hand')
     
-    def left_release(self,obj:URDFObject):
-        return self.release('left_hand',obj)
+    def left_release(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.release(error_info, 'left_hand', obj)
     
-    def right_release(self,obj:URDFObject):
-        return self.release('right_hand',obj)
+    def right_release(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.release(error_info, 'right_hand', obj)
     
-    def left_place_ontop(self,obj):
-        if isinstance(obj,RoomFloor):
-            return self.place_ontop_floor(obj,'left_hand')
+    def left_place_ontop(self, error_info: ErrorInfo, obj):
+        if isinstance(obj, RoomFloor):
+            return self.place_ontop_floor(error_info, obj, 'left_hand')
         else:
-            return self.place_ontop(obj,'left_hand')
+            return self.place_ontop(error_info, obj, 'left_hand')
         
-    def right_place_ontop(self,obj):
-        if isinstance(obj,RoomFloor):
-            return self.place_ontop_floor(obj,'right_hand')
+    def right_place_ontop(self, error_info: ErrorInfo, obj):
+        if isinstance(obj, RoomFloor):
+            return self.place_ontop_floor(error_info, obj, 'right_hand')
         else:
-            return self.place_ontop(obj,'right_hand')
+            return self.place_ontop(error_info, obj, 'right_hand')
     
-    def left_place_inside(self,obj:URDFObject):
-        return self.place_inside(obj,'left_hand')
+    def left_place_inside(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_inside(error_info, obj, 'left_hand')
     
-    def right_place_inside(self,obj:URDFObject):
-        return self.place_inside(obj,'right_hand')
+    def right_place_inside(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_inside(error_info, obj, 'right_hand')
     
-    def open(self,obj:URDFObject):
-        return self.open_or_close(obj,'open')
+    def open(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.open_or_close(error_info, obj, 'open')
     
-    def close(self,obj:URDFObject):
-        return self.open_or_close(obj,'close')
+    def close(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.open_or_close(error_info, obj, 'close')
     
-    def left_place_nextto(self,obj:URDFObject):
-        return self.place_next_to(obj,'left_hand')
+    def left_place_nextto(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_next_to(error_info, obj, 'left_hand')
     
-    def right_place_nextto(self,obj:URDFObject):
-        return self.place_next_to(obj,'right_hand')
+    def right_place_nextto(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_next_to(error_info, obj, 'right_hand')
     
-    def left_transfer_contents_inside(self,obj:URDFObject):
-        return self.pour_inside(obj,'left_hand')
+    def left_transfer_contents_inside(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.pour_inside(error_info, obj, 'left_hand')
     
-    def right_transfer_contents_inside(self,obj:URDFObject):
-        return self.pour_inside(obj,'right_hand')
+    def right_transfer_contents_inside(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.pour_inside(error_info, obj, 'right_hand')
     
-    def left_transfer_contents_ontop(self,obj:URDFObject):
-        return self.pour_onto(obj,'left_hand')
+    def left_transfer_contents_ontop(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.pour_onto(error_info, obj, 'left_hand')
     
-    def right_transfer_contents_ontop(self,obj:URDFObject):
-        return self.pour_onto(obj,'right_hand')
+    def right_transfer_contents_ontop(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.pour_onto(error_info, obj, 'right_hand')
     
-    def soak(self,obj:URDFObject):
-        return self.soak_dry(obj,'soak')
+    def soak(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.soak_dry(error_info, obj, 'soak')
     
-    def dry(self,obj:URDFObject):
-        return self.soak_dry(obj,'dry')
+    def dry(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.soak_dry(error_info, obj, 'dry')
     
-    def freeze(self,obj:URDFObject):
-        return self.freeze_unfreeze(obj,'freeze')
+    def freeze(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.freeze_unfreeze(error_info, obj, 'freeze')
     
-    def unfreeze(self,obj:URDFObject):
-        return self.freeze_unfreeze(obj,'unfreeze')
+    def unfreeze(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.freeze_unfreeze(error_info, obj, 'unfreeze')
     
-    def toggle_on(self,obj:URDFObject):
-        return self.toggle_on_off(obj,'on')
+    def toggle_on(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.toggle_on_off(error_info, obj, 'on')
     
-    def toggle_off(self,obj:URDFObject):
-        return self.toggle_on_off(obj,'off')
+    def toggle_off(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.toggle_on_off(error_info, obj, 'off')
     
     
-    def left_place_nextto_ontop(self,obj1:URDFObject,obj2):
-        return self.place_next_to_ontop(obj1,obj2,'left_hand')
+    def left_place_nextto_ontop(self, error_info: ErrorInfo, obj1:URDFObject, obj2):
+        return self.place_next_to_ontop(error_info, obj1, obj2, 'left_hand')
     
-    def right_place_nextto_ontop(self,obj1:URDFObject,obj2):
-        return self.place_next_to_ontop(obj1,obj2,'right_hand')
+    def right_place_nextto_ontop(self, error_info: ErrorInfo, obj1:URDFObject, obj2):
+        return self.place_next_to_ontop(error_info, obj1, obj2, 'right_hand')
     
-    def left_place_under(self,obj:URDFObject):
-        return self.place_under(obj,'left_hand')
+    def left_place_under(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_under(error_info, obj, 'left_hand')
     
-    def right_place_under(self,obj:URDFObject):
-        return self.place_under(obj,'right_hand')
+    def right_place_under(self, error_info: ErrorInfo, obj:URDFObject):
+        return self.place_under(error_info, obj, 'right_hand')
     
-    def clean(self,obj):
-
+    def clean(self, error_info: ErrorInfo, obj):
         if object_states.Dusty not in self.cur_state.graph.nodes[obj.name] and \
         object_states.Stained not in self.cur_state.graph.nodes[obj.name]:
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (CLEAN)")
+            error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {obj.name} does not have target state (CLEAN)")
             return False
 
         # clean will clean both dust and stain
@@ -1026,13 +1072,14 @@ class EvolvingGraph():
         flag1=False
         flag2=False
         if object_states.Dusty in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Dusty]==True:
-            flag1=self.clean_dust(obj)
+            flag1=self.clean_dust(error_info, obj)
             try_clean_dust=True
         if object_states.Stained in self.cur_state.graph.nodes[obj.name] and self.cur_state.graph.nodes[obj.name][object_states.Stained]==True:
-            flag2=self.clean_stain(obj)
+            flag2=self.clean_stain(error_info, obj)
             try_clean_stain=True
         if not (try_clean_dust or try_clean_stain):
             print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object is not dusty or stained (CLEAN)")
+            error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Object {obj.name} is not dusty or stained (CLEAN)")
             return False
         return flag1 or flag2
 
@@ -1044,33 +1091,39 @@ class BasePrecond:
         self.obj=obj
         self.name_to_obj=name_to_obj
     
-    def check_precond(self,state:GraphState,ignore_print=False):
+    def check_precond(self,error_info: ErrorInfo, state:GraphState,ignore_print=False):
         for precond in self.precond_list:
             if ignore_print:
                 with HiddenPrints():
-                    if not precond(state):
+                    error_info.set_hidden_add()
+                    if not precond(error_info, state):
+                        error_info.reset_hidden_add()
                         return False
+                    error_info.reset_hidden_add()
             else:
-                if not precond(state):
+                if not precond(error_info, state):
                     return False
         return True
     
-    def interactivity_precond(self,state:GraphState):
+    def interactivity_precond(self, error_info: ErrorInfo, state:GraphState):
         if isinstance(self.obj,RoomFloor):
             return True
         node=state.relation_tree.get_node(self.obj.name)
         while node.parent is not state.relation_tree.root:
+            assert node != node.parent.parent
             parent_obj_name=node.parent.obj
             parent_obj=self.name_to_obj[parent_obj_name]
             if (object_states.Open in state.graph.nodes[parent_obj.name].keys() and 
             not state.graph.nodes[parent_obj.name][object_states.Open] and
             node.teleport_type==TeleportType.INSIDE):
+                error_info.update_error(ErrorType.MISSING_STEP, f"{parent_obj.name} is closed, open first")
                 print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Object is inside a closed object")
                 return False
             node=node.parent
 
         if object_states.Sliced in state.graph.nodes[self.obj.name].keys() and \
         state.graph.nodes[self.obj.name][object_states.Sliced] and 'part' not in self.obj.name:
+            error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"{self.obj.name} is sliced, you need to interact with parts of it")
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object is sliced, you need to interact with parts of it")
             return False
 
@@ -1084,17 +1137,20 @@ class PlacePrecond(BasePrecond):
         self.hand=hand
         self.obj=obj
     
-    def place_precond(self,state:GraphState):
+    def place_precond(self, error_info: ErrorInfo, state:GraphState):
         if state.robot_inventory[self.hand] is None:
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot is not holding anything (PLACE)")
+            error_info.update_error(ErrorType.MISSING_STEP, "Robot is not holding anything (PLACE)")    
             return False
         
         if self.obj==self.name_to_obj[state.robot_inventory[self.hand]]:
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
+            error_info.update_error(ErrorType.MISSING_STEP, "Release target obj first before place (PLACE)")
             return False
         
         if self.obj.name in state.get_all_inhand_objects(self.hand):
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Release target obj first before place (PLACE)")
+            error_info.update_error(ErrorType.MISSING_STEP, f"Release target obj {self.obj.name} first before place (PLACE)")
             return False
         return True
 
@@ -1103,13 +1159,14 @@ class PourPrecond(PlacePrecond):
         super().__init__(obj,hand,name_to_obj)
         self.precond_list.appendleft(self.pour_precond)
     
-    def pour_precond(self,state:GraphState):
+    def pour_precond(self, error_info: ErrorInfo, state:GraphState):
         in_hand_objs=state.get_all_inhand_objects(self.hand)
         if len(in_hand_objs)==1:
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Only holding one obj in {self.hand}, nothing to pour")
+            error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Only holding one obj in {self.hand}, nothing to pour")
             return False
         return True
-    
+
 class HighLevelActionPrecond(BasePrecond):
     def __init__(self,obj,object_state,state_value,name_to_obj):
         super().__init__(obj,name_to_obj)
@@ -1117,15 +1174,18 @@ class HighLevelActionPrecond(BasePrecond):
         self.object_state=object_state
         self.state_value=state_value
     
-    def high_level_action_precond(self,state:GraphState):
+    def high_level_action_precond(self, error_info: ErrorInfo, state:GraphState):
         if state.robot_inventory['right_hand'] is not None and state.robot_inventory['left_hand'] is not None:
             print(f"<Error> {ErrorType.MISSING_STEP} <Reason> Robot's both hands are full (HIGH_LEVEL_ACTION)")
+            error_info.update_error(ErrorType.MISSING_STEP, "Robot's both hands are full (HIGH_LEVEL_ACTION)")
             return False
         if self.object_state not in state.graph.nodes[self.obj.name]:
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (HIGH_LEVEL_ACTION)")
+            error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {self.obj.name} does not have target state (HIGH_LEVEL_ACTION)")
             return False
         if state.graph.nodes[self.obj.name][self.object_state]==self.state_value:
             print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object's state is already satisfied (HIGH_LEVEL_ACTION)")
+            error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Object's state is already satisfied (HIGH_LEVEL_ACTION)")
             return False
         return True
     
@@ -1136,11 +1196,13 @@ class FullHandAllowedHighLevelPrecond(BasePrecond):
         self.object_state=object_state
         self.state_value=state_value
     
-    def high_level_action_precond(self,state:GraphState):
+    def high_level_action_precond(self, error_info: ErrorInfo, state:GraphState):
         if self.object_state not in state.graph.nodes[self.obj.name]:
             print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object does not have target state (HIGH_LEVEL_ACTION)")
+            error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {self.obj.name} does not have target state (HIGH_LEVEL_ACTION)")
             return False
         if state.graph.nodes[self.obj.name][self.object_state]==self.state_value:
             print(f"<Error> {ErrorType.ADDITIONAL_STEP} <Reason> Object's state is already satisfied (HIGH_LEVEL_ACTION)")
+            error_info.update_error(ErrorType.ADDITIONAL_STEP, f"Object's state is already satisfied (HIGH_LEVEL_ACTION)")
             return False
         return True
