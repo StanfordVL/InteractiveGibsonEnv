@@ -1,0 +1,78 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_32"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_32"
+    },
+    {
+        "action": "SOAK",
+        "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_32"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_storage_room_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_garage_0"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_15"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bottom_cabinet_15"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "room_floor_garage_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "newspaper_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "newspaper_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "trash_can_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "trash_can_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cruet_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cruet_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_14"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_14"
+    }
+]

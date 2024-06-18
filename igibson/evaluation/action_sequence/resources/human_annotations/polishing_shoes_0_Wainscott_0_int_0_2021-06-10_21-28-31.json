@@ -1,0 +1,38 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_145"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_67"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_67"
+    },
+    {
+        "action": "SOAK",
+        "object": "rag_145"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_67"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_145"
+    },
+    {
+        "action": "CLEAN",
+        "object": "walker_144"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sandal_143"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_67"
+    }
+]

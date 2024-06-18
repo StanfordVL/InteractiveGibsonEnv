@@ -1,0 +1,54 @@
+[
+    {
+        "action": "OPEN",
+        "object": "backpack_100"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_101"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "backpack_100"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sunglass_105"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "backpack_100"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "apple_103"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "backpack_100"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "headset_104"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "backpack_100"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bracelet_102"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "backpack_100"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "backpack_100"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "room_floor_bedroom_0"
+    }
+]

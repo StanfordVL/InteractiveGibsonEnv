@@ -1,0 +1,162 @@
+[
+    {
+        "action": "OPEN",
+        "object": "fridge_97"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "salad_143"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "salad_144"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "salad_143"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "salad_144"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "pretzel_153"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "pretzel_152"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "salad_145"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "salad_146"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "salad_145"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "salad_146"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "pretzel_154"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "pretzel_155"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tray_147"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cheese_156"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cheese_157"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "cheese_156"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "cheese_157"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cheese_158"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cheese_159"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "cheese_158"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "cheese_159"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "parsley_148"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "parsley_149"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "parsley_148"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "parsley_149"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "cheese_156"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "cheese_157"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "parsley_150"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "parsley_151"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "parsley_150"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "parsley_151"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "cheese_158"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "cheese_159"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_97"
+    }
+]

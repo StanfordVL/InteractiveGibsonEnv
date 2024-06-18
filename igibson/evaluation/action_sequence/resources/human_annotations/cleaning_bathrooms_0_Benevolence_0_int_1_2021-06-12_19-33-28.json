@@ -1,0 +1,46 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "sink_7"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "sink_7"
+    },
+    {
+        "action": "SOAK",
+        "object": "rag_0"
+    },
+    {
+        "action": "TOGGLE_OFF",
+        "object": "sink_7"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sink_7"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bathtub_4"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_bathroom_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "toilet_6"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bucket_0"
+    }
+]
