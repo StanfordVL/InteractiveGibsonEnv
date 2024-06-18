@@ -3,15 +3,18 @@ from igibson.envs.igibson_env import iGibsonEnv
 from igibson.objects.multi_object_wrappers import ObjectMultiplexer,ObjectGrouper
 from igibson.objects.articulated_object import URDFObject
 from igibson.object_states.on_floor import RoomFloor
-from igibson.evaluation.transition_modeling.prompts.zero_shot import zero_shot
-from igibson.evaluation.utils.gpt_utils import call_gpt_with_retry
+from igibson.evaluation.transition_modeling.prompts.prompts import prompt2 as prompt
 from bddl.config import get_definition_filename
 import os
 import json
 import re
 from igibson.evaluation.transition_modeling.logic_score import calculate_logic_score
-DOMAIN_FILE_PATH = "igibson/evaluation/transition_modeling/resources/behavior.pddl"
+DOMAIN_FILE_PATH = "igibson/evaluation/transition_modeling/data/resources/behavior_new.pddl"
 HUMAN_ANNOTATION_PATH="igibson/evaluation/data/action_sequence_human_annotations"
+GT_DATA_PATH="igibson/evaluation/transition_modeling/data/resources/problem_pddl.json"
+
+with open(GT_DATA_PATH) as f:
+    GT_DATA=json.load(f)
 
 ACTION_HANDLER_MAPPING={
     "NAVIGATE_TO":"navigate_to",
@@ -45,46 +48,12 @@ class TransitionModelingEvaluator(BaseEnv):
         self.problem_pddl=self.get_problem_pddl()
         self.domain_pddl=self.get_domain_pddl()
         self.gold_actions=self.extract_action_details(content=self.domain_pddl)
-        self.human_annotations=self.get_human_annotation()
-        self.action_handler_str=self.get_llm_input_action_handler()
-    
 
 
-    def get_action_handler(self):
+    def get_action_handler(self,gt_data=GT_DATA):
         action_handler=set()
-        for action in self.human_annotations:
-            action_name=action.get("action")
-            if action_name in ACTION_HANDLER_MAPPING:
-                action_handler.add(ACTION_HANDLER_MAPPING[action_name])
-            if action_name=="CLEAN":
-                if "stained" in self.problem_pddl:
-                    if "rag" in self.problem_pddl:
-                        action_handler.add("clean_stained_rag")
-                    if "scrub_brush" in self.problem_pddl:
-                        action_handler.add("clean_stained_brush")
-                    if "piece_of_cloth" in self.problem_pddl:
-                        action_handler.add("clean_stained_cloth")
-                    if "hand_towel" in self.problem_pddl:
-                        action_handler.add("clean_stained_towel")
-                    if "towel" in self.problem_pddl:
-                        action_handler.add("clean_stained_towel")
-                    if "dishtowel" in self.problem_pddl:
-                        action_handler.add("clean_stained_dishtowel")
-                    if "dishwasher" in self.problem_pddl:
-                        action_handler.add("clean_stained_dishwasher")
-                if "dusty" in self.problem_pddl:
-                    if "rag" in self.problem_pddl:
-                        action_handler.add("clean_dusty_rag")
-                    if "scrub_brush" in self.problem_pddl:
-                        action_handler.add("clean_dusty_brush")
-                    if "piece_of_cloth" in self.problem_pddl:
-                        action_handler.add("clean_dusty_cloth")
-                    if "vacuum" in self.problem_pddl:
-                        action_handler.add("clean_dusty_vacuum")
-        if "soak" in action_handler and "sink" not in self.problem_pddl and "teapot" in self.problem_pddl:
-            action_handler.remove("soak")
-            action_handler.add("soak_teapot")
-        action_handler.add("navigate_to")
+        for action in gt_data[self.demo_name]['actions']:
+            action_handler.add(action.split(" ")[0].strip())
         return list(action_handler)   
                         
     def get_llm_input_action_handler(self)->str:
@@ -103,12 +72,6 @@ class TransitionModelingEvaluator(BaseEnv):
         with open(self.domain_file_path) as f:
             domain_pddl=f.read()
         return domain_pddl
-    
-    def get_human_annotation(self):
-        human_path=os.path.join(self.human_attotation_path,self.demo_name+".json")
-        with open(human_path) as f:
-            human_annotation=json.load(f)
-        return human_annotation
     
     @staticmethod
     # copied from https://github.com/zsyJosh/AgentEval/blob/shiyu_dev/virtualhome/simulation/evolving_graph/eval_robots.py
@@ -168,8 +131,6 @@ class TransitionModelingEvaluator(BaseEnv):
         return actions
 
     
-        
-    
     def get_problem_pddl(self)->str:
         behavior_activity=self.config.get("task")
         instance=self.config.get("task_id")
@@ -178,11 +139,11 @@ class TransitionModelingEvaluator(BaseEnv):
             problem_pddl=f.read()
         return problem_pddl
     
-    def get_prompt_zeroshot(self):
-        return zero_shot.format(problem_file=self.problem_pddl,action_handler=self.action_handler_str)
-
-    def get_raw_response(self,prompt):
-        return call_gpt_with_retry(prompt)
+    def get_modified_pddl(self,gt_data=GT_DATA)->str:
+        return gt_data[self.demo_name]['problem_pddl']
+    
+    def get_prompt(self,gt_data=GT_DATA):
+        return prompt.format(problem_file=self.get_modified_pddl(gt_data),action_handler=self.get_llm_input_action_handler())
     
     def parse_response(self,response):
         parsed_actions=self.extract_action_details(content=response)

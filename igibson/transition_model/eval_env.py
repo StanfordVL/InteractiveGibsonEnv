@@ -150,6 +150,7 @@ class EvalEnv(BaseEnv):
             flag=self.control_function[action_idx](obj_list[0])
         else:
             flag=self.control_function[action_idx](obj_list[0],obj_list[1])
+        self.simulator.sync()
         return flag
 
     def final_step(self):

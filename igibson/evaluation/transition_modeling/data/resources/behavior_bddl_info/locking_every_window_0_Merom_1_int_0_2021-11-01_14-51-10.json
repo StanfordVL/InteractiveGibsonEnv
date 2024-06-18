@@ -1,0 +1,81 @@
+{
+    "initial_condition": [
+        [
+            "open",
+            "window.n.01_1"
+        ],
+        [
+            "open",
+            "window.n.01_2"
+        ],
+        [
+            "open",
+            "window.n.01_3"
+        ],
+        [
+            "open",
+            "window.n.01_4"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_1"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "not",
+            "open",
+            "window.n.01_1"
+        ],
+        [
+            "not",
+            "open",
+            "window.n.01_2"
+        ],
+        [
+            "not",
+            "open",
+            "window.n.01_3"
+        ],
+        [
+            "not",
+            "open",
+            "window.n.01_4"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "not",
+                "open",
+                "window.n.01_1"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_2"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_3"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_4"
+            ]
+        ]
+    ],
+    "name_category": {
+        "window.n.01_1": "window.n.01",
+        "window.n.01_2": "window.n.01",
+        "window.n.01_3": "window.n.01",
+        "window.n.01_4": "window.n.01",
+        "bed.n.01_1": "bed.n.01",
+        "sofa.n.01_1": "sofa.n.01",
+        "floor.n.01_1": "floor.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

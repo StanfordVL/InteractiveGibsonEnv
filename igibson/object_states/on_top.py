@@ -48,7 +48,7 @@ class OnTop(PositionalValidationMemoizedObjectStateMixin, RelativeObjectState, B
         # redefine the get_value function
         lo,hi=self.obj.states[AABB].get_value()
         other_lo,other_hi=other.states[AABB].get_value()
-
+        flag=True
         # given two segments, check if they overlap
         def is_overlap(a_low, a_high, b_low, b_high):
             return (a_low <= b_low and b_low <= a_high) or \
@@ -57,25 +57,26 @@ class OnTop(PositionalValidationMemoizedObjectStateMixin, RelativeObjectState, B
             (b_low <= a_low and a_high <= b_high)
         
         if not is_overlap(lo[0], hi[0], other_lo[0], other_hi[0]) or not is_overlap(lo[1], hi[1], other_lo[1], other_hi[1]):
-            return False
-        
+            flag=False
         if (lo+hi)[2]<(other_lo+other_hi)[2]:
-            
-            return False
+            flag=False
         if lo[2]-other_hi[2] > MAX_DISTANCE_POS or other_hi[2]-lo[2] > MAX_DISTANCE_NEG:
+            flag=False
+
+        
+        if flag:
+            return True
+        else:
+            # # Touching is the less costly of our conditions.
+            # # Check it first.
+            # if not self.obj.states[Touching].get_value(other):
+            #     return False
+
+            # # Then check vertical adjacency - it's the second least
+            # # costly.
+            # other_bids = set(other.get_body_ids())
+            # adjacency = self.obj.states[VerticalAdjacency].get_value()
+            # return not other_bids.isdisjoint(adjacency.negative_neighbors) and other_bids.isdisjoint(
+            #     adjacency.positive_neighbors
+            # )
             return False
-
-        return True
-    
-        # Touching is the less costly of our conditions.
-        # Check it first.
-        # if not self.obj.states[Touching].get_value(other):
-        #     return False
-
-        # Then check vertical adjacency - it's the second least
-        # costly.
-        # other_bids = set(other.get_body_ids())
-        # adjacency = self.obj.states[VerticalAdjacency].get_value()
-        # return not other_bids.isdisjoint(adjacency.negative_neighbors) and other_bids.isdisjoint(
-        #     adjacency.positive_neighbors
-        # )

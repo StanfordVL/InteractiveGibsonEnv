@@ -1,0 +1,101 @@
+{
+    "initial_condition": [
+        [
+            "ontop",
+            "alarm.n.02_1",
+            "table.n.02_2"
+        ],
+        [
+            "ontop",
+            "alarm.n.02_2",
+            "table.n.02_2"
+        ],
+        [
+            "not",
+            "toggled_on",
+            "alarm.n.02_1"
+        ],
+        [
+            "not",
+            "toggled_on",
+            "alarm.n.02_2"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_1"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "forpairs",
+            "alarm.n.02",
+            "-",
+            "alarm.n.02",
+            "table.n.02",
+            "-",
+            "table.n.02",
+            "ontop",
+            "alarm.n.02",
+            "table.n.02"
+        ],
+        [
+            "forall",
+            "alarm.n.02",
+            "-",
+            "alarm.n.02",
+            "toggled_on",
+            "alarm.n.02"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "ontop",
+                "alarm.n.02_1",
+                "table.n.02_1"
+            ],
+            [
+                "ontop",
+                "alarm.n.02_2",
+                "table.n.02_2"
+            ],
+            [
+                "toggled_on",
+                "alarm.n.02_1"
+            ],
+            [
+                "toggled_on",
+                "alarm.n.02_2"
+            ]
+        ],
+        [
+            [
+                "ontop",
+                "alarm.n.02_2",
+                "table.n.02_1"
+            ],
+            [
+                "ontop",
+                "alarm.n.02_1",
+                "table.n.02_2"
+            ],
+            [
+                "toggled_on",
+                "alarm.n.02_1"
+            ],
+            [
+                "toggled_on",
+                "alarm.n.02_2"
+            ]
+        ]
+    ],
+    "name_category": {
+        "alarm.n.02_1": "alarm.n.02",
+        "alarm.n.02_2": "alarm.n.02",
+        "table.n.02_1": "table.n.02",
+        "table.n.02_2": "table.n.02",
+        "floor.n.01_1": "floor.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

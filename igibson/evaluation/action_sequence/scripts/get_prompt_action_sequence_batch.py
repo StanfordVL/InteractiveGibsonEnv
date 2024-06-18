@@ -23,10 +23,10 @@ def main(demo_dir,action_dir,rst_dir):
             print("Error in ",args[0])
             print(e)
 
-        with open(os.path.join(rst_dir,"statistics.json"), 'w') as f:
+        with open(os.path.join(rst_dir,"action_sequence_prompts.json"), 'w') as f:
             json.dump(statistics,f,indent=4)
 
-    with open(os.path.join(rst_dir,"statistics.json"), 'w') as f:
+    with open(os.path.join(rst_dir,"action_sequence_prompts.json"), 'w') as f:
         json.dump(statistics,f,indent=4)
     
     print("All Done!")

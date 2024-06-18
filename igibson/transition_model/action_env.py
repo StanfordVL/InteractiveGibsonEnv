@@ -33,6 +33,19 @@ class ActionEnv:
                                  for obj in self.addressable_objects if object_states.Open in obj.states}
 
     ##################### helper functions #####################
+
+    def get_all_inhand_objects(self,hand):
+        inhand_objects=[]
+        def traverse(node):
+            inhand_objects.append(node.obj)
+            for child in node.children.keys():
+                inhand_objects.append(child)
+                traverse(node.children[child])
+        v=self.robot_inventory[hand]
+        if v is not None:
+            traverse(self.relation_tree.get_node(v))
+        return set(inhand_objects)
+    
     def navigate_to_if_needed(self,obj:URDFObject):
         if not obj.states[object_states.InReachOfRobot].get_value():
             self.navigate_to(obj)
@@ -109,6 +122,19 @@ class ActionEnv:
         self.relation_tree.remove_ancestor(obj)
         self.position_geometry.set_in_hand(obj,hand)
         self.robot_inventory[hand]=obj
+
+        # remove all children of obj if they are too big
+        node=self.relation_tree.get_node(obj)
+        obj_volumn=obj.bounding_box[0]*obj.bounding_box[1]*obj.bounding_box[2]
+        node_to_remove=[]
+        if node is not None:
+            for child_obj in node.children.keys():
+                if child_obj.bounding_box[0]*child_obj.bounding_box[1]*child_obj.bounding_box[2]>5*obj_volumn:
+                    teleport_relation=node.children[child_obj].teleport_type
+                    print(f"Remove {child_obj.name} {teleport_relation.name} {obj.name} because it's too big")
+                    node_to_remove.append(child_obj)
+        for child_obj in node_to_remove:
+            self.relation_tree.remove_ancestor(child_obj)
         self.teleport_relation(obj)
         print(f"Grasp {obj.name} with {hand} successful")
         return True
@@ -145,8 +171,9 @@ class ActionEnv:
             print(f"{hand} is empty")
             return False
         
+        in_hand_objs=self.get_all_inhand_objects(hand)
         obj_in_hand=self.robot_inventory[hand]
-        if obj_in_hand==tar_obj:
+        if tar_obj in in_hand_objs:
             print(f"{tar_obj.name} is already in {hand}")
             return False
         
@@ -200,13 +227,12 @@ class ActionEnv:
             print(f"{hand} is empty")
             return False
         
+        in_hand_objs=self.get_all_inhand_objects(hand)
         obj_in_hand=self.robot_inventory[hand]
-        if obj_in_hand==obj:
+        if obj in in_hand_objs:
             print(f"{obj.name} is already in {hand}")
             return False
-        elif obj in self.robot_inventory.values():
-            print(f"Release {obj.name} first to place {obj_in_hand.name} on top of it")
-            return False
+
         
         ## post effects
         self.navigate_to_if_needed(obj)
@@ -233,8 +259,9 @@ class ActionEnv:
             print(f"{hand} is empty")
             return False
         
+        in_hand_objs=self.get_all_inhand_objects(hand)
         obj_in_hand=self.robot_inventory[hand]
-        if obj_in_hand==tar_obj:
+        if tar_obj in in_hand_objs:
             print(f"{tar_obj.name} is already in {hand}")
             return False
         elif tar_obj in self.robot_inventory.values():
@@ -266,8 +293,9 @@ class ActionEnv:
             print(f"{hand} is empty")
             return False
         
+        in_hand_objs=self.get_all_inhand_objects(hand)
         obj_in_hand=self.robot_inventory[hand]
-        if obj_in_hand==tar_obj:
+        if tar_obj in in_hand_objs:
             print(f"{tar_obj.name} is already in {hand}")
             return False
         elif tar_obj in self.robot_inventory.values():
@@ -307,13 +335,22 @@ class ActionEnv:
             print(f"{hand} is empty")
             return False
         
+        in_hand_objs=self.get_all_inhand_objects(hand)
         obj_in_hand=self.robot_inventory[hand]
-        if obj_in_hand==tar_obj1:
+        if tar_obj1 in in_hand_objs:
             print(f"{tar_obj1.name} is already in {hand}")
             return False
         elif tar_obj1 in self.robot_inventory.values():
-            print(f"Release {tar_obj1.name} first to place {obj_in_hand.name} next to it")
+            print(f"Release {tar_obj1.name} first to place {obj_in_hand.name} nextto it")
             return False
+        
+        if tar_obj2 in in_hand_objs:
+            print(f"{tar_obj2.name} is already in {hand}")
+            return False
+        elif tar_obj2 in self.robot_inventory.values():
+            print(f"Release {tar_obj2.name} first to place {obj_in_hand.name} ontop it")
+            return False
+        
         
 
         if isinstance(tar_obj2,RoomFloor):
@@ -859,10 +896,21 @@ class ActionEnv:
     def right_place_under(self,obj:URDFObject):
         return self.place_under(obj,'right_hand')
     
-    def clean(self,obj:URDFObject):
+    def clean(self,obj):
         # clean will clean both dust and stain
-        flag1=self.clean_dust(obj)
-        flag2=self.clean_stain(obj)
+        flag1=False
+        flag2=False
+        try_clean_dust=False
+        try_clean_stain=False
+        if not (object_states.Dusty in obj.states and obj.states[object_states.Dusty].get_value()==False):
+            flag1=self.clean_dust(obj)
+            try_clean_dust=True
+        if not (object_states.Stained in obj.states and obj.states[object_states.Stained].get_value()==False):
+            flag2=self.clean_stain(obj)
+            try_clean_stain=True
+        if not (try_clean_dust or try_clean_stain):
+            print("Clean failed, object is already clean")
+            return False
         return flag1 or flag2
 
     

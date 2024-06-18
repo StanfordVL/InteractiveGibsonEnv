@@ -109,7 +109,7 @@ class PositionGeometry:
         obj1_aabb=get_aabb(obj1)
         obj2_aabb=get_aabb(obj2)
 
-        for i in [0,1]:
+        for i in [1,0]:
             for weight in [-1,1]:
                 target_center = get_aabb_center(obj2)
                 target_center[i] += weight*(0.5 * obj1_aabb[i] + 
