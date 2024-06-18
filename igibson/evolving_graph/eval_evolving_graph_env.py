@@ -12,7 +12,6 @@ from igibson.object_states.on_floor import RoomFloor
 from enum import Enum, unique,auto
 from .evolving_graph import EvolvingGraph, GraphState, ErrorType, ErrorInfo
 from copy import deepcopy
-TASK_RELEVANT_OBJECTS_ONLY = True
 
 
 @unique
@@ -64,7 +63,6 @@ class EvalGraphEnv(BaseEnv):
         self.get_relevant_objects()
         self.action_env=EvolvingGraph(self.addressable_objects)
         self.control_function={
-            EvalActions.NAVIGATE_TO.value: self.action_env.navigate,
             EvalActions.LEFT_GRASP.value: self.action_env.left_grasp,
             EvalActions.RIGHT_GRASP.value: self.action_env.right_grasp,
             EvalActions.LEFT_PLACE_ONTOP.value: self.action_env.left_place_ontop,
@@ -98,16 +96,11 @@ class EvalGraphEnv(BaseEnv):
 
     def get_relevant_objects(self):
 
-        if TASK_RELEVANT_OBJECTS_ONLY and isinstance(self.task, BehaviorTask):
-            self.addressable_objects = set([
+        self.addressable_objects = set([
                 item
                 for item in self.task.object_scope.values()
                 if isinstance(item, URDFObject) or isinstance(item, RoomFloor) or isinstance(item, ObjectMultiplexer)
             ])
-        else:
-            self.addressable_objects = set(self.scene.objects_by_name.values())
-            if isinstance(self.task, BehaviorTask):
-                self.addressable_objects.update(self.task.object_scope.values())
 
         obj_in_multiplexer = set()
         #deal with multiplexed objects
