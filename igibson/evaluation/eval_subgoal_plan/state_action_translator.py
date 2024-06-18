@@ -146,7 +146,6 @@ class StateActionTranslator:
                 important_list.append(inventory_obj)
         return important_list
 
-
     def spare_hand_not_important(self, cur_hand_state: Dict[str, Any], important_items: List[str]):
         left_hand_holding = cur_hand_state['left_hand']
         right_hand_holding = cur_hand_state['right_hand']
@@ -197,6 +196,8 @@ class StateActionTranslator:
     def map_nextto_ontop_to_action(self, p1: SimpleTLPrimitive, p2: SimpleTLPrimitive) -> List[List[Dict[str, str]]]:
         ontop_list = ['ontop', 'onfloor']
         nextto_list = ['nextto', 'touching']
+        if p2.prop_or_action.name in ontop_list and p1.prop_or_action.name in nextto_list:
+            p1, p2 = p2, p1
         pred_1 = p1.prop_or_action
         pred_2 = p2.prop_or_action
         pred_1_name = pred_1.name

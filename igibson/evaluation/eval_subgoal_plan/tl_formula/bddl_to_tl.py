@@ -8,6 +8,8 @@ def translate_tl_obj_into_addressable_obj(tl_obj):
     return addressable_obj
 
 def translate_addressable_obj_into_tl_obj(address_obj):
+    if 'toggled' in address_obj:
+        return 'toggledon'
     if '_' not in address_obj:
         return address_obj
     # replace the last char '_' with '.'

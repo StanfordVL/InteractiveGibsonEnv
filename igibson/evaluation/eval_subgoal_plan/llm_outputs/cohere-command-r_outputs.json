@@ -1,0 +1,402 @@
+[
+    {
+        "identifier": "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37",
+        "llm_output": "{\n    \"output\": [\n        \"forpairs(basket_n_01, candle_n_01, ontop(candle_n_01, basket_n_01)) and forpairs(basket_n_01, cheese_n_01, ontop(cheese_n_01, basket_n_01)) and forpairs(basket_n_01, cookie_n_01, ontop(cookie_n_01, basket_n_01)) and forpairs(basket_n_01, bow_n_08, ontop(bow_n_08, basket_n_01))\",\n        \"holds_rh(basket.0) and onfloor(basket.1, room_floor_living_room.0) and onfloor(basket.2, room_floor_living_room.0) and onfloor(basket.3, room_floor_living_room.0)\",\n        \"inside(candle.0, basket.0) and inside(candle.1, basket.0) and inside(candle.2, basket.0) and inside(candle.3, basket.0)\",\n        \"inside(cheese.0, basket.1) and inside(cheese.1, basket.1) and inside(cookie.0, basket.2) and inside(cookie.1, basket.2)\",\n        \"inside(bow.0, basket.3) and inside(bow.1, basket.3) and inside(bow.2, basket.3) and inside(bow.3, basket.3)\",\n        \"not ontop(candle.0, breakfast_table.13) and not ontop(candle.1, breakfast_table.13) and not ontop(candle.2, breakfast_table.13) and not ontop(candle.3, breakfast_table.13) and not ontop(cookie.0, breakfast_table.13) and not ontop(cookie.1, breakfast_table.13) and not ontop(cookie.2, breakfast_table.13) and not ontop(cookie.3, breakfast_table.13) and not ontop(cheese.0, coffee_table.12) and not ontop(cheese.1, coffee_table.12) and not ontop(cheese.2, coffee_table.12) and not ontop(cheese.3, coffee_table.12) and not ontop(bow.0, coffee_table.12) and not ontop(bow.1, coffee_table.12) and not ontop(bow.2, coffee_table.12) and not ontop(bow.3, coffee_table.12)\"\n    ]}"
+    },
+    {
+        "identifier": "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46",
+        "llm_output": "{\n    \"output\": [\n        \"inside(strawberry.0, fridge.97) && inside(peach.0, fridge.97)\",\n        \"not sliced(strawberry.0) && not sliced(peach.0)\",\n        \"ontop(jar.0, countertop.84) && ontop(jar.1, countertop.84) && ontop(carving_knife.0, countertop.84)\",\n        \"holds_rh(carving_knife.0)\",\n        \"open(jar.0) && open(jar.1)\",\n        \"sliced(strawberry.0) && sliced(peach.0)\",\n        \"inside(strawberry.0, jar.0) && not inside(peach.0, jar.0) || inside(peach.0, jar.1) && not inside(strawberry.0, jar.1)\",\n        \"not open(jar.0) && not open(jar.1)\"\n    ]}"
+    },
+    {
+        "identifier": "boxing_books_up_for_storage_0_Benevolence_1_int_0_2021-09-10_15-35-47",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(carton.66, room_floor_living_room.0)\",\n        \"holds_rh(notebook.59) or holds_rh(notebook.60) or holds_rh(notebook.61) or holds_rh(notebook.62) or holds_rh(notebook.63) or holds_rh(hardback.64) or holds_rh(hardback.65)\",\n        \"inside(notebook.59, carton.66) and inside(notebook.60, carton.66) and inside(notebook.61, carton.66) and inside(notebook.62, carton.66) and inside(notebook.63, carton.66) and inside(hardback.64, carton.66) and inside(hardback.65, carton.66)\",\n        \"not inside(book_n_02, agent_n_01.1)\"\n    ]}"
+    },
+    {
+        "identifier": "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(plywood.0, room_floor_kitchen.0)\",\n        \"onfloor(plywood.1, room_floor_kitchen.0)\",\n        \"onfloor(plywood.2, room_floor_kitchen.0)\",\n        \"holds_rh(plywood.0) or holds_rh(plywood.1) or holds_rh(plywood.2)\",\n        \"onfloor(agent_n_01.1, room_floor_kitchen.0)\",\n        \"not onfloor(plywood.0, room_floor_living_room.0) and not onfloor(plywood.1, room_floor_living_room.0) and not onfloor(plywood.2, room_floor_living_room.0)\"\n    ]}"
+    },
+    {
+        "identifier": "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(scrub_brush.40)\",\n        \"dusty(sweater.36) and dusty(sweater.37) and dusty(sweater.38) and dusty(sweater.39)\",\n        \"ontop(sweater.36, bed.11) and ontop(sweater.37, bed.11) and ontop(sweater.38, bed.11) and ontop(sweater.39, bed.11)\",\n        \"not dusty(sweater.36) and not dusty(sweater.37) and not dusty(sweater.38) and not dusty(sweater.39)\"\n    ]}"
+    },
+    {
+        "identifier": "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(tomato.61, countertop.26) and ontop(tomato.62, countertop.26) and ontop(mushroom.63, countertop.26) and ontop(mushroom.64, countertop.26) and ontop(chestnut.65, countertop.26) and ontop(chestnut.66, countertop.26)\",\n        \"holds_rh(carving_knife.69)\",\n        \"not sliced(tomato.61) and not sliced(tomato.62) and not sliced(mushroom.63) and not sliced(mushroom.64) and not sliced(chestnut.65) and not sliced(chestnut.66)\",\n        \"inside(vidalia_onion.67, fridge.40) and inside(vidalia_onion.68, fridge.40)\",\n        \"forall(dish_n_01, (inside(tomato.61, dish_n_01) and sliced(tomato.61)) or (inside(tomato.62, dish_n_01) and sliced(tomato.62)) or (inside(mushroom.63, dish_n_01) and sliced(mushroom.63)) or (inside(mushroom.64, dish_n_01) and sliced(mushroom.64)) or (inside(chestnut.65, dish_n_01) and sliced(chestnut.65)) or (inside(chestnut.66, dish_n_01) and sliced(chestnut.66)) or (inside(vidalia_onion.67, dish_n_01) and sliced(vidalia_onion.67)) or (inside(vidalia_onion.68, dish_n_01) and sliced(vidalia_onion.68)))\",\n        \"holds_lh(casserole.70)\",\n        \"forall(dish_n_01, inside(tomato.61, dish_n_01) or inside(tomato.62, dish_n_01) or inside(mushroom.63, dish_n_01) or inside(mushroom.64, dish_n_01) or inside(chestnut.65, dish_n_01) or inside(chestnut.66, dish_n_01) or inside(vidalia_onion.67, dish_n_01) or inside(vidalia_onion.68, dish_n_01))\",\n        \"sliced(tomato.61) and sliced(tomato.62) and sliced(mushroom.63) and sliced(mushroom.64) and sliced(chestnut.65) and sliced(chestnut.66) and sliced(vidalia_onion.67) and sliced(vidalia_onion.68)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.0)\",\n        \"not dusty(car.0) and soaked(rag.0)\",\n        \"inside(soap.0, bucket.0)\",\n        \"inside(rag.0, bucket.0)\",\n        \"onfloor(bucket.0, room_floor_garage.0)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.51)\",\n        \"not stained(grill.50) and dusty(grill.50)\",\n        \"inside(grill.50, bucket.52)\",\n        \"onfloor(bucket.52, room_floor_garage.0)\",\n        \"inside(bucket.52, sink.32) and toggledon(sink.32)\",\n        \"not dusty(grill.50)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_bathrooms_0_Benevolence_0_int_1_2021-06-12_19-33-28",
+        "llm_output": "{\n    \"output\": [\n        \"inside(soap.0, sink.7) and inside(toothbrush.0, bathtub.4)\",\n        \"not stained(agent_n_01.1) and holds_rh(rag.0) and soaked(rag.0)\",\n        \"not stained(room_floor_bathroom.0)\",\n        \"not stained(bathtub.4)\",\n        \"not stained(sink.7)\",\n        \"inside(rag.0, bucket.0) and soaked(rag.0)\",\n        \"not stained(toilet.6)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_bathtub_0_Pomaria_0_int_0_2021-09-10_16-22-10",
+        "llm_output": "{\n    \"output\": [\n        \"inside(scrub_brush.0, agent_n_01.1) and holds_rh(soap.0)\",\n        \"not stained(bathtub.35) and exists(cleaner, soaked(cleaner))\",\n        \"or[inside(soap.0, sink.38) and toggledon(sink.38), holding(detergent)]\",\n        \"inside(scrub_brush.0, bathtub.35)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59",
+        "llm_output": "{\n    \"output\": [\n        \"inside(jeans.46, bottom_cabinet.0) and inside(jeans.47, bottom_cabinet.0)\",\n        \"not dusty(bottom_cabinet.0)\",\n        \"inside(necklace.48, bottom_cabinet.2) and inside(cologne.49, bottom_cabinet.2)\",\n        \"not dusty(bottom_cabinet.2)\",\n        \"ontop(sheet.53, bed.10)\",\n        \"ontop(painting.50, sheet.53)\",\n        \"nextto(vacuum.51, bed.10)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41",
+        "llm_output": "{\n    \"output\": [\n        \"inside(shampoo.103, top_cabinet.50)\",\n        \"not stained(room_floor_corridor.0) and onfloor(agent_n_01.1, room_floor_corridor.0)\",\n        \"holds_rh(shampoo.103) and onfloor(hand_towel.102, room_floor_utility_room.0)\",\n        \"inside(shampoo.103, sink.51) and toggledon(sink.51)\",\n        \"soaked(shampoo.103) and not stained(room_floor_corridor.0)\",\n        \"inside(shampoo.103, washer.49) and toggledon(washer.49)\",\n        \"not stained(room_floor_corridor.0) and [inside(hand_towel.102, washer.49) or holds_rh(hand_towel.102)]\",\n        \"dryer.48 is on and inside(hand_towel.102, dryer.48) and not stained(room_floor_corridor.0)\",\n        \"ontop(hand_towel.102, room_floor_corridor.0) and not stained(room_floor_corridor.0)\",\n        \"inside(shampoo.103, top_cabinet.50)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_closet_0_Beechwood_1_int_0_2021-10-25_19-50-32",
+        "llm_output": "{\n    \"output\": [\n        \"dusty(shelf.31) and dusty(bottom_cabinet.30) and onfloor(bracelet.0, room_floor_closet.0) and onfloor(necklace.0, room_floor_closet.0) and dusty(room_floor_closet.0) and onfloor(hat.0, room_floor_closet.0) and onfloor(sandal.0, room_floor_closet.0) and onfloor(sandal.1, room_floor_closet.0) and onfloor(umbrella.0, room_floor_closet.0) and inside(paper_towel.0, bottom_cabinet.44)\",\n        \"inside(bracelet.0, bottom_cabinet.30) and inside(necklace.0, bottom_cabinet.30)\",\n        \"not dusty(bottom_cabinet.30)\",\n        \"holds_rh(paper_towel.0) and not dusty(room_floor_closet.0)\",\n        \"not dusty(shelf.31)\",\n        \"inside(hat.0, bottom_cabinet.44) or ontop(hat.0, shelf.31)\",\n        \"nextto(sandal.0, shelf.31) and nextto(sandal.1, shelf.31) and onfloor(sandal.0, room_floor_closet.0) and onfloor(sandal.1, room_floor_closet.0)\",\n        \"not inside(umbrella.0, bottom_cabinet.30)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44",
+        "llm_output": "{\n    \"output\": [\n        \"inside(notebook.102, agent_n_01.1) and inside(hardback.103, agent_n_01.1) and inside(hardback.104, agent_n_01.1) and inside(pen.105, agent_n_01.1) and inside(highlighter.106, agent_n_01.1) and inside(highlighter.107, agent_n_01.1) and inside(scrub_brush.109, agent_n_01.1) and inside(rag.110, agent_n_01.1)\",\n        \"holds_rh(detergent.111) and not dusty(bottom_cabinet.28) and not dusty(bottom_cabinet.25)\",\n        \"forall(book_n_02, inside(book_n_02, bucket.113)) and inside(pen.105, bucket.113) and inside(highlighter.106, bucket.113) and inside(highlighter.107, bucket.113)\",\n        \"inside(screwdriver.108, trash_can.112)\",\n        \"not inside(notebook.102, bottom_cabinet.28) and not inside(hardback.103, bottom_cabinet.25) and not inside(hardback.104, bottom_cabinet.25) and not inside(pen.105, bottom_cabinet.28) and not inside(highlighter.106, bottom_cabinet.25) and not inside(highlighter.107, bottom_cabinet.25) and not inside(scrub_brush.109, bottom_cabinet.28) and not inside(rag.110, bottom_cabinet.28)\",\n        \"forall(cabinet_n_01, inside(cabinet_n_01, agent_n_01.1))\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(broom.0) and not dusty(room_floor_bathroom.0)\",\n        \"inside(room_floor_bathroom.0, dustpan.0) and not stained(room_floor_bathroom.0)\",\n        \"inside(toothpaste.0, sink.48) and toggledon(sink.48)\",\n        \"holds_lh(scrub_brush.0) and not stained(room_floor_bathroom.0)\",\n        \"open(door.65)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25",
+        "llm_output": "{\n    \"output\": [\n        \"inside(pop.0, agent_n_01.1) and inside(pop.1, agent_n_01.1) and inside(pop.2, agent_n_01.1)\",\n        \"not stained(fridge.20)\",\n        \"forall(food_n_01, not inside(food_n_01, fridge.20))\",\n        \"ontop(toothpaste.0, breakfast_table.6) and ontop(hand_towel.0, breakfast_table.6)\",\n        \"inside(pop.0, sink.37) and inside(pop.1, sink.37) and inside(pop.2, sink.37)\",\n        \"toggleOn(sink.37)\",\n        \"dirty(sink.37)\",\n        \"holding(agent_n_01.1, hand_towel.0)\",\n        \"not stained(pop.0) and not stained(pop.1) and not stained(pop.2)\",\n        \"inside(pop.0, fridge.20) and inside(pop.1, fridge.20) and inside(pop.2, fridge.20)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48",
+        "llm_output": "{\n    \"output\": [\n        \"not dusty(room_floor_garage.0) and not dusty(bottom_cabinet.15)\",\n        \"holds_rh(broom.0)\",\n        \"not stained(bottom_cabinet.15)\",\n        \"forpairs(newspaper_n_03, trash_can_n_01, inside(newspaper_n_03, trash_can_n_01)) and fornpairs(2, newspaper_n_03, room_floor_garage_n_01, not onfloor(newspaper_n_03, room_floor_garage_n_01))\",\n        \"forpairs(bottle_n_01, breakfast_table_n_02, ontop(bottle_n_01, breakfast_table_n_02))\",\n        \"ontop(cruet.0, breakfast_table.14) and ontop(cruet.1, breakfast_table.14)\",\n        \"inside(rag.0, trash_can.0)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15",
+        "llm_output": "{\n    \"output\": [\n        \"inside(paper_towel.0, sink.82) and not dusty(highchair.0)\",\n        \"or[holds_rh(paper_towel.0), (inside(paper_towel.0, bottom_cabinet_no_top.80) and holding other cleaning tool)]\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36",
+        "llm_output": "{\n    \"output\": [\n        \"dusty(top_cabinet.25) and dusty(top_cabinet.24)\",\n        \"ontop(paper_towel.0, countertop.31) and ontop(soap.0, countertop.31)\",\n        \"inside(bowl.1, top_cabinet.24) and inside(cup.0, top_cabinet.24) and inside(cup.1, top_cabinet.25)\",\n        \"ontop(bowl.0, countertop.31)\",\n        \"not dusty(top_cabinet.25) and not dusty(top_cabinet.24)\",\n        \"holds_rh(paper_towel.0) and not dusty(top_cabinet.25)\",\n        \"holds_rh(soap.0) and not dusty(top_cabinet.24)\",\n        \"inside(bowl.1, top_cabinet.25) and inside(cup.0, top_cabinet.25)\",\n        \"inside(cup.1, top_cabinet.24) and inside(bowl.0, top_cabinet.24)\",\n        \"exists(cabinet_n_01,forall(bowl_n_01,inside(bowl_n_01,cabinet_n_01) and not inside(cup.0,cabinet_n_01)) and exists(cabinet_n_01,forall(cup_n_01,inside(cup_n_01,cabinet_n_01) and not inside(bowl.0,cabinet_n_01)))\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.0)\",\n        \"not dusty(microwave.36) and not stained(microwave.36)\",\n        \"inside(rag.0, sink.19) and toggledon(sink.19)\",\n        \"or[holds_lh(detergent), holding other cleaning tool]\",\n        \"not dusty(microwave.36)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_out_drawers_0_Benevolence_1_int_0_2021-10-20_05-03-27",
+        "llm_output": "{\n    \"output\": [\n        \"inside(bowl.0, bottom_cabinet_no_top.16) and inside(bowl.1, bottom_cabinet_no_top.16) and inside(spoon.0, bottom_cabinet_no_top.15) and inside(spoon.1, bottom_cabinet_no_top.15) and inside(bath_towel.0, bottom_cabinet_no_top.16)\",\n        \"onfloor(agent_n_01.1, room_floor_kitchen.0)\",\n        \"not(nextto(bath_towel.0, sink.19) or nextto(bowl.0, sink.19) or nextto(bowl.1, sink.19) or nextto(spoon.0, sink.19) or nextto(spoon.1, sink.19))\",\n        \"holds_rh(bath_towel.0) and nextto(bath_towel.0, sink.19)\",\n        \"holds_lh(bowl.0) and nextto(bowl.0, sink.19)\",\n        \"nextto(bowl.1, sink.19)\",\n        \"holds_rh(spoon.0) and nextto(spoon.0, sink.19)\",\n        \"nextto(spoon.1, sink.19)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40",
+        "llm_output": "{\n    \"output\": [\n        \"inside(soap.0, bottom_cabinet_no_top.15)\",\n        \"inside(rag.0, bottom_cabinet_no_top.15)\",\n        \"inside(rag.1, bottom_cabinet_no_top.15)\",\n        \"inside(scrub_brush.0, bottom_cabinet_no_top.15)\",\n        \"not soaked(rag.0) and not soaked(rag.1) and not soaked(scrub_brush.0)\",\n        \"holds_rh(rag.0) or holds_rh(rag.1)\",\n        \"not stained(oven.24) and [soaked(scrub_brush.0) or holds_lh(scrub_brush.0)]\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.37)\",\n        \"not stained(sandal.39) and not stained(sandal.40)\",\n        \"inside(sandal.39, sink.18) and inside(sandal.40, sink.18)\",\n        \"toggleOn(sink.18)\",\n        \"soaked(rag.37)\",\n        \"dusty(sandal.41) or dusty(walker.42)\",\n        \"inside(sandal.41, sink.18) or inside(walker.42, sink.18)\",\n        \"toggleOn(sink.18)\",\n        \"soaked(rag.37) and holds_lh(soap.36)\",\n        \"not dusty(sandal.41) and not dusty(walker.42)\",\n        \"holds_rh(paper_towel.38)\",\n        \"onfloor(sandal.39, room_floor_bedroom.0) and onfloor(sandal.40, room_floor_bedroom.0) and onfloor(sandal.41, room_floor_bedroom.0) and onfloor(walker.42, room_floor_bedroom.0)\",\n        \"not soaked(rag.37) and holds_lh(towel_n_01)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08",
+        "llm_output": "{\n    \"output\": [\n        \"inside(soap.82, top_cabinet.24) and onfloor(agent_n_01.1, room_floor_kitchen.0)\",\n        \"holds_rh(scrub_brush.84) and onfloor(gym_shoe.78, room_floor_kitchen.0) and stained(gym_shoe.78)\",\n        \"not dusty(gym_shoe.80) and not dusty(gym_shoe.81) and onfloor(gym_shoe.80, room_floor_kitchen.0) and onfloor(gym_shoe.81, room_floor_kitchen.0)\",\n        \"inside(soap.82, sink.37) and toggledon(sink.37)\",\n        \"holds_lh(hand_towel.83) and not stained(hand_towel.83)\",\n        \"forpairs(gym_shoe_n_01, coffee_table.4, nextto(gym_shoe_n_01, coffee_table.4)) and fornpairs(2, gym_shoe_n_01, coffee_table.4, under(gym_shoe_n_01, coffee_table.4))\",\n        \"not stained(gym_shoe.78) and not stained(gym_shoe.79) and onfloor(gym_shoe.78, room_floor_living_room.0) and onfloor(gym_shoe.79, room_floor_living_room.0)\",\n        \"nextto(scrub_brush.84, hand_towel.83)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_stove_0_Wainscott_0_int_0_2021-09-11_12-51-07",
+        "llm_output": "{\n    \"output\": [\n        \"inside(soap.0, bottom_cabinet_no_top.80) and inside(rag.0, bottom_cabinet_no_top.80) and inside(dishtowel.0, bottom_cabinet_no_top.80)\",\n        \"holds_rh(rag.0) and not stained(rag.0)\",\n        \"not dusty(stove.88)\",\n        \"soaked(rag.0) and nextto(rag.0, sink.82)\",\n        \"holds_lh(dishtowel.0) and not soaked(dishtowel.0)\",\n        \"not stained(stove.88)\",\n        \"nextto(dishtowel.0, sink.82)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44",
+        "llm_output": "{\n    \"output\": [\n        \"inside(soap.0, bottom_cabinet.49) and inside(dishtowel.0, bottom_cabinet.49)\",\n        \"holds_rh(dishtowel.0)\",\n        \"not stained(breakfast_table.20) and exists(cleaner, soaked(cleaner))\",\n        \"or[not stained(breakfast_table.20), exists(detergent, holds_lh(detergent))]\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(scrub_brush.51)\",\n        \"not stained(pool.50) and onfloor(pool.50, room_floor_garage.0)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_the_pool_0_Ihlen_0_int_0_2021-06-01_15-30-31",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(scrub_brush.51)\",\n        \"not stained(pool.50) and onfloor(pool.50, room_floor_garage.0)\",\n        \"ontop(scrub_brush.51, shelf.16)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_toilet_0_Merom_0_int_1_2021-06-23_17-35-48",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(scrub_brush.70)\",\n        \"not stained(toilet.45) and onfloor(detergent.71, room_floor_bathroom.0)\",\n        \"or[holds_lh(detergent.71), inside(detergent.71, sink.48) and toggledon(sink.48)]\",\n        \"onfloor(scrub_brush.70, room_floor_bathroom.0)\",\n        \"onfloor(agent_n_01.1, room_floor_bathroom.0)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(bowl.143, breakfast_table.1) and ontop(bowl.144, breakfast_table.1) and ontop(paper_bag.145, breakfast_table.1) and ontop(plate.146, breakfast_table.1) and ontop(plate.147, breakfast_table.1) and ontop(plate.148, breakfast_table.1) and ontop(plate.149, breakfast_table.1) and ontop(cup.150, breakfast_table.1) and ontop(cup.151, breakfast_table.1) and ontop(hamburger.152, straight_chair.3) and onfloor(hamburger.153, room_floor_dining_room.0) and onfloor(detergent.154, room_floor_dining_room.0) and stained(bowl.143) and stained(bowl.144) and stained(plate.146) and stained(plate.147) and stained(plate.148) and stained(plate.149) and stained(cup.150) and stained(cup.151) and stained(straight_chair.2) and stained(straight_chair.3) and stained(breakfast_table.1)\",\n        \"holds_rh(detergent.154)\",\n        \"not stained(bowl.143) and not stained(bowl.144)\",\n        \"soaked(rag.0) and holds_lh(rag.0)\",\n        \"not stained(plate.146) and not stained(plate.147) and not stained(plate.148) and not stained(plate.149)\",\n        \"soaked(rag.0) and holds_rh(rag.0) and not stained(cup.150) and not stained(cup.151)\",\n        \"inside(hamburger.152, paper_bag.145) and inside(hamburger.153, paper_bag.145)\",\n        \"not stained(room_floor_dining_room.0) and not stained(straight_chair.2) and not stained(breakfast_table.1)\",\n        \"onfloor(paper_bag.145, room_floor_dining_room.0)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_up_refrigerator_0_Wainscott_0_int_1_2021-06-23_17-46-01",
+        "llm_output": "{\n    \"output\": [\n        \"inside(rag.0, bottom_cabinet_no_top.80) and inside(rag.1, bottom_cabinet_no_top.80)\",\n        \"not soaked(rag.0) and not soaked(rag.1)\",\n        \"holds_rh(rag.0) or holds_rh(rag.1)\",\n        \"inside(soap.0, countertop.84)\",\n        \"inside(tray.0, fridge.97) and inside(tray.1, fridge.97) and inside(bowl.0, fridge.97)\",\n        \"stained(tray.0) and stained(tray.1) and stained(fridge.97)\",\n        \"dusty(bowl.0)\",\n        \"not stained(tray.0) and not stained(tray.1)\",\n        \"[holds_rh(soap.0) or soaked(soap.0)] and not stained(tray.0) and not stained(fridge.97)\",\n        \"inside(bowl.0, fridge.97)\",\n        \"nextto(bowl.0, sink.82)\",\n        \"not dusty(bowl.0)\",\n        \"forall(tray_n_01, inside(tray_n_01, fridge.97)) and nextto(rag.0, sink.82) and nextto(rag.1, sink.82)\",\n        \"inside(soap.0, sink.82)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(trash_can.78, room_floor_kitchen.0)\",\n        \"inside(soap.79, top_cabinet.27) and inside(rag.80, top_cabinet.27) and inside(dustpan.81, top_cabinet.27)\",\n        \"not soaked(rag.80)\",\n        \"onfloor(broom.82, room_floor_kitchen.0) and dusty(broom.82)\",\n        \"onfloor(blender.83, room_floor_kitchen.0) and stained(blender.83)\",\n        \"inside(casserole.84, fridge.20) and inside(plate.85, fridge.20) and inside(olive_oil.86, fridge.20) and inside(apple.87, fridge.20)\",\n        \"dusty(dustpan.81)\",\n        \"dusty(room_floor_kitchen.0) and dusty(top_cabinet.27) and dusty(top_cabinet.24)\",\n        \"ontop(blender.83, countertop.31) and not stained(blender.83)\",\n        \"nextto(soap.79, sink.37)\",\n        \"inside(olive_oil.86, top_cabinet.27) and not inside(plate.85, top_cabinet.27) or inside(plate.85, top_cabinet.27) and not inside(olive_oil.86, top_cabinet.27)\",\n        \"not dusty(top_cabinet.27) and not dusty(top_cabinet.24) and not dusty(room_floor_kitchen.0)\",\n        \"nextto(rag.80, sink.37) or inside(rag.80, sink.37)\",\n        \"not stained(plate.85)\"\n    ]}"
+    },
+    {
+        "identifier": "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05",
+        "llm_output": "{\n    \"output\": [\n        \"inside(toothpaste.0, bottom_cabinet_no_top.80) and inside(dishtowel.0, bottom_cabinet_no_top.80)\",\n        \"holds_rh(toothpaste.0) and not dusty(sink.82)\",\n        \"soaked(rag.0) and soaked(rag.1)\",\n        \"dusty(window.133) and dusty(window.119)\",\n        \"not dusty(window.133) and not dusty(window.119)\"\n    ]}"
+    },
+    {
+        "identifier": "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(cup.0, breakfast_table.2) and ontop(cup.1, breakfast_table.2) and ontop(bowl.0, breakfast_table.2) and ontop(bowl.1, breakfast_table.2) and ontop(bowl.2, breakfast_table.2) and ontop(bowl.3, breakfast_table.2) and ontop(catsup.0, breakfast_table.2) and ontop(pop.0, breakfast_table.2)\",\n        \"holds_rh(bucket.0) and onfloor(bucket.1, room_floor_dining_room.0)\",\n        \"forall(cup_n_01, inside(cup_n_01, bucket.0)) and forall(bowl_n_01, inside(bowl_n_01, bucket.1))\",\n        \"inside(catsup.0, bucket.1)\"\n    ]}"
+    },
+    {
+        "identifier": "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(pop.112, bucket.118) and ontop(pop.113, bucket.118) and ontop(pop.114, bucket.118)\",\n        \"holds_rh(bucket.118)\",\n        \"forall(pop_n_02, inside(pop_n_02, bucket.118))\"\n    ]}"
+    },
+    {
+        "identifier": "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11",
+        "llm_output": "{\n    \"output\": [\n        \"under(gym_shoe.0, coffee_table.33) and onfloor(gym_shoe.0, room_floor_dining_room.0) and under(notebook.0, breakfast_table.1) and ontop(sock.0, sofa.39) and onfloor(sock.1, room_floor_living_room.0)\",\n        \"holds_rh(gym_shoe.0) and not onfloor(gym_shoe.0, room_floor_dining_room.0)\",\n        \"moves(agent_n_01.1, gym_shoe.0, breakfast_table.1) and ontop(gym_shoe.0, breakfast_table.1)\",\n        \"holds_rh(necklace.0) and inside(necklace.0, bottom_cabinet.79)\",\n        \"moves(agent_n_01.1, necklace.0, breakfast_table.1) and ontop(necklace.0, breakfast_table.1)\",\n        \"holds_rh(notebook.0) and not under(notebook.0, breakfast_table.1)\",\n        \"moves(agent_n_01.1, notebook.0, breakfast_table.1) and ontop(notebook.0, breakfast_table.1)\",\n        \"holds_lh(sock.0) and not ontop(sock.0, sofa.39)\",\n        \"moves(agent_n_01.1, sock.0, breakfast_table.1) and ontop(sock.0, breakfast_table.1)\",\n        \"holds_rh(sock.1) and not onfloor(sock.1, room_floor_living_room.0)\",\n        \"moves(agent_n_01.1, sock.1, breakfast_table.1) and ontop(sock.1, breakfast_table.1)\",\n        \"forall(sock_n_01, ontop(sock_n_01, breakfast_table.1))\"\n    ]}"
+    },
+    {
+        "identifier": "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(scraper.0, countertop.56) and ontop(paper_towel.0, countertop.56)\",\n        \"holds_rh(scraper.0)\",\n        \"inside(pomelo.0, fridge.57) and inside(pear.0, fridge.57) and inside(pea.0, fridge.57)\",\n        \"open(fridge.57)\",\n        \"not stained(sink.64)\",\n        \"inside(rag.0, sink.64) and soaked(rag.0)\",\n        \"ontop(rag.0, countertop.56)\",\n        \"holds_lh(rag.0)\",\n        \"dustpan.0 nextto fridge.57 and bucket.0 nextto countertop.56\",\n        \"forall(food_n_02, inside(food_n_02, bucket.0))\"\n    ]}"
+    },
+    {
+        "identifier": "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(basket.0, countertop.18) and ontop(basket.1, countertop.18)\",\n        \"ontop(ball.0, countertop.18) and ontop(bracelet.0, countertop.18)\",\n        \"inside(notebook.0, bottom_cabinet_no_top.15) and inside(notebook.1, bottom_cabinet_no_top.15)\",\n        \"inside(bow.0, bottom_cabinet_no_top.16) and inside(bow.1, bottom_cabinet_no_top.16)\",\n        \"inside(egg.0, basket.0) and inside(egg.1, basket.1)\",\n        \"inside(lollipop.0, basket.0) and inside(lollipop.1, basket.1)\",\n        \"holds_rh(ball.0) and ontop(bracelet.0, basket.1)\",\n        \"forpairs(bow_n_08, basket_n_01, ontop(bow_n_08, basket_n_01)) and forpairs(book_n_02, basket_n_01, nextto(book_n_02, basket_n_01))\"\n    ]}"
+    },
+    {
+        "identifier": "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42",
+        "llm_output": "{\n    \"output\": [\n        \"forpairs(stocking.0, ice_cube.0, inside(ice_cube.0, stocking.0)) and forpairs(stocking.1, ice_cube.1, inside(ice_cube.1, stocking.1)) and forpairs(stocking.2, ice_cube.2, inside(ice_cube.2, stocking.2)) and forpairs(stocking.3, ice_cube.3, inside(ice_cube.3, stocking.3))\",\n        \"forpairs(stocking.0, lollipop.0, inside(lollipop.0, stocking.0)) and forpairs(stocking.1, candy_cane.0, inside(candy_cane.0, stocking.1)) and forpairs(stocking.2, lollipop.1, inside(lollipop.1, stocking.2)) and forpairs(stocking.3, lollipop.2, inside(lollipop.2, stocking.3))\",\n        \"forpairs(stocking.0, pen.0, inside(pen.0, stocking.0)) and forpairs(stocking.1, pen.1, inside(pen.1, stocking.1)) and forpairs(stocking.2, pen.2, inside(pen.2, stocking.2)) and forpairs(stocking.3, pen.3, inside(pen.3, stocking.3))\"\n    ]}"
+    },
+    {
+        "identifier": "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(alarm.0) and holds_lh(alarm.1)\",\n        \"not toggledon(alarm.0) and not toggledon(alarm.1)\",\n        \"ontop(alarm.0, breakfast_table.20) and ontop(alarm.1, breakfast_table.20)\",\n        \"toggledon(alarm.0) and toggledon(alarm.1)\"\n    ]}"
+    },
+    {
+        "identifier": "installing_a_fax_machine_0_Beechwood_0_int_0_2021-10-25_20-22-22",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(facsimile.0)\",\n        \"ontop(facsimile.0, breakfast_table.37)\",\n        \"toggledon(facsimile.0)\"\n    ]}"
+    },
+    {
+        "identifier": "installing_a_modem_0_Beechwood_0_int_0_2021-10-25_20-28-55",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(modem.0)\",\n        \"toggledon(modem.0)\",\n        \"under(modem.0, breakfast_table.37)\"\n    ]}"
+    },
+    {
+        "identifier": "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(printer.0)\",\n        \"ontop(printer.0, breakfast_table.3)\",\n        \"not toggledon(printer.0)\",\n        \"toggledon(printer.0)\"\n    ]}"
+    },
+    {
+        "identifier": "installing_a_scanner_0_Pomaria_0_int_0_2021-06-08_18-34-59",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(scanner.0)\",\n        \"toggledon(scanner.0)\",\n        \"under(scanner.0, breakfast_table.3)\"\n    ]}"
+    },
+    {
+        "identifier": "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(tile.0, room_floor_bathroom.0)\",\n        \"onfloor(tile.1, room_floor_bathroom.0)\",\n        \"onfloor(tile.2, room_floor_bathroom.0)\",\n        \"onfloor(tile.3, room_floor_bathroom.0)\",\n        \"forall(tile_n_01, onfloor(tile_n_01, room_floor_bathroom.0))\"\n    ]}"
+    },
+    {
+        "identifier": "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(plywood.78, room_floor_living_room.0) and onfloor(plywood.79, room_floor_living_room.0) and onfloor(plywood.80, room_floor_living_room.0) and onfloor(plywood.81, room_floor_living_room.0)\",\n        \"forall(plywood_n_01, (nextto(plywood.78, plywood_n_01) or nextto(plywood.79, plywood_n_01) or nextto(plywood.80, plywood_n_01) or nextto(plywood.81, plywood_n_01)))\",\n        \"onfloor(hammer.82, room_floor_kitchen.0) and onfloor(saw.83, room_floor_kitchen.0)\",\n        \"forall(plywood_n_01, onfloor(plywood_n_01, room_floor_kitchen.0))\"\n    ]}"
+    },
+    {
+        "identifier": "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(plate.59) and stained(plate.59)\",\n        \"holds_lh(dishwasher.20) and open(dishwasher.20)\",\n        \"inside(plate.59, dishwasher.20)\",\n        \"holds_rh(plate.60) and stained(plate.60)\",\n        \"inside(plate.60, dishwasher.20)\",\n        \"holds_rh(plate.61) and stained(plate.61)\",\n        \"inside(plate.61, dishwasher.20)\",\n        \"holds_rh(mug.62) and stained(mug.62)\",\n        \"inside(mug.62, dishwasher.20)\",\n        \"holds_rh(bowl.63) and stained(bowl.63)\",\n        \"inside(bowl.63, dishwasher.20)\",\n        \"holds_rh(bowl.64) and stained(bowl.64)\",\n        \"inside(bowl.64, dishwasher.20)\",\n        \"not open(dishwasher.20)\"\n    ]}"
+    },
+    {
+        "identifier": "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14",
+        "llm_output": "{\n    \"output\": [\n        \"open(door.85) and open(door.89)\",\n        \"holds_rh(door.85)\",\n        \"not open(door.85)\",\n        \"holds_lh(door.89)\",\n        \"not open(door.89)\"\n    ]}"
+    },
+    {
+        "identifier": "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10",
+        "llm_output": "{\n    \"output\": [\n        \"open(window.79) and open(window.76) and open(window.82) and open(window.81)\",\n        \"holds_rh(agent_n_01.1, window.79) and not open(window.79)\",\n        \"holds_lh(agent_n_01.1, window.82) and not open(window.82)\",\n        \"not open(window.76) and not open(window.81)\",\n        \"holds_rh(agent_n_01.1, window.81) and not open(window.81)\",\n        \"holds_lh(agent_n_01.1, window.76) and not open(window.76)\"\n    ]}"
+    },
+    {
+        "identifier": "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48",
+        "llm_output": "{\n    \"output\": [\n        \"inside(lemon.0, agent_n_01.1)\",\n        \"holds_rh(carving_knife.0)\",\n        \"sliced(lemon.0)\",\n        \"ontop(teapot.0, stove.88)\",\n        \"inside(tea_bag.0, teapot.0)\",\n        \"soaked(tea_bag.0) and toggledon(stove.88)\"\n    ]}"
+    },
+    {
+        "identifier": "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(broom.0)\",\n        \"onfloor(agent_n_01.1, room_floor_bathroom.0)\",\n        \"not stained(room_floor_bathroom.0) and holds_lh(soap.0)\",\n        \"inside(soap.0, bucket.0) and onfloor(bucket.0, room_floor_bathroom.0)\",\n        \"nextto(bucket.0, sink.28) and nextto(broom.0, sink.28)\"\n    ]}"
+    },
+    {
+        "identifier": "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(carton.70)\",\n        \"ontop(carton.71, carton.70)\",\n        \"move(agent_n_01.1, room_floor_living_room.0, room_floor_storage_room.0)\",\n        \"put(carton.70, room_floor_storage_room.0)\",\n        \"not onfloor(carton.70, room_floor_living_room.0)\",\n        \"onfloor(carton.71, room_floor_living_room.0)\",\n        \"move(agent_n_01.1, room_floor_storage_room.0, room_floor_living_room.0)\",\n        \"put(carton.71, room_floor_storage_room.0)\",\n        \"not onfloor(carton.71, room_floor_living_room.0)\"\n    ]}"
+    },
+    {
+        "identifier": "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42",
+        "llm_output": "{\n    \"output\": [\n        \"open(package.0) and open(package.1)\"\n    ]}"
+    },
+    {
+        "identifier": "opening_presents_0_Benevolence_2_int_0_2021-10-25_21-10-48",
+        "llm_output": "{\n    \"output\": [\n        \"not open(package.0) and not open(package.1)\",\n        \"holds_rh(package.0) or holds_rh(package.1)\",\n        \"open(package.0) and open(package.1)\"\n    ]}"
+    },
+    {
+        "identifier": "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(carton.0, room_floor_garage.0) and onfloor(carton.1, room_floor_garage.0) and onfloor(ball.0, room_floor_garage.0) and onfloor(ball.1, room_floor_garage.0) and onfloor(saucepan.0, room_floor_garage.0)\",\n        \"holds_rh(carton.0) and inside(ball.0, carton.0) and inside(ball.1, carton.0)\",\n        \"holds_lh(carton.1) and inside(plate.0, carton.1) and inside(plate.1, carton.1) and inside(plate.2, carton.1)\",\n        \"inside(saucepan.0, carton.1)\",\n        \"onfloor(carton.0, room_floor_garage.0) and onfloor(carton.1, room_floor_garage.0)\"\n    ]}"
+    },
+    {
+        "identifier": "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(highlighter.0)\",\n        \"inside(highlighter.0, bottom_cabinet_no_top.21)\",\n        \"inside(document.0, bottom_cabinet_no_top.21)\",\n        \"inside(document.1, bottom_cabinet_no_top.21)\",\n        \"inside(document.2, bottom_cabinet_no_top.21)\",\n        \"inside(document.3, bottom_cabinet_no_top.21)\",\n        \"inside(folder.0, bottom_cabinet_no_top.21)\",\n        \"inside(folder.1, bottom_cabinet_no_top.21)\"\n    ]}"
+    },
+    {
+        "identifier": "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(highlighter.102, bed.58) and ontop(pencil.103, bed.58) and ontop(hardback.106, bed.58) and ontop(folder.107, bed.58)\",\n        \"holds_rh(folder.107) and nextto(hardback.106, backpack.108)\",\n        \"moves(folder.107, nextto(highlighter.102, backpack.108) and nextto(pencil.103, backpack.108))\",\n        \"inside(highlighter.102, backpack.108) and inside(pencil.103, backpack.108)\",\n        \"holds_rh(hardback.106) and moves(backpack.108, ontop(bed.58))\",\n        \"inside(pen.104, backpack.108)\",\n        \"inside(calculator.105, backpack.108)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(hanger.113, bed.33) and ontop(mouse.119, bed.33)\",\n        \"holds_rh(hanger.113) and ontop(lipstick.114, bed.33) and ontop(lipstick.115, bed.33) and ontop(toothbrush.118, bed.33)\",\n        \"inside(lipstick.114, backpack.112) and inside(lipstick.115, backpack.112) and inside(toothbrush.118, backpack.112) and inside(mouse.119, backpack.112) and onfloor(backpack.112, room_floor_bedroom.0)\",\n        \"onfloor(bracelet.116, room_floor_bedroom.0) and onfloor(necklace.117, room_floor_bedroom.0)\",\n        \"forall(jewelry_n_01, inside(jewelry_n_01, backpack.112)) and inside(bracelet.116, backpack.112) and inside(necklace.117, backpack.112)\",\n        \"onfloor(backpack.112, room_floor_corridor.0)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(toothbrush.98) and holds_lh(underwear.101)\",\n        \"inside(underwear.102, backpack.97)\",\n        \"inside(toothpaste.103, backpack.97)\",\n        \"inside(toothbrush.98, backpack.97) and inside(shampoo.99, backpack.97)\",\n        \"inside(hardback.100, backpack.97)\",\n        \"not ontop(backpack.97, bed.7) and onfloor(backpack.97, room_floor_bedroom.0)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(hardback.0, coffee_table.26) and ontop(notebook.0, coffee_table.26)\",\n        \"holds_rh(dishtowel.0)\",\n        \"inside(plate.0, carton.0) and inside(plate.1, carton.0) and inside(plate.2, carton.0) and inside(plate.3, carton.0)\",\n        \"inside(dishtowel.0, carton.0)\",\n        \"ontop(sweater.0, carton.1) and ontop(t-shirt.0, carton.1) and ontop(t-shirt.1, carton.1)\",\n        \"inside(hardback.0, carton.1) and inside(notebook.0, carton.1)\",\n        \"inside(sweater.0, carton.1) and inside(t-shirt.0, carton.1) and inside(t-shirt.1, carton.1)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(briefcase.51, room_floor_storage_room.0) and onfloor(pencil_box.52, breakfast_table.14) and onfloor(headset.53, breakfast_table.14) and onfloor(duffel_bag.54, room_floor_storage_room.0)\",\n        \"holds_rh(pencil_box.52) and holds_lh(headset.53)\",\n        \"inside(briefcase.51, car.50)\",\n        \"inside(pencil_box.52, car.50) and inside(headset.53, duffel_bag.54)\",\n        \"inside(duffel_bag.54, car.50)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(backpack.100)\",\n        \"ontop(sunglass.105, backpack.100) and ontop(bracelet.102, backpack.100) and ontop(notebook.101, backpack.100) and ontop(apple.103, backpack.100) and ontop(headset.104, backpack.100)\",\n        \"inside(sunglass.105, backpack.100) and inside(notebook.101, backpack.100) and inside(bracelet.102, backpack.100)\",\n        \"inside(apple.103, backpack.100) and inside(headset.104, backpack.100)\",\n        \"not onfloor(backpack.100, room_floor_bedroom.0)\",\n        \"nextto(backpack.100, bed.43)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(juice.0, countertop.81) and ontop(apple.0, countertop.81)\",\n        \"holds_rh(hamburger.0) and inside(hamburger.1, top_cabinet.62)\",\n        \"inside(juice.0, carton.0) and inside(apple.0, carton.0)\",\n        \"inside(hamburger.0, fridge.61) and not burnt(hamburger.0)\",\n        \"ontop(carton.0, countertop.81) or onfloor(carton.0, room_floor_kitchen.0)\",\n        \"inside(hamburger.0, carton.0) and inside(hamburger.1, carton.0)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14",
+        "llm_output": "{\n    \"output\": [\n        \"inside(salad.0, fridge.57) and inside(hamburger.0, fridge.57)\",\n        \"ontop(juice.0, breakfast_table.7) and ontop(pop.0, breakfast_table.7)\",\n        \"ontop(apple.0, countertop.56) and ontop(banana.0, countertop.56) and ontop(cookie.0, countertop.56) and ontop(cookie.1, countertop.56)\",\n        \"forpairs(chip_n_04, carton_n_02, inside(chip_n_04, carton_n_02)) and forpairs(cookie_n_01, carton_n_02, inside(cookie_n_01, carton_n_02))\",\n        \"inside(apple.0, carton.0) or inside(banana.0, carton.0)\",\n        \"inside(apple.0, carton.1) or inside(banana.0, carton.1)\",\n        \"holds_rh(carton.0) and inside(salad.0, fridge.57) and inside(juice.0, breakfast_table.7)\",\n        \"not inside(hamburger.0, carton.0) and not inside(chip.0, carton.0) and not inside(chip.1, carton.0)\",\n        \"inside(hamburger.0, carton.0) and inside(pop.0, breakfast_table.7)\",\n        \"holds_rh(carton.1) and inside(salad.0, fridge.57) and inside(juice.0, breakfast_table.7)\",\n        \"not inside(hamburger.0, carton.1) and not inside(chip.0, carton.1) and not inside(chip.1, carton.1)\",\n        \"inside(hamburger.0, carton.1) and inside(pop.0, breakfast_table.7)\"\n    ]}"
+    },
+    {
+        "identifier": "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(carton.0, room_floor_kitchen.0) and onfloor(carton.1, room_floor_living_room.0) and onfloor(carton.2, room_floor_living_room.0)\",\n        \"holds_rh(chip.0) and holds_lh(chip.1)\",\n        \"inside(hamburger.0, carton.0) and inside(hamburger.1, carton.0) and inside(hamburger.2, carton.0) and inside(hamburger.3, carton.0)\",\n        \"inside(strawberry.0, carton.1) and inside(strawberry.1, carton.1) and inside(strawberry.2, carton.1) and inside(strawberry.3, carton.1)\",\n        \"inside(grape.0, carton.2) and inside(grape.1, carton.2) and inside(grape.2, carton.2) and inside(grape.3, carton.2)\",\n        \"inside(peach.0, carton.2) and inside(peach.1, carton.2)\",\n        \"not(ontop(cantaloup.0, countertop.84)) and nextto(cantaloup.0, carton.2)\",\n        \"inside(pop.0, carton.1) and inside(pop.1, carton.1)\",\n        \"inside(beer.0, carton.1) and inside(beer.1, carton.1)\",\n        \"inside(water.0, carton.2) and inside(water.1, carton.2) and inside(water.2, carton.2) and inside(water.3, carton.2)\",\n        \"forall(chip_n_04, inside(chip_n_04, carton_n_02)) and forall(sandwich_n_01, inside(sandwich_n_01, carton_n_02)) and forall(strawberry_n_01, inside(strawberry_n_01, carton_n_02)) and forall(grape_n_01, inside(grape_n_01, carton_n_02)) and forall(peach_n_03, inside(peach_n_03, carton_n_02)) and forall(pop_n_02, inside(pop_n_02, carton_n_02)) and forall(beer_n_01, inside(beer_n_01, carton_n_02)) and forall(water_n_06, inside(water_n_06, carton_n_02))\"\n    ]}"
+    },
+    {
+        "identifier": "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(carton.0, room_floor_living_room.0) and onfloor(agent_n_01.1, room_floor_living_room.0)\",\n        \"holds_rh(carton.0)\",\n        \"ontop(carton.0, breakfast_table.19)\"\n    ]}"
+    },
+    {
+        "identifier": "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(trash_can.116, room_floor_kitchen.0) and onfloor(agent_n_01.1, room_floor_kitchen.0)\",\n        \"holds_rh(trash_can.116)\",\n        \"inside(sticky_note.117, trash_can.116) and inside(sticky_note.118, trash_can.116) and inside(sticky_note.119, trash_can.116)\",\n        \"inside(pop.120, trash_can.116) and inside(pop.121, trash_can.116)\"\n    ]}"
+    },
+    {
+        "identifier": "polishing_furniture_0_Ihlen_0_int_0_2021-10-26_11-35-40",
+        "llm_output": "{\n    \"output\": [\n        \"inside(rag.0, dishwasher) and toggledon(dishwasher)\",\n        \"or\",\n        \"holding(spray_bottle) and holding_lh(rag.0)\",\n        \"not dusty(coffee_table.10)\",\n        \"not dusty(shelf.11)\",\n        \"under(rag.0, coffee_table.10)\"\n    ]}"
+    },
+    {
+        "identifier": "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.145)\",\n        \"not stained(sandal.143) and not stained(walker.144) and onfloor(sandal.143, room_floor_bathroom.0) and onfloor(walker.144, room_floor_bathroom.0)\",\n        \"inside(rag.145, sink.67) and soaked(rag.145)\",\n        \"nextto(rag.145, sink.67)\"\n    ]}"
+    },
+    {
+        "identifier": "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15",
+        "llm_output": "{\n    \"output\": [\n        \"inside(rag.101, agent_n_01.1) and not dusty(spoon.97)\",\n        \"inside(rag.101, agent_n_01.1) and not dusty(spoon.98)\",\n        \"inside(rag.101, agent_n_01.1) and not dusty(spoon.99)\",\n        \"inside(rag.101, agent_n_01.1) and not dusty(spoon.100)\",\n        \"holds_rh(spoon.97) and not inside(spoon.97, bottom_cabinet.49)\",\n        \"holds_rh(spoon.98) and not inside(spoon.98, bottom_cabinet.49)\",\n        \"holds_rh(spoon.99) and not inside(spoon.99, bottom_cabinet.49)\",\n        \"holds_rh(spoon.100) and not inside(spoon.100, bottom_cabinet.49)\",\n        \"inside(rag.101, bottom_cabinet.49)\",\n        \"ontop(spoon.97, countertop.84) and ontop(spoon.98, countertop.84) and ontop(spoon.99, countertop.84) and ontop(spoon.100, countertop.84)\",\n        \"inside(rag.101, agent_n_01.1) and holds_lh(soap.102)\",\n        \"not dusty(spoon.97) and not dusty(spoon.98) and not dusty(spoon.99) and not dusty(spoon.100)\",\n        \"inside(rag.101, bottom_cabinet.49) and inside(spoon.97, bottom_cabinet.49) and inside(spoon.98, bottom_cabinet.49) and inside(spoon.99, bottom_cabinet.49) and inside(spoon.100, bottom_cabinet.49)\"\n    ]}"
+    },
+    {
+        "identifier": "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(shampoo.0) and holds_lh(soap.0)\",\n        \"not onfloor(shampoo.0, room_floor_bathroom.0) and not onfloor(soap.0, room_floor_bathroom.0)\",\n        \"nextto(soap.0, sink.38)\",\n        \"onfloor(dishtowel.0, room_floor_bathroom.0) and (holds_rh(shampoo.0) or holds_rh(soap.0))\"\n    ]}"
+    },
+    {
+        "identifier": "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(lettuce.78, countertop.31) and ontop(lettuce.79, countertop.31) and ontop(apple.80, countertop.31) and ontop(apple.81, countertop.31) and ontop(radish.84, countertop.31) and ontop(radish.85, countertop.31)\",\n        \"holds_rh(carving_knife.86)\",\n        \"not dusty(plate.87) and not dusty(plate.88)\",\n        \"forpairs(plate_n_04, (lettuce.78 or lettuce.79 or radish.84 or radish.85), ontop(plate_n_04, countertop.31))\",\n        \"forpairs(plate_n_04, apple.80 or apple.81, sliced(apple.80) and sliced(apple.81) and ontop(apple.80 or apple.81, plate_n_04))\",\n        \"forpairs(plate_n_04, tomato.82 or tomato.83, sliced(tomato.82) and sliced(tomato.83) and ontop(tomato.82 or tomato.83, plate_n_04))\"\n    ]}"
+    },
+    {
+        "identifier": "preserving_food_0_Rs_int_0_2021-08-25_15-53-33",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(carving_knife.66)\",\n        \"sliced(strawberry.61) and sliced(strawberry.62)\",\n        \"cooking(saucepan.65) and (inside(strawberry.61, saucepan.65) or inside(strawberry.62, saucepan.65))\",\n        \"inside(strawberry.61, jar.64) and inside(strawberry.62, jar.64)\",\n        \"not open(jar.64)\",\n        \"inside(beef.63, fridge.40)\",\n        \"frozen(beef.63)\"\n    ]}"
+    },
+    {
+        "identifier": "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(wreath.0, room_floor_living_room.0) and onfloor(wreath.1, room_floor_living_room.0) and onfloor(bow.0, room_floor_living_room.0) and onfloor(bow.1, room_floor_living_room.0) and onfloor(bow.2, room_floor_living_room.0) and onfloor(ribbon.0, room_floor_living_room.0) and onfloor(ribbon.1, room_floor_living_room.0) and onfloor(ribbon.2, room_floor_living_room.0)\",\n        \"holds_rh(wreath.0) and holds_lh(ribbon.0)\",\n        \"nextto(wreath.0, bottom_cabinet.79) and nextto(wreath.1, bottom_cabinet.79) and nextto(bow.0, bottom_cabinet.79) and nextto(bow.1, bottom_cabinet.79) and nextto(bow.2, bottom_cabinet.79)\",\n        \"inside(ribbon.0, bottom_cabinet.79) and inside(ribbon.1, bottom_cabinet.79) and inside(ribbon.2, bottom_cabinet.79)\",\n        \"not holds_rh(wreath.0) and not holds_lh(ribbon.0)\"\n    ]}"
+    },
+    {
+        "identifier": "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(pumpkin.0) and holds_lh(pumpkin.1)\",\n        \"inside(pumpkin.0, bottom_cabinet.13) and inside(pumpkin.1, bottom_cabinet.13)\",\n        \"not onfloor(pumpkin.0, room_floor_living_room.0) and not onfloor(pumpkin.1, room_floor_living_room.0)\",\n        \"holds_rh(candle.0) and onfloor(candle.1, room_floor_living_room.0) and onfloor(candle.2, room_floor_living_room.0)\",\n        \"inside(candle.0, bottom_cabinet.13) and inside(candle.1, bottom_cabinet.13) and inside(candle.2, bottom_cabinet.13)\",\n        \"not onfloor(candle.0, room_floor_living_room.0)\",\n        \"ontop(sheet.0, coffee_table.5)\",\n        \"nextto(cauldron.0, coffee_table.5)\"\n    ]}"
+    },
+    {
+        "identifier": "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44",
+        "llm_output": "{\n    \"output\": [\n        \"forpairs(plaything_n_01, carton_n_02, inside(toy.0, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.1, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.2, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.3, carton_n_02))\",\n        \"forpairs(plaything_n_01, carton_n_02, inside(toy.4, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.5, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.6, carton_n_02)) and forpairs(plaything_n_01, carton_n_02, inside(toy.7, carton_n_02))\",\n        \"ontop(carton.0, breakfast_table.2)\"\n    ]}"
+    },
+    {
+        "identifier": "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(plate.0, countertop.81) and ontop(plate.1, countertop.81) and ontop(plate.2, countertop.81) and ontop(plate.3, countertop.81)\",\n        \"holds_rh(plate.0) and ontop(plate.1, countertop.81) and ontop(plate.2, countertop.81) and ontop(plate.3, countertop.81)\",\n        \"ontop(plate.4, countertop.79) and ontop(plate.5, countertop.79) and ontop(plate.6, countertop.79) and ontop(plate.7, countertop.79)\",\n        \"holds_lh(plate.4) and ontop(plate.5, countertop.79) and ontop(plate.6, countertop.79) and ontop(plate.7, countertop.79)\",\n        \"inside(plate.0, top_cabinet.62) and inside(plate.4, top_cabinet.62)\",\n        \"inside(plate.1, top_cabinet.62) and inside(plate.5, top_cabinet.62)\",\n        \"inside(plate.2, top_cabinet.62) and inside(plate.6, top_cabinet.62)\",\n        \"inside(plate.3, top_cabinet.62) and inside(plate.7, top_cabinet.62)\",\n        \"forall(plate_n_04, inside(plate_n_04, top_cabinet.62))\"\n    ]}"
+    },
+    {
+        "identifier": "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(pasta.0, fridge.61) and ontop(pasta.1, fridge.61) and ontop(pasta.2, fridge.61) and ontop(pasta.3, fridge.61)\",\n        \"forall(sauce_n_01, inside(sauce_n_01, fridge.61))\",\n        \"holds_rh(pasta.0) and inside(pasta.1, fridge.61) and inside(pasta.2, fridge.61) and inside(pasta.3, fridge.61)\",\n        \"not ontop(spaghetti_sauce.0, countertop.79) and not ontop(mayonnaise.0, countertop.79) and not ontop(spaghetti_sauce.1, countertop.79) and not ontop(spaghetti_sauce.2, countertop.79)\",\n        \"inside(spaghetti_sauce.0, fridge.61) and inside(spaghetti_sauce.1, fridge.61) and inside(spaghetti_sauce.2, fridge.61)\"\n    ]}"
+    },
+    {
+        "identifier": "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(wrapped_gift.119, room_floor_living_room.0) and onfloor(wrapped_gift.120, room_floor_living_room.0) and onfloor(wrapped_gift.121, room_floor_living_room.0)\",\n        \"forall(wrapping_n_01, nextto(wrapping_n_01, christmas_tree_decorated.112))\",\n        \"ontop(candle.117, breakfast_table.19) and ontop(candle.118, breakfast_table.19)\",\n        \"forn(1, bow_n_08, ontop(bow_n_08, breakfast_table.19)) and fornpairs(1, wreath, breakfast_table, ontop(wreath.113, breakfast_table.19))\",\n        \"forn(2, bow_n_08, ontop(bow_n_08, sofa.25))\",\n        \"not onfloor(christmas_tree_decorated.112, room_floor_living_room.0)\",\n        \"ontop(christmas_tree_decorated.112, breakfast_table.19)\"\n    ]}"
+    },
+    {
+        "identifier": "re-shelving_library_books_0_Rs_int_0_2021-10-25_21-22-26",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(hardback.0, breakfast_table.9) and ontop(hardback.1, breakfast_table.9) and ontop(hardback.2, breakfast_table.9) and ontop(notebook.0, breakfast_table.9) and ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9)\",\n        \"holds_rh(hardback.0) and ontop(hardback.1, breakfast_table.9) and ontop(hardback.2, breakfast_table.9) and ontop(notebook.0, breakfast_table.9) and ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9)\",\n        \"ontop(hardback.1, breakfast_table.9) and ontop(hardback.2, breakfast_table.9) and ontop(notebook.0, breakfast_table.9) and ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9) and holds_lh(hardback.0)\",\n        \"move(agent_n_01.1, breakfast_table.9, shelf.19)\",\n        \"put(hardback.0, shelf.19)\",\n        \"put(hardback.1, shelf.19)\",\n        \"put(hardback.2, shelf.19)\",\n        \"ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9)\",\n        \"holds_rh(notebook.0) and ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9)\",\n        \"ontop(hardback.3, breakfast_table.9) and ontop(notebook.1, breakfast_table.9) and ontop(notebook.2, breakfast_table.9) and ontop(notebook.3, breakfast_table.9) and holds_lh(notebook.0)\",\n        \"move(agent_n_01.1, shelf.19, breakfast_table.9)\",\n        \"put(notebook.0, shelf.19)\"\n    ]}"
+    },
+    {
+        "identifier": "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(table_lamp.0) and holds_lh(door.29)\",\n        \"move_to(floor_lamp.1, window.27)\",\n        \"not onfloor(table_lamp.0)\",\n        \"nextto(table_lamp.0, door.29)\",\n        \"holds_rh(floor_lamp.1)\",\n        \"move_to(chaise_longue.0, bed.11)\",\n        \"touching(chaise_longue.0, bed.11)\",\n        \"move_to(chaise_longue.1, window.27)\",\n        \"nextto(chaise_longue.1, window.27)\"\n    ]}"
+    },
+    {
+        "identifier": "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17",
+        "llm_output": "{\n    \"output\": [\n        \"inside(table_knife.0, bottom_cabinet.49) and inside(carving_knife.0, bottom_cabinet.49) and inside(toasting_fork.0, bottom_cabinet.49) and inside(tablefork.0, bottom_cabinet.49) and inside(spoon.0, bottom_cabinet.49) and inside(spoon.1, bottom_cabinet.49) and inside(plate.0, bottom_cabinet.50) and inside(plate.1, bottom_cabinet.49)\",\n        \"holds_rh(table_knife.0) or holds_rh(carving_knife.0)\",\n        \"ontop(plate.0, breakfast_table.20) and ontop(plate.1, breakfast_table.20)\",\n        \"ontop(table_knife.0, breakfast_table.20) or ontop(carving_knife.0, breakfast_table.20) or ontop(toasting_fork.0, breakfast_table.20) or ontop(tablefork.0, breakfast_table.20)\",\n        \"not (inside(plate.0, bottom_cabinet.50) or inside(plate.1, bottom_cabinet.49))\",\n        \"forpairs(spoon_n_01, soup_n_01, (nextto(spoon_n_01, soup_n_01) or ontop(soup.0, breakfast_table.20) or ontop(soup.1, breakfast_table.20)))\",\n        \"inside(muffin.0, fridge.57) and inside(bagel.0, fridge.57) and inside(salad.0, fridge.57) and inside(salad.1, fridge.57) and inside(chicken.0, fridge.57) and inside(chicken.1, fridge.57) and inside(water.0, fridge.57) and inside(water.1, fridge.57) and inside(cookie.0, fridge.57) and inside(cupcake.0, fridge.57)\",\n        \"ontop(water.0, breakfast_table.20) and ontop(water.1, breakfast_table.20)\",\n        \"forpairs(chicken_n_01, plate_n_04, ontop(chicken_n_01, plate_n_04)) and forpairs(salad_n_01, plate_n_04, nextto(salad_n_01, plate_n_04)) and forpairs(bread_n_01, plate_n_04, nextto(bread_n_01, plate_n_04)) and forpairs(cake_n_03, plate_n_04, nextto(cake_n_03, plate_n_04))\"\n    ]}"
+    },
+    {
+        "identifier": "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22",
+        "llm_output": "{\n    \"output\": [\n        \"inside(salad.143, tray.147) and inside(salad.144, tray.147) and inside(salad.145, tray.147) and inside(salad.146, tray.147)\",\n        \"ontop(tray.147, breakfast_table.1)\",\n        \"forpairs(salad_n_01, cracker_n_01, nextto(salad_n_01, cracker_n_01))\",\n        \"holds_rh(pretzel.152) and holds_lh(pretzel.153) and ontop(pretzel.154, breakfast_table.1) and ontop(pretzel.155, breakfast_table.1)\",\n        \"forall(cracker_n_01, ontop(cracker_n_01, breakfast_table.1))\",\n        \"inside(cheese.156, fridge.97) and inside(cheese.157, fridge.97) and inside(cheese.158, fridge.97) and inside(cheese.159, fridge.97)\",\n        \"ontop(parsley.148, breakfast_table.1) and ontop(parsley.149, breakfast_table.1) and ontop(parsley.150, breakfast_table.1) and ontop(parsley.151, breakfast_table.1)\",\n        \"forpairs(cheese_n_01, parsley_n_02, ontop(parsley_n_02, cheese_n_01))\"\n    ]}"
+    },
+    {
+        "identifier": "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(mousetrap.100, agent_n_01.1) and ontop(mousetrap.101, agent_n_01.1) and ontop(mousetrap.102, agent_n_01.1) and ontop(mousetrap.103, agent_n_01.1)\",\n        \"onfloor(mousetrap.100, room_floor_corridor.0) and onfloor(mousetrap.101, room_floor_corridor.0)\",\n        \"holds_rh(mousetrap.102) and holds_lh(mousetrap.103)\",\n        \"nextto(mousetrap.102, toilet.64) and nextto(mousetrap.103, toilet.64)\"\n    ]}"
+    },
+    {
+        "identifier": "setting_up_candles_0_Wainscott_0_int_0_2021-10-26_13-40-51",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(carton.0, room_floor_living_room.0) and onfloor(carton.1, room_floor_living_room.0)\",\n        \"holds_rh(candle.0) and holds_lh(candle.3)\",\n        \"ontop(candle.0, coffee_table.33) and ontop(candle.3, breakfast_table.1)\",\n        \"exists(candle_n_01, ontop(candle_n_01, coffee_table.33)) and exists(candle_n_01, ontop(candle_n_01, breakfast_table.1))\",\n        \"holds_rh(candle.1) and holds_lh(candle.4)\",\n        \"ontop(candle.1, coffee_table.33) and ontop(candle.4, breakfast_table.1)\",\n        \"exists(candle_n_01, ontop(candle_n_01, coffee_table.33)) and exists(candle_n_01, ontop(candle_n_01, breakfast_table.1))\",\n        \"holds_rh(candle.2) and holds_lh(candle.5)\",\n        \"ontop(candle.2, coffee_table.33) and ontop(candle.5, breakfast_table.1)\",\n        \"forn(3, candle_n_01, ontop(candle_n_01, coffee_table.33)) and fornpairs(3, candle_n_01, breakfast_table.1, ontop(candle_n_01, breakfast_table.1))\"\n    ]}"
+    },
+    {
+        "identifier": "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(hardback.78, shelf.15) and ontop(hardback.81, shelf.15)\",\n        \"holds_rh(hardback.79)\",\n        \"ontop(book_n_02, shelf.15)\",\n        \"not ontop(hardback.79, coffee_table.3) and not ontop(notebook.80, coffee_table.3)\",\n        \"onfloor(hardback.79, shelf.15) and onfloor(notebook.80, shelf.15)\"\n    ]}"
+    },
+    {
+        "identifier": "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(pretzel.0, countertop.84) and ontop(broccoli.0, countertop.84) and ontop(carrot.0, countertop.84) and ontop(carrot.1, countertop.84) and ontop(carrot.2, countertop.84) and ontop(apple.0, countertop.84) and ontop(apple.1, countertop.84)\",\n        \"holds_rh(pretzel.0) and ontop(milk.0, chair.45) and ontop(prosciutto.0, breakfast_table.44) and ontop(cheese.0, breakfast_table.44) and ontop(yogurt.0, breakfast_table.44) and ontop(soup.0, breakfast_table.44) and ontop(orange.0, breakfast_table.44) and ontop(orange.1, breakfast_table.44) and ontop(orange.2, breakfast_table.44)\",\n        \"inside(pretzel.0, bottom_cabinet_no_top.80) and inside(broccoli.0, fridge.97)\",\n        \"forall(carrot_n_03, (inside(carrot_n_03, fridge.97) and (nextto(carrot_n_03, carrot.0) or nextto(carrot_n_03, carrot.1) or nextto(carrot_n_03, carrot.2))) and inside(milk.0, fridge.97) and inside(prosciutto.0, fridge.97) and inside(cheese.0, fridge.97) and inside(yogurt.0, fridge.97) and inside(soup.0, fridge.97)\",\n        \"forall(apple_n_01, (inside(apple_n_01, fridge.97) and (nextto(apple_n_01, apple.0) or nextto(apple_n_01, apple.1))))\",\n        \"forall(orange_n_01, (ontop(orange_n_01, breakfast_table.44) and (nextto(orange_n_01, orange.0) or nextto(orange_n_01, orange.1) or nextto(orange_n_01, orange.2))))\",\n        \"not ontop(milk.0, chair.45) and holds_lh(milk.0)\",\n        \"inside(milk.0, fridge.97)\",\n        \"holds_rh(pretzel.0) and not ontop(pretzel.0, countertop.84)\",\n        \"inside(pretzel.0, fridge.97)\"\n    ]}"
+    },
+    {
+        "identifier": "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16",
+        "llm_output": "{\n    \"output\": [\n        \"forall(envelope_n_01, touching(envelope_n_01, envelope.143) or touching(envelope_n_01, envelope.144) or touching(envelope_n_01, envelope.145) or touching(envelope_n_01, envelope.146)) and forall(newspaper_n_03, touching(newspaper_n_03, newspaper.147) or touching(newspaper_n_03, newspaper.148) or touching(newspaper_n_03, newspaper.149) or touching(newspaper_n_03, newspaper.150))\"\n    ]}"
+    },
+    {
+        "identifier": "storing_food_0_Rs_int_0_2021-10-25_21-27-36",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(oatmeal.0, countertop.26) and ontop(oatmeal.1, countertop.26) and ontop(chip.0, countertop.26) and ontop(chip.1, countertop.26) and ontop(olive_oil.0, countertop.26) and ontop(olive_oil.1, countertop.26) and ontop(sugar_jar.0, countertop.26) and ontop(sugar_jar.1, countertop.26)\",\n        \"holds_rh(oatmeal.0) and holds_lh(chip.0)\",\n        \"inside(oatmeal.0, bottom_cabinet.41) and inside(chip.0, bottom_cabinet.41)\",\n        \"inside(oatmeal.1, bottom_cabinet.41) and inside(chip.1, bottom_cabinet.41)\",\n        \"not(ontop(olive_oil.0, countertop.26)) and not(ontop(olive_oil.1, countertop.26)) and not(ontop(sugar_jar.0, countertop.26)) and not(ontop(sugar_jar.1, countertop.26))\",\n        \"inside(olive_oil.0, bottom_cabinet.41) and inside(olive_oil.1, bottom_cabinet.41)\",\n        \"inside(sugar_jar.0, bottom_cabinet.41) and inside(sugar_jar.1, bottom_cabinet.41)\"\n    ]}"
+    },
+    {
+        "identifier": "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(cereal.0, countertop.56) and ontop(cereal.1, countertop.56) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"holds_rh(cereal.0) and ontop(cereal.1, countertop.56) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"holds_lh(cereal.1) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56)\",\n        \"inside(cereal.0, bottom_cabinet_no_top.54) and ontop(cereal.1, countertop.56) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"inside(cereal.1, bottom_cabinet_no_top.54) and inside(cereal.0, bottom_cabinet_no_top.54) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"not(ontop(cereal.0, countertop.56)) and not(ontop(cereal.1, countertop.56)) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(lettuce.0, countertop.56) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"holds_rh(lettuce.0) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56)\",\n        \"holds_lh(lettuce.1) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56)\",\n        \"inside(lettuce.0, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(lettuce.1, countertop.56) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"inside(lettuce.1, fridge.57) and inside(lettuce.0, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"not(ontop(lettuce.0, countertop.56)) and not(ontop(lettuce.1, countertop.56)) and inside(lettuce.0, fridge.57) and inside(lettuce.1, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(broccoli.0, countertop.56) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"holds_rh(broccoli.0) and ontop(broccoli.1, countertop.56) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56)\",\n        \"holds_lh(broccoli.1) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56)\",\n        \"inside(broccoli.0, fridge.57) and inside(lettuce.0, fridge.57) and inside(lettuce.1, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"inside(broccoli.1, fridge.57) and inside(broccoli.0, fridge.57) and inside(lettuce.0, fridge.57) and inside(lettuce.1, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet_no_top.54) and ontop(raspberry.0, countertop.56) and ontop(raspberry.1, countertop.56) and ontop(pork.0, countertop.56) and ontop(pork.1, countertop.56)\",\n        \"not(ontop(broccoli.0, countertop.56)) and not(ontop(broccoli.1, countertop.56)) and inside(broccoli.0, fridge.57) and inside(broccoli.1, fridge.57) and inside(lettuce.0, fridge.57) and inside(lettuce.1, fridge.57) and inside(cereal.0, bottom_cabinet_no_top.54) and inside(cereal.1, bottom_cabinet}"
+    },
+    {
+        "identifier": "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33",
+        "llm_output": "{\n    \"output\": [\n        \"inside(container_date.0, agent_n_01.1) and inside(olive.0, agent_n_01.1) and inside(fish.0, agent_n_01.1) and inside(fish.1, agent_n_01.1) and inside(fish.2, agent_n_01.1) and inside(fish.3, agent_n_01.1)\",\n        \"not frozen(container_date.0) and not frozen(olive.0) and not frozen(fish.0) and not frozen(fish.1) and not frozen(fish.2) and not frozen(fish.3)\",\n        \"ontop(container_date.0, sink.37) and ontop(olive.0, sink.37) and ontop(fish.0, sink.37) and ontop(fish.1, sink.37) and ontop(fish.2, sink.37) and ontop(fish.3, sink.37)\"\n    ]}"
+    },
+    {
+        "identifier": "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(plate.112, countertop.79) and ontop(plate.113, countertop.79) and ontop(plate.114, countertop.79)\",\n        \"ontop(hamburger.116, plate.112) and ontop(hamburger.118, plate.113) and ontop(hamburger.117, plate.114)\",\n        \"holds_rh(plate.112) or holds_rh(plate.113) or holds_rh(plate.114)\",\n        \"inside(hamburger.116, trash_can.119) and inside(hamburger.118, trash_can.119) and inside(hamburger.117, trash_can.119)\",\n        \"not (ontop(plate.115, countertop.79) or ontop(hamburger.115, plate.115))\",\n        \"holds_lh(plate.115)\",\n        \"inside(plate.115, trash_can.119)\"\n    ]}"
+    },
+    {
+        "identifier": "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(agent_n_01.1, room_floor_living_room.0) \",\n        \"holds_rh(notebook.0) and holds_lh(sock.0)\",\n        \"ontop(sock.1, sofa.10)\",\n        \"not ontop(notebook.0, sofa.10) and not ontop(toothbrush.0, sofa.10) and not ontop(cologne.0, sofa.10)\",\n        \"ontop(notebook.0, sofa.10) and ontop(toothbrush.0, sofa.10)\",\n        \"holds_rh(sock.1) and ontop(cologne.0, sofa.10)\",\n        \"forall(sock_n_01, ontop(sock_n_01, sofa.10))\"\n    ]}"
+    },
+    {
+        "identifier": "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55",
+        "llm_output": "{\n    \"output\": [\n        \"inside(room_floor_bedroom.0, vacuum.0) and not dusty(room_floor_bedroom.0)\",\n        \"or[holds_rh(vacuum.0), holds_lh(vacuum.0)]\",\n        \"inside(trash_can.0, vacuum.0)\",\n        \"not dusty(room_floor_bedroom.0)\"\n    ]}"
+    },
+    {
+        "identifier": "washing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_22-38-10",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.0) and not dusty(car.0)\",\n        \"inside(rag.0, sink.32) and toggledon(sink.32) and not stained(car.0)\",\n        \"or[inside(soap.0, bucket.0), ontop(soap.0, car.0)]\",\n        \"holds_lh(bucket.0) and onfloor(car.0, room_floor_garage.0)\",\n        \"not dusty(car.0) and not stained(car.0)\"\n    ]}"
+    },
+    {
+        "identifier": "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(plate.59, countertop.18) and ontop(plate.60, countertop.18) and ontop(bowl.62, countertop.18) and ontop(cup.61, countertop.18)\",\n        \"holds_rh(scrub_brush.63)\",\n        \"not stained(plate.59) and not stained(plate.60)\",\n        \"inside(plate.59, sink.19) and inside(plate.60, sink.19)\",\n        \"not stained(cup.61) and not stained(bowl.62)\",\n        \"inside(cup.61, sink.19) and inside(bowl.62, sink.19)\",\n        \"forall(plate_n_04, not stained(plate_n_04))\"\n    ]}"
+    },
+    {
+        "identifier": "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28",
+        "llm_output": "{\n    \"output\": [\n        \"inside(bucket.0, shower.32) and not stained(bucket.0)\",\n        \"holds_rh(soap.0)\",\n        \"inside(bucket.0, shower.32) and soaked(bucket.0)\",\n        \"not dusty(room_floor_bathroom.0) and not stained(room_floor_bathroom.0)\",\n        \"ontop(bucket.0, room_floor_bathroom.0) and not stained(bucket.0)\"\n    ]}"
+    },
+    {
+        "identifier": "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44",
+        "llm_output": "{\n    \"output\": [\n        \"ontop(teapot.78, countertop.31) and ontop(kettle.79, countertop.33) and ontop(saucepan.80, countertop.31) and ontop(saucepan.81, countertop.31) and ontop(frying_pan.82, countertop.33)\",\n        \"holds_rh(scrub_brush.83)\",\n        \"not stained(teapot.78) and not stained(kettle.79) and not stained(saucepan.80) and not stained(saucepan.81) and not stained(frying_pan.82)\",\n        \"inside(teapot.78, sink.37) and inside(kettle.79, sink.37) and inside(saucepan.80, sink.37) and inside(saucepan.81, sink.37) and inside(frying_pan.82, sink.37)\",\n        \"toggleOn(sink.37)\",\n        \"soaked(scrub_brush.83)\",\n        \"holds_lh(soap.84)\",\n        \"not stained(teapot.78) and not stained(kettle.79) and not stained(saucepan.80) and not stained(saucepan.81) and not stained(frying_pan.82) and [inside(teapot.78, sink.37) or inside(kettle.79, sink.37) or inside(saucepan.80, sink.37) or inside(saucepan.81, sink.37) or inside(frying_pan.82, sink.37)]\",\n        \"toggleOff(sink.37)\",\n        \"forall(pan_n_01, (inside(pan_n_01, cabinet_n_01)))\",\n        \"forall(cabinet_n_01, [(not open(cabinet_n_01)) and (inside(teapot.78, cabinet_n_01) or inside(kettle.79, cabinet_n_01) or inside(saucepan.80, cabinet_n_01) or inside(saucepan.81, cabinet_n_01) or inside(frying_pan.82, cabinet_n_01))])\"\n    ]}"
+    },
+    {
+        "identifier": "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01",
+        "llm_output": "{\n    \"output\": [\n        \"onfloor(pot_plant.0, room_floor_dining_room.0) && onfloor(pot_plant.1, room_floor_dining_room.0) && onfloor(pot_plant.2, room_floor_kitchen.0)\",\n        \"holds_rh(water_n_01)\",\n        \"not soaked(pot_plant.0) && not soaked(pot_plant.1) && not soaked(pot_plant.2)\",\n        \"inside(pot_plant.0, sink.64) && inside(pot_plant.1, sink.64)\",\n        \"soaked(pot_plant.0) && soaked(pot_plant.1)\",\n        \"inside(pot_plant.2, sink.64)\",\n        \"soaked(pot_plant.2)\",\n        \"onfloor(agent_n_01.1, room_floor_kitchen.0)\",\n        \"holds_lh(pot_plant.0)\",\n        \"holds_rh(water_n_01) && not soaked(pot_plant.0)\",\n        \"inside(pot_plant.1, breakfast_table.16)\",\n        \"holds_lh(pot_plant.1)\",\n        \"holds_rh(water_n_01) && not soaked(pot_plant.1)\",\n        \"inside(pot_plant.0, countertop.56)\",\n        \"soaked(pot_plant.0)\",\n        \"inside(pot_plant.2, breakfast_table.16)\",\n        \"holds_lh(pot_plant.2)\",\n        \"soaked(pot_plant.2)\",\n        \"holds_rh(water_n_01)\"\n    ]}"
+    },
+    {
+        "identifier": "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46",
+        "llm_output": "{\n    \"output\": [\n        \"holds_rh(rag.52)\",\n        \"not dusty(car.50) and onfloor(car.50, room_floor_garage.0)\",\n        \"inside(rag.52, shelf.16) and ontop(cruet.51, shelf.16)\"\n    ]}"
+    }
+]

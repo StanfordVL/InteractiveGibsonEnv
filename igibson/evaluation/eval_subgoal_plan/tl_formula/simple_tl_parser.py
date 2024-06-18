@@ -36,8 +36,8 @@ primitive_stmt: "not" primitive_stmt -> not_stmt
 
 %import common.WS
 %ignore WS
-VARNAME: /[a-zA-Z_]\w*/
-VARNAMEWITHID: /[a-zA-Z_]\w*\.[0-9]+/
+VARNAME: /[a-zA-Z_\-]\w*/
+VARNAMEWITHID: /[a-zA-Z_\-]\w*\.[0-9]+/
 NUM: /\d+/
 """
 

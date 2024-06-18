@@ -1,0 +1,3896 @@
+{
+    "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37": {
+        "success": false,
+        "subgoals": [
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "candle.n.01",
+                "-",
+                "candle.n.01",
+                "inside",
+                "candle.n.01",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "cheese.n.01",
+                "-",
+                "cheese.n.01",
+                "inside",
+                "cheese.n.01",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "cookie.n.01",
+                "-",
+                "cookie.n.01",
+                "inside",
+                "cookie.n.01",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "bow.n.08",
+                "-",
+                "bow.n.08",
+                "inside",
+                "bow.n.08",
+                "basket.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46": {
+        "success": false,
+        "subgoals": [
+            [
+                "exists",
+                "jar.n.01",
+                "-",
+                "jar.n.01",
+                "and",
+                "inside",
+                "strawberry.n.01_1",
+                "jar.n.01",
+                "not",
+                "inside",
+                "peach.n.03_1",
+                "jar.n.01"
+            ],
+            [
+                "exists",
+                "jar.n.01",
+                "-",
+                "jar.n.01",
+                "and",
+                "inside",
+                "peach.n.03_1",
+                "jar.n.01",
+                "not",
+                "inside",
+                "strawberry.n.01_1",
+                "jar.n.01"
+            ],
+            [
+                "forall",
+                "jar.n.01",
+                "-",
+                "jar.n.01",
+                "not",
+                "open",
+                "jar.n.01"
+            ],
+            [
+                "sliced",
+                "strawberry.n.01_1"
+            ],
+            [
+                "sliced",
+                "peach.n.03_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            true,
+            false,
+            false
+        ]
+    },
+    "boxing_books_up_for_storage_0_Benevolence_1_int_0_2021-09-10_15-35-47": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "book.n.02",
+                "-",
+                "book.n.02",
+                "inside",
+                "book.n.02",
+                "carton.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plywood.n.01",
+                "-",
+                "plywood.n.01",
+                "onfloor",
+                "plywood.n.01",
+                "floor.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "sweater.n.01",
+                "-",
+                "sweater.n.01",
+                "not",
+                "dusty",
+                "sweater.n.01"
+            ],
+            [
+                "forall",
+                "sweater.n.01",
+                "-",
+                "sweater.n.01",
+                "ontop",
+                "sweater.n.01",
+                "bed.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "tomato.n.01",
+                "-",
+                "tomato.n.01",
+                "and",
+                "exists",
+                "dish.n.01",
+                "-",
+                "dish.n.01",
+                "inside",
+                "tomato.n.01",
+                "dish.n.01",
+                "sliced",
+                "tomato.n.01"
+            ],
+            [
+                "forall",
+                "mushroom.n.05",
+                "-",
+                "mushroom.n.05",
+                "and",
+                "exists",
+                "dish.n.01",
+                "-",
+                "dish.n.01",
+                "inside",
+                "mushroom.n.05",
+                "dish.n.01",
+                "sliced",
+                "mushroom.n.05"
+            ],
+            [
+                "forall",
+                "chestnut.n.03",
+                "-",
+                "chestnut.n.03",
+                "and",
+                "exists",
+                "dish.n.01",
+                "-",
+                "dish.n.01",
+                "inside",
+                "chestnut.n.03",
+                "dish.n.01",
+                "sliced",
+                "chestnut.n.03"
+            ],
+            [
+                "forall",
+                "vidalia_onion.n.01",
+                "-",
+                "vidalia_onion.n.01",
+                "and",
+                "exists",
+                "dish.n.01",
+                "-",
+                "dish.n.01",
+                "inside",
+                "vidalia_onion.n.01",
+                "dish.n.01",
+                "sliced",
+                "vidalia_onion.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "car.n.01_1"
+            ],
+            [
+                "inside",
+                "soap.n.01_1",
+                "bucket.n.01_1"
+            ],
+            [
+                "inside",
+                "rag.n.01_1",
+                "bucket.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "grill.n.02_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "grill.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "cleaning_bathrooms_0_Benevolence_0_int_1_2021-06-12_19-33-28": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "toilet.n.02_1"
+            ],
+            [
+                "not",
+                "stained",
+                "bathtub.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "sink.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ],
+            [
+                "and",
+                "soaked",
+                "rag.n.01_1",
+                "inside",
+                "rag.n.01_1",
+                "bucket.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_bathtub_0_Pomaria_0_int_0_2021-09-10_16-22-10": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "bathtub.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "apparel.n.01",
+                "-",
+                "apparel.n.01",
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "inside",
+                "apparel.n.01",
+                "cabinet.n.01"
+            ],
+            [
+                "and",
+                "inside",
+                "jewelry.n.01_1",
+                "cabinet.n.01_1",
+                "inside",
+                "perfume.n.02_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "ontop",
+                "sheet.n.03_1",
+                "bed.n.01_1"
+            ],
+            [
+                "forall",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "not",
+                "dusty",
+                "cabinet.n.01"
+            ],
+            [
+                "nextto",
+                "vacuum.n.04_1",
+                "bed.n.01_1"
+            ],
+            [
+                "ontop",
+                "painting.n.01_1",
+                "sheet.n.03_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+        ]
+    },
+    "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "cleaning_closet_0_Beechwood_1_int_0_2021-10-25_19-50-32": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "jewelry.n.01",
+                "-",
+                "jewelry.n.01",
+                "inside",
+                "jewelry.n.01",
+                "cabinet.n.01_3"
+            ],
+            [
+                "not",
+                "inside",
+                "umbrella.n.01_1",
+                "cabinet.n.01_3"
+            ],
+            [
+                "or",
+                "inside",
+                "hat.n.01_1",
+                "cabinet.n.01_1",
+                "ontop",
+                "hat.n.01_1",
+                "shelf.n.01_1"
+            ],
+            [
+                "forall",
+                "sandal.n.01",
+                "-",
+                "sandal.n.01",
+                "and",
+                "nextto",
+                "sandal.n.01",
+                "shelf.n.01_1",
+                "onfloor",
+                "sandal.n.01",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "cabinet.n.01_3"
+            ],
+            [
+                "not",
+                "dusty",
+                "shelf.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "not",
+                "dusty",
+                "cabinet.n.01"
+            ],
+            [
+                "forall",
+                "book.n.02",
+                "-",
+                "book.n.02",
+                "forall",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "not",
+                "inside",
+                "book.n.02",
+                "cabinet.n.01"
+            ],
+            [
+                "inside",
+                "screwdriver.n.01_1",
+                "bin.n.01_1"
+            ],
+            [
+                "forall",
+                "marker.n.03",
+                "-",
+                "marker.n.03",
+                "inside",
+                "marker.n.03",
+                "bucket.n.01_1"
+            ],
+            [
+                "inside",
+                "pen.n.01_1",
+                "bucket.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "forall",
+                "food.n.01",
+                "-",
+                "food.n.01",
+                "not",
+                "inside",
+                "food.n.01",
+                "electric_refrigerator.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "cabinet.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "cabinet.n.01_1"
+            ],
+            [
+                "forall",
+                "newspaper.n.03",
+                "-",
+                "newspaper.n.03",
+                "or",
+                "inside",
+                "newspaper.n.03",
+                "bin.n.01_1",
+                "not",
+                "onfloor",
+                "newspaper.n.03",
+                "floor.n.01_1"
+            ],
+            [
+                "forall",
+                "bottle.n.01",
+                "-",
+                "bottle.n.01",
+                "ontop",
+                "bottle.n.01",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            true,
+            false,
+            false
+        ]
+    },
+    "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "highchair.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "not",
+                "dusty",
+                "cabinet.n.01"
+            ],
+            [
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "forall",
+                "bowl.n.01",
+                "-",
+                "bowl.n.01",
+                "and",
+                "inside",
+                "bowl.n.01",
+                "cabinet.n.01",
+                "not",
+                "inside",
+                "cup.n.01_1",
+                "cabinet.n.01"
+            ],
+            [
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "forall",
+                "cup.n.01",
+                "-",
+                "cup.n.01",
+                "and",
+                "inside",
+                "cup.n.01",
+                "cabinet.n.01",
+                "not",
+                "inside",
+                "bowl.n.01_1",
+                "cabinet.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "microwave.n.02_1"
+            ],
+            [
+                "not",
+                "stained",
+                "microwave.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "cleaning_out_drawers_0_Benevolence_1_int_0_2021-10-20_05-03-27": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "piece_of_cloth.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "bowl.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "bowl.n.01_2",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "spoon.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "spoon.n.01_2",
+                "sink.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "rag.n.01",
+                "-",
+                "rag.n.01",
+                "soaked",
+                "rag.n.01"
+            ],
+            [
+                "soaked",
+                "scrub_brush.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "oven.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "shoe.n.01",
+                "-",
+                "shoe.n.01",
+                "not",
+                "stained",
+                "shoe.n.01"
+            ],
+            [
+                "forall",
+                "shoe.n.01",
+                "-",
+                "shoe.n.01",
+                "not",
+                "dusty",
+                "shoe.n.01"
+            ],
+            [
+                "onfloor",
+                "towel.n.01_1",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            true
+        ]
+    },
+    "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "towel.n.01_1",
+                "countertop.n.01_1"
+            ],
+            [
+                "nextto",
+                "brush.n.02_1",
+                "towel.n.01_1"
+            ],
+            [
+                "inside",
+                "soap.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "forall",
+                "gym_shoe.n.01",
+                "-",
+                "gym_shoe.n.01",
+                "not",
+                "dusty",
+                "gym_shoe.n.01"
+            ],
+            [
+                "forall",
+                "gym_shoe.n.01",
+                "-",
+                "gym_shoe.n.01",
+                "not",
+                "stained",
+                "gym_shoe.n.01"
+            ],
+            [
+                "forn",
+                "2",
+                "gym_shoe.n.01",
+                "-",
+                "gym_shoe.n.01",
+                "nextto",
+                "gym_shoe.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forn",
+                "2",
+                "gym_shoe.n.01",
+                "-",
+                "gym_shoe.n.01",
+                "under",
+                "gym_shoe.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forall",
+                "gym_shoe.n.01",
+                "-",
+                "gym_shoe.n.01",
+                "onfloor",
+                "gym_shoe.n.01",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_stove_0_Wainscott_0_int_0_2021-09-11_12-51-07": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "stove.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "stove.n.01_1"
+            ],
+            [
+                "nextto",
+                "rag.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "dishtowel.n.01_1",
+                "sink.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "pool.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "pool.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            false
+        ]
+    },
+    "cleaning_the_pool_0_Ihlen_0_int_0_2021-06-01_15-30-31": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "pool.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "pool.n.01_1"
+            ],
+            [
+                "ontop",
+                "scrub_brush.n.01_1",
+                "shelf.n.01_1"
+            ],
+            [
+                "onfloor",
+                "detergent.n.02_1",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            false,
+            false,
+            true
+        ]
+    },
+    "cleaning_toilet_0_Merom_0_int_1_2021-06-23_17-35-48": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "toilet.n.02_1"
+            ],
+            [
+                "onfloor",
+                "scrub_brush.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "onfloor",
+                "detergent.n.02_1",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            true,
+            true
+        ]
+    },
+    "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "bowl.n.01",
+                "-",
+                "bowl.n.01",
+                "not",
+                "stained",
+                "bowl.n.01"
+            ],
+            [
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "not",
+                "stained",
+                "plate.n.04"
+            ],
+            [
+                "forall",
+                "cup.n.01",
+                "-",
+                "cup.n.01",
+                "not",
+                "stained",
+                "cup.n.01"
+            ],
+            [
+                "forall",
+                "hamburger.n.01",
+                "-",
+                "hamburger.n.01",
+                "inside",
+                "hamburger.n.01",
+                "sack.n.01_1"
+            ],
+            [
+                "onfloor",
+                "sack.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "chair.n.01_2"
+            ],
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false
+        ]
+    },
+    "cleaning_up_refrigerator_0_Wainscott_0_int_1_2021-06-23_17-46-01": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "rag.n.01",
+                "-",
+                "rag.n.01",
+                "nextto",
+                "rag.n.01",
+                "sink.n.01_1"
+            ],
+            [
+                "inside",
+                "soap.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "forall",
+                "tray.n.01",
+                "-",
+                "tray.n.01",
+                "inside",
+                "tray.n.01",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "tray.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "tray.n.01_2"
+            ],
+            [
+                "nextto",
+                "bowl.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "bowl.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "electric_refrigerator.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "blender.n.01_1",
+                "countertop.n.01_1"
+            ],
+            [
+                "nextto",
+                "soap.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "and",
+                "inside",
+                "vegetable_oil.n.01_1",
+                "cabinet.n.01",
+                "not",
+                "inside",
+                "plate.n.04_1",
+                "cabinet.n.01"
+            ],
+            [
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "and",
+                "inside",
+                "plate.n.04_1",
+                "cabinet.n.01",
+                "not",
+                "inside",
+                "vegetable_oil.n.01_1",
+                "cabinet.n.01"
+            ],
+            [
+                "and",
+                "not",
+                "dusty",
+                "cabinet.n.01_1",
+                "not",
+                "dusty",
+                "cabinet.n.01_2",
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "plate.n.04_1"
+            ],
+            [
+                "or",
+                "nextto",
+                "rag.n.01_1",
+                "sink.n.01_1",
+                "inside",
+                "rag.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "and",
+                "inside",
+                "casserole.n.02_1",
+                "electric_refrigerator.n.01_1",
+                "inside",
+                "apple.n.01_1",
+                "electric_refrigerator.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+        ]
+    },
+    "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05": {
+        "success": false,
+        "subgoals": [
+            [
+                "and",
+                "soaked",
+                "rag.n.01_1",
+                "soaked",
+                "rag.n.01_2"
+            ],
+            [
+                "and",
+                "not",
+                "dusty",
+                "window.n.01_1",
+                "not",
+                "dusty",
+                "window.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "cup.n.01",
+                "-",
+                "cup.n.01",
+                "exists",
+                "bucket.n.01",
+                "-",
+                "bucket.n.01",
+                "inside",
+                "cup.n.01",
+                "bucket.n.01"
+            ],
+            [
+                "forall",
+                "bowl.n.01",
+                "-",
+                "bowl.n.01",
+                "exists",
+                "bucket.n.01",
+                "-",
+                "bucket.n.01",
+                "inside",
+                "bowl.n.01",
+                "bucket.n.01"
+            ],
+            [
+                "exists",
+                "bucket.n.01",
+                "-",
+                "bucket.n.01",
+                "inside",
+                "catsup.n.01_1",
+                "bucket.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pop.n.02",
+                "-",
+                "pop.n.02",
+                "inside",
+                "pop.n.02",
+                "bucket.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "gym_shoe.n.01_1",
+                "table.n.02_2"
+            ],
+            [
+                "ontop",
+                "necklace.n.01_1",
+                "table.n.02_2"
+            ],
+            [
+                "ontop",
+                "notebook.n.01_1",
+                "table.n.02_2"
+            ],
+            [
+                "forall",
+                "sock.n.01",
+                "-",
+                "sock.n.01",
+                "ontop",
+                "sock.n.01",
+                "table.n.02_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "receptacle.n.01_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "nextto",
+                "bucket.n.01_1",
+                "countertop.n.01_1"
+            ],
+            [
+                "ontop",
+                "scraper.n.01_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "ontop",
+                "towel.n.01_1",
+                "countertop.n.01_1"
+            ],
+            [
+                "inside",
+                "rag.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "soaked",
+                "rag.n.01_1"
+            ],
+            [
+                "forall",
+                "food.n.02",
+                "-",
+                "food.n.02",
+                "inside",
+                "food.n.02",
+                "bucket.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+        ]
+    },
+    "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "ontop",
+                "basket.n.01",
+                "countertop.n.01_1"
+            ],
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "egg.n.02",
+                "-",
+                "egg.n.02",
+                "inside",
+                "egg.n.02",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "candy.n.01",
+                "-",
+                "candy.n.01",
+                "inside",
+                "candy.n.01",
+                "basket.n.01"
+            ],
+            [
+                "exists",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "and",
+                "inside",
+                "jewelry.n.01_1",
+                "basket.n.01",
+                "inside",
+                "ball.n.01_1",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "bow.n.08",
+                "-",
+                "bow.n.08",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "or",
+                "ontop",
+                "bow.n.08",
+                "basket.n.01",
+                "inside",
+                "bow.n.08",
+                "basket.n.01"
+            ],
+            [
+                "forpairs",
+                "book.n.02",
+                "-",
+                "book.n.02",
+                "basket.n.01",
+                "-",
+                "basket.n.01",
+                "nextto",
+                "book.n.02",
+                "basket.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42": {
+        "success": false,
+        "subgoals": [
+            [
+                "forpairs",
+                "stocking.n.01",
+                "-",
+                "stocking.n.01",
+                "cube.n.05",
+                "-",
+                "cube.n.05",
+                "inside",
+                "cube.n.05",
+                "stocking.n.01"
+            ],
+            [
+                "forpairs",
+                "stocking.n.01",
+                "-",
+                "stocking.n.01",
+                "candy.n.01",
+                "-",
+                "candy.n.01",
+                "inside",
+                "candy.n.01",
+                "stocking.n.01"
+            ],
+            [
+                "forpairs",
+                "stocking.n.01",
+                "-",
+                "stocking.n.01",
+                "pen.n.01",
+                "-",
+                "pen.n.01",
+                "inside",
+                "pen.n.01",
+                "stocking.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24": {
+        "success": false,
+        "subgoals": [
+            [
+                "forpairs",
+                "alarm.n.02",
+                "-",
+                "alarm.n.02",
+                "table.n.02",
+                "-",
+                "table.n.02",
+                "ontop",
+                "alarm.n.02",
+                "table.n.02"
+            ],
+            [
+                "forall",
+                "alarm.n.02",
+                "-",
+                "alarm.n.02",
+                "toggled_on",
+                "alarm.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "installing_a_fax_machine_0_Beechwood_0_int_0_2021-10-25_20-22-22": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "facsimile.n.02_1",
+                "table.n.02_1"
+            ],
+            [
+                "toggled_on",
+                "facsimile.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "installing_a_modem_0_Beechwood_0_int_0_2021-10-25_20-28-55": {
+        "success": false,
+        "subgoals": [
+            [
+                "toggled_on",
+                "modem.n.01_1"
+            ],
+            [
+                "under",
+                "modem.n.01_1",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "printer.n.03_1",
+                "table.n.02_1"
+            ],
+            [
+                "toggled_on",
+                "printer.n.03_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "installing_a_scanner_0_Pomaria_0_int_0_2021-06-08_18-34-59": {
+        "success": false,
+        "subgoals": [
+            [
+                "toggled_on",
+                "scanner.n.02_1"
+            ],
+            [
+                "under",
+                "scanner.n.02_1",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "tile.n.01",
+                "-",
+                "tile.n.01",
+                "onfloor",
+                "tile.n.01",
+                "floor.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plywood.n.01",
+                "-",
+                "plywood.n.01",
+                "onfloor",
+                "plywood.n.01",
+                "floor.n.01_2"
+            ],
+            [
+                "forall",
+                "plywood.n.01",
+                "-",
+                "plywood.n.01",
+                "or",
+                "nextto",
+                "plywood.n.01",
+                "plywood.n.01_1",
+                "nextto",
+                "plywood.n.01",
+                "plywood.n.01_2",
+                "nextto",
+                "plywood.n.01",
+                "plywood.n.01_3",
+                "nextto",
+                "plywood.n.01",
+                "plywood.n.01_4"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "inside",
+                "plate.n.04",
+                "dishwasher.n.01_1"
+            ],
+            [
+                "forall",
+                "bowl.n.01",
+                "-",
+                "bowl.n.01",
+                "inside",
+                "bowl.n.01",
+                "dishwasher.n.01_1"
+            ],
+            [
+                "inside",
+                "mug.n.04_1",
+                "dishwasher.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "open",
+                "door.n.01_1"
+            ],
+            [
+                "not",
+                "open",
+                "door.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "open",
+                "window.n.01_1"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_2"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_3"
+            ],
+            [
+                "not",
+                "open",
+                "window.n.01_4"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48": {
+        "success": false,
+        "subgoals": [
+            [
+                "sliced",
+                "lemon.n.01_1"
+            ],
+            [
+                "ontop",
+                "teapot.n.01_1",
+                "stove.n.01_1"
+            ],
+            [
+                "inside",
+                "tea_bag.n.01_1",
+                "teapot.n.01_1"
+            ],
+            [
+                "soaked",
+                "tea_bag.n.01_1"
+            ],
+            [
+                "toggled_on",
+                "stove.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ],
+            [
+                "nextto",
+                "bucket.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "inside",
+                "soap.n.01_1",
+                "bucket.n.01_1"
+            ],
+            [
+                "nextto",
+                "broom.n.01_1",
+                "sink.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "carton.n.02_1",
+                "floor.n.01_2"
+            ],
+            [
+                "ontop",
+                "carton.n.02_2",
+                "carton.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "package.n.02",
+                "-",
+                "package.n.02",
+                "open",
+                "package.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "opening_presents_0_Benevolence_2_int_0_2021-10-25_21-10-48": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "package.n.02",
+                "-",
+                "package.n.02",
+                "open",
+                "package.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54": {
+        "success": false,
+        "subgoals": [
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "ball.n.01",
+                "-",
+                "ball.n.01",
+                "inside",
+                "ball.n.01",
+                "carton.n.02",
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "inside",
+                "plate.n.04",
+                "carton.n.02",
+                "inside",
+                "saucepan.n.01_1",
+                "carton.n.02"
+            ],
+            [
+                "forall",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "onfloor",
+                "carton.n.02",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            true
+        ]
+    },
+    "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "marker.n.03_1",
+                "table.n.02_1"
+            ],
+            [
+                "forall",
+                "document.n.01",
+                "-",
+                "document.n.01",
+                "inside",
+                "document.n.01",
+                "cabinet.n.01_1"
+            ],
+            [
+                "forall",
+                "folder.n.02",
+                "-",
+                "folder.n.02",
+                "inside",
+                "folder.n.02",
+                "cabinet.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24": {
+        "success": false,
+        "subgoals": [
+            [
+                "and",
+                "nextto",
+                "folder.n.02_1",
+                "book.n.02_1",
+                "nextto",
+                "folder.n.02_1",
+                "backpack.n.01_1",
+                "nextto",
+                "book.n.02_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "highlighter.n.02_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "pencil.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "pen.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "calculator.n.02_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "ontop",
+                "backpack.n.01_1",
+                "bed.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "jewelry.n.01",
+                "-",
+                "jewelry.n.01",
+                "inside",
+                "jewelry.n.01",
+                "backpack.n.01_1"
+            ],
+            [
+                "forall",
+                "makeup.n.01",
+                "-",
+                "makeup.n.01",
+                "inside",
+                "makeup.n.01",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "toothbrush.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "mouse.n.04_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "onfloor",
+                "backpack.n.01_1",
+                "floor.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "underwear.n.01",
+                "-",
+                "underwear.n.01",
+                "inside",
+                "underwear.n.01",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "toothbrush.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "shampoo.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "hardback.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "toothpaste.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "or",
+                "ontop",
+                "backpack.n.01_1",
+                "bed.n.01_1",
+                "onfloor",
+                "backpack.n.01_1",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+        ]
+    },
+    "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19": {
+        "success": false,
+        "subgoals": [
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "inside",
+                "plate.n.04",
+                "carton.n.02",
+                "inside",
+                "dishtowel.n.01_1",
+                "carton.n.02"
+            ],
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "book.n.02",
+                "-",
+                "book.n.02",
+                "inside",
+                "book.n.02",
+                "carton.n.02",
+                "forall",
+                "shirt.n.01",
+                "-",
+                "shirt.n.01",
+                "inside",
+                "shirt.n.01",
+                "carton.n.02",
+                "inside",
+                "sweater.n.01_1",
+                "carton.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23": {
+        "success": false,
+        "subgoals": [
+            [
+                "inside",
+                "briefcase.n.01_1",
+                "car.n.01_1"
+            ],
+            [
+                "inside",
+                "pencil_box.n.01_1",
+                "car.n.01_1"
+            ],
+            [
+                "inside",
+                "headset.n.01_1",
+                "car.n.01_1"
+            ],
+            [
+                "inside",
+                "duffel_bag.n.01_1",
+                "car.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "backpack.n.01_1",
+                "bed.n.01_1"
+            ],
+            [
+                "inside",
+                "sunglass.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "notebook.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "bracelet.n.02_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "apple.n.01_1",
+                "backpack.n.01_1"
+            ],
+            [
+                "inside",
+                "earphone.n.01_1",
+                "backpack.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15": {
+        "success": false,
+        "subgoals": [
+            [
+                "inside",
+                "sandwich.n.01_1",
+                "carton.n.02_1"
+            ],
+            [
+                "inside",
+                "apple.n.01_1",
+                "carton.n.02_1"
+            ],
+            [
+                "inside",
+                "snack_food.n.01_1",
+                "carton.n.02_1"
+            ],
+            [
+                "inside",
+                "juice.n.01_1",
+                "carton.n.02_1"
+            ],
+            [
+                "or",
+                "onfloor",
+                "carton.n.02_1",
+                "floor.n.01_1",
+                "ontop",
+                "carton.n.02_1",
+                "countertop.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            true
+        ]
+    },
+    "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14": {
+        "success": false,
+        "subgoals": [
+            [
+                "forpairs",
+                "chip.n.04",
+                "-",
+                "chip.n.04",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "inside",
+                "chip.n.04",
+                "carton.n.02"
+            ],
+            [
+                "forpairs",
+                "cookie.n.01",
+                "-",
+                "cookie.n.01",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "inside",
+                "cookie.n.01",
+                "carton.n.02"
+            ],
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "inside",
+                "salad.n.01_1",
+                "carton.n.02",
+                "inside",
+                "juice.n.01_1",
+                "carton.n.02",
+                "not",
+                "inside",
+                "sandwich.n.01_1",
+                "carton.n.02"
+            ],
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "inside",
+                "sandwich.n.01_1",
+                "carton.n.02",
+                "inside",
+                "pop.n.02_1",
+                "carton.n.02",
+                "not",
+                "inside",
+                "salad.n.01_1",
+                "carton.n.02"
+            ],
+            [
+                "or",
+                "inside",
+                "apple.n.01_1",
+                "carton.n.02_1",
+                "inside",
+                "banana.n.02_1",
+                "carton.n.02_1"
+            ],
+            [
+                "or",
+                "inside",
+                "apple.n.01_1",
+                "carton.n.02_2",
+                "inside",
+                "banana.n.02_1",
+                "carton.n.02_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29": {
+        "success": false,
+        "subgoals": [
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "chip.n.04",
+                "-",
+                "chip.n.04",
+                "inside",
+                "chip.n.04",
+                "carton.n.02",
+                "forall",
+                "sandwich.n.01",
+                "-",
+                "sandwich.n.01",
+                "inside",
+                "sandwich.n.01",
+                "carton.n.02"
+            ],
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "strawberry.n.01",
+                "-",
+                "strawberry.n.01",
+                "inside",
+                "strawberry.n.01",
+                "carton.n.02",
+                "forall",
+                "grape.n.01",
+                "-",
+                "grape.n.01",
+                "inside",
+                "grape.n.01",
+                "carton.n.02",
+                "forall",
+                "peach.n.03",
+                "-",
+                "peach.n.03",
+                "inside",
+                "peach.n.03",
+                "carton.n.02",
+                "nextto",
+                "melon.n.01_1",
+                "carton.n.02"
+            ],
+            [
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "and",
+                "forall",
+                "pop.n.02",
+                "-",
+                "pop.n.02",
+                "inside",
+                "pop.n.02",
+                "carton.n.02",
+                "forall",
+                "beer.n.01",
+                "-",
+                "beer.n.01",
+                "inside",
+                "beer.n.01",
+                "carton.n.02",
+                "forall",
+                "water.n.06",
+                "-",
+                "water.n.06",
+                "inside",
+                "water.n.06",
+                "carton.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "ontop",
+                "carton.n.02",
+                "table.n.02_1"
+            ],
+            [
+                "inside",
+                "sushi.n.01_1",
+                "carton.n.02_1"
+            ],
+            [
+                "inside",
+                "hamburger.n.01_1",
+                "carton.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            true,
+            true
+        ]
+    },
+    "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pad.n.01",
+                "-",
+                "pad.n.01",
+                "inside",
+                "pad.n.01",
+                "ashcan.n.01_1"
+            ],
+            [
+                "forall",
+                "pop.n.02",
+                "-",
+                "pop.n.02",
+                "inside",
+                "pop.n.02",
+                "ashcan.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "polishing_furniture_0_Ihlen_0_int_0_2021-10-26_11-35-40": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "table.n.02_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "shelf.n.01_1"
+            ],
+            [
+                "under",
+                "rag.n.01_1",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "rag.n.01_1",
+                "sink.n.01_1"
+            ],
+            [
+                "soaked",
+                "rag.n.01_1"
+            ],
+            [
+                "and",
+                "not",
+                "stained",
+                "shoe.n.01_1",
+                "not",
+                "stained",
+                "shoe.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "spoon.n.01_1"
+            ],
+            [
+                "not",
+                "dusty",
+                "spoon.n.01_2"
+            ],
+            [
+                "not",
+                "dusty",
+                "spoon.n.01_3"
+            ],
+            [
+                "not",
+                "dusty",
+                "spoon.n.01_4"
+            ],
+            [
+                "not",
+                "inside",
+                "rag.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "spoon.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "spoon.n.01_2",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "spoon.n.01_3",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "spoon.n.01_4",
+                "cabinet.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+        ]
+    },
+    "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "towel.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "onfloor",
+                "shampoo.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "nextto",
+                "soap.n.01_1",
+                "sink.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            true,
+            false
+        ]
+    },
+    "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24": {
+        "success": false,
+        "subgoals": [
+            [
+                "forpairs",
+                "lettuce.n.03",
+                "-",
+                "lettuce.n.03",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "ontop",
+                "lettuce.n.03",
+                "plate.n.04"
+            ],
+            [
+                "forpairs",
+                "apple.n.01",
+                "-",
+                "apple.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "and",
+                "sliced",
+                "apple.n.01",
+                "ontop",
+                "apple.n.01",
+                "plate.n.04"
+            ],
+            [
+                "forpairs",
+                "tomato.n.01",
+                "-",
+                "tomato.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "and",
+                "ontop",
+                "tomato.n.01",
+                "plate.n.04",
+                "sliced",
+                "tomato.n.01"
+            ],
+            [
+                "forpairs",
+                "radish.n.01",
+                "-",
+                "radish.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "ontop",
+                "radish.n.01",
+                "plate.n.04"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "preserving_food_0_Rs_int_0_2021-08-25_15-53-33": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "strawberry.n.01",
+                "-",
+                "strawberry.n.01",
+                "sliced",
+                "strawberry.n.01"
+            ],
+            [
+                "forall",
+                "strawberry.n.01",
+                "-",
+                "strawberry.n.01",
+                "cooked",
+                "strawberry.n.01"
+            ],
+            [
+                "forall",
+                "strawberry.n.01",
+                "-",
+                "strawberry.n.01",
+                "inside",
+                "strawberry.n.01",
+                "jar.n.01_1"
+            ],
+            [
+                "not",
+                "open",
+                "jar.n.01_1"
+            ],
+            [
+                "inside",
+                "beef.n.02_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "frozen",
+                "beef.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "wreath.n.01",
+                "-",
+                "wreath.n.01",
+                "nextto",
+                "wreath.n.01",
+                "cabinet.n.01_1"
+            ],
+            [
+                "forall",
+                "bow.n.08",
+                "-",
+                "bow.n.08",
+                "nextto",
+                "bow.n.08",
+                "cabinet.n.01_1"
+            ],
+            [
+                "forall",
+                "ribbon.n.01",
+                "-",
+                "ribbon.n.01",
+                "inside",
+                "ribbon.n.01",
+                "cabinet.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pumpkin.n.02",
+                "-",
+                "pumpkin.n.02",
+                "inside",
+                "pumpkin.n.02",
+                "cabinet.n.01_1"
+            ],
+            [
+                "forall",
+                "candle.n.01",
+                "-",
+                "candle.n.01",
+                "inside",
+                "candle.n.01",
+                "cabinet.n.01_1"
+            ],
+            [
+                "or",
+                "nextto",
+                "sheet.n.03_1",
+                "table.n.02_1",
+                "ontop",
+                "sheet.n.03_1",
+                "table.n.02_1"
+            ],
+            [
+                "nextto",
+                "caldron.n.01_1",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plaything.n.01",
+                "-",
+                "plaything.n.01",
+                "exists",
+                "carton.n.02",
+                "-",
+                "carton.n.02",
+                "inside",
+                "plaything.n.01",
+                "carton.n.02"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09": {
+        "success": false,
+        "subgoals": [
+            [
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "inside",
+                "plate.n.04",
+                "cabinet.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pasta.n.02",
+                "-",
+                "pasta.n.02",
+                "inside",
+                "pasta.n.02",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "forall",
+                "sauce.n.01",
+                "-",
+                "sauce.n.01",
+                "inside",
+                "sauce.n.01",
+                "electric_refrigerator.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "wrapping.n.01",
+                "-",
+                "wrapping.n.01",
+                "or",
+                "nextto",
+                "wrapping.n.01",
+                "christmas_tree.n.05_1",
+                "under",
+                "wrapping.n.01",
+                "christmas_tree.n.05_1"
+            ],
+            [
+                "forall",
+                "candle.n.01",
+                "-",
+                "candle.n.01",
+                "ontop",
+                "candle.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forn",
+                "1",
+                "bow.n.08",
+                "-",
+                "bow.n.08",
+                "ontop",
+                "bow.n.08",
+                "table.n.02_1"
+            ],
+            [
+                "forn",
+                "2",
+                "bow.n.08",
+                "-",
+                "bow.n.08",
+                "ontop",
+                "bow.n.08",
+                "sofa.n.01_1"
+            ],
+            [
+                "ontop",
+                "wreath.n.01_1",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "re-shelving_library_books_0_Rs_int_0_2021-10-25_21-22-26": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "book.n.02_1",
+                "shelf.n.01_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_2",
+                "shelf.n.01_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_3",
+                "shelf.n.01_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_4",
+                "shelf.n.01_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_5",
+                "table.n.02_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_6",
+                "table.n.02_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_7",
+                "table.n.02_1"
+            ],
+            [
+                "ontop",
+                "book.n.02_8",
+                "table.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+        ]
+    },
+    "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "lamp.n.02_1",
+                "door.n.01_1"
+            ],
+            [
+                "nextto",
+                "lamp.n.02_2",
+                "window.n.01_1"
+            ],
+            [
+                "touching",
+                "seat.n.03_1",
+                "bed.n.01_1"
+            ],
+            [
+                "nextto",
+                "seat.n.03_2",
+                "window.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "ontop",
+                "plate.n.04",
+                "table.n.02_1"
+            ],
+            [
+                "forall",
+                "knife.n.01",
+                "-",
+                "knife.n.01",
+                "ontop",
+                "knife.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forall",
+                "fork.n.01",
+                "-",
+                "fork.n.01",
+                "ontop",
+                "fork.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forpairs",
+                "spoon.n.01",
+                "-",
+                "spoon.n.01",
+                "soup.n.01",
+                "-",
+                "soup.n.01",
+                "nextto",
+                "spoon.n.01",
+                "soup.n.01"
+            ],
+            [
+                "forall",
+                "water.n.06",
+                "-",
+                "water.n.06",
+                "ontop",
+                "water.n.06",
+                "table.n.02_1"
+            ],
+            [
+                "forpairs",
+                "chicken.n.01",
+                "-",
+                "chicken.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "ontop",
+                "chicken.n.01",
+                "plate.n.04"
+            ],
+            [
+                "forpairs",
+                "salad.n.01",
+                "-",
+                "salad.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "nextto",
+                "salad.n.01",
+                "plate.n.04"
+            ],
+            [
+                "forpairs",
+                "bread.n.01",
+                "-",
+                "bread.n.01",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "nextto",
+                "bread.n.01",
+                "plate.n.04"
+            ],
+            [
+                "forpairs",
+                "cake.n.03",
+                "-",
+                "cake.n.03",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "nextto",
+                "cake.n.03",
+                "plate.n.04"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22": {
+        "success": false,
+        "subgoals": [
+            [
+                "ontop",
+                "tray.n.01_1",
+                "table.n.02_1"
+            ],
+            [
+                "forall",
+                "cracker.n.01",
+                "-",
+                "cracker.n.01",
+                "ontop",
+                "cracker.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forpairs",
+                "salad.n.01",
+                "-",
+                "salad.n.01",
+                "cracker.n.01",
+                "-",
+                "cracker.n.01",
+                "nextto",
+                "salad.n.01",
+                "cracker.n.01"
+            ],
+            [
+                "forpairs",
+                "cheese.n.01",
+                "-",
+                "cheese.n.01",
+                "parsley.n.02",
+                "-",
+                "parsley.n.02",
+                "ontop",
+                "parsley.n.02",
+                "cheese.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            true,
+            false,
+            false
+        ]
+    },
+    "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "mousetrap.n.01_1",
+                "floor.n.01_1"
+            ],
+            [
+                "onfloor",
+                "mousetrap.n.01_2",
+                "floor.n.01_1"
+            ],
+            [
+                "nextto",
+                "mousetrap.n.01_3",
+                "toilet.n.02_1"
+            ],
+            [
+                "nextto",
+                "mousetrap.n.01_4",
+                "toilet.n.02_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "setting_up_candles_0_Wainscott_0_int_0_2021-10-26_13-40-51": {
+        "success": false,
+        "subgoals": [
+            [
+                "forn",
+                "3",
+                "candle.n.01",
+                "-",
+                "candle.n.01",
+                "ontop",
+                "candle.n.01",
+                "table.n.02_1"
+            ],
+            [
+                "forn",
+                "3",
+                "candle.n.01",
+                "-",
+                "candle.n.01",
+                "ontop",
+                "candle.n.01",
+                "table.n.02_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "hardback.n.01",
+                "-",
+                "hardback.n.01",
+                "ontop",
+                "hardback.n.01",
+                "shelf.n.01_1"
+            ],
+            [
+                "forall",
+                "book.n.02",
+                "-",
+                "book.n.02",
+                "ontop",
+                "book.n.02",
+                "shelf.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01": {
+        "success": false,
+        "subgoals": [
+            [
+                "inside",
+                "bread.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "flour.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "and",
+                "inside",
+                "milk.n.01_1",
+                "electric_refrigerator.n.01_1",
+                "inside",
+                "meat.n.01_1",
+                "electric_refrigerator.n.01_1",
+                "inside",
+                "cheese.n.01_1",
+                "electric_refrigerator.n.01_1",
+                "inside",
+                "yogurt.n.01_1",
+                "electric_refrigerator.n.01_1",
+                "inside",
+                "soup.n.01_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "forall",
+                "carrot.n.03",
+                "-",
+                "carrot.n.03",
+                "and",
+                "inside",
+                "carrot.n.03",
+                "electric_refrigerator.n.01_1",
+                "or",
+                "nextto",
+                "carrot.n.03",
+                "carrot.n.03_1",
+                "nextto",
+                "carrot.n.03",
+                "carrot.n.03_2",
+                "nextto",
+                "carrot.n.03",
+                "carrot.n.03_3"
+            ],
+            [
+                "inside",
+                "broccoli.n.02_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "forall",
+                "apple.n.01",
+                "-",
+                "apple.n.01",
+                "and",
+                "inside",
+                "apple.n.01",
+                "electric_refrigerator.n.01_1",
+                "or",
+                "nextto",
+                "apple.n.01",
+                "apple.n.01_1",
+                "nextto",
+                "apple.n.01",
+                "apple.n.01_2"
+            ],
+            [
+                "forall",
+                "orange.n.01",
+                "-",
+                "orange.n.01",
+                "and",
+                "ontop",
+                "orange.n.01",
+                "table.n.02_1",
+                "or",
+                "nextto",
+                "orange.n.01",
+                "orange.n.01_1",
+                "nextto",
+                "orange.n.01",
+                "orange.n.01_2",
+                "nextto",
+                "orange.n.01",
+                "orange.n.01_3"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "envelope.n.01",
+                "-",
+                "envelope.n.01",
+                "or",
+                "touching",
+                "envelope.n.01",
+                "envelope.n.01_1",
+                "touching",
+                "envelope.n.01",
+                "envelope.n.01_2",
+                "touching",
+                "envelope.n.01",
+                "envelope.n.01_3",
+                "touching",
+                "envelope.n.01",
+                "envelope.n.01_4"
+            ],
+            [
+                "forall",
+                "newspaper.n.03",
+                "-",
+                "newspaper.n.03",
+                "or",
+                "touching",
+                "newspaper.n.03",
+                "newspaper.n.03_1",
+                "touching",
+                "newspaper.n.03",
+                "newspaper.n.03_2",
+                "touching",
+                "newspaper.n.03",
+                "newspaper.n.03_3",
+                "touching",
+                "newspaper.n.03",
+                "newspaper.n.03_4"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "storing_food_0_Rs_int_0_2021-10-25_21-27-36": {
+        "success": false,
+        "subgoals": [
+            [
+                "inside",
+                "oatmeal.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "oatmeal.n.01_2",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "chip.n.04_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "chip.n.04_2",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "vegetable_oil.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "vegetable_oil.n.01_2",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "sugar.n.01_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "sugar.n.01_2",
+                "cabinet.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47": {
+        "success": false,
+        "subgoals": [
+            [
+                "inside",
+                "cereal.n.03_1",
+                "cabinet.n.01_1"
+            ],
+            [
+                "inside",
+                "cereal.n.03_2",
+                "cabinet.n.01_1"
+            ],
+            [
+                "nextto",
+                "cereal.n.03_1",
+                "cereal.n.03_2"
+            ],
+            [
+                "inside",
+                "lettuce.n.03_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "inside",
+                "lettuce.n.03_2",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "nextto",
+                "lettuce.n.03_1",
+                "lettuce.n.03_2"
+            ],
+            [
+                "inside",
+                "broccoli.n.02_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "inside",
+                "broccoli.n.02_2",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "nextto",
+                "broccoli.n.02_1",
+                "broccoli.n.02_2"
+            ],
+            [
+                "inside",
+                "raspberry.n.02_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "inside",
+                "raspberry.n.02_2",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "nextto",
+                "raspberry.n.02_1",
+                "raspberry.n.02_2"
+            ],
+            [
+                "inside",
+                "pork.n.01_1",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "inside",
+                "pork.n.01_2",
+                "electric_refrigerator.n.01_1"
+            ],
+            [
+                "nextto",
+                "pork.n.01_1",
+                "pork.n.01_2"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33": {
+        "success": false,
+        "subgoals": [
+            [
+                "nextto",
+                "date.n.08_1",
+                "fish.n.02_1"
+            ],
+            [
+                "nextto",
+                "fish.n.02_1",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "fish.n.02_2",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "fish.n.02_3",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "fish.n.02_4",
+                "sink.n.01_1"
+            ],
+            [
+                "nextto",
+                "olive.n.04_1",
+                "sink.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "hamburger.n.01",
+                "-",
+                "hamburger.n.01",
+                "inside",
+                "hamburger.n.01",
+                "ashcan.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34": {
+        "success": false,
+        "subgoals": [
+            [
+                "onfloor",
+                "carton.n.02_1",
+                "floor.n.01_1"
+            ],
+            [
+                "forall",
+                "sock.n.01",
+                "-",
+                "sock.n.01",
+                "ontop",
+                "sock.n.01",
+                "sofa.n.01_1"
+            ],
+            [
+                "ontop",
+                "perfume.n.02_1",
+                "sofa.n.01_1"
+            ],
+            [
+                "ontop",
+                "toothbrush.n.01_1",
+                "sofa.n.01_1"
+            ],
+            [
+                "ontop",
+                "notebook.n.01_1",
+                "sofa.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            true,
+            false,
+            false,
+            false,
+            false
+        ]
+    },
+    "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "washing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_22-38-10": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "car.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "car.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false
+        ]
+    },
+    "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "plate.n.04",
+                "-",
+                "plate.n.04",
+                "not",
+                "stained",
+                "plate.n.04"
+            ],
+            [
+                "not",
+                "stained",
+                "cup.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "bowl.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "or",
+                "dusty",
+                "floor.n.01_1",
+                "stained",
+                "floor.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pan.n.01",
+                "-",
+                "pan.n.01",
+                "and",
+                "not",
+                "stained",
+                "pan.n.01",
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "inside",
+                "pan.n.01",
+                "cabinet.n.01"
+            ],
+            [
+                "forall",
+                "kettle.n.01",
+                "-",
+                "kettle.n.01",
+                "and",
+                "not",
+                "stained",
+                "kettle.n.01",
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "inside",
+                "kettle.n.01",
+                "cabinet.n.01"
+            ],
+            [
+                "forall",
+                "teapot.n.01",
+                "-",
+                "teapot.n.01",
+                "and",
+                "not",
+                "stained",
+                "teapot.n.01",
+                "exists",
+                "cabinet.n.01",
+                "-",
+                "cabinet.n.01",
+                "inside",
+                "teapot.n.01",
+                "cabinet.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false,
+            false,
+            false
+        ]
+    },
+    "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01": {
+        "success": false,
+        "subgoals": [
+            [
+                "forall",
+                "pot_plant.n.01",
+                "-",
+                "pot_plant.n.01",
+                "soaked",
+                "pot_plant.n.01"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    },
+    "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46": {
+        "success": false,
+        "subgoals": [
+            [
+                "not",
+                "dusty",
+                "vehicle.n.01_1"
+            ]
+        ],
+        "subgoal_success": [
+            false
+        ]
+    }
+}

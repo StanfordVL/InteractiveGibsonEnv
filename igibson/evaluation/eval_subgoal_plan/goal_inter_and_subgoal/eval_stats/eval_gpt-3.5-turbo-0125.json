@@ -1,0 +1,2695 @@
+{
+    "assembling_gift_baskets_0_Beechwood_0_int_0_2021-10-26_12-46-37": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'candle_0'}, {'action': 'RIGHT_RELEASE', 'object': 'candle_0'}, {'action': 'RIGHT_GRASP', 'object': 'cheese_0'}, {'action': 'RIGHT_RELEASE', 'object': 'cheese_0'}, {'action': 'RIGHT_GRASP', 'object': 'cookie_0'}, {'action': 'RIGHT_RELEASE', 'object': 'cookie_0'}, {'action': 'RIGHT_GRASP', 'object': 'bow_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "candle.n.01",
+                    "-",
+                    "candle.n.01",
+                    "inside",
+                    "candle.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "cheese.n.01",
+                    "-",
+                    "cheese.n.01",
+                    "inside",
+                    "cheese.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "cookie.n.01",
+                    "-",
+                    "cookie.n.01",
+                    "inside",
+                    "cookie.n.01",
+                    "basket.n.01"
+                ],
+                [
+                    "forpairs",
+                    "basket.n.01",
+                    "-",
+                    "basket.n.01",
+                    "bow.n.08",
+                    "-",
+                    "bow.n.08",
+                    "inside",
+                    "bow.n.08",
+                    "basket.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "bottling_fruit_0_Wainscott_0_int_0_2021-05-24_19-46-46": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'ontop(strawberry.0, countertop.84)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'strawberry_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_97 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "and",
+                    "inside",
+                    "strawberry.n.01_1",
+                    "jar.n.01",
+                    "not",
+                    "inside",
+                    "peach.n.03_1",
+                    "jar.n.01"
+                ],
+                [
+                    "exists",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "and",
+                    "inside",
+                    "peach.n.03_1",
+                    "jar.n.01",
+                    "not",
+                    "inside",
+                    "strawberry.n.01_1",
+                    "jar.n.01"
+                ],
+                [
+                    "forall",
+                    "jar.n.01",
+                    "-",
+                    "jar.n.01",
+                    "not",
+                    "open",
+                    "jar.n.01"
+                ],
+                [
+                    "sliced",
+                    "strawberry.n.01_1"
+                ],
+                [
+                    "sliced",
+                    "peach.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true,
+                false,
+                false
+            ]
+        }
+    },
+    "boxing_books_up_for_storage_0_Benevolence_1_int_0_2021-09-10_15-35-47": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'notebook_59'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'notebook_60'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'notebook_61'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'notebook_62'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'notebook_63'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'hardback_64'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}, {'action': 'LEFT_GRASP', 'object': 'hardback_65'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'carton_66'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "book.n.02",
+                    "-",
+                    "book.n.02",
+                    "inside",
+                    "book.n.02",
+                    "carton.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "bringing_in_wood_0_Benevolence_1_int_0_2021-09-15_18-42-25": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'bringing_in_wood', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(plywood.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "brushing_lint_off_clothing_0_Pomaria_2_int_0_2021-06-04_17-41-56": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_40'}, {'action': 'CLEAN', 'object': 'sweater_36'}, {'action': 'CLEAN', 'object': 'sweater_37'}, {'action': 'CLEAN', 'object': 'sweater_38'}, {'action': 'CLEAN', 'object': 'sweater_39'}, {'action': 'LEFT_GRASP', 'object': 'sweater_38'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}, {'action': 'LEFT_GRASP', 'object': 'sweater_39'}, {'action': 'LEFT_PLACE_ONTOP', 'object': 'bed_11'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "sweater.n.01",
+                    "-",
+                    "sweater.n.01",
+                    "not",
+                    "dusty",
+                    "sweater.n.01"
+                ],
+                [
+                    "forall",
+                    "sweater.n.01",
+                    "-",
+                    "sweater.n.01",
+                    "ontop",
+                    "sweater.n.01",
+                    "bed.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false
+            ]
+        }
+    },
+    "chopping_vegetables_0_Rs_int_0_2021-05-25_22-01-16": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'chopping_vegetables', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(casserole.70) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "cleaning_a_car_0_Ihlen_0_int_0_2021-09-11_16-37-11": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'soaked(rag.0)', 'failed_action': {'action': 'SOAK', 'object': 'rag_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object rag_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "car.n.01_1"
+                ],
+                [
+                    "inside",
+                    "soap.n.01_1",
+                    "bucket.n.01_1"
+                ],
+                [
+                    "inside",
+                    "rag.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_barbecue_grill_0_Ihlen_0_int_0_2021-09-10_16-02-39": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_51'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_32'}, {'action': 'TOGGLE_ON', 'object': 'sink_32'}], 'failed_subgoal': 'Not(stained(grill.50))', 'failed_action': {'action': 'CLEAN', 'object': 'grill_50'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "grill.n.02_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "grill.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_bathrooms_0_Benevolence_0_int_1_2021-06-12_19-33-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_0'}], 'failed_subgoal': 'soaked(rag.0)', 'failed_action': {'action': 'SOAK', 'object': 'rag_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object rag_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "toilet.n.02_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "bathtub.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "sink.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ],
+                [
+                    "and",
+                    "soaked",
+                    "rag.n.01_1",
+                    "inside",
+                    "rag.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_bathtub_0_Pomaria_0_int_0_2021-09-10_16-22-10": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_0'}], 'failed_subgoal': 'Not(stained(bathtub.35))', 'failed_action': {'action': 'CLEAN', 'object': 'bathtub_35'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "bathtub.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "cleaning_bedroom_0_Benevolence_2_int_0_2021-06-06_18-10-59": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'OPEN', 'object': 'bottom_cabinet_2'}, {'action': 'OPEN', 'object': 'bottom_cabinet_0'}, {'action': 'RIGHT_GRASP', 'object': 'jeans_46'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_2'}, {'action': 'RIGHT_GRASP', 'object': 'jeans_47'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_2'}, {'action': 'RIGHT_GRASP', 'object': 'necklace_48'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_2'}, {'action': 'RIGHT_GRASP', 'object': 'cologne_49'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_2'}, {'action': 'RIGHT_GRASP', 'object': 'sheet_53'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_10'}, {'action': 'RIGHT_GRASP', 'object': 'painting_50'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'bed_10'}, {'action': 'RIGHT_GRASP', 'object': 'vacuum_51'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bed_10'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "apparel.n.01",
+                    "-",
+                    "apparel.n.01",
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "inside",
+                    "apparel.n.01",
+                    "cabinet.n.01"
+                ],
+                [
+                    "and",
+                    "inside",
+                    "jewelry.n.01_1",
+                    "cabinet.n.01_1",
+                    "inside",
+                    "perfume.n.02_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "sheet.n.03_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "dusty",
+                    "cabinet.n.01"
+                ],
+                [
+                    "nextto",
+                    "vacuum.n.04_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "painting.n.01_1",
+                    "sheet.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                true,
+                false,
+                true,
+                false
+            ]
+        }
+    },
+    "cleaning_carpets_0_Wainscott_1_int_0_2021-09-11_01-12-41": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hand_towel_102'}], 'failed_subgoal': 'inside(hand_towel.102, washer.49)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'washer_49'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object washer_49 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "cleaning_closet_0_Beechwood_1_int_0_2021-10-25_19-50-32": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'OPEN', 'object': 'bottom_cabinet_30'}, {'action': 'RIGHT_GRASP', 'object': 'hat_0'}], 'failed_subgoal': 'inside(hat.0, bottom_cabinet.44)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_44'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object bottom_cabinet_44 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "jewelry.n.01",
+                    "-",
+                    "jewelry.n.01",
+                    "inside",
+                    "jewelry.n.01",
+                    "cabinet.n.01_3"
+                ],
+                [
+                    "not",
+                    "inside",
+                    "umbrella.n.01_1",
+                    "cabinet.n.01_3"
+                ],
+                [
+                    "or",
+                    "inside",
+                    "hat.n.01_1",
+                    "cabinet.n.01_1",
+                    "ontop",
+                    "hat.n.01_1",
+                    "shelf.n.01_1"
+                ],
+                [
+                    "forall",
+                    "sandal.n.01",
+                    "-",
+                    "sandal.n.01",
+                    "and",
+                    "nextto",
+                    "sandal.n.01",
+                    "shelf.n.01_1",
+                    "onfloor",
+                    "sandal.n.01",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "cabinet.n.01_3"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "shelf.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_cupboards_0_Wainscott_1_int_1_2021-08-25_16-40-44": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(screwdriver.108)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'screwdriver_108'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_24 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "dusty",
+                    "cabinet.n.01"
+                ],
+                [
+                    "forall",
+                    "book.n.02",
+                    "-",
+                    "book.n.02",
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "inside",
+                    "book.n.02",
+                    "cabinet.n.01"
+                ],
+                [
+                    "inside",
+                    "screwdriver.n.01_1",
+                    "bin.n.01_1"
+                ],
+                [
+                    "forall",
+                    "marker.n.03",
+                    "-",
+                    "marker.n.03",
+                    "inside",
+                    "marker.n.03",
+                    "bucket.n.01_1"
+                ],
+                [
+                    "inside",
+                    "pen.n.01_1",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_floors_0_Merom_0_int_1_2021-06-23_16-12-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'broom_0'}, {'action': 'LEFT_GRASP', 'object': 'dustpan_0'}, {'action': 'RIGHT_RELEASE', 'object': 'broom_0'}], 'failed_subgoal': 'Not(dusty(room_floor_bathroom.0))', 'failed_action': {'action': 'CLEAN', 'object': 'room_floor_bathroom_0'}, 'error_info': {'error_type': ['ErrorType.WRONG_TEMPORAL_ORDER'], 'error_info': ['Temporal order is wrong']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_freezer_0_Pomaria_1_int_0_2021-10-26_12-59-25": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(pop.0, sink.37)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'pop_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_20 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "forall",
+                    "food.n.01",
+                    "-",
+                    "food.n.01",
+                    "not",
+                    "inside",
+                    "food.n.01",
+                    "electric_refrigerator.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_garage_0_Ihlen_0_int_0_2021-08-24_17-40-48": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_garage', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(newspaper.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "cleaning_high_chair_0_Wainscott_0_int_0_2021-06-05_18-03-15": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'highchair_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_82'}, {'action': 'TOGGLE_ON', 'object': 'sink_82'}, {'action': 'CLEAN', 'object': 'highchair_0'}, {'action': 'CLEAN', 'object': 'highchair_0'}]], [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'highchair_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_82'}, {'action': 'TOGGLE_ON', 'object': 'sink_82'}, {'action': 'CLEAN', 'object': 'highchair_0'}, {'action': 'CLEAN', 'object': 'highchair_0'}], 'failed_subgoal': 'Not(stained(highchair.0))', 'failed_action': {'action': 'CLEAN', 'object': 'highchair_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "highchair.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "cleaning_kitchen_cupboard_0_Pomaria_1_int_0_2021-10-26_13-05-36": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'paper_towel_0'}, {'action': 'RIGHT_RELEASE', 'object': 'paper_towel_0'}, {'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'LEFT_GRASP', 'object': 'bowl_0'}], 'failed_subgoal': 'inside(bowl.0, top_cabinet.25)', 'failed_action': {'action': 'LEFT_PLACE_INSIDE', 'object': 'top_cabinet_25'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object top_cabinet_25 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "not",
+                    "dusty",
+                    "cabinet.n.01"
+                ],
+                [
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "forall",
+                    "bowl.n.01",
+                    "-",
+                    "bowl.n.01",
+                    "and",
+                    "inside",
+                    "bowl.n.01",
+                    "cabinet.n.01",
+                    "not",
+                    "inside",
+                    "cup.n.01_1",
+                    "cabinet.n.01"
+                ],
+                [
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "forall",
+                    "cup.n.01",
+                    "-",
+                    "cup.n.01",
+                    "and",
+                    "inside",
+                    "cup.n.01",
+                    "cabinet.n.01",
+                    "not",
+                    "inside",
+                    "bowl.n.01_1",
+                    "cabinet.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_microwave_oven_0_Benevolence_1_int_0_2021-09-11_01-27-10": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'microwave_36'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_19'}, {'action': 'TOGGLE_ON', 'object': 'sink_19'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'CLEAN', 'object': 'microwave_36'}, {'action': 'CLEAN', 'object': 'microwave_36'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "microwave.n.02_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "microwave.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "cleaning_out_drawers_0_Benevolence_1_int_0_2021-10-20_05-03-27": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(bath_towel.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'bath_towel_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_16 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "piece_of_cloth.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bowl.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bowl.n.01_2",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "spoon.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "spoon.n.01_2",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_oven_0_Benevolence_1_int_0_2021-09-11_12-20-40": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(rag.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'rag_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_15 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "rag.n.01",
+                    "-",
+                    "rag.n.01",
+                    "soaked",
+                    "rag.n.01"
+                ],
+                [
+                    "soaked",
+                    "scrub_brush.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "oven.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_shoes_0_Pomaria_2_int_0_2021-09-11_13-59-22": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_36'}, {'action': 'LEFT_GRASP', 'object': 'sandal_39'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_18'}], 'failed_subgoal': 'Not(stained(sandal.39))', 'failed_action': {'action': 'CLEAN', 'object': 'sandal_39'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "shoe.n.01",
+                    "-",
+                    "shoe.n.01",
+                    "not",
+                    "stained",
+                    "shoe.n.01"
+                ],
+                [
+                    "forall",
+                    "shoe.n.01",
+                    "-",
+                    "shoe.n.01",
+                    "not",
+                    "dusty",
+                    "shoe.n.01"
+                ],
+                [
+                    "onfloor",
+                    "towel.n.01_1",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "cleaning_sneakers_0_Pomaria_1_int_0_2021-10-26_13-36-08": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_sneakers', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_stove_0_Wainscott_0_int_0_2021-09-11_12-51-07": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'Not(dusty(stove.88))', 'failed_action': {'action': 'CLEAN', 'object': 'stove_88'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No cleaner in inventory or object not in toggled on cleaner (CLEAN_DUST)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "stove.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "stove.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "rag.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "dishtowel.n.01_1",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_table_after_clearing_0_Merom_1_int_0_2021-06-06_19-48-44": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(dishtowel.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'dishtowel_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_49 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "cleaning_the_hot_tub_0_Ihlen_0_int_0_2021-08-24_22-19-07": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_51'}], 'failed_subgoal': 'inside(pool.50, sink.38)', 'failed_action': {'action': 'LEFT_GRASP', 'object': 'pool_50'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object pool_50 too big to grasp']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "onfloor",
+                    "pool.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "pool.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                false
+            ]
+        }
+    },
+    "cleaning_the_pool_0_Ihlen_0_int_0_2021-06-01_15-30-31": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_51'}, {'action': 'RIGHT_RELEASE', 'object': 'scrub_brush_51'}, {'action': 'RIGHT_GRASP', 'object': 'detergent_52'}, {'action': 'CLEAN', 'object': 'pool_50'}, {'action': 'CLEAN', 'object': 'scrub_brush_51'}], 'failed_subgoal': 'Not(stained(scrub_brush.51))', 'failed_action': {'action': 'CLEAN', 'object': 'scrub_brush_51'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_51'}, {'action': 'RIGHT_RELEASE', 'object': 'scrub_brush_51'}, {'action': 'RIGHT_GRASP', 'object': 'detergent_52'}, {'action': 'CLEAN', 'object': 'pool_50'}, {'action': 'CLEAN', 'object': 'scrub_brush_51'}], 'failed_subgoal': 'Not(stained(detergent.52))', 'failed_action': {'action': 'CLEAN', 'object': 'detergent_52'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object detergent_52 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "onfloor",
+                    "pool.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "pool.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "scrub_brush.n.01_1",
+                    "shelf.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "detergent.n.02_1",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false,
+                false
+            ]
+        }
+    },
+    "cleaning_toilet_0_Merom_0_int_1_2021-06-23_17-35-48": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_70'}], 'failed_subgoal': 'Not(stained(toilet.45))', 'failed_action': {'action': 'CLEAN', 'object': 'toilet_45'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "stained",
+                    "toilet.n.02_1"
+                ],
+                [
+                    "onfloor",
+                    "scrub_brush.n.01_1",
+                    "floor.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "detergent.n.02_1",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "cleaning_up_after_a_meal_0_Wainscott_0_int_0_2021-10-20_05-33-24": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_up_after_a_meal', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object hamburger.107 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "cleaning_up_refrigerator_0_Wainscott_0_int_1_2021-06-23_17-46-01": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_up_refrigerator', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_up_the_kitchen_only_0_Pomaria_1_int_0_2021-10-26_00-50-16": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_up_the_kitchen_only', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "cleaning_windows_0_Wainscott_0_int_0_2021-05-23_23-07-05": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'cleaning_windows', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "clearing_the_table_after_dinner_0_Ihlen_0_int_0_2021-10-25_23-01-51": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'cup_0'}, {'action': 'LEFT_GRASP', 'object': 'bucket_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'cup_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'catsup_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "cup.n.01",
+                    "-",
+                    "cup.n.01",
+                    "exists",
+                    "bucket.n.01",
+                    "-",
+                    "bucket.n.01",
+                    "inside",
+                    "cup.n.01",
+                    "bucket.n.01"
+                ],
+                [
+                    "forall",
+                    "bowl.n.01",
+                    "-",
+                    "bowl.n.01",
+                    "exists",
+                    "bucket.n.01",
+                    "-",
+                    "bucket.n.01",
+                    "inside",
+                    "bowl.n.01",
+                    "bucket.n.01"
+                ],
+                [
+                    "exists",
+                    "bucket.n.01",
+                    "-",
+                    "bucket.n.01",
+                    "inside",
+                    "catsup.n.01_1",
+                    "bucket.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "collecting_aluminum_cans_0_Ihlen_1_int_0_2021-06-06_20-13-28": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'collecting_aluminum_cans', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(pop.112) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "collect_misplaced_items_0_Wainscott_0_int_1_2021-10-26_18-48-11": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'collect_misplaced_items', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: on'})",
+        "goal_info": null
+    },
+    "defrosting_freezer_0_Beechwood_0_int_0_2021-10-25_23-10-43": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'dustpan_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'bucket_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'scraper_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'fridge_57'}, {'action': 'RIGHT_GRASP', 'object': 'paper_towel_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'countertop_56'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_64'}], 'failed_subgoal': 'inside(pomelo.0, bucket.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'pomelo_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_57 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "receptacle.n.01_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "bucket.n.01_1",
+                    "countertop.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "scraper.n.01_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "ontop",
+                    "towel.n.01_1",
+                    "countertop.n.01_1"
+                ],
+                [
+                    "inside",
+                    "rag.n.01_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "soaked",
+                    "rag.n.01_1"
+                ],
+                [
+                    "forall",
+                    "food.n.02",
+                    "-",
+                    "food.n.02",
+                    "inside",
+                    "food.n.02",
+                    "bucket.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false
+            ]
+        }
+    },
+    "filling_an_Easter_basket_0_Benevolence_1_int_1_2021-09-10_00-09-54": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'filling_an_Easter_basket', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(egg.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "filling_a_Christmas_stocking_0_Rs_int_0_2021-06-04_18-47-42": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'filling_a_Christmas_stocking', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(ice_cube.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "installing_alarms_0_Merom_1_int_0_2021-05-23_23-02-24": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'alarm_0'}, {'action': 'LEFT_GRASP', 'object': 'alarm_1'}, {'action': 'RIGHT_RELEASE', 'object': 'alarm_0'}, {'action': 'TOGGLE_ON', 'object': 'alarm_0'}, {'action': 'TOGGLE_ON', 'object': 'alarm_1'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "alarm.n.02",
+                    "-",
+                    "alarm.n.02",
+                    "table.n.02",
+                    "-",
+                    "table.n.02",
+                    "ontop",
+                    "alarm.n.02",
+                    "table.n.02"
+                ],
+                [
+                    "forall",
+                    "alarm.n.02",
+                    "-",
+                    "alarm.n.02",
+                    "toggled_on",
+                    "alarm.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "installing_a_fax_machine_0_Beechwood_0_int_0_2021-10-25_20-22-22": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'facsimile_0'}, {'action': 'TOGGLE_ON', 'object': 'facsimile_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_37'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "ontop",
+                    "facsimile.n.02_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "toggled_on",
+                    "facsimile.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_modem_0_Beechwood_0_int_0_2021-10-25_20-28-55": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'modem_0'}, {'action': 'TOGGLE_ON', 'object': 'modem_0'}, {'action': 'RIGHT_PLACE_UNDER', 'object': 'breakfast_table_37'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "toggled_on",
+                    "modem.n.01_1"
+                ],
+                [
+                    "under",
+                    "modem.n.01_1",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_printer_0_Pomaria_0_int_0_2021-06-08_18-33-07": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'printer_0'}, {'action': 'TOGGLE_ON', 'object': 'printer_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_3'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "ontop",
+                    "printer.n.03_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "toggled_on",
+                    "printer.n.03_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "installing_a_scanner_0_Pomaria_0_int_0_2021-06-08_18-34-59": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'scanner_0'}, {'action': 'TOGGLE_ON', 'object': 'scanner_0'}, {'action': 'RIGHT_PLACE_UNDER', 'object': 'breakfast_table_3'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "toggled_on",
+                    "scanner.n.02_1"
+                ],
+                [
+                    "under",
+                    "scanner.n.02_1",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "laying_tile_floors_0_Beechwood_0_int_0_2021-10-26_17-26-23": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'tile_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'tile_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'tile_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}, {'action': 'RIGHT_GRASP', 'object': 'tile_3'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_corridor_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "tile.n.01",
+                    "-",
+                    "tile.n.01",
+                    "onfloor",
+                    "tile.n.01",
+                    "floor.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "laying_wood_floors_0_Pomaria_1_int_0_2021-10-25_20-46-59": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'plywood_78'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'plywood_79'}, {'action': 'RIGHT_GRASP', 'object': 'plywood_79'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'plywood_80'}, {'action': 'RIGHT_GRASP', 'object': 'plywood_80'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'plywood_81'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plywood.n.01",
+                    "-",
+                    "plywood.n.01",
+                    "onfloor",
+                    "plywood.n.01",
+                    "floor.n.01_2"
+                ],
+                [
+                    "forall",
+                    "plywood.n.01",
+                    "-",
+                    "plywood.n.01",
+                    "or",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_1",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_2",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_3",
+                    "nextto",
+                    "plywood.n.01",
+                    "plywood.n.01_4"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "loading_the_dishwasher_0_Benevolence_1_int_0_2021-10-20_06-10-42": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'plate_59'}, {'action': 'RIGHT_RELEASE', 'object': 'plate_59'}, {'action': 'RIGHT_GRASP', 'object': 'plate_60'}, {'action': 'RIGHT_RELEASE', 'object': 'plate_60'}, {'action': 'RIGHT_GRASP', 'object': 'plate_61'}, {'action': 'RIGHT_RELEASE', 'object': 'plate_61'}, {'action': 'RIGHT_GRASP', 'object': 'mug_62'}, {'action': 'RIGHT_RELEASE', 'object': 'mug_62'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_63'}, {'action': 'RIGHT_RELEASE', 'object': 'bowl_63'}, {'action': 'RIGHT_GRASP', 'object': 'bowl_64'}, {'action': 'LEFT_GRASP', 'object': 'plate_59'}], 'failed_subgoal': 'inside(plate.59, dishwasher.20)', 'failed_action': {'action': 'LEFT_PLACE_INSIDE', 'object': 'dishwasher_20'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object dishwasher_20 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "dishwasher.n.01_1"
+                ],
+                [
+                    "forall",
+                    "bowl.n.01",
+                    "-",
+                    "bowl.n.01",
+                    "inside",
+                    "bowl.n.01",
+                    "dishwasher.n.01_1"
+                ],
+                [
+                    "inside",
+                    "mug.n.04_1",
+                    "dishwasher.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "locking_every_door_0_Merom_1_int_0_2021-10-20_05-53-14": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'locking_every_door', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: closed'})",
+        "goal_info": null
+    },
+    "locking_every_window_0_Merom_1_int_0_2021-11-01_14-51-10": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'window_79'}, {'action': 'CLOSE', 'object': 'window_79'}, {'action': 'RIGHT_RELEASE', 'object': 'window_79'}, {'action': 'RIGHT_GRASP', 'object': 'window_76'}, {'action': 'CLOSE', 'object': 'window_76'}, {'action': 'RIGHT_RELEASE', 'object': 'window_76'}, {'action': 'RIGHT_GRASP', 'object': 'window_82'}, {'action': 'CLOSE', 'object': 'window_82'}, {'action': 'RIGHT_RELEASE', 'object': 'window_82'}, {'action': 'RIGHT_GRASP', 'object': 'window_81'}, {'action': 'CLOSE', 'object': 'window_81'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "not",
+                    "open",
+                    "window.n.01_1"
+                ],
+                [
+                    "not",
+                    "open",
+                    "window.n.01_2"
+                ],
+                [
+                    "not",
+                    "open",
+                    "window.n.01_3"
+                ],
+                [
+                    "not",
+                    "open",
+                    "window.n.01_4"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "making_tea_0_Wainscott_0_int_0_2021-10-26_12-49-48": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'making_tea', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object cutting_board.0 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "mopping_floors_0_Benevolence_2_int_0_2021-10-25_21-01-58": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'mopping_floors', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: cleaned'})",
+        "goal_info": null
+    },
+    "moving_boxes_to_storage_0_Merom_0_int_0_2021-06-11_20-04-35": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'moving_boxes_to_storage', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(carton.71) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "opening_packages_0_Benevolence_2_int_0_2021-10-25_21-06-42": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'package_0'}, {'action': 'OPEN', 'object': 'package_0'}, {'action': 'RIGHT_RELEASE', 'object': 'package_0'}, {'action': 'RIGHT_GRASP', 'object': 'package_1'}, {'action': 'OPEN', 'object': 'package_1'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "package.n.02",
+                    "-",
+                    "package.n.02",
+                    "open",
+                    "package.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "opening_presents_0_Benevolence_2_int_0_2021-10-25_21-10-48": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'package_0'}, {'action': 'OPEN', 'object': 'package_0'}, {'action': 'RIGHT_RELEASE', 'object': 'package_0'}, {'action': 'RIGHT_GRASP', 'object': 'package_1'}, {'action': 'OPEN', 'object': 'package_1'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "package.n.02",
+                    "-",
+                    "package.n.02",
+                    "open",
+                    "package.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "organizing_boxes_in_garage_0_Ihlen_0_int_0_2021-08-24_22-59-54": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'ball_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'plate_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'saucepan_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_0'}, {'action': 'RIGHT_GRASP', 'object': 'carton_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}, {'action': 'RIGHT_GRASP', 'object': 'ball_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'plate_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'carton_1'}, {'action': 'RIGHT_GRASP', 'object': 'carton_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'room_floor_garage_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "ball.n.01",
+                    "-",
+                    "ball.n.01",
+                    "inside",
+                    "ball.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "carton.n.02",
+                    "inside",
+                    "saucepan.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "forall",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "onfloor",
+                    "carton.n.02",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                true
+            ]
+        }
+    },
+    "organizing_file_cabinet_0_Pomaria_0_int_0_2021-06-08_15-27-20": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'highlighter_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_3'}, {'action': 'OPEN', 'object': 'bottom_cabinet_no_top_21'}, {'action': 'RIGHT_GRASP', 'object': 'document_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_21'}, {'action': 'RIGHT_GRASP', 'object': 'document_1'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_21'}, {'action': 'RIGHT_GRASP', 'object': 'document_2'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_21'}, {'action': 'RIGHT_GRASP', 'object': 'document_3'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_21'}, {'action': 'RIGHT_GRASP', 'object': 'folder_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_no_top_21'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "ontop",
+                    "marker.n.03_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "forall",
+                    "document.n.01",
+                    "-",
+                    "document.n.01",
+                    "inside",
+                    "document.n.01",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "forall",
+                    "folder.n.02",
+                    "-",
+                    "folder.n.02",
+                    "inside",
+                    "folder.n.02",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false
+            ]
+        }
+    },
+    "organizing_school_stuff_0_Wainscott_1_int_0_2021-08-24_22-56-24": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'organizing_school_stuff', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(backpack.108) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "packing_adult_s_bags_0_Ihlen_1_int_0_2021-10-26_09-54-15": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bracelet_116'}, {'action': 'LEFT_GRASP', 'object': 'necklace_117'}], 'failed_subgoal': 'inside(bracelet.116, backpack.112)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_112'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object backpack_112 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "jewelry.n.01",
+                    "-",
+                    "jewelry.n.01",
+                    "inside",
+                    "jewelry.n.01",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "forall",
+                    "makeup.n.01",
+                    "-",
+                    "makeup.n.01",
+                    "inside",
+                    "makeup.n.01",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "toothbrush.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "mouse.n.04_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "onfloor",
+                    "backpack.n.01_1",
+                    "floor.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "packing_bags_or_suitcase_0_Merom_1_int_0_2021-10-26_10-04-07": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_bags_or_suitcase', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(backpack.97) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "packing_boxes_for_household_move_or_trip_0_Ihlen_1_int_0_2021-06-08_19-16-19": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_boxes_for_household_move_or_trip', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object shirt.1 is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "packing_car_for_trip_0_Ihlen_0_int_0_2021-10-26_10-27-23": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'packing_car_for_trip', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(briefcase.51) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "packing_child_s_bag_0_Beechwood_1_int_0_2021-10-26_10-33-11": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'sunglass_105'}, {'action': 'LEFT_GRASP', 'object': 'notebook_101'}], 'failed_subgoal': 'inside(sunglass.105, backpack.100)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'backpack_100'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object backpack_100 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "backpack.n.01_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "inside",
+                    "sunglass.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "notebook.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "bracelet.n.02_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "apple.n.01_1",
+                    "backpack.n.01_1"
+                ],
+                [
+                    "inside",
+                    "earphone.n.01_1",
+                    "backpack.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "packing_food_for_work_0_Ihlen_1_int_0_2021-06-08_19-36-15": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'cooked(hamburger.0)', 'failed_action': {'action': 'COOK', 'object': 'hamburger_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_61 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "inside",
+                    "sandwich.n.01_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "inside",
+                    "apple.n.01_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "inside",
+                    "snack_food.n.01_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "inside",
+                    "juice.n.01_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "or",
+                    "onfloor",
+                    "carton.n.02_1",
+                    "floor.n.01_1",
+                    "ontop",
+                    "carton.n.02_1",
+                    "countertop.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "packing_lunches_0_Beechwood_0_int_0_2021-10-26_11-03-14": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'inside(chip.0, carton.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'chip_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_54 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forpairs",
+                    "chip.n.04",
+                    "-",
+                    "chip.n.04",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "inside",
+                    "chip.n.04",
+                    "carton.n.02"
+                ],
+                [
+                    "forpairs",
+                    "cookie.n.01",
+                    "-",
+                    "cookie.n.01",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "inside",
+                    "cookie.n.01",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "inside",
+                    "salad.n.01_1",
+                    "carton.n.02",
+                    "inside",
+                    "juice.n.01_1",
+                    "carton.n.02",
+                    "not",
+                    "inside",
+                    "sandwich.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "inside",
+                    "sandwich.n.01_1",
+                    "carton.n.02",
+                    "inside",
+                    "pop.n.02_1",
+                    "carton.n.02",
+                    "not",
+                    "inside",
+                    "salad.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "or",
+                    "inside",
+                    "apple.n.01_1",
+                    "carton.n.02_1",
+                    "inside",
+                    "banana.n.02_1",
+                    "carton.n.02_1"
+                ],
+                [
+                    "or",
+                    "inside",
+                    "apple.n.01_1",
+                    "carton.n.02_2",
+                    "inside",
+                    "banana.n.02_1",
+                    "carton.n.02_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "packing_picnics_0_Wainscott_0_int_0_2021-10-26_11-07-29": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(chip.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'chip_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_no_top_80 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "chip.n.04",
+                    "-",
+                    "chip.n.04",
+                    "inside",
+                    "chip.n.04",
+                    "carton.n.02",
+                    "forall",
+                    "sandwich.n.01",
+                    "-",
+                    "sandwich.n.01",
+                    "inside",
+                    "sandwich.n.01",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "inside",
+                    "strawberry.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "grape.n.01",
+                    "-",
+                    "grape.n.01",
+                    "inside",
+                    "grape.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "peach.n.03",
+                    "-",
+                    "peach.n.03",
+                    "inside",
+                    "peach.n.03",
+                    "carton.n.02",
+                    "nextto",
+                    "melon.n.01_1",
+                    "carton.n.02"
+                ],
+                [
+                    "exists",
+                    "carton.n.02",
+                    "-",
+                    "carton.n.02",
+                    "and",
+                    "forall",
+                    "pop.n.02",
+                    "-",
+                    "pop.n.02",
+                    "inside",
+                    "pop.n.02",
+                    "carton.n.02",
+                    "forall",
+                    "beer.n.01",
+                    "-",
+                    "beer.n.01",
+                    "inside",
+                    "beer.n.01",
+                    "carton.n.02",
+                    "forall",
+                    "water.n.06",
+                    "-",
+                    "water.n.06",
+                    "inside",
+                    "water.n.06",
+                    "carton.n.02"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "picking_up_take-out_food_0_Ihlen_1_int_0_2021-06-10_22-09-43": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'picking_up_take-out_food', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(sushi.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "picking_up_trash_0_Beechwood_0_int_1_2021-10-26_14-06-49": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'trash_can_116'}, {'action': 'LEFT_GRASP', 'object': 'sticky_note_117'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_116'}, {'action': 'LEFT_GRASP', 'object': 'sticky_note_118'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_116'}, {'action': 'LEFT_GRASP', 'object': 'sticky_note_119'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_116'}, {'action': 'LEFT_GRASP', 'object': 'pop_120'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_116'}, {'action': 'LEFT_GRASP', 'object': 'pop_121'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_116'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "pad.n.01",
+                    "-",
+                    "pad.n.01",
+                    "inside",
+                    "pad.n.01",
+                    "ashcan.n.01_1"
+                ],
+                [
+                    "forall",
+                    "pop.n.02",
+                    "-",
+                    "pop.n.02",
+                    "inside",
+                    "pop.n.02",
+                    "ashcan.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "polishing_furniture_0_Ihlen_0_int_0_2021-10-26_11-35-40": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'CLEAN', 'object': 'shelf_11'}, {'action': 'CLEAN', 'object': 'coffee_table_10'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "table.n.02_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "shelf.n.01_1"
+                ],
+                [
+                    "under",
+                    "rag.n.01_1",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false
+            ]
+        }
+    },
+    "polishing_shoes_0_Wainscott_0_int_0_2021-06-10_21-28-31": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'polishing_shoes', 'IncorrectParamLength': True, 'ObjectNotInScene': False, 'error_info': 'Object detergent is not in the scene\\n'})",
+        "goal_info": null
+    },
+    "polishing_silver_0_Merom_1_int_0_2021-10-26_11-43-15": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(rag.101)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'rag_101'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['bottom_cabinet_49 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_1"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_2"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_3"
+                ],
+                [
+                    "not",
+                    "dusty",
+                    "spoon.n.01_4"
+                ],
+                [
+                    "not",
+                    "inside",
+                    "rag.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_3",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "spoon.n.01_4",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                true
+            ]
+        }
+    },
+    "preparing_a_shower_for_child_0_Ihlen_0_int_0_2021-10-25_21-36-25": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'preparing_a_shower_for_child', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(dishtowel.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "preparing_salad_0_Pomaria_1_int_1_2021-10-26_14-17-24": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'preparing_salad', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(plate.87) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "preserving_food_0_Rs_int_0_2021-08-25_15-53-33": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'carving_knife_66'}, {'action': 'SLICE', 'object': 'strawberry_61'}], 'failed_subgoal': 'cooked(strawberry.61)', 'failed_action': {'action': 'COOK', 'object': 'strawberry_61'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['strawberry_61 is sliced, you need to interact with parts of it']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "sliced",
+                    "strawberry.n.01"
+                ],
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "cooked",
+                    "strawberry.n.01"
+                ],
+                [
+                    "forall",
+                    "strawberry.n.01",
+                    "-",
+                    "strawberry.n.01",
+                    "inside",
+                    "strawberry.n.01",
+                    "jar.n.01_1"
+                ],
+                [
+                    "not",
+                    "open",
+                    "jar.n.01_1"
+                ],
+                [
+                    "inside",
+                    "beef.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "frozen",
+                    "beef.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "putting_away_Christmas_decorations_0_Wainscott_0_int_0_2021-06-06_17-03-25": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'wreath_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_79'}, {'action': 'RIGHT_GRASP', 'object': 'wreath_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_79'}, {'action': 'RIGHT_GRASP', 'object': 'bow_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_79'}, {'action': 'RIGHT_GRASP', 'object': 'bow_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_79'}, {'action': 'RIGHT_GRASP', 'object': 'bow_2'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_79'}, {'action': 'RIGHT_GRASP', 'object': 'ribbon_0'}], 'failed_subgoal': 'inside(ribbon.0, bottom_cabinet.79)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bottom_cabinet_79'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object bottom_cabinet_79 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "wreath.n.01",
+                    "-",
+                    "wreath.n.01",
+                    "nextto",
+                    "wreath.n.01",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "forall",
+                    "bow.n.08",
+                    "-",
+                    "bow.n.08",
+                    "nextto",
+                    "bow.n.08",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "forall",
+                    "ribbon.n.01",
+                    "-",
+                    "ribbon.n.01",
+                    "inside",
+                    "ribbon.n.01",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false
+            ]
+        }
+    },
+    "putting_away_Halloween_decorations_0_Rs_int_0_2021-10-25_22-42-17": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'pumpkin_0'}, {'action': 'LEFT_GRASP', 'object': 'pumpkin_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_13'}, {'action': 'LEFT_PLACE_NEXTTO', 'object': 'bottom_cabinet_13'}, {'action': 'RIGHT_GRASP', 'object': 'candle_0'}, {'action': 'LEFT_GRASP', 'object': 'candle_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_13'}, {'action': 'LEFT_PLACE_NEXTTO', 'object': 'bottom_cabinet_13'}, {'action': 'RIGHT_GRASP', 'object': 'candle_2'}, {'action': 'LEFT_GRASP', 'object': 'cauldron_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bottom_cabinet_13'}, {'action': 'LEFT_PLACE_NEXTTO', 'object': 'coffee_table_5'}, {'action': 'OPEN', 'object': 'bottom_cabinet_13'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pumpkin.n.02",
+                    "-",
+                    "pumpkin.n.02",
+                    "inside",
+                    "pumpkin.n.02",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "forall",
+                    "candle.n.01",
+                    "-",
+                    "candle.n.01",
+                    "inside",
+                    "candle.n.01",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "or",
+                    "nextto",
+                    "sheet.n.03_1",
+                    "table.n.02_1",
+                    "ontop",
+                    "sheet.n.03_1",
+                    "table.n.02_1"
+                ],
+                [
+                    "nextto",
+                    "caldron.n.01_1",
+                    "table.n.02_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                true
+            ]
+        }
+    },
+    "putting_away_toys_0_Ihlen_0_int_0_2021-10-25_22-47-44": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'putting_away_toys', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(toy.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "putting_dishes_away_after_cleaning_0_Ihlen_1_int_0_2021-10-25_22-54-09": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}], 'failed_subgoal': 'Not(stained(plate.0))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_0'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}], 'failed_subgoal': 'Not(stained(plate.1))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_1'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}], 'failed_subgoal': 'Not(stained(plate.2))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_2'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}], 'failed_subgoal': 'Not(stained(plate.3))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_3'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'CLEAN', 'object': 'plate_0'}, {'action': 'CLEAN', 'object': 'plate_1'}, {'action': 'CLEAN', 'object': 'plate_2'}, {'action': 'CLEAN', 'object': 'plate_3'}, {'action': 'RIGHT_GRASP', 'object': 'plate_0'}], 'failed_subgoal': 'inside(plate.0, top_cabinet.62)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'top_cabinet_62'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object top_cabinet_62 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "inside",
+                    "plate.n.04",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "putting_leftovers_away_0_Ihlen_1_int_0_2021-06-08_13-42-57": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'frozen(pasta.0)', 'failed_action': {'action': 'FREEZE', 'object': 'pasta_0'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object pasta_0 does not have target state (HIGH_LEVEL_ACTION)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pasta.n.02",
+                    "-",
+                    "pasta.n.02",
+                    "inside",
+                    "pasta.n.02",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "forall",
+                    "sauce.n.01",
+                    "-",
+                    "sauce.n.01",
+                    "inside",
+                    "sauce.n.01",
+                    "electric_refrigerator.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'putting_up_Christmas_decorations_inside', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(wrapped_gift.119) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "re-shelving_library_books_0_Rs_int_0_2021-10-25_21-22-26": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 're-shelving_library_books', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(hardback.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "rearranging_furniture_0_Pomaria_2_int_1_2021-06-22_16-39-21": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'table_lamp_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'door_29'}, {'action': 'RIGHT_GRASP', 'object': 'floor_lamp_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'window_27'}, {'action': 'RIGHT_GRASP', 'object': 'chaise_longue_0'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'bed_11'}, {'action': 'RIGHT_GRASP', 'object': 'chaise_longue_1'}, {'action': 'RIGHT_PLACE_NEXTTO', 'object': 'window_27'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "lamp.n.02_1",
+                    "door.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "lamp.n.02_2",
+                    "window.n.01_1"
+                ],
+                [
+                    "touching",
+                    "seat.n.03_1",
+                    "bed.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "seat.n.03_2",
+                    "window.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true,
+                false,
+                true
+            ]
+        }
+    },
+    "serving_a_meal_0_Merom_1_int_0_2021-10-26_00-34-17": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'serving_a_meal', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(soup.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "serving_hors_d_oeuvres_0_Wainscott_0_int_0_2021-10-26_14-00-22": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'serving_hors_d_oeuvres', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(pretzel.152) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "setting_mousetraps_0_Beechwood_1_int_0_2021-10-26_13-53-26": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'setting_mousetraps', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(mousetrap.100) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "setting_up_candles_0_Wainscott_0_int_0_2021-10-26_13-40-51": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'candle_0'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'coffee_table_33'}, {'action': 'RIGHT_GRASP', 'object': 'candle_1'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'coffee_table_33'}, {'action': 'RIGHT_GRASP', 'object': 'candle_2'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'coffee_table_33'}, {'action': 'RIGHT_GRASP', 'object': 'candle_3'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_1'}, {'action': 'RIGHT_GRASP', 'object': 'candle_4'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_1'}, {'action': 'RIGHT_GRASP', 'object': 'candle_5'}, {'action': 'RIGHT_PLACE_ONTOP', 'object': 'breakfast_table_1'}]], [])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forn",
+                    "3",
+                    "candle.n.01",
+                    "-",
+                    "candle.n.01",
+                    "ontop",
+                    "candle.n.01",
+                    "table.n.02_1"
+                ],
+                [
+                    "forn",
+                    "3",
+                    "candle.n.01",
+                    "-",
+                    "candle.n.01",
+                    "ontop",
+                    "candle.n.01",
+                    "table.n.02_2"
+                ]
+            ],
+            "subgoal_success": [
+                true,
+                true
+            ]
+        }
+    },
+    "sorting_books_0_Pomaria_1_int_0_2021-10-26_13-27-18": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_books', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive ontop(hardback.78) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "sorting_groceries_0_Wainscott_0_int_0_2021-10-26_13-36-01": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_groceries', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive inside(milk.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "sorting_mail_0_Wainscott_0_int_1_2021-10-26_14-38-16": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'sorting_mail', 'syntactic_check': False, 'error_type': 'UnknownPrimitive', 'error_info': 'Error trying to process rule \"primitive\":\\n\\nUnknown primitive: stacked'})",
+        "goal_info": null
+    },
+    "storing_food_0_Rs_int_0_2021-10-25_21-27-36": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'oatmeal_0'}, {'action': 'LEFT_GRASP', 'object': 'oatmeal_1'}, {'action': 'RIGHT_RELEASE', 'object': 'oatmeal_0'}, {'action': 'RIGHT_GRASP', 'object': 'chip_0'}, {'action': 'LEFT_RELEASE', 'object': 'oatmeal_1'}, {'action': 'LEFT_GRASP', 'object': 'chip_1'}, {'action': 'RIGHT_RELEASE', 'object': 'chip_0'}, {'action': 'RIGHT_GRASP', 'object': 'olive_oil_0'}, {'action': 'LEFT_RELEASE', 'object': 'chip_1'}, {'action': 'LEFT_GRASP', 'object': 'olive_oil_1'}, {'action': 'RIGHT_RELEASE', 'object': 'olive_oil_0'}, {'action': 'RIGHT_GRASP', 'object': 'sugar_jar_0'}, {'action': 'LEFT_RELEASE', 'object': 'olive_oil_1'}, {'action': 'LEFT_GRASP', 'object': 'sugar_jar_1'}, {'action': 'RIGHT_RELEASE', 'object': 'sugar_jar_0'}, {'action': 'OPEN', 'object': 'bottom_cabinet_41'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "inside",
+                    "oatmeal.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "oatmeal.n.01_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "chip.n.04_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "chip.n.04_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "vegetable_oil.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "vegetable_oil.n.01_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "sugar.n.01_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "sugar.n.01_2",
+                    "cabinet.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "storing_the_groceries_0_Beechwood_0_int_0_2021-10-26_13-13-47": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'cereal_0'}], 'failed_subgoal': 'inside(cereal.0, fridge.57)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'fridge_57'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object fridge_57 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "inside",
+                    "cereal.n.03_1",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "inside",
+                    "cereal.n.03_2",
+                    "cabinet.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "cereal.n.03_1",
+                    "cereal.n.03_2"
+                ],
+                [
+                    "inside",
+                    "lettuce.n.03_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "lettuce.n.03_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "lettuce.n.03_1",
+                    "lettuce.n.03_2"
+                ],
+                [
+                    "inside",
+                    "broccoli.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "broccoli.n.02_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "broccoli.n.02_1",
+                    "broccoli.n.02_2"
+                ],
+                [
+                    "inside",
+                    "raspberry.n.02_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "raspberry.n.02_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "raspberry.n.02_1",
+                    "raspberry.n.02_2"
+                ],
+                [
+                    "inside",
+                    "pork.n.01_1",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "inside",
+                    "pork.n.01_2",
+                    "electric_refrigerator.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "pork.n.01_1",
+                    "pork.n.01_2"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "thawing_frozen_food_0_Pomaria_1_int_0_2021-10-26_13-10-33": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [], 'failed_subgoal': 'holds_rh(fish.0)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'fish_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['fridge_20 is closed, open first']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "nextto",
+                    "date.n.08_1",
+                    "fish.n.02_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_1",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_2",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_3",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "fish.n.02_4",
+                    "sink.n.01_1"
+                ],
+                [
+                    "nextto",
+                    "olive.n.04_1",
+                    "sink.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "throwing_away_leftovers_0_Ihlen_1_int_0_2021-06-04_19-52-40": {
+        "success": true,
+        "info": "('Correct', True, [[{'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_116'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_117'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_117'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_118'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_116'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_117'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'UNFREEZE', 'object': 'hamburger_116'}, {'action': 'UNFREEZE', 'object': 'hamburger_117'}, {'action': 'UNFREEZE', 'object': 'hamburger_118'}]], [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_116'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_117'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_117'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_118'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_116'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_117'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'UNFREEZE', 'object': 'hamburger_116'}, {'action': 'UNFREEZE', 'object': 'hamburger_117'}, {'action': 'UNFREEZE', 'object': 'hamburger_118'}], 'failed_subgoal': 'Not(frozen(hamburger.116))', 'failed_action': {'action': 'UNFREEZE', 'object': 'hamburger_116'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_116'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_117'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_117'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_118'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_116'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_117'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'UNFREEZE', 'object': 'hamburger_116'}, {'action': 'UNFREEZE', 'object': 'hamburger_117'}, {'action': 'UNFREEZE', 'object': 'hamburger_118'}], 'failed_subgoal': 'Not(frozen(hamburger.117))', 'failed_action': {'action': 'UNFREEZE', 'object': 'hamburger_117'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'hamburger_116'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_116'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_117'}, {'action': 'RIGHT_RELEASE', 'object': 'hamburger_117'}, {'action': 'RIGHT_GRASP', 'object': 'hamburger_118'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_116'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'LEFT_GRASP', 'object': 'hamburger_117'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'trash_can_119'}, {'action': 'UNFREEZE', 'object': 'hamburger_116'}, {'action': 'UNFREEZE', 'object': 'hamburger_117'}, {'action': 'UNFREEZE', 'object': 'hamburger_118'}], 'failed_subgoal': 'Not(frozen(hamburger.118))', 'failed_action': {'action': 'UNFREEZE', 'object': 'hamburger_118'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}])",
+        "goal_info": {
+            "success": true,
+            "subgoals": [
+                [
+                    "forall",
+                    "hamburger.n.01",
+                    "-",
+                    "hamburger.n.01",
+                    "inside",
+                    "hamburger.n.01",
+                    "ashcan.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                true
+            ]
+        }
+    },
+    "unpacking_suitcase_0_Benevolence_1_int_0_2021-06-08_17-58-34": {
+        "success": false,
+        "info": "('Hallucination', {'task_name': 'unpacking_suitcase', 'IncorrectParamLength': False, 'ObjectNotInScene': True, 'error_info': 'Primitive onfloor(sock.0) has incorrect number of parameters\\n'})",
+        "goal_info": null
+    },
+    "vacuuming_floors_0_Ihlen_1_int_0_2021-06-08_18-03-55": {
+        "success": false,
+        "info": "('GoalUnreachable', True, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'vacuum_0'}], 'failed_subgoal': 'None', 'failed_action': None, 'error_info': {'error_type': ['ErrorType.GOAL_FAILED'], 'error_info': ['Final goal not satisfied']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "washing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_22-38-10": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'soap_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}, {'action': 'RIGHT_GRASP', 'object': 'rag_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'bucket_0'}], 'failed_subgoal': 'inside(car.0, sink.32)', 'failed_action': {'action': 'RIGHT_GRASP', 'object': 'car_0'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object car_0 too big to grasp']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "car.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "car.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false
+            ]
+        }
+    },
+    "washing_dishes_0_Benevolence_1_int_0_2021-06-08_18-07-48": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_63'}, {'action': 'LEFT_GRASP', 'object': 'plate_59'}, {'action': 'LEFT_PLACE_INSIDE', 'object': 'sink_19'}], 'failed_subgoal': 'Not(stained(plate.59))', 'failed_action': {'action': 'CLEAN', 'object': 'plate_59'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['No soaked cleaner in inventory or object not in toggled on cleaner (CLEAN_STAIN)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "plate.n.04",
+                    "-",
+                    "plate.n.04",
+                    "not",
+                    "stained",
+                    "plate.n.04"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "cup.n.01_1"
+                ],
+                [
+                    "not",
+                    "stained",
+                    "bowl.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "washing_floor_0_Ihlen_1_int_1_2021-10-26_14-53-28": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'bucket_0'}, {'action': 'RIGHT_PLACE_INSIDE', 'object': 'sink_49'}, {'action': 'TOGGLE_ON', 'object': 'sink_49'}], 'failed_subgoal': 'soaked(bath_towel.0)', 'failed_action': {'action': 'SOAK', 'object': 'bath_towel_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object bath_towel_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "or",
+                    "dusty",
+                    "floor.n.01_1",
+                    "stained",
+                    "floor.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "washing_pots_and_pans_0_Pomaria_1_int_0_2021-10-26_13-06-44": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_83'}, {'action': 'CLEAN', 'object': 'teapot_78'}, {'action': 'CLEAN', 'object': 'teapot_78'}, {'action': 'LEFT_GRASP', 'object': 'teapot_78'}], 'failed_subgoal': 'Not(dusty(teapot.78))', 'failed_action': {'action': 'CLEAN', 'object': 'teapot_78'}, 'error_info': {'error_type': ['ErrorType.ADDITIONAL_STEP'], 'error_info': [\"Object's state is already satisfied (HIGH_LEVEL_ACTION)\"]}}, {'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'scrub_brush_83'}, {'action': 'CLEAN', 'object': 'teapot_78'}, {'action': 'CLEAN', 'object': 'teapot_78'}, {'action': 'LEFT_GRASP', 'object': 'teapot_78'}], 'failed_subgoal': 'inside(teapot.78, top_cabinet.27)', 'failed_action': {'action': 'LEFT_PLACE_INSIDE', 'object': 'top_cabinet_27'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Target object top_cabinet_27 is closed']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pan.n.01",
+                    "-",
+                    "pan.n.01",
+                    "and",
+                    "not",
+                    "stained",
+                    "pan.n.01",
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "inside",
+                    "pan.n.01",
+                    "cabinet.n.01"
+                ],
+                [
+                    "forall",
+                    "kettle.n.01",
+                    "-",
+                    "kettle.n.01",
+                    "and",
+                    "not",
+                    "stained",
+                    "kettle.n.01",
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "inside",
+                    "kettle.n.01",
+                    "cabinet.n.01"
+                ],
+                [
+                    "forall",
+                    "teapot.n.01",
+                    "-",
+                    "teapot.n.01",
+                    "and",
+                    "not",
+                    "stained",
+                    "teapot.n.01",
+                    "exists",
+                    "cabinet.n.01",
+                    "-",
+                    "cabinet.n.01",
+                    "inside",
+                    "teapot.n.01",
+                    "cabinet.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false,
+                false,
+                false
+            ]
+        }
+    },
+    "watering_houseplants_0_Beechwood_0_int_0_2021-10-26_15-20-01": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'pot_plant_0'}, {'action': 'RIGHT_RELEASE', 'object': 'pot_plant_0'}, {'action': 'RIGHT_GRASP', 'object': 'pot_plant_1'}, {'action': 'RIGHT_RELEASE', 'object': 'pot_plant_1'}, {'action': 'RIGHT_GRASP', 'object': 'pot_plant_2'}], 'failed_subgoal': 'soaked(pot_plant.0)', 'failed_action': {'action': 'SOAK', 'object': 'pot_plant_0'}, 'error_info': {'error_type': ['ErrorType.MISSING_STEP'], 'error_info': ['Object pot_plant_0 not in toggled on sink or in a teapot(SOAK)']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "forall",
+                    "pot_plant.n.01",
+                    "-",
+                    "pot_plant.n.01",
+                    "soaked",
+                    "pot_plant.n.01"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    },
+    "waxing_cars_or_other_vehicles_0_Ihlen_0_int_0_2021-10-25_23-03-46": {
+        "success": false,
+        "info": "('Runtime', False, [{'failed_action_sequence': [{'action': 'RIGHT_GRASP', 'object': 'rag_52'}], 'failed_subgoal': 'inside(rag.52, cruet.51)', 'failed_action': {'action': 'RIGHT_PLACE_INSIDE', 'object': 'cruet_51'}, 'error_info': {'error_type': ['ErrorType.AFFORDANCE_ERROR'], 'error_info': ['Object rag_52 too big to place inside cruet_51']}}])",
+        "goal_info": {
+            "success": false,
+            "subgoals": [
+                [
+                    "not",
+                    "dusty",
+                    "vehicle.n.01_1"
+                ]
+            ],
+            "subgoal_success": [
+                false
+            ]
+        }
+    }
+}
