@@ -347,7 +347,8 @@ class EvolvingGraph():
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Cannot grasp floor (GRASP)")
                     return False
                 
-                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1:
+                if self.obj.bounding_box[0]*self.obj.bounding_box[1]*self.obj.bounding_box[2]>1.5:
+                    error_info.update_error(ErrorType.AFFORDANCE_ERROR, f"Object {self.obj.name} too big to grasp")
                     print(f"<Error> {ErrorType.AFFORDANCE_ERROR} <Reason> Object too big to grasp (GRASP)")
                     return False
 
