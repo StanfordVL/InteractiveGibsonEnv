@@ -1,4 +1,8 @@
-generate_vocab.py
+**__pycache__**
 analyze*.py
-
 *.bat
+get_grammar_error_list.py
+
+logs
+
+

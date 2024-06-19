@@ -106,6 +106,7 @@ target_task_info = \
 
 import json
 import os
+import igibson
 def generate_prompt_final(prompt_file_path):
     if not os.path.exists(prompt_file_path):
         with open(prompt_file_path, 'w') as f:
@@ -120,5 +121,8 @@ def generate_prompt_final(prompt_file_path):
         json.dump(prompts, f, indent=4)
 
 if __name__ == '__main__':
-    prompt_file_path = './igibson/evaluation/eval_subgoal_plan/resources/goal_intepret_subgoal_plan_final_prompt_behavior_meta.json'
-    generate_prompt_final(prompt_file_path)
+    meta_file_path = os.path.join(
+        igibson.subgoal_prompt_root_path, 
+        'subgoal_plan_final_prompt_behavior_meta.json'
+    )
+    generate_prompt_final(meta_file_path)

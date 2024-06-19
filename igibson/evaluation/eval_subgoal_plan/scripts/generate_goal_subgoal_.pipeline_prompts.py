@@ -3,6 +3,7 @@ import json
 import multiprocessing
 import os
 import ast
+import igibson
 from typing import Dict, Any, List, Union, Tuple
 from igibson.evaluation.action_sequence.action_sequence_evaluator import ActionSequenceEvaluator
 from igibson.evaluation.eval_subgoal_plan.tl_formula.bddl_to_tl import translate_addressable_obj_into_tl_obj, translate_raw_bddl_name_rep_into_tl_name_rep, build_simplified_tl_expr_from_bddl_condition_recursively, remove_redudant_list
@@ -129,7 +130,7 @@ def get_generated_len():
     ...
 
 
-def main_generate_input_prompt(input_llm_name:str):
+def main_generate_input_prompt(input_llm_name:str, n_proc:int, task_num:int):
     demo_dir = './igibson/data/virtual_reality'
     prompt_file_path = './igibson/evaluation/eval_subgoal_plan/goal_inter_and_subgoal/resources/goal_intepret_subgoal_plan_final_prompt_behavior_meta.json'
     log_path = './igibson/evaluation/eval_subgoal_plan/goal_inter_and_subgoal/resources/all_goal_intr_and_subgoal_prompts.json'
@@ -151,9 +152,11 @@ def main_generate_input_prompt(input_llm_name:str):
         print('All tasks have been generated')
         return
     print(f'remaining tasks: {len(real_task_list)}')
-    real_task_list = real_task_list[:10] if len(real_task_list) > 10 else real_task_list
+    real_task_list = real_task_list[:task_num] if len(real_task_list) > task_num else real_task_list
 
-    n_proc = min(multiprocessing.cpu_count(), len(real_task_list), 5)
+    n_proc = min(multiprocessing.cpu_count(), len(real_task_list), n_proc)
+    print(f'Number of processes: {n_proc}')
+    print(f'Total tasks: {len(real_task_list)}')
     with multiprocessing.Pool(processes=n_proc, initializer=init_globals, initargs=(counter, lock)) as pool:
         try:
             pool.starmap(generate_input_prompt, [(demo_dir, task_name, task_info, user_prompt, log_path, llm_name) for task_name, task_info in real_task_list])
@@ -183,10 +186,13 @@ def run_one_case(input_llm_name:str, task_name: str):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Evaluate subgoal plan')
     parser.add_argument('--llm_name', type=str,  default='gpt-4-turbo-2024-04-09', help='Name of the LLM')
+    parser.add_argument('--n_proc', type=int, default=5, help='Number of processes')
+    parser.add_argument('--max_tasks', type=int, default=100, help='Number of tasks to generate')
     args = parser.parse_args()
     llm_name = args.llm_name.replace('_outputs', '')
+    n_proc = args.n_proc
+    task_num = args.max_tasks
     
-    # main_generate_input_prompt(llm_name)
-
+    main_generate_input_prompt(llm_name, n_proc, task_num)
     # run_one_case('cohere-command-r-plus', 'putting_up_Christmas_decorations_inside_0_Ihlen_1_int_0_2021-06-03_14-27-09')
-    get_generated_len()
+    # get_generated_len()
