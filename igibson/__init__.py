@@ -59,6 +59,15 @@ else:
     key_path = global_config["key_path"]
 key_path = os.path.expanduser(key_path)
 
+if 'DEMO_NAME_PATH' in os.environ:
+    demo_name_path = os.environ['DEMO_NAME_PATH']
+else:
+    demo_name_path = global_config['demo_name_path']
+demo_name_path = os.path.expanduser(demo_name_path)
+
+subgoal_prompt_root_path = global_config['subgoal_prompt_root_path']
+subgoal_prompt_root_path = os.path.expanduser(subgoal_prompt_root_path)
+
 root_path = os.path.dirname(os.path.realpath(__file__))
 
 if not os.path.isabs(assets_path):
