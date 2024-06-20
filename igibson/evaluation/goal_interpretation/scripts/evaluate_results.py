@@ -1,23 +1,17 @@
 import igibson.object_states as object_states
-from igibson.tasks.behavior_task import BehaviorTask
-from igibson.utils.ig_logging import IGLogReader
-from igibson.utils.utils import parse_config
-import os
-import igibson
-from igibson.envs.igibson_env import iGibsonEnv
-from igibson.transition_model_v3.eval_env import EvalEnv
-from igibson.transition_model_v3.eval_env import EvalActions
-from tqdm import tqdm
 import json
 
 
-demo_to_conds_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/all_conditions.json"
-demo_to_objs_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/all_objects.json"
-demo_names_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/100_selected_demos.txt"
-task_to_instructions_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/instructions_by_activity_name_v2.json"
-prompt_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/prompts/behavior_goal_interpretation.txt"
-task_to_demo_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/task_to_demo.json"
-demo_to_prompt_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/assets/llm_prompts_v2.json"
+
+
+demo_to_conds_path = "./igibson/evaluation/goal_interpretation/data/all_conditions.json"
+demo_to_objs_path = "./igibson/evaluation/goal_interpretation/data/all_objects.json"
+demo_names_path = "./igibson/evaluation/goal_interpretation/data/100_selected_demos.txt"
+task_to_instructions_path = "./igibson/evaluation/goal_interpretation/data/instructions_by_activity_name.json"
+prompt_path = "./igibson/evaluation/goal_interpretation/prompts/behavior_goal_interpretation.txt"
+task_to_demo_path = "./igibson/evaluation/goal_interpretation/data/task_to_demo.json"
+demo_to_prompt_path = "./igibson/evaluation/goal_interpretation/data/llm_prompts.json"
+
 
 
 with open(demo_to_conds_path, 'r') as json_file:
@@ -39,6 +33,7 @@ with open(demo_names_path, 'r') as file:
     demo_names = file.read().splitlines()
     
     
+        
 
 object_states = {
     "node_states": [
@@ -60,6 +55,28 @@ object_states = {
         "Under"
     ]
 }
+
+
+
+all_models = [
+    "claude-3-haiku-20240307", 
+    "claude-3-opus-20240229", 
+    "claude-3-sonnet-2024022", 
+    "gemini-1.0-pro", 
+    "gemini-1.5-flash-preview-0514", 
+    "gemini-1.5-pro-preview-0409", 
+    "gpt-3.5-turbo-0125", 
+    "gpt-4-turbo-2024-04-09", 
+    "gpt-4o-2024-05-13", 
+    "llama-3-8b-chat", 
+    "llama-3-70b-chat", 
+    "mistral-large-2402", 
+    "mixtral-8x22b-instruct-v0.1",
+    "cohere-command-r",
+    "cohere-command-r-plus"
+]
+
+
 
 
 
@@ -109,6 +126,7 @@ def is_state_condition(state, condition):
         return condition[0] == state.lower()
     
 
+
 def compute_metrics_by_state(all_satisfied_conditions, all_unsatisfied_conditions, predicted_conditions):
     """Compute metrics for each state separately."""
     node_state_results = {}
@@ -132,6 +150,38 @@ def compute_metrics_by_state(all_satisfied_conditions, all_unsatisfied_condition
     
     return node_state_results, edge_state_results
             
+
+def compute_confusion_metrics(all_satisfied_conditions, all_unsatisfied_conditions, all_false_positive_conditions, predicted_conditions, keep_conditions=True):
+    
+    # Compute evaluation metrics
+    true_positives = len(all_satisfied_conditions)
+    false_positives = len(all_false_positive_conditions)
+    false_negatives = len(all_unsatisfied_conditions)
+    accuracy = true_positives / len(predicted_conditions) if predicted_conditions else 0
+    precision = true_positives / (true_positives + false_positives) if true_positives + false_positives > 0 else 0
+    recall = true_positives / (true_positives + false_negatives) if true_positives + false_negatives > 0 else 0
+    f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+    
+    
+    if keep_conditions:
+        return {
+            'precision': precision,
+            'recall': recall,
+            'f1_score': f1_score,
+            'all_satisfied_conditions': all_satisfied_conditions,
+            'all_unsatisfied_conditions': all_unsatisfied_conditions,
+            'predicted_conditions': predicted_conditions,
+            "false_positive_conditions": all_false_positive_conditions
+        }
+    else:
+        return {
+            'precision': precision,
+            'recall': recall,
+            'f1_score': f1_score
+        }
+        
+        
+
 
 
 # Grammatical Error Checks
@@ -217,13 +267,13 @@ def dataset_error_analysis(all_satisfied_conditions: list, all_unsatisfied_condi
         'grammatical_errors': 
             {
                 "grammatically_valid_num": len(grammatically_valid_predicted_conditions),
-                "grammatically_valid_rate": len(grammatically_valid_predicted_conditions) / len(predicted_conditions),
+                "grammatically_valid_rate": len(grammatically_valid_predicted_conditions) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "wrong_length_num": len(wrong_length),
-                "wrong_length_rate": len(wrong_length) / len(predicted_conditions),
+                "wrong_length_rate": len(wrong_length) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "state_hallucination_num": len(state_hallucination),
-                "state_hallucination_rate": len(state_hallucination) / len(predicted_conditions),
+                "state_hallucination_rate": len(state_hallucination) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "object_hallucination_num": num_object_hallucinations,
-                "object_hallucination_rate": num_object_hallucinations / len(predicted_conditions),
+                "object_hallucination_rate": num_object_hallucinations / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
             },
         'overall': 
             {
@@ -253,6 +303,7 @@ def dataset_error_analysis(all_satisfied_conditions: list, all_unsatisfied_condi
                 'spatial_confusion_metrics': spatial_confusion,
             },
     }
+
 
 
 
@@ -292,13 +343,13 @@ def per_demo_error_analysis(demo, all_satisfied_conditions, all_unsatisfied_cond
         'grammatical_errors': 
             {
                 "grammatically_valid_num": len(grammatically_valid_predicted_conditions),
-                "grammatically_valid_rate": len(grammatically_valid_predicted_conditions) / len(predicted_conditions),
+                "grammatically_valid_rate": len(grammatically_valid_predicted_conditions) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "wrong_length_num": len(wrong_length),
-                "wrong_length_rate": len(wrong_length) / len(predicted_conditions),
+                "wrong_length_rate": len(wrong_length) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "state_hallucination_num": len(state_hallucination),
-                "state_hallucination_rate": len(state_hallucination) / len(predicted_conditions),
+                "state_hallucination_rate": len(state_hallucination) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
                 "object_hallucination_num": len(object_hallucination),
-                "object_hallucination_rate": len(object_hallucination) / len(predicted_conditions),
+                "object_hallucination_rate": len(object_hallucination) / len(predicted_conditions) if len(predicted_conditions) > 0 else 0,
             },
         'overall': 
             {
@@ -329,41 +380,61 @@ def per_demo_error_analysis(demo, all_satisfied_conditions, all_unsatisfied_cond
             },
     }
     
-    
-def compute_confusion_metrics(all_satisfied_conditions, all_unsatisfied_conditions, all_false_positive_conditions, predicted_conditions, keep_conditions=True):
-    
-    # Compute evaluation metrics
-    true_positives = len(all_satisfied_conditions)
-    false_positives = len(all_false_positive_conditions)
-    false_negatives = len(all_unsatisfied_conditions)
-    accuracy = true_positives / len(predicted_conditions) if predicted_conditions else 0
-    precision = true_positives / (true_positives + false_positives) if true_positives + false_positives > 0 else 0
-    recall = true_positives / (true_positives + false_negatives) if true_positives + false_negatives > 0 else 0
-    f1_score = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-    
-    
-    if keep_conditions:
-        return {
-            'precision': precision,
-            'recall': recall,
-            'f1_score': f1_score,
-            'all_satisfied_conditions': all_satisfied_conditions,
-            'all_unsatisfied_conditions': all_unsatisfied_conditions,
-            'predicted_conditions': predicted_conditions,
-            "false_positive_conditions": all_false_positive_conditions
-        }
-    else:
-        return {
-            'precision': precision,
-            'recall': recall,
-            'f1_score': f1_score
-        }
 
+
+# Evaluate goals per demo
+
+def evaluate_goals(predicted_goals, ground_truth_goals):
+    """This function is in charge of figuring out the satisfied, unsatisfied, and false positive conditions"""
+    # Flatten the predicted goals
+    flattened_predicted_conditions = flatten_goals(predicted_goals)
+    
+    all_satisfied_conditions = []
+    all_unsatisfied_conditions = []
+    
+    # check each goal in ground_truth_goals
+    for key, value in ground_truth_goals.items():
+        # if there is only one way to satisfy the goal
+        if len(value) == 1:
+            satisfied_conditions, unsatisfied_conditions = check_satisfaction(flattened_predicted_conditions, value[0])
+        # if there are multiple ways to satisfy the goal, choose the one that satisfies the most number of conditions
+        else:
+            satisfied_nums = [len([cond for cond in option if cond in flattened_predicted_conditions]) for option in value]
+            max_satisfied_option = value[satisfied_nums.index(max(satisfied_nums))]
+            satisfied_conditions, unsatisfied_conditions= check_satisfaction(flattened_predicted_conditions, max_satisfied_option)
+        
+        all_satisfied_conditions.extend(satisfied_conditions)
+        all_unsatisfied_conditions.extend(unsatisfied_conditions) 
+    
+    all_false_positive_conditions = [condition for condition in flattened_predicted_conditions if condition not in all_satisfied_conditions]
+    
+    return all_satisfied_conditions, all_unsatisfied_conditions, all_false_positive_conditions, flattened_predicted_conditions
+
+
+# Basic Helper Methods
+
+def flatten_goals(goal_data):
+    """Flatten goal data into a single list of conditions."""
+    return [condition for goal_type in goal_data.values() for condition in goal_type]
+
+def check_satisfaction(predicted_conditions, ground_truth_conditions):
+    """check which of the conditions in the ground truth are satisfied by the predicted conditions."""
+    satisfied_conditions = []
+    unsatisfied_conditions = []
+    
+    for condition in ground_truth_conditions:
+        if condition in predicted_conditions:
+            satisfied_conditions.append(condition)
+        else:
+            unsatisfied_conditions.append(condition)
+    
+    
+    return satisfied_conditions, unsatisfied_conditions
 
 
 
 # define the evaluate dataset function
-def evaluate_dataset(result_reference_list, save_path):
+def evaluate_dataset(result_reference_list):
     all_satisfied_conditions = []
     all_unsatisfied_conditions = []
     all_predicted_conditions = []
@@ -392,25 +463,71 @@ def evaluate_dataset(result_reference_list, save_path):
         
     # save results for each individual demo
     sorted_model_results_evaluated  = {key: model_results_evaluated [key] for key in sorted(model_results_evaluated)}
-    with open(save_path, 'w') as json_file:
-        json.dump(sorted_model_results_evaluated, json_file, indent=4)
+    
 
     # this is to obtain error analysis results for the complete dataset
     dataset_results_evaluated = dataset_error_analysis(all_satisfied_conditions, all_unsatisfied_conditions, all_false_positive_conditions, all_predicted_conditions, num_object_hallucination)
     
-    return dataset_results_evaluated
+    return dataset_results_evaluated, sorted_model_results_evaluated 
 
 
+  
+
+
+        
 
 
 
 def main():
+    '''
+    This script is used to evaluate performance of the 15 LLMs in the Embodied Agents Eval Paper.
     
-    result_reference_list_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/results/trial4/gpt4o_result_reference_list.json"
-    save_path = "/Users/bryan/Desktop/wkdir/behavior-vllm-eval/igibson/evaluation/goal_interpretation/results/trial4/gpt4o_goal_interpretation_evaluated.json"
+    ----------------------------Required Inputs----------------------------
+    base prompt to be modified (prompt_path)
+    relevant objects (with all possible states) (demo_to_objs_path)
+    initial and goal conditions (demo_to_conds_path)
+    task instructions (task_to_instructions_path)
+    list of demo names (demo_names_path)
+    mapping from task name to demo name (task_to_demo_path)
+    -----------------------------------------------------------------------
     
-    # evaluate dataset:
-    print(evaluate_dataset(result_reference_list_path, save_path))
+    ----------------------------Produced Outputs----------------------------
+    error analysis for all 15 models ({model_name}_outputs.json)
+    ------------------------------------------------------------------------
+    
+    '''
+    
+
+    ALL_RESULTS = {}
+
+    for model_name in all_models:
+        save_path = f"./igibson/evaluation/goal_interpretation/results/HELM_output/{model_name}_outputs.json"
+        with open(save_path, 'r') as json_file:
+            ALL_RESULTS[model_name] = json.load(json_file)
+
+    
+    ALL_METRICS = {}
+
+    for model_name in all_models:
+        model_results = ALL_RESULTS[model_name]
+        
+        result_reference_list = []
+        for demo in demo_names:
+            goal_conds = demo_to_conds[demo]['goal_conditions']
+            model_pred = model_results[demo]    
+            result_reference_list.append(
+                {   
+                    "identifier": demo,
+                    "llm_output": model_pred,
+                    "reference": goal_conds,
+                }
+            )    
+        
+        ALL_METRICS[model_name], sorted_model_results_evaluated = evaluate_dataset(result_reference_list)
+        with open(f"./igibson/evaluation/goal_interpretation/results/error_analysis/{model_name}_error_analysis.json", 'w') as json_file:
+            json.dump(sorted_model_results_evaluated, json_file, indent=4)
+    
+    print("results saved to ./igibson/evaluation/goal_interpretation/results/error_analysis/")
 
 if __name__ == "__main__":
     main()
