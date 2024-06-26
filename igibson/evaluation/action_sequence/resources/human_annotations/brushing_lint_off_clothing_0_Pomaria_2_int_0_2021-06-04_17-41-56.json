@@ -1,0 +1,54 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "scrub_brush_40"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sweater_36"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sweater_36"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "bed_11"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sweater_37"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sweater_37"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "bed_11"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sweater_38"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sweater_38"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "bed_11"
+    },
+    {
+        "action": "CLEAN",
+        "object": "sweater_39"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sweater_39"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "bed_11"
+    }
+]

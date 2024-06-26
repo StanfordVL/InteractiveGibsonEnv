@@ -1,0 +1,14 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "scanner_0"
+    },
+    {
+        "action": "RIGHT_PLACE_UNDER",
+        "object": "breakfast_table_3"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "scanner_0"
+    }
+]

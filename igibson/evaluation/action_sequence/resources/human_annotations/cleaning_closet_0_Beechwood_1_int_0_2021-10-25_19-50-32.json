@@ -1,0 +1,82 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_44"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_30"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "paper_towel_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "room_floor_closet_0"
+    },
+    {
+        "action": "CLEAN",
+        "object": "shelf_31"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bottom_cabinet_44"
+    },
+    {
+        "action": "CLEAN",
+        "object": "bottom_cabinet_30"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "room_floor_closet_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hat_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "necklace_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "shelf_31"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_30"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bracelet_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_30"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sandal_0"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO_ONTOP",
+        "object": "shelf_31,room_floor_closet_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sandal_1"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO_ONTOP",
+        "object": "shelf_31,room_floor_closet_0"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_44"
+    },
+    {
+        "action": "CLOSE",
+        "object": "bottom_cabinet_30"
+    }
+]

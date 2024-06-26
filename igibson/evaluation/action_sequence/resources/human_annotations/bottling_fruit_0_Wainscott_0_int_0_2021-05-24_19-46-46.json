@@ -1,0 +1,87 @@
+[
+    
+    {
+        "action": "OPEN",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "strawberry_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "peach_0"
+    },
+    {
+        "action": "LEFT_RELEASE",
+        "object": "peach_0"
+    },
+    {
+        "action": "RIGHT_RELEASE",
+        "object": "strawberry_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "carving_knife_0"
+    },
+    {
+        "action": "SLICE",
+        "object": "strawberry_0"
+    },
+    {
+        "action": "SLICE",
+        "object": "peach_0"
+    },
+    {
+        "action": "LEFT_RELEASE",
+        "object": "carving_knife_0"
+    },
+    {
+        "action": "OPEN",
+        "object": "jar_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "strawberry_0_part_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "jar_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "strawberry_0_part_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "jar_1"
+    },
+    {
+        "action": "CLOSE",
+        "object": "jar_1"
+    },
+    {
+        "action": "OPEN",
+        "object": "jar_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "peach_0_part_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "jar_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "peach_0_part_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "jar_0"
+    },
+    {
+        "action": "CLOSE",
+        "object": "jar_0"
+    }
+]

@@ -1,0 +1,138 @@
+[
+    {
+        "action": "OPEN",
+        "object": "top_cabinet_27"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_87"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "plate_88"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "countertop_31"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "countertop_31"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_20"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "tomato_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tomato_82"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "countertop_31"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "countertop_31"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_20"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "tomato_83"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "tomato_82"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "carving_knife_86"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "radish_84"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_88"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "radish_85"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_87"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "lettuce_78"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_88"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "lettuce_79"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_87"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "apple_80"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_88"
+    },
+    {
+        "action": "SLICE",
+        "object": "apple_80"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "apple_81"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_87"
+    },
+    {
+        "action": "SLICE",
+        "object": "apple_81"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tomato_83"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_88"
+    },
+    {
+        "action": "SLICE",
+        "object": "tomato_83"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tomato_82"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_87"
+    },
+    {
+        "action": "SLICE",
+        "object": "tomato_82"
+    }
+]

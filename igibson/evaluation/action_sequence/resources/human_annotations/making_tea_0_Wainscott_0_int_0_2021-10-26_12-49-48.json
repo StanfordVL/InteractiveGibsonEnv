@@ -1,0 +1,54 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_no_top_80"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "teapot_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tea_bag_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "teapot_0"
+    },
+    {
+        "action": "SOAK",
+        "object": "tea_bag_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "stove_88"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "stove_88"
+    },
+    {
+        "action": "OPEN",
+        "object": "fridge_97"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lemon_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "carving_knife_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "carving_knife_0"
+    },
+    {
+        "action": "SLICE",
+        "object": "lemon_0"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_97"
+    }
+]

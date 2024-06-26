@@ -1,0 +1,66 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "notebook_60"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hardback_65"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "hardback_64"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_59"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "notebook_62"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "hardback_65"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "notebook_63"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "notebook_61"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "carton_66"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "carton_66"
+    }
+]

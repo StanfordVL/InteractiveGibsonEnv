@@ -1,0 +1,26 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_49"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "rag_101"
+    },
+    {
+        "action": "CLEAN",
+        "object": "spoon_97"
+    },
+    {
+        "action": "CLEAN",
+        "object": "spoon_99"
+    },
+    {
+        "action": "CLEAN",
+        "object": "spoon_98"
+    },
+    {
+        "action": "CLEAN",
+        "object": "spoon_100"
+    }
+]

@@ -1,0 +1,77 @@
+{
+    "initial_condition": [
+        [
+            "onfloor",
+            "bucket.n.01_1",
+            "floor.n.01_1"
+        ],
+        [
+            "ontop",
+            "soap.n.01_1",
+            "towel.n.01_1"
+        ],
+        [
+            "onfloor",
+            "soap.n.01_1",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "towel.n.01_1",
+            "floor.n.01_1"
+        ],
+        [
+            "not",
+            "stained",
+            "towel.n.01_1"
+        ],
+        [
+            "dusty",
+            "floor.n.01_1"
+        ],
+        [
+            "stained",
+            "floor.n.01_1"
+        ],
+        [
+            "onfloor",
+            "agent.n.01_1",
+            "floor.n.01_1"
+        ]
+    ],
+    "goal_condition": [
+        [
+            "not",
+            "or",
+            "dusty",
+            "floor.n.01_1",
+            "stained",
+            "floor.n.01_1"
+        ]
+    ],
+    "goal_option": [
+        [
+            [
+                "not",
+                "dusty",
+                "floor.n.01_1"
+            ],
+            [
+                "not",
+                "stained",
+                "floor.n.01_1"
+            ]
+        ]
+    ],
+    "name_category": {
+        "bucket.n.01_1": "bucket.n.01",
+        "floor.n.01_1": "floor.n.01",
+        "soap.n.01_1": "soap.n.01",
+        "towel.n.01_1": "towel.n.01",
+        "shower.n.01_1": "shower.n.01",
+        "toilet.n.02_1": "toilet.n.02",
+        "bed.n.01_1": "bed.n.01",
+        "sink.n.01_1": "sink.n.01",
+        "agent.n.01_1": "agent.n.01"
+    }
+}

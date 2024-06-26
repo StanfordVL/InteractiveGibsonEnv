@@ -16,17 +16,30 @@ class NextTo(PositionalValidationMemoizedObjectStateMixin, KinematicsMixin, Rela
         raise NotImplementedError()
 
     def _get_value(self, other):
+
         objA_states = self.obj.states
         objB_states = other.states
-
+       
         assert AABB in objA_states
         assert AABB in objB_states
 
         objA_aabb = objA_states[AABB].get_value()
         objB_aabb = objB_states[AABB].get_value()
 
+    
         objA_lower, objA_upper = objA_aabb
         objB_lower, objB_upper = objB_aabb
+
+        # Calculate the distance between the two AABBs.
+        obj1_center= (objA_lower + objA_upper) / 2
+        objb_center = (objB_lower + objB_upper) / 2
+        distance = np.linalg.norm(obj1_center - objb_center)
+        objA_box= objA_upper - objA_lower
+        objB_box = objB_upper - objB_lower
+        if abs(distance-(objA_box[0]+objB_box[0])/2) < 0.02 or abs(distance-(objA_box[1]+objB_box[1])/2) < 0.02:
+            return True
+
+
         distance_vec = []
         for dim in range(3):
             glb = max(objA_lower[dim], objB_lower[dim])

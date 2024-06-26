@@ -1,0 +1,50 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_3"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "candle_5"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "coffee_table_33"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "coffee_table_33"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_4"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "coffee_table_33"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "candle_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_1"
+    }
+]

@@ -1,0 +1,182 @@
+{
+    "navigate_to": {
+        "action_name": "navigate_to",
+        "action_parameters": "(?objto - object ?agent - agent)",
+        "action_preconditions": "(not (in_reach_of_agent ?objto))",
+        "action_effects": "(and (in_reach_of_agent ?objto) (forall (?objfrom - object) (when (and (in_reach_of_agent ?objfrom) (not (= ?objfrom ?objto))) (not (in_reach_of_agent ?objfrom))) ))"
+    },
+    "grasp": {
+        "action_name": "grasp",
+        "action_parameters": "(?obj - object ?agent - agent)",
+        "action_preconditions": "(and (not (holding ?obj)) (not (handsfull ?agent)) (in_reach_of_agent ?obj) (not (exists (?obj2 - object) (and (inside ?obj ?obj2) (not (open ?obj2))))))",
+        "action_effects": "(and (holding ?obj) (handsfull ?agent) (forall (?other_obj - object) (and (not (inside ?obj ?other_obj)) (not (ontop ?obj ?other_obj)) (not (under ?obj ?other_obj)) (not (under ?other_obj ?obj)) (not (nextto ?obj ?other_obj)) (not (nextto ?other_obj ?obj)) (not (onfloor ?obj ?other_obj))) ))"
+    },
+    "release": {
+        "action_name": "release",
+        "action_parameters": "(?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj))",
+        "action_effects": "(and (not (holding ?obj)) (not (handsfull ?agent)))"
+    },
+    "place_ontop": {
+        "action_name": "place_ontop",
+        "action_parameters": "(?obj_in_hand - object ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?obj))",
+        "action_effects": "(and (ontop ?obj_in_hand ?obj) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "place_inside": {
+        "action_name": "place_inside",
+        "action_parameters": "(?obj_in_hand - object ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?obj) (open ?obj))",
+        "action_effects": "(and (inside ?obj_in_hand ?obj) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "open": {
+        "action_name": "open",
+        "action_parameters": "(?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (not (open ?obj)) (not (handsfull ?agent)))",
+        "action_effects": "(open ?obj)"
+    },
+    "close": {
+        "action_name": "close",
+        "action_parameters": "(?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (open ?obj) (not (handsfull ?agent)))",
+        "action_effects": "(not (open ?obj))"
+    },
+    "slice": {
+        "action_name": "slice",
+        "action_parameters": "(?obj - object ?knife - knife_n_01 ?agent - agent)",
+        "action_preconditions": "(and (holding ?knife) (in_reach_of_agent ?obj))",
+        "action_effects": "(sliced ?obj)"
+    },
+    "slice_carvingknife": {
+        "action_name": "slice_carvingknife",
+        "action_parameters": "(?obj - object ?knife - carving_knife_n_01 ?board - countertop_n_01 ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (holding ?knife) (ontop ?obj ?board) (not (sliced ?obj)))",
+        "action_effects": "(sliced ?obj)"
+    },
+    "place_onfloor": {
+        "action_name": "place_onfloor",
+        "action_parameters": "(?obj_in_hand - object ?floor - floor_n_01 ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?floor))",
+        "action_effects": "(and (onfloor ?obj_in_hand ?floor) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "place_nextto": {
+        "action_name": "place_nextto",
+        "action_parameters": "(?obj_in_hand - object ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?obj))",
+        "action_effects": "(and (nextto ?obj_in_hand ?obj) (nextto ?obj ?obj_in_hand) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "place_nextto_ontop": {
+        "action_name": "place_nextto_ontop",
+        "action_parameters": "(?obj_in_hand - object ?obj1 - object ?obj2 - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?obj1))",
+        "action_effects": "(and (nextto ?obj_in_hand ?obj1) (nextto ?obj1 ?obj_in_hand) (ontop ?obj_in_hand ?obj2) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "clean_stained_brush": {
+        "action_name": "clean_stained_brush",
+        "action_parameters": "(?scrub_brush - scrub_brush_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?scrub_brush) (holding ?scrub_brush))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_cloth": {
+        "action_name": "clean_stained_cloth",
+        "action_parameters": "(?rag - piece_of_cloth_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?rag) (holding ?rag))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_handowel": {
+        "action_name": "clean_stained_handowel",
+        "action_parameters": "(?hand_towel - hand_towel_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?hand_towel) (holding ?hand_towel))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_towel": {
+        "action_name": "clean_stained_towel",
+        "action_parameters": "(?hand_towel - towel_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?hand_towel) (holding ?hand_towel))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_dishtowel": {
+        "action_name": "clean_stained_dishtowel",
+        "action_parameters": "(?hand_towel - dishtowel_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?hand_towel) (holding ?hand_towel))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_dishwasher": {
+        "action_name": "clean_stained_dishwasher",
+        "action_parameters": "(?dishwasher - dishwasher_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj) (in_reach_of_agent ?dishwasher))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "clean_stained_rag": {
+        "action_name": "clean_stained_rag",
+        "action_parameters": "(?rag - rag_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (stained ?obj) (soaked ?rag) (holding ?rag))",
+        "action_effects": "(not (stained ?obj))"
+    },
+    "soak": {
+        "action_name": "soak",
+        "action_parameters": "(?obj1 - object ?sink - sink_n_01 ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj1) (in_reach_of_agent ?sink) (toggled_on ?sink))",
+        "action_effects": "(soaked ?obj1)"
+    },
+    "soak_teapot": {
+        "action_name": "soak_teapot",
+        "action_parameters": "(?obj1 - object ?agent - agent ?teapot - teapot_n_01)",
+        "action_preconditions": "(and (holding ?obj1) (in_reach_of_agent ?teapot))",
+        "action_effects": "(soaked ?obj1)"
+    },
+    "place_under": {
+        "action_name": "place_under",
+        "action_parameters": "(?obj_in_hand - object ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (holding ?obj_in_hand) (in_reach_of_agent ?obj))",
+        "action_effects": "(and (under ?obj_in_hand ?obj) (not (holding ?obj_in_hand)) (not (handsfull ?agent)))"
+    },
+    "toggle_on": {
+        "action_name": "toggle_on",
+        "action_parameters": "(?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (not (handsfull ?agent)))",
+        "action_effects": "(toggled_on ?obj)"
+    },
+    "clean_dusty_rag": {
+        "action_name": "clean_dusty_rag",
+        "action_parameters": "(?rag - rag_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (dusty ?obj) (holding ?rag))",
+        "action_effects": "(not (dusty ?obj))"
+    },
+    "clean_dusty_towel": {
+        "action_name": "clean_dusty_towel",
+        "action_parameters": "(?towel - towel_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (dusty ?obj) (holding ?towel))",
+        "action_effects": "(not (dusty ?obj))"
+    },
+    "clean_dusty_cloth": {
+        "action_name": "clean_dusty_cloth",
+        "action_parameters": "(?rag - piece_of_cloth_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (dusty ?obj) (holding ?rag))",
+        "action_effects": "(not (dusty ?obj))"
+    },
+    "clean_dusty_brush": {
+        "action_name": "clean_dusty_brush",
+        "action_parameters": "(?scrub_brush - scrub_brush_n_01 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (dusty ?obj) (holding ?scrub_brush))",
+        "action_effects": "(not (dusty ?obj))"
+    },
+    "clean_dusty_vacuum": {
+        "action_name": "clean_dusty_vacuum",
+        "action_parameters": "(?vacuum - vacuum_n_04 ?obj - object ?agent - agent)",
+        "action_preconditions": "(and (in_reach_of_agent ?obj) (dusty ?obj) (holding ?vacuum))",
+        "action_effects": "(not (dusty ?obj))"
+    },
+    "freeze": {
+        "action_name": "freeze",
+        "action_parameters": "(?obj - object ?fridge - electric_refrigerator_n_01)",
+        "action_preconditions": "(and (inside ?obj ?fridge) (not (frozen ?obj)))",
+        "action_effects": "(frozen ?obj)"
+    },
+    "cook": {
+        "action_name": "cook",
+        "action_parameters": "(?obj - object ?pan - pan_n_01)",
+        "action_preconditions": "(and (ontop ?obj ?pan) (not (cooked ?obj)))",
+        "action_effects": "(cooked ?obj)"
+    }
+}

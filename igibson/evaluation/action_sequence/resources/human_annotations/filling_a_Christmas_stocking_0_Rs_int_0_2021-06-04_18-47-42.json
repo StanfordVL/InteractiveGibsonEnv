@@ -1,0 +1,102 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "ice_cube_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lollipop_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pen_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "ice_cube_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lollipop_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pen_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "ice_cube_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "lollipop_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pen_2"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "ice_cube_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candy_cane_0"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "pen_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "stocking_3"
+    }
+]

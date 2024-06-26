@@ -1,0 +1,8 @@
+**__pycache__**
+analyze*.py
+*.bat
+get_grammar_error_list.py
+
+logs
+
+

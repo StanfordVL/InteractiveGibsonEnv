@@ -37,6 +37,8 @@ dependencies = [
     "urllib3>=1.20",
     "progressbar>=2.5",
     "packaging",
+    "pyquaternion",
+    "fire",
 ]
 
 [tool.black]

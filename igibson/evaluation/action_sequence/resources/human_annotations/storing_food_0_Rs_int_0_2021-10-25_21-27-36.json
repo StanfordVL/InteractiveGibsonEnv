@@ -1,0 +1,70 @@
+[
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chip_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "chip_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "sugar_jar_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "sugar_jar_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "oatmeal_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "oatmeal_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "olive_oil_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "olive_oil_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "bottom_cabinet_41"
+    }
+]

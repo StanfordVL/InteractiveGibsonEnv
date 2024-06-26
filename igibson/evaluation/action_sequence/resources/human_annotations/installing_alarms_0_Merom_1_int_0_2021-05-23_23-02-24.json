@@ -1,0 +1,26 @@
+[
+    {
+        "action": "TOGGLE_ON",
+        "object": "alarm_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "alarm_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "alarm_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "coffee_table_27"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "alarm_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    }
+]

@@ -1,0 +1,18 @@
+{
+    "inside": "spatial relations",
+    "nextto": "spatial relations",
+    "ontop": "spatial relations",
+    "under": "spatial relations",
+    "cooked": "object states",
+    "dusty": "object states",
+    "frozen": "object states",
+    "open": "object states",
+    "stained": "object states",
+    "sliced": "object states",
+    "soaked": "object states",
+    "toggled_on": "object states",
+    "onfloor": "spatial relations",
+    "holding": "non-spatial relations",
+    "handsfull": "non-spatial relations",
+    "in_reach_of_agent": "spatial relations"
+}

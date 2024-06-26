@@ -1,0 +1,130 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bow_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bow_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "bow_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bow_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_2"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cheese_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cheese_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cheese_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cheese_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_2"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cookie_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cookie_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cookie_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cookie_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_2"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_3"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "candle_1"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_0"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "candle_2"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "candle_3"
+    },
+    {
+        "action": "RIGHT_PLACE_INSIDE",
+        "object": "basket_2"
+    },
+    {
+        "action": "LEFT_PLACE_INSIDE",
+        "object": "basket_3"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "action": "RIGHT_GRASP",
+        "object": "modem_0"
+    },
+    {
+        "action": "TOGGLE_ON",
+        "object": "modem_0"
+    },
+    {
+        "action": "RIGHT_PLACE_UNDER",
+        "object": "breakfast_table_37"
+    }
+]

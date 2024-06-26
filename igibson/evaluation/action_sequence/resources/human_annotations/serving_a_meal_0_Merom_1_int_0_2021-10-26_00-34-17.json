@@ -1,0 +1,178 @@
+[
+    {
+        "action": "OPEN",
+        "object": "fridge_57"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_49"
+    },
+    {
+        "action": "OPEN",
+        "object": "bottom_cabinet_50"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "plate_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "plate_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "chicken_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "chicken_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "plate_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "plate_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "spoon_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "soup_1"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "soup_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "table_knife_0"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "tablefork_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "toasting_fork_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "carving_knife_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "water_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "water_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "salad_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "salad_1"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "soup_0"
+    },
+    {
+        "action": "LEFT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "RIGHT_PLACE_ONTOP",
+        "object": "breakfast_table_20"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "spoon_1"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "soup_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "cupcake_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "muffin_0"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "plate_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "plate_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "bagel_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "cookie_0"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "plate_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "plate_1"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_57"
+    }
+]

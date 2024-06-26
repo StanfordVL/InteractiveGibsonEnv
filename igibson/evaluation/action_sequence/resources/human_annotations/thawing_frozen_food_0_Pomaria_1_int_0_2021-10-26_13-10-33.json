@@ -1,0 +1,82 @@
+[
+    {
+        "action": "OPEN",
+        "object": "fridge_20"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "fish_3"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "fish_2"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "fish_3"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "fish_2"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "fish_1"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "fish_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "fish_1"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "fish_0"
+    },
+    {
+        "action": "RIGHT_GRASP",
+        "object": "container_date_0"
+    },
+    {
+        "action": "LEFT_GRASP",
+        "object": "olive_0"
+    },
+    {
+        "action": "RIGHT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "LEFT_PLACE_NEXTTO",
+        "object": "sink_37"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "container_date_0"
+    },
+    {
+        "action": "UNFREEZE",
+        "object": "olive_0"
+    },
+    {
+        "action": "CLOSE",
+        "object": "fridge_20"
+    }
+]

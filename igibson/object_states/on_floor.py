@@ -74,4 +74,7 @@ class OnFloor(RelativeObjectState, KinematicsMixin, BooleanState):
             return is_in_room
 
         touching = self.obj.states[Touching].get_value(scene_floor)
-        return is_in_room and touching
+        z_threshold = 0.02
+        z_lo=center[2]-extent[2]*0.5
+
+        return is_in_room and (touching or z_lo<z_threshold)
